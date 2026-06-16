@@ -1,0 +1,1067 @@
+{
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search…",
+    "noResults": "No results found",
+    "optional": "optional",
+    "currency": "CZK",
+    "emptyState": {
+      "title": "Nothing here yet",
+      "description": "Start by adding your first record."
+    }
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "properties": "Properties",
+    "tenants": "Tenants",
+    "payments": "Payments",
+    "documents": "Documents",
+    "energy": "Energy",
+    "taxes": "Taxes",
+    "messages": "Messages",
+    "b2b": "B2B Panel",
+    "settings": "Settings",
+    "logout": "Log out",
+    "collapseMenu": "Collapse menu",
+    "expandMenu": "Expand menu"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Next-gen property management",
+      "headline": "Own more. Worry less.",
+      "subheadline": "Everything in one place. Payments, leases, tenants — without the chaos.",
+      "cta": "Get started free",
+      "ctaSecondary": "See how it works",
+      "socialProof": "Over 1,200 landlords already saving time",
+      "paymentCard": {
+        "title": "Rent paid",
+        "tenant": "John Smith",
+        "property": "42 Oak Street, Prague",
+        "amount": "CZK 18,500",
+        "date": "Today, 8:14"
+      }
+    },
+    "features": {
+      "title": "Passive income, actually passive.",
+      "subtitle": "EstatIQ automates every step of rental management — from lease to tax report.",
+      "items": {
+        "payments": {
+          "title": "Payments without the stress",
+          "description": "Automatic reminders, overdue notices and a payment calendar. Always know who paid and who didn't."
+        },
+        "tenants": {
+          "title": "Tenants under control",
+          "description": "Invite a tenant with one click. Leases, documents and communication in one place."
+        },
+        "analytics": {
+          "title": "Real-time revenue",
+          "description": "Dashboard with income, occupancy and expense charts. Always know where you stand."
+        },
+        "taxes": {
+          "title": "Taxes without an accountant",
+          "description": "Automatic expense and income overview for tax filing. Export to PDF in one click."
+        },
+        "documents": {
+          "title": "Documents secured",
+          "description": "Leases, handover protocols, insurance — always accessible, with expiry alerts."
+        },
+        "mobile": {
+          "title": "Always with you",
+          "description": "Fully responsive web and upcoming mobile app. Manage properties anytime, anywhere."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Choose the plan that fits you.",
+      "subtitle": "Start free. Upgrade when you're ready.",
+      "badge": "Most popular",
+      "perMonth": "/ mo.",
+      "perYear": "/ yr.",
+      "saveLabel": "2 months free",
+      "billingMonthly": "Monthly",
+      "billingYearly": "Yearly",
+      "unitLimit_one": "{{count}} property",
+      "unitLimit_few": "{{count}} properties",
+      "unitLimit_many": "{{count}} properties",
+      "unitLimit_other": "{{count}} properties",
+      "free": {
+        "name": "Free",
+        "price": "0",
+        "yearlyPrice": "0",
+        "limit": "1 property",
+        "description": "Start for free. No credit card required.",
+        "cta": "Get started free"
+      },
+      "starter": {
+        "name": "Starter",
+        "price": "199",
+        "yearlyPrice": "1,990",
+        "limit": "3 properties",
+        "description": "Automatic reminders and data export.",
+        "cta": "Choose Starter"
+      },
+      "growth": {
+        "name": "Growth",
+        "price": "349",
+        "yearlyPrice": "3,490",
+        "limit": "7 properties",
+        "description": "Energy module and tax documents.",
+        "cta": "Choose Growth"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "549",
+        "yearlyPrice": "5,490",
+        "limit": "15 properties",
+        "description": "Advanced reports and priority support.",
+        "cta": "Choose Pro"
+      },
+      "portfolio": {
+        "name": "Portfolio",
+        "price": "999",
+        "yearlyPrice": "9,990",
+        "limit": "30 properties",
+        "description": "API access, multi-user (3 seats) and customisation.",
+        "cta": "Choose Portfolio"
+      },
+      "b2b": {
+        "title": "Property management firms",
+        "subtitle": "Managing properties for clients? We have a plan for you.",
+        "cta": "Book a demo",
+        "tiers": {
+          "start": {
+            "name": "B2B Start",
+            "price": "2,900",
+            "limit": "up to 50 units"
+          },
+          "growth": {
+            "name": "B2B Growth",
+            "price": "8,500",
+            "limit": "51–150 units"
+          },
+          "scale": {
+            "name": "B2B Scale",
+            "price": "18,500",
+            "limit": "151–400 units"
+          },
+          "enterprise": {
+            "name": "Enterprise",
+            "price": "from 25,000",
+            "limit": "400+ units"
+          }
+        }
+      }
+    },
+    "cta": {
+      "headline": "Add. Rent. Earn.",
+      "subheadline": "Sign up in 60 seconds. No credit card required.",
+      "button": "Get started free"
+    },
+    "footer": {
+      "tagline": "Rental management that runs itself.",
+      "product": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "changelog": "Changelog",
+      "company": "Company",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "legal": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "gdpr": "GDPR",
+      "rights": "All rights reserved.",
+      "madeIn": "Made with love in Prague"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your EstatIQ account",
+      "email": "Email address",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign in",
+      "noAccount": "Don't have an account?",
+      "register": "Sign up",
+      "orContinueWith": "or continue with",
+      "error": "Incorrect email or password. Please try again."
+    },
+    "register": {
+      "title": "Get started free",
+      "subtitle": "Create your account in 60 seconds",
+      "name": "Full name",
+      "email": "Email address",
+      "password": "Password",
+      "passwordHint": "At least 8 characters",
+      "submit": "Create account",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in",
+      "terms": "I agree to the Terms of Service and Privacy Policy",
+      "role": {
+        "label": "I am a",
+        "landlord": "Landlord",
+        "tenant": "Tenant",
+        "manager": "Property management firm"
+      },
+      "phone": "Phone number",
+      "country": "Country",
+      "city": "City",
+      "street": "Street",
+      "houseNumber": "House number",
+      "preferredCurrency": "Preferred currency",
+      "contactSection": "Contact & location details",
+      "detectLocation": "Detect location automatically",
+      "detectingLocation": "Detecting location…",
+      "locationError": "Could not detect location. Please fill in the address manually.",
+      "locationSuccess": "Address pre-filled from your location.",
+      "checkCadastre": "Verify in land register (ČÚZK)"
+    },
+    "forgotPassword": {
+      "title": "Reset password",
+      "subtitle": "Enter your email and we'll send you a reset link.",
+      "email": "Email address",
+      "submit": "Send reset link",
+      "back": "Back to sign in",
+      "successTitle": "Link sent",
+      "successMessage": "Check your email and click the password reset link.",
+      "error": "Failed to send reset link. Please check your email address."
+    },
+    "acceptInvite": {
+      "validating": "Validating your invitation…",
+      "invalidTitle": "Invitation invalid",
+      "invalidMessage": "This link has expired or was already used. Ask your admin to send a new invite.",
+      "backToLogin": "Back to sign in",
+      "tenantTitle": "Accept tenant invitation",
+      "tenantSubtitle": "Your landlord is inviting you to EstatIQ. Set a password and get started.",
+      "memberTitle": "Accept team invitation",
+      "memberSubtitle": "You've been invited to join an organisation. Set a password to get access.",
+      "name": "Full name",
+      "email": "Email address",
+      "password": "New password",
+      "passwordHint": "At least 8 characters",
+      "passwordConfirm": "Confirm password",
+      "passwordMismatch": "Passwords do not match",
+      "submit": "Activate account",
+      "successTitle": "Account activated!",
+      "successMessage": "Redirecting you in a moment…",
+      "confirmEmailTitle": "Confirm your email",
+      "confirmEmailMessage": "We sent a confirmation link to {{email}}. Click it to complete your sign-in.",
+      "submitError": "Could not activate your account. Please try again.",
+      "errorAlreadyRegistered": "This email is already registered. Try signing in instead."
+    }
+  },
+  "onboarding": {
+    "stepLabel": "Step {{current}} of {{total}}",
+    "back": "Back",
+    "next": "Continue",
+    "skip": "Skip",
+    "skipSetup": "Skip for now",
+    "welcome": {
+      "title": "Welcome to EstatIQ.",
+      "subtitle": "In a minute your first property is live and your rentals run themselves.",
+      "points": {
+        "property": "Add your first property",
+        "tenant": "Invite a tenant with one email",
+        "relax": "And let the app track payments for you"
+      },
+      "cta": "Let's go"
+    },
+    "property": {
+      "title": "Your first property",
+      "subtitle": "Just a few details. You can fill in the rest anytime later.",
+      "name": "Property name",
+      "namePlaceholder": "Oak Street Apartment",
+      "street": "Street and number",
+      "streetPlaceholder": "42 Oak Street",
+      "city": "City",
+      "cityPlaceholder": "Prague",
+      "zip": "ZIP code",
+      "zipPlaceholder": "120 00",
+      "rent": "Monthly rent",
+      "rentPlaceholder": "18,500",
+      "nameRequired": "Name the property so you can tell them apart.",
+      "rentRequired": "Enter the monthly rent."
+    },
+    "tenant": {
+      "title": "Invite a tenant",
+      "subtitle": "We'll send them an email invite. They fill in the rest — no work for you.",
+      "name": "Tenant name",
+      "namePlaceholder": "John Smith",
+      "email": "Tenant email",
+      "emailPlaceholder": "john@email.com",
+      "nameRequired": "Enter the tenant's name.",
+      "emailInvalid": "Enter a valid email.",
+      "inviteNote": "The invite is valid for 72 hours and can be used once.",
+      "skipHint": "No tenant on hand right now? Feel free to skip — you can invite them anytime."
+    },
+    "done": {
+      "title": "Done. Everything's running.",
+      "subtitle": "From now on EstatIQ tracks payments for you. Find the rest in your dashboard.",
+      "summary": {
+        "property": "Property {{name}} added",
+        "tenant": "Invite for {{email}} on its way",
+        "tenantSkipped": "You'll invite a tenant later",
+        "automation": "Payment tracking active"
+      },
+      "inviteLink": {
+        "label": "Tenant invite link — copy and send manually",
+        "copy": "Copy link",
+        "hint": "We're not sending emails automatically yet. Send this link to your tenant directly."
+      },
+      "cta": "Enter dashboard",
+      "creating": "Setting everything up…"
+    },
+    "error": {
+      "generic": "Something went wrong. Please try again.",
+      "unitLimitExceeded": "You have reached the property limit for your plan. Upgrade your subscription to add more properties."
+    }
+  },
+  "dashboard": {
+    "greeting": {
+      "morning": "Good morning,",
+      "afternoon": "Good afternoon,",
+      "evening": "Good evening,"
+    },
+    "cards": {
+      "income": {
+        "title": "Income this month",
+        "trend": "vs last month"
+      },
+      "properties": {
+        "title": "Properties",
+        "occupied": "occupied",
+        "total": "total"
+      },
+      "unpaid": {
+        "title": "Unpaid rents",
+        "count_one": "{{count}} payment pending",
+        "count_other": "{{count}} payments pending"
+      },
+      "expenses": {
+        "title": "Expenses this month"
+      },
+      "pending": {
+        "title": "Pending payments"
+      },
+      "overdue": {
+        "title": "Overdue"
+      },
+      "occupancy": {
+        "title": "Occupancy"
+      }
+    },
+    "recentPayments": {
+      "title": "Recent payments",
+      "viewAll": "View all"
+    },
+    "upcomingPayments": {
+      "title": "Upcoming payments",
+      "dueIn": "Due in {{days}} days",
+      "dueToday": "Due today",
+      "overdue": "{{days}} days overdue"
+    },
+    "occupancyChart": {
+      "title": "Occupancy & revenue",
+      "income": "Income",
+      "occupancy": "Occupancy (%)"
+    },
+    "emptyState": {
+      "title": "All clear",
+      "description": "No unpaid rents or urgent tasks."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "empty": "No new notifications",
+      "markRead": "Mark as read"
+    }
+  },
+  "properties": {
+    "title": "Properties",
+    "subtitle": "All your properties in one place.",
+    "add": "Add property",
+    "search": "Search by name or address…",
+    "searchEmpty": "Nothing matches “{{query}}”.",
+    "count_one": "{{count}} property",
+    "count_other": "{{count}} properties",
+    "filter": {
+      "all": "All",
+      "active": "Rented",
+      "vacant": "Vacant",
+      "maintenance": "Maintenance",
+      "archived": "Archive"
+    },
+    "status": {
+      "active": "Rented",
+      "vacant": "Vacant",
+      "maintenance": "Maintenance",
+      "archived": "Archived"
+    },
+    "card": {
+      "rentPerMonth": "/ mo",
+      "viewDetail": "View",
+      "tenants_one": "{{count}} tenant",
+      "tenants_other": "{{count}} tenants",
+      "noTenants": "No tenant",
+      "unpaid_one": "{{count}} unpaid",
+      "unpaid_other": "{{count}} unpaid"
+    },
+    "units": {
+      "area": "{{value}} m²",
+      "rooms_one": "{{count}} room",
+      "rooms_other": "{{count}} rooms",
+      "floor": "Floor {{value}}"
+    },
+    "form": {
+      "createTitle": "New property",
+      "createSubtitle": "Fill in the basics. You can edit everything anytime.",
+      "editTitle": "Edit property",
+      "editSubtitle": "Changes apply instantly.",
+      "name": "Name",
+      "namePlaceholder": "Oak Street Apartment",
+      "street": "Street and number",
+      "streetPlaceholder": "42 Oak Street",
+      "city": "City",
+      "cityPlaceholder": "Prague",
+      "zip": "ZIP code",
+      "zipPlaceholder": "120 00",
+      "rooms": "Rooms",
+      "area": "Area (m²)",
+      "rent": "Monthly rent",
+      "status": "Status",
+      "notes": "Note",
+      "notesPlaceholder": "Optional internal note…",
+      "nameRequired": "Enter a property name.",
+      "rentRequired": "Enter the monthly rent.",
+      "create": "Add property",
+      "save": "Save changes"
+    },
+    "detail": {
+      "back": "Back to properties",
+      "edit": "Edit",
+      "archive": "Archive",
+      "restore": "Restore",
+      "overview": "Overview",
+      "address": "Address",
+      "area": "Area",
+      "rooms": "Rooms",
+      "floor": "Floor",
+      "rent": "Monthly rent",
+      "status": "Status",
+      "tenants": "Tenants",
+      "lastPayment": "Last payment",
+      "nextPayment": "Next payment",
+      "noPayment": "No payment yet",
+      "notes": "Note",
+      "noNotes": "No note.",
+      "notFound": "Property not found",
+      "notFoundDesc": "This property doesn't exist or was removed."
+    },
+    "archiveDialog": {
+      "title": "Archive property?",
+      "message": "“{{name}}” will move to the archive. Data is kept for taxes and you can restore it anytime.",
+      "confirm": "Archive",
+      "cancel": "Cancel"
+    },
+    "emptyState": {
+      "title": "No properties yet",
+      "description": "Add your first property to start managing it.",
+      "cta": "Add property"
+    },
+    "emptyFiltered": {
+      "title": "Nothing here",
+      "description": "No properties match the selected filter."
+    },
+    "addFromCuzk": "Search ČÚZK registry"
+  },
+  "payments": {
+    "title": "Payments",
+    "subtitle": "Overview of rents and their status.",
+    "generate": "Generate rents",
+    "export": "Export CSV",
+    "search": "Search tenant or property…",
+    "searchEmpty": "Nothing matches \"{{query}}\".",
+    "count_one": "{{count}} payment",
+    "count_other": "{{count}} payments",
+    "filter": {
+      "all": "All",
+      "paid": "Paid",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    },
+    "status": {
+      "paid": "Paid",
+      "pending": "Pending",
+      "overdue": "Overdue",
+      "canceled": "Cancelled"
+    },
+    "stats": {
+      "collected": "Collected this month",
+      "expected": "Expected this month",
+      "overdueAmount": "Total overdue",
+      "rate": "Payment rate"
+    },
+    "row": {
+      "markPaid": "Mark as paid",
+      "remind": "Send payment reminder",
+      "remindSent": "Reminder sent",
+      "dunning": "Send overdue notice",
+      "dunningSent": "Notice sent",
+      "paidOn": "Paid {{date}}",
+      "dueToday": "Due today",
+      "dueIn_one": "Due in {{count}} day",
+      "dueIn_other": "Due in {{count}} days",
+      "overdueDays_one": "{{count}} day overdue",
+      "overdueDays_other": "{{count}} days overdue"
+    },
+    "markPaidModal": {
+      "title": "Mark as paid",
+      "subtitle": "{{month}} · {{tenant}}",
+      "paidAt": "Payment date",
+      "note": "Note",
+      "notePlaceholder": "Cash, bank transfer…",
+      "confirm": "Confirm payment"
+    },
+    "generateDialog": {
+      "title": "Generate payments",
+      "subtitle": "Creates pending payments for all active tenants who don't have one for the selected month yet.",
+      "month": "Month",
+      "alreadyExists": "Payments for {{month}} are already generated.",
+      "confirm": "Generate"
+    },
+    "emptyState": {
+      "title": "No payments",
+      "description": "Generate payments after adding properties and tenants.",
+      "cta": "Generate payments"
+    },
+    "emptyFiltered": {
+      "title": "Nothing here",
+      "description": "No payments match the selected filter or search."
+    }
+  },
+  "tenants": {
+    "title": "Tenants",
+    "subtitle": "All your tenants and their status.",
+    "invite": "Invite tenant",
+    "search": "Search name, email or property…",
+    "searchEmpty": "Nothing matches “{{query}}”.",
+    "count_one": "{{count}} tenant",
+    "count_other": "{{count}} tenants",
+    "filter": {
+      "all": "All",
+      "active": "Active",
+      "invited": "Invited",
+      "ended": "Ended"
+    },
+    "status": {
+      "active": "Active",
+      "invited": "Invite sent",
+      "ended": "Ended"
+    },
+    "statusShort": {
+      "active": "Active",
+      "invited": "Invited",
+      "ended": "Ended"
+    },
+    "row": {
+      "property": "Property",
+      "rent": "Rent",
+      "since": "Tenant since",
+      "inviteExpires": "Valid until {{date}}",
+      "inviteExpired": "Invite expired",
+      "paid": "Paid",
+      "unpaid_one": "{{count}} unpaid",
+      "unpaid_other": "{{count}} unpaid"
+    },
+    "invite_modal": {
+      "title": "Invite a tenant",
+      "subtitle": "The tenant will receive an email invite. Valid for 72 hours.",
+      "name": "Name",
+      "namePlaceholder": "John Smith",
+      "email": "Email",
+      "emailPlaceholder": "john@email.com",
+      "property": "Property",
+      "propertyPlaceholder": "Select a property",
+      "rent": "Monthly rent",
+      "nameRequired": "Enter the tenant's name.",
+      "emailInvalid": "Enter a valid email.",
+      "propertyRequired": "Select a property.",
+      "rentRequired": "Enter the monthly rent.",
+      "submit": "Send invite",
+      "note": "The invite is valid for 72 hours and can be used once."
+    },
+    "detail": {
+      "back": "Back to tenants",
+      "contact": "Contact",
+      "email": "Email",
+      "phone": "Phone",
+      "noPhone": "No phone",
+      "lease": "Lease",
+      "property": "Property",
+      "rent": "Monthly rent",
+      "deposit": "Deposit",
+      "paymentDay": "Due on the {{day}}th",
+      "leaseStart": "Lease start",
+      "leaseEnd": "Lease end",
+      "leaseIndefinite": "Open-ended",
+      "invitation": "Invitation",
+      "inviteSent": "Sent",
+      "inviteExpires": "Valid until {{date}}",
+      "inviteExpired": "Invite expired",
+      "resendInvite": "Resend invite",
+      "endTenancy": "End tenancy",
+      "notFound": "Tenant not found",
+      "notFoundDesc": "This tenant doesn't exist or was removed."
+    },
+    "endDialog": {
+      "title": "End tenancy?",
+      "message": "The tenancy for {{name}} will be marked as ended. Data is kept for taxes.",
+      "confirm": "End tenancy",
+      "cancel": "Cancel"
+    },
+    "emptyState": {
+      "title": "No tenants yet",
+      "description": "Invite your first tenant by email. They fill in the rest.",
+      "cta": "Invite tenant"
+    },
+    "emptyFiltered": {
+      "title": "Nothing here",
+      "description": "No tenants match the selected filter."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": {
+      "title": "Profile",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "save": "Save profile"
+    },
+    "language": {
+      "title": "Language & region",
+      "language": "Language",
+      "currency": "Currency",
+      "dateFormat": "Date format"
+    },
+    "appearance": {
+      "title": "Appearance",
+      "theme": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": "Email notifications",
+      "push": "Push notifications",
+      "quietHours": "Quiet hours (10 PM–7 AM)",
+      "emailHint": "Overdue alerts and payment confirmations",
+      "pushHint": "Real-time browser notifications",
+      "quietHoursHint": "Quiet hours 10 PM–7 AM"
+    },
+    "billing": {
+      "title": "Subscription & billing",
+      "plan": "Current plan",
+      "upgrade": "Upgrade",
+      "cancel": "Cancel subscription",
+      "currentPlan": "Your plan",
+      "active": "Active",
+      "upgradePlan": "Upgrade plan",
+      "manageBilling": "Manage billing",
+      "stripeNote": "Payment methods and invoices are managed via Stripe.",
+      "annualSaving": "Save 2 months per year",
+      "features": {
+        "free": [
+          "1 property",
+          "Basic dashboard",
+          "Tenants & payments",
+          "Tenant portal"
+        ],
+        "starter": [
+          "3 properties",
+          "Automatic reminders",
+          "CSV export",
+          "Email notifications"
+        ],
+        "growth": [
+          "7 properties",
+          "Everything in Starter",
+          "Energy module",
+          "Tax documents"
+        ],
+        "pro": [
+          "15 properties",
+          "Everything in Growth",
+          "Advanced reports",
+          "Priority support"
+        ],
+        "portfolio": [
+          "30 properties",
+          "Everything in Pro",
+          "API access",
+          "Multi-user (3 seats)"
+        ]
+      }
+    },
+    "danger": {
+      "title": "Danger zone",
+      "exportData": "Export data",
+      "deleteAccount": "Delete account",
+      "deleteWarning": "This action is irreversible. All your data will be permanently deleted.",
+      "exportDescription": "Download an archive of all your data in JSON format."
+    },
+    "saveSuccess": "Changes saved"
+  },
+  "errors": {
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you're looking for doesn't exist or has been moved.",
+      "cta": "Back to dashboard"
+    },
+    "unauthorized": {
+      "title": "Access denied",
+      "description": "You don't have permission to view this page.",
+      "cta": "Sign in"
+    },
+    "serverError": {
+      "title": "Server error",
+      "description": "Something went wrong on our end. We're working to fix it.",
+      "cta": "Try again"
+    }
+  },
+  "documents": {
+    "title": "Documents",
+    "subtitle": "Contracts, invoices and all your paperwork.",
+    "upload": "Upload document",
+    "download": "Download",
+    "delete": "Delete",
+    "count_one": "{{count}} document",
+    "count_few": "{{count}} documents",
+    "count_many": "{{count}} documents",
+    "count_other": "{{count}} documents",
+    "search": "Search documents…",
+    "searchEmpty": "Nothing matches “{{query}}”.",
+    "filter": {
+      "all": "All",
+      "lease": "Leases",
+      "protocol": "Handovers",
+      "invoice": "Invoices",
+      "insurance": "Insurance",
+      "correspondence": "Letters",
+      "other": "Other"
+    },
+    "category": {
+      "lease": "Lease agreement",
+      "protocol": "Handover protocol",
+      "invoice": "Invoice",
+      "insurance": "Insurance policy",
+      "correspondence": "Correspondence",
+      "other": "Other"
+    },
+    "row": {
+      "noProperty": "No property",
+      "noTenant": "No tenant"
+    },
+    "uploadModal": {
+      "title": "Upload document",
+      "name": "Document name",
+      "namePlaceholder": "Lease agreement 2026…",
+      "category": "Category",
+      "property": "Property (optional)",
+      "propertyNone": "— none —",
+      "tenant": "Tenant (optional)",
+      "tenantNone": "— none —",
+      "file": "File",
+      "filePlaceholder": "Click to choose a file…",
+      "fileSelected": "{{name}} · {{size}}",
+      "confirm": "Upload"
+    },
+    "deleteModal": {
+      "title": "Delete document",
+      "message": "Are you sure you want to delete “{{name}}”? This cannot be undone.",
+      "confirm": "Delete"
+    },
+    "emptyState": {
+      "title": "No documents yet",
+      "description": "Upload contracts, handover protocols and other files for your properties.",
+      "cta": "Upload first document"
+    },
+    "emptyFiltered": {
+      "title": "Nothing here",
+      "description": "No documents match the selected filter or search."
+    }
+  },
+  "tenant": {
+    "nav": {
+      "dashboard": "Overview",
+      "payments": "My Payments",
+      "documents": "My Documents",
+      "contact": "Contact"
+    },
+    "welcome": "Welcome back, {{name}}.",
+    "logout": "Sign out",
+    "propertyLabel": "{{name}}, {{city}}",
+    "dashboard": {
+      "nextPayment": {
+        "title": "Next Payment",
+        "dueOn": "Due {{date}}",
+        "allPaid": "All paid up",
+        "noPending": "No pending payments"
+      },
+      "lease": {
+        "title": "Lease Agreement",
+        "since": "Lease since {{date}}",
+        "untilDate": "Until {{date}}",
+        "indefinite": "Open-ended",
+        "monthlyRent": "Monthly rent",
+        "paymentDay": "Payment due day",
+        "paymentDayValue": "{{day}}th of each month"
+      },
+      "recentDocs": {
+        "title": "Recent Documents",
+        "viewAll": "View all",
+        "empty": "No documents"
+      }
+    },
+    "payments": {
+      "title": "My Payments",
+      "subtitle": "Rent payment history",
+      "count_one": "{{count}} payment",
+      "count_few": "{{count}} payments",
+      "count_many": "{{count}} payments",
+      "count_other": "{{count}} payments",
+      "emptyState": {
+        "title": "No payments",
+        "description": "No payment records yet."
+      }
+    },
+    "documents": {
+      "title": "My Documents",
+      "subtitle": "Contracts and documents for your tenancy",
+      "download": "Download",
+      "emptyState": {
+        "title": "No documents",
+        "description": "Your landlord has not shared any documents yet."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "landlordSection": "Your Landlord",
+      "email": "Email",
+      "phone": "Phone",
+      "messagingNote": "Direct messaging will be available soon."
+    },
+    "role": "Tenant"
+  },
+  "b2b": {
+    "nav": "B2B Panel",
+    "title": "B2B Panel",
+    "subtitle": "Manage your organization and team",
+    "org": {
+      "title": "Organization",
+      "name": "Organization name",
+      "slug": "Identifier (slug)",
+      "owner": "Owner",
+      "plan": "Plan",
+      "memberCount_one": "{{count}} member",
+      "memberCount_other": "{{count}} members"
+    },
+    "members": {
+      "title": "Team members",
+      "invite": "Invite member",
+      "email": "Email",
+      "role": "Role",
+      "joined": "Joined",
+      "actions": "Actions",
+      "remove": "Remove",
+      "removeConfirm": "Really remove this member?",
+      "emptyState": {
+        "title": "No members yet",
+        "description": "Invite your first team member to grant access to your organization."
+      }
+    },
+    "roles": {
+      "admin": "Administrator",
+      "manager": "Manager",
+      "accountant": "Accountant",
+      "viewer": "Viewer"
+    },
+    "roleDescriptions": {
+      "admin": "Full access, member management and settings",
+      "manager": "Manage properties, tenants and payments",
+      "accountant": "Read-only access to payments and tax reports",
+      "viewer": "View-only access"
+    },
+    "invite": {
+      "title": "Invite a new member",
+      "emailPlaceholder": "jane.smith@company.com",
+      "roleLabel": "Assign role",
+      "send": "Send invitation",
+      "sending": "Sending…",
+      "success": "Invitation sent",
+      "linkCopied": "Link copied",
+      "copyLink": "Copy link",
+      "note": "The invitation is valid for 72 hours and can only be used once.",
+      "resendNote": "Full email invite management will be available in the next phase."
+    }
+  },
+  "energy": {
+    "title": "Energy",
+    "subtitle": "Meter readings and consumption by property.",
+    "addReading": "Add reading",
+    "anomaly": "Anomaly",
+    "filter": {
+      "allTypes": "All types",
+      "allProperties": "All properties"
+    },
+    "typeFilter": {
+      "all": "All",
+      "elektrina": "Electricity",
+      "plyn": "Gas",
+      "voda": "Water",
+      "teplo": "Heat"
+    },
+    "modal": {
+      "title": "New meter reading",
+      "description": "Enter the meter value and reading date.",
+      "property": "Property",
+      "propertyRequired": "Select a property.",
+      "type": "Type",
+      "value": "Meter value",
+      "valueRequired": "Enter a valid value.",
+      "date": "Reading date",
+      "note": "Note",
+      "notePlaceholder": "Optional note…",
+      "submit": "Save reading",
+      "meterId": "Meter ID",
+      "meterIdPlaceholder": "e.g. 123456789",
+      "provider": "Supplier",
+      "photo": "Receipt photo",
+      "photoPlaceholder": "Click to attach a photo or PDF…",
+      "photoSelected": "{{name}} ({{size}})"
+    },
+    "chart": {
+      "title": "Consumption — last 12 months",
+      "noData": "Add more readings and the consumption trend will appear here."
+    },
+    "anomalyBanner": {
+      "title_one": "New consumption anomaly",
+      "title_other": "{{count}} consumption anomalies",
+      "description": "Consumption exceeded the 12-month average by more than 30%.",
+      "dismiss": "Mark as read"
+    },
+    "emptyState": {
+      "title": "No readings yet",
+      "description": "Add your first meter reading to start tracking energy consumption."
+    },
+    "emptyFiltered": {
+      "title": "No readings",
+      "description": "No readings match the selected filter."
+    },
+    "import": {
+      "button": "Import CSV",
+      "title": "Import from provider portal",
+      "subtitle": "Upload an export from ČEZ, E.ON or PRE customer portal.",
+      "provider": "Provider",
+      "property": "Property",
+      "parsing": "Processing file…",
+      "importing": "Importing…",
+      "supported": "Supported formats: CSV, TXT · Max 5 MB · UTF-8 or Windows-1250 encoding",
+      "confirm_one": "Import {{count}} reading",
+      "confirm_few": "Import {{count}} readings",
+      "confirm_many": "Import {{count}} readings",
+      "confirm_other": "Import {{count}} readings",
+      "dropzone": {
+        "title": "Drop file here or click to select",
+        "hint": "CSV or TXT export from your energy provider's portal"
+      },
+      "preview": {
+        "date": "Date",
+        "type": "Type",
+        "value": "Meter reading",
+        "consumption": "Consumption",
+        "meterId": "Meter ID",
+        "rowCount_one": "{{count}} row",
+        "rowCount_few": "{{count}} rows",
+        "rowCount_many": "{{count}} rows",
+        "rowCount_other": "{{count}} rows",
+        "warnings_one": "{{count}} row skipped",
+        "warnings_few": "{{count}} rows skipped",
+        "warnings_many": "{{count}} rows skipped",
+        "warnings_other": "{{count}} rows skipped",
+        "showMore": "Show {{count}} more rows",
+        "showLess": "Show less"
+      },
+      "done": {
+        "title": "Import complete",
+        "summary": "Imported {{imported}} readings, skipped {{skipped}} duplicates.",
+        "close": "Close"
+      },
+      "error": {
+        "noRows": "The file contains no valid data.",
+        "parse": "Could not process the file. Please check the format."
+      }
+    }
+  },
+  "subscription": {
+    "banner": {
+      "nearLimit": "Using {{count}} of {{limit}} properties. Approaching the limit.",
+      "atLimit": "You have reached the limit of {{limit}} properties. Upgrade to add more.",
+      "locked": "Your subscription is inactive. Data is safe, edits are blocked.",
+      "upgradeCta": "Upgrade plan"
+    }
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggle": "Toggle theme"
+  },
+  "cuzk": {
+    "modal": {
+      "title": "Search ČÚZK registry",
+      "description": "Enter an address or land registry number to auto-fill from the cadastre.",
+      "tab": {
+        "address": "By address",
+        "lv": "By LV / parcel"
+      },
+      "addressLabel": "Property address",
+      "addressPlaceholder": "42 Oak Street, Prague…",
+      "changeAddress": "Change address",
+      "confirm": "Continue",
+      "lvHint": "Enter the cadastral area code and the land registry number.",
+      "kuCode": "KÚ code",
+      "lvNumber": "Land registry (LV)",
+      "search": "Search"
+    },
+    "error": {
+      "ruianFailed": "Address search failed. Please try again.",
+      "wsdpFailed": "ČÚZK query failed. Check the KÚ code and LV number."
+    },
+    "detail": {
+      "title": "Land Registry (ČÚZK)",
+      "lv": "Land registry number",
+      "ku": "Cadastral area",
+      "parcel": "Parcel number",
+      "owners": "Owners",
+      "encumbrances": "Encumbrances",
+      "refresh": "Refresh from ČÚZK",
+      "refreshed": "Updated {{date}}",
+      "noData": "No cadastral data available.",
+      "noEncumbrances": "No encumbrances"
+    }
+  }
+}

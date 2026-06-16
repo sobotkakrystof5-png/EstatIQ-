@@ -1,0 +1,1048 @@
+{
+  "common": {
+    "loading": "Laden…",
+    "error": "Etwas ist schief gelaufen",
+    "retry": "Erneut versuchen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "add": "Hinzufügen",
+    "confirm": "Bestätigen",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "search": "Suchen…",
+    "noResults": "Keine Ergebnisse",
+    "optional": "optional",
+    "currency": "CZK",
+    "emptyState": {
+      "title": "Noch nichts hier",
+      "description": "Beginnen Sie mit dem Hinzufügen des ersten Eintrags."
+    }
+  },
+  "nav": {
+    "dashboard": "Übersicht",
+    "properties": "Objekte",
+    "tenants": "Mieter",
+    "payments": "Zahlungen",
+    "documents": "Dokumente",
+    "energy": "Energie",
+    "taxes": "Steuern",
+    "messages": "Nachrichten",
+    "b2b": "B2B Panel",
+    "settings": "Einstellungen",
+    "logout": "Abmelden",
+    "collapseMenu": "Menü einklappen",
+    "expandMenu": "Menü ausklappen"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Immobilienverwaltung der nächsten Generation",
+      "headline": "Vermietung, die sich selbst verwaltet.",
+      "subheadline": "Alles an einem Ort. Zahlungen, Verträge, Mieter — ohne Chaos.",
+      "cta": "Kostenlos starten",
+      "ctaSecondary": "Wie es funktioniert",
+      "socialProof": "Mehr als 1.200 Vermieter sparen bereits Zeit",
+      "paymentCard": {
+        "title": "Miete bezahlt",
+        "tenant": "Jan Novák",
+        "property": "Vinohradská 42, Prag",
+        "amount": "18.500 Kč",
+        "date": "Heute, 8:14"
+      }
+    },
+    "features": {
+      "title": "Passives Einkommen wirklich passiv.",
+      "subtitle": "EstatIQ automatisiert jeden Schritt der Mietverwaltung — vom Vertrag bis zur Steuererklärung.",
+      "items": {
+        "payments": {
+          "title": "Zahlungen ohne Sorgen",
+          "description": "Automatische Erinnerungen, Mahnungen und Zahlungskalender. Sie wissen immer, wer bezahlt hat."
+        },
+        "tenants": {
+          "title": "Mieter im Griff",
+          "description": "Laden Sie Mieter mit einem Klick ein. Verträge, Dokumente und Kommunikation an einem Ort."
+        },
+        "analytics": {
+          "title": "Einnahmen in Echtzeit",
+          "description": "Dashboard mit Einnahmen-, Belegungs- und Kostengrafik. Immer den Überblick."
+        },
+        "taxes": {
+          "title": "Steuern ohne Buchhalter",
+          "description": "Automatische Ausgaben- und Einnahmenübersicht für die Steuererklärung. PDF-Export mit einem Klick."
+        },
+        "documents": {
+          "title": "Dokumente sicher",
+          "description": "Verträge, Übergabeprotokolle, Versicherungen — immer griffbereit, mit Ablauferinnerung."
+        },
+        "mobile": {
+          "title": "Immer dabei",
+          "description": "Vollständig responsives Web und künftige mobile App. Immobilienverwaltung jederzeit und überall."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Wählen Sie den passenden Plan.",
+      "subtitle": "Kostenlos starten. Upgraden, wenn Sie bereit sind.",
+      "badge": "Beliebtester",
+      "perMonth": "/ Mon.",
+      "perYear": "/ Jahr",
+      "saveLabel": "2 Monate gratis",
+      "billingMonthly": "Monatlich",
+      "billingYearly": "Jährlich",
+      "unitLimit_one": "{{count}} Objekt",
+      "unitLimit_other": "{{count}} Objekte",
+      "free": {
+        "name": "Free",
+        "price": "0",
+        "yearlyPrice": "0",
+        "limit": "1 Objekt",
+        "description": "Kostenlos starten. Keine Kreditkarte erforderlich.",
+        "cta": "Kostenlos starten"
+      },
+      "starter": {
+        "name": "Starter",
+        "price": "199",
+        "yearlyPrice": "1.990",
+        "limit": "3 Objekte",
+        "description": "Automatische Erinnerungen und Datenexport.",
+        "cta": "Starter wählen"
+      },
+      "growth": {
+        "name": "Growth",
+        "price": "349",
+        "yearlyPrice": "3.490",
+        "limit": "7 Objekte",
+        "description": "Energiemodul und Steuerunterlagen.",
+        "cta": "Growth wählen"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "549",
+        "yearlyPrice": "5.490",
+        "limit": "15 Objekte",
+        "description": "Erweiterte Berichte und Prioritätssupport.",
+        "cta": "Pro wählen"
+      },
+      "portfolio": {
+        "name": "Portfolio",
+        "price": "999",
+        "yearlyPrice": "9.990",
+        "limit": "30 Objekte",
+        "description": "API-Zugang, Multi-User (3 Accounts) und Anpassung.",
+        "cta": "Portfolio wählen"
+      },
+      "b2b": {
+        "title": "Hausverwaltungen",
+        "subtitle": "Verwalten Sie Objekte für Kunden? Wir haben den richtigen Plan.",
+        "cta": "Demo vereinbaren",
+        "tiers": {
+          "start": {
+            "name": "B2B Start",
+            "price": "2.900",
+            "limit": "bis 50 Einheiten"
+          },
+          "growth": {
+            "name": "B2B Growth",
+            "price": "8.500",
+            "limit": "51–150 Einheiten"
+          },
+          "scale": {
+            "name": "B2B Scale",
+            "price": "18.500",
+            "limit": "151–400 Einheiten"
+          },
+          "enterprise": {
+            "name": "Enterprise",
+            "price": "ab 25.000",
+            "limit": "400+ Einheiten"
+          }
+        }
+      }
+    },
+    "cta": {
+      "headline": "Hinzufügen. Vermieten. Verdienen.",
+      "subheadline": "Registrierung in 60 Sekunden. Keine Kreditkarte erforderlich.",
+      "button": "Kostenlos starten"
+    },
+    "footer": {
+      "tagline": "Vermietung, die sich selbst verwaltet.",
+      "product": "Produkt",
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "changelog": "Neuigkeiten",
+      "company": "Unternehmen",
+      "about": "Über uns",
+      "blog": "Blog",
+      "careers": "Karriere",
+      "legal": "Rechtliches",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen",
+      "gdpr": "DSGVO",
+      "rights": "Alle Rechte vorbehalten.",
+      "madeIn": "Mit Liebe in Prag gemacht"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Willkommen zurück",
+      "subtitle": "Melden Sie sich bei Ihrem EstatIQ-Konto an",
+      "email": "E-Mail-Adresse",
+      "password": "Passwort",
+      "forgotPassword": "Passwort vergessen?",
+      "submit": "Anmelden",
+      "noAccount": "Kein Konto?",
+      "register": "Registrieren",
+      "orContinueWith": "oder weiter mit",
+      "error": "Falsche E-Mail oder Passwort. Bitte versuchen Sie es erneut."
+    },
+    "register": {
+      "title": "Kostenlos starten",
+      "subtitle": "Erstellen Sie Ihr Konto in 60 Sekunden",
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "password": "Passwort",
+      "passwordHint": "Mindestens 8 Zeichen",
+      "submit": "Konto erstellen",
+      "hasAccount": "Haben Sie bereits ein Konto?",
+      "login": "Anmelden",
+      "terms": "Ich stimme den Nutzungsbedingungen und dem Datenschutz zu",
+      "role": {
+        "label": "Ich bin",
+        "landlord": "Vermieter",
+        "tenant": "Mieter",
+        "manager": "Hausverwaltung"
+      },
+      "phone": "Telefonnummer",
+      "country": "Land",
+      "city": "Stadt",
+      "street": "Straße",
+      "houseNumber": "Hausnummer",
+      "preferredCurrency": "Bevorzugte Währung",
+      "contactSection": "Kontakt- und Standortdaten",
+      "detectLocation": "Standort automatisch erkennen",
+      "detectingLocation": "Standort wird ermittelt…",
+      "locationError": "Standort konnte nicht ermittelt werden. Bitte Adresse manuell eingeben.",
+      "locationSuccess": "Adresse aus Ihrem Standort vorausgefüllt.",
+      "checkCadastre": "Im Grundbuch prüfen (ČÚZK)"
+    },
+    "forgotPassword": {
+      "title": "Passwort zurücksetzen",
+      "subtitle": "Geben Sie Ihre E-Mail ein und wir senden Ihnen einen Link zum Zurücksetzen.",
+      "email": "E-Mail-Adresse",
+      "submit": "Link senden",
+      "back": "Zurück zur Anmeldung",
+      "successTitle": "Link gesendet",
+      "successMessage": "Überprüfen Sie Ihre E-Mail und klicken Sie auf den Link zum Zurücksetzen.",
+      "error": "Link konnte nicht gesendet werden. Überprüfen Sie die E-Mail-Adresse."
+    },
+    "acceptInvite": {
+      "validating": "Einladung wird überprüft…",
+      "invalidTitle": "Ungültige Einladung",
+      "invalidMessage": "Der Link ist abgelaufen oder wurde bereits verwendet. Fordern Sie eine neue Einladung an.",
+      "backToLogin": "Zurück zur Anmeldung",
+      "tenantTitle": "Mietereinladung annehmen",
+      "tenantSubtitle": "Ihr Vermieter lädt Sie in das EstatIQ-Portal ein. Legen Sie ein Passwort fest.",
+      "memberTitle": "Teameinladung annehmen",
+      "memberSubtitle": "Sie wurden in eine Organisation eingeladen. Legen Sie ein Passwort fest.",
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "password": "Neues Passwort",
+      "passwordHint": "Mindestens 8 Zeichen",
+      "passwordConfirm": "Passwort bestätigen",
+      "passwordMismatch": "Passwörter stimmen nicht überein",
+      "submit": "Konto aktivieren",
+      "successTitle": "Konto aktiviert!",
+      "successMessage": "Sie werden gleich weitergeleitet…",
+      "confirmEmailTitle": "Bestätigen Sie Ihre E-Mail",
+      "confirmEmailMessage": "Wir haben einen Bestätigungslink an {{email}} gesendet.",
+      "submitError": "Kontoaktivierung konnte nicht abgeschlossen werden. Bitte versuchen Sie es erneut.",
+      "errorAlreadyRegistered": "Diese E-Mail ist bereits registriert. Versuchen Sie sich anzumelden."
+    }
+  },
+  "onboarding": {
+    "stepLabel": "Schritt {{current}} von {{total}}",
+    "back": "Zurück",
+    "next": "Weiter",
+    "skip": "Überspringen",
+    "skipSetup": "Vorerst überspringen",
+    "welcome": {
+      "title": "Willkommen bei EstatIQ.",
+      "subtitle": "In einer Minute haben Sie Ihr erstes Objekt online.",
+      "points": {
+        "property": "Erstes Objekt hinzufügen",
+        "tenant": "Mieter per E-Mail einladen",
+        "relax": "Die App überwacht Zahlungen für Sie"
+      },
+      "cta": "Los geht's"
+    },
+    "property": {
+      "title": "Ihr erstes Objekt",
+      "subtitle": "Nur ein paar Angaben. Den Rest können Sie später ergänzen.",
+      "name": "Objektname",
+      "namePlaceholder": "Wohnung Hauptstraße",
+      "street": "Straße und Hausnummer",
+      "streetPlaceholder": "Hauptstraße 42",
+      "city": "Stadt",
+      "cityPlaceholder": "Berlin",
+      "zip": "Postleitzahl",
+      "zipPlaceholder": "10115",
+      "rent": "Monatliche Miete",
+      "rentPlaceholder": "1.200",
+      "nameRequired": "Bitte benennen Sie das Objekt.",
+      "rentRequired": "Bitte geben Sie die monatliche Miete an."
+    },
+    "tenant": {
+      "title": "Mieter einladen",
+      "subtitle": "Wir senden ihm eine Einladung per E-Mail.",
+      "name": "Name des Mieters",
+      "namePlaceholder": "Max Mustermann",
+      "email": "E-Mail des Mieters",
+      "emailPlaceholder": "max@email.de",
+      "nameRequired": "Bitte geben Sie den Namen des Mieters an.",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail an.",
+      "inviteNote": "Die Einladung ist 72 Stunden gültig und kann nur einmal verwendet werden.",
+      "skipHint": "Kein Mieter zur Hand? Überspringen — Sie können später einladen."
+    },
+    "done": {
+      "title": "Fertig. Alles läuft.",
+      "subtitle": "EstatIQ überwacht ab jetzt Ihre Zahlungen. Den Rest finden Sie in der Übersicht.",
+      "summary": {
+        "property": "Objekt {{name}} hinzugefügt",
+        "tenant": "Einladung an {{email}} unterwegs",
+        "tenantSkipped": "Mieter später einladen",
+        "automation": "Zahlungsüberwachung aktiv"
+      },
+      "inviteLink": {
+        "label": "Einladungslink — kopieren und manuell senden",
+        "copy": "Link kopieren",
+        "hint": "E-Mail wird noch nicht automatisch gesendet. Senden Sie den Link direkt an den Mieter."
+      },
+      "cta": "Zur Übersicht",
+      "creating": "Alles wird vorbereitet…"
+    },
+    "error": {
+      "generic": "Etwas ist schief gelaufen. Versuchen Sie es erneut.",
+      "unitLimitExceeded": "Sie haben das Objektlimit Ihres Plans erreicht. Upgraden Sie Ihr Abonnement."
+    }
+  },
+  "dashboard": {
+    "greeting": {
+      "morning": "Guten Morgen,",
+      "afternoon": "Guten Tag,",
+      "evening": "Guten Abend,"
+    },
+    "cards": {
+      "income": {
+        "title": "Einnahmen diesen Monat",
+        "trend": "gegenüber letztem Monat"
+      },
+      "properties": {
+        "title": "Objekte",
+        "occupied": "vermietet",
+        "total": "gesamt"
+      },
+      "unpaid": {
+        "title": "Unbezahlte Mieten",
+        "count_one": "{{count}} Zahlung ausstehend",
+        "count_other": "{{count}} Zahlungen ausstehend"
+      },
+      "expenses": {
+        "title": "Ausgaben diesen Monat"
+      },
+      "pending": {
+        "title": "Ausstehende Zahlungen"
+      },
+      "overdue": {
+        "title": "Überfällig"
+      },
+      "occupancy": {
+        "title": "Belegungsrate"
+      }
+    },
+    "recentPayments": {
+      "title": "Letzte Zahlungen",
+      "viewAll": "Alle anzeigen"
+    },
+    "upcomingPayments": {
+      "title": "Bevorstehende Zahlungen",
+      "dueIn": "Fällig in {{days}} Tagen",
+      "dueToday": "Heute fällig",
+      "overdue": "{{days}} Tage überfällig"
+    },
+    "occupancyChart": {
+      "title": "Belegung und Einnahmen",
+      "income": "Einnahmen",
+      "occupancy": "Belegung (%)"
+    },
+    "emptyState": {
+      "title": "Alles in Ordnung",
+      "description": "Keine unbezahlten Mieten oder dringende Aufgaben."
+    },
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "empty": "Keine neuen Benachrichtigungen",
+      "markRead": "Als gelesen markieren"
+    }
+  },
+  "properties": {
+    "title": "Objekte",
+    "subtitle": "Alle Ihre Objekte an einem Ort.",
+    "add": "Objekt hinzufügen",
+    "search": "Nach Name oder Adresse suchen…",
+    "searchEmpty": "Keine Ergebnisse für „{{query}}\".",
+    "count_one": "{{count}} Objekt",
+    "count_other": "{{count}} Objekte",
+    "filter": {
+      "all": "Alle",
+      "active": "Vermietet",
+      "vacant": "Leer",
+      "maintenance": "Instandhaltung",
+      "archived": "Archiv"
+    },
+    "status": {
+      "active": "Vermietet",
+      "vacant": "Leer",
+      "maintenance": "Instandhaltung",
+      "archived": "Archiviert"
+    },
+    "card": {
+      "rentPerMonth": "/ Monat",
+      "viewDetail": "Details",
+      "tenants_one": "{{count}} Mieter",
+      "tenants_other": "{{count}} Mieter",
+      "noTenants": "Kein Mieter",
+      "unpaid_one": "{{count}} unbezahlte Zahlung",
+      "unpaid_other": "{{count}} unbezahlte Zahlungen"
+    },
+    "units": {
+      "area": "{{value}} m²",
+      "rooms_one": "{{count}} Zimmer",
+      "rooms_other": "{{count}} Zimmer",
+      "floor": "{{value}}. Etage"
+    },
+    "form": {
+      "createTitle": "Neues Objekt",
+      "createSubtitle": "Füllen Sie die Grunddaten aus. Alles kann später geändert werden.",
+      "editTitle": "Objekt bearbeiten",
+      "editSubtitle": "Änderungen werden sofort wirksam.",
+      "name": "Name",
+      "namePlaceholder": "Wohnung Hauptstraße",
+      "street": "Straße und Hausnummer",
+      "streetPlaceholder": "Hauptstraße 42",
+      "city": "Stadt",
+      "cityPlaceholder": "Berlin",
+      "zip": "Postleitzahl",
+      "zipPlaceholder": "10115",
+      "rooms": "Anzahl Zimmer",
+      "area": "Fläche (m²)",
+      "rent": "Monatliche Miete",
+      "status": "Status",
+      "notes": "Notiz",
+      "notesPlaceholder": "Optionale interne Notiz…",
+      "nameRequired": "Bitte geben Sie einen Objektnamen an.",
+      "rentRequired": "Bitte geben Sie die monatliche Miete an.",
+      "create": "Objekt hinzufügen",
+      "save": "Änderungen speichern"
+    },
+    "detail": {
+      "back": "Zurück zu Objekten",
+      "edit": "Bearbeiten",
+      "archive": "Archivieren",
+      "restore": "Wiederherstellen",
+      "overview": "Übersicht",
+      "address": "Adresse",
+      "area": "Fläche",
+      "rooms": "Zimmer",
+      "floor": "Etage",
+      "rent": "Monatliche Miete",
+      "status": "Status",
+      "tenants": "Mieter",
+      "lastPayment": "Letzte Zahlung",
+      "nextPayment": "Nächste Zahlung",
+      "noPayment": "Noch keine Zahlung",
+      "notes": "Notizen",
+      "noNotes": "Keine Notiz.",
+      "notFound": "Objekt nicht gefunden",
+      "notFoundDesc": "Dieses Objekt existiert nicht oder wurde entfernt."
+    },
+    "archiveDialog": {
+      "title": "Objekt archivieren?",
+      "message": "„{{name}}\" wird ins Archiv verschoben. Daten bleiben für Steuerzwecke erhalten.",
+      "confirm": "Archivieren",
+      "cancel": "Abbrechen"
+    },
+    "emptyState": {
+      "title": "Noch kein Objekt",
+      "description": "Fügen Sie Ihr erstes Objekt hinzu.",
+      "cta": "Objekt hinzufügen"
+    },
+    "emptyFiltered": {
+      "title": "Nichts hier",
+      "description": "Für den gewählten Filter haben wir keine Objekte."
+    }
+  },
+  "payments": {
+    "title": "Zahlungen",
+    "subtitle": "Mietübersicht und Status.",
+    "generate": "Mieten generieren",
+    "export": "CSV exportieren",
+    "search": "Mieter oder Objekt suchen…",
+    "searchEmpty": "Keine Ergebnisse für „{{query}}\".",
+    "count_one": "{{count}} Zahlung",
+    "count_other": "{{count}} Zahlungen",
+    "filter": {
+      "all": "Alle",
+      "paid": "Bezahlt",
+      "pending": "Ausstehend",
+      "overdue": "Überfällig"
+    },
+    "status": {
+      "paid": "Bezahlt",
+      "pending": "Ausstehend",
+      "overdue": "Überfällig",
+      "canceled": "Storniert"
+    },
+    "stats": {
+      "collected": "Diesen Monat eingezogen",
+      "expected": "Diesen Monat erwartet",
+      "overdueAmount": "Überfällig gesamt",
+      "rate": "Zahlungsmoral"
+    },
+    "row": {
+      "markPaid": "Als bezahlt markieren",
+      "remind": "Zahlung erinnern",
+      "remindSent": "Erinnerung gesendet",
+      "dunning": "Mahnung senden",
+      "dunningSent": "Mahnung gesendet",
+      "paidOn": "Bezahlt {{date}}",
+      "dueToday": "Heute fällig",
+      "dueIn_one": "Fällig in {{count}} Tag",
+      "dueIn_other": "Fällig in {{count}} Tagen",
+      "overdueDays_one": "{{count}} Tag überfällig",
+      "overdueDays_other": "{{count}} Tage überfällig"
+    },
+    "markPaidModal": {
+      "title": "Als bezahlt markieren",
+      "subtitle": "{{month}} · {{tenant}}",
+      "paidAt": "Zahlungsdatum",
+      "note": "Notiz",
+      "notePlaceholder": "Bar, Überweisung…",
+      "confirm": "Zahlung bestätigen"
+    },
+    "generateDialog": {
+      "title": "Zahlungen generieren",
+      "subtitle": "Erstellt ausstehende Zahlungen für alle aktiven Mieter, die in diesem Monat noch keine haben.",
+      "month": "Monat",
+      "alreadyExists": "Für {{month}} wurden bereits Zahlungen generiert.",
+      "confirm": "Generieren"
+    },
+    "emptyState": {
+      "title": "Keine Zahlungen",
+      "description": "Generieren Sie Zahlungen nach dem Hinzufügen von Objekten und Mietern.",
+      "cta": "Zahlungen generieren"
+    },
+    "emptyFiltered": {
+      "title": "Nichts hier",
+      "description": "Für den gewählten Filter oder die Suche haben wir keine Zahlungen."
+    }
+  },
+  "tenants": {
+    "title": "Mieter",
+    "subtitle": "Alle Ihre Mieter und ihr Status.",
+    "invite": "Mieter einladen",
+    "search": "Name, E-Mail oder Objekt suchen…",
+    "searchEmpty": "Keine Ergebnisse für „{{query}}\".",
+    "count_one": "{{count}} Mieter",
+    "count_other": "{{count}} Mieter",
+    "filter": {
+      "all": "Alle",
+      "active": "Aktiv",
+      "invited": "Eingeladen",
+      "ended": "Beendet"
+    },
+    "status": {
+      "active": "Aktiv",
+      "invited": "Einladung gesendet",
+      "ended": "Beendet"
+    },
+    "statusShort": {
+      "active": "Aktiv",
+      "invited": "Eingeladen",
+      "ended": "Beendet"
+    },
+    "row": {
+      "property": "Objekt",
+      "rent": "Miete",
+      "since": "Mieter seit",
+      "inviteExpires": "Gültig bis {{date}}",
+      "inviteExpired": "Einladung abgelaufen",
+      "paid": "Bezahlt",
+      "unpaid_one": "{{count}} unbezahlt",
+      "unpaid_other": "{{count}} unbezahlt"
+    },
+    "invite_modal": {
+      "title": "Mieter einladen",
+      "subtitle": "Der Mieter erhält eine Einladung per E-Mail. Gültig 72 Stunden.",
+      "name": "Name",
+      "namePlaceholder": "Max Mustermann",
+      "email": "E-Mail",
+      "emailPlaceholder": "max@email.de",
+      "property": "Objekt",
+      "propertyPlaceholder": "Objekt auswählen",
+      "rent": "Monatliche Miete",
+      "nameRequired": "Bitte geben Sie den Namen des Mieters an.",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail an.",
+      "propertyRequired": "Bitte wählen Sie ein Objekt.",
+      "rentRequired": "Bitte geben Sie die Miete an.",
+      "submit": "Einladung senden",
+      "note": "Die Einladung ist 72 Stunden gültig und kann nur einmal verwendet werden.",
+      "successTitle": "Einladung erstellt",
+      "successDesc": "Kopieren Sie den Link und senden Sie ihn an den Mieter.",
+      "successExpiry": "Gültig bis {{date}}",
+      "copyLink": "Link kopieren",
+      "copied": "Kopiert"
+    },
+    "detail": {
+      "back": "Zurück zu Mietern",
+      "contact": "Kontakt",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "noPhone": "Kein Telefon angegeben",
+      "lease": "Mietvertrag",
+      "property": "Objekt",
+      "rent": "Monatliche Miete",
+      "deposit": "Kaution",
+      "paymentDay": "Fällig am {{day}}. des Monats",
+      "leaseStart": "Mietbeginn",
+      "leaseEnd": "Mietende",
+      "leaseIndefinite": "Unbefristet",
+      "invitation": "Einladung",
+      "inviteSent": "Gesendet",
+      "inviteExpires": "Gültig bis {{date}}",
+      "inviteExpired": "Einladung abgelaufen",
+      "resendInvite": "Erneut senden",
+      "endTenancy": "Mietverhältnis beenden",
+      "notFound": "Mieter nicht gefunden",
+      "notFoundDesc": "Dieser Mieter existiert nicht oder wurde entfernt."
+    },
+    "endDialog": {
+      "title": "Mietverhältnis beenden?",
+      "message": "Das Mietverhältnis für {{name}} wird als beendet markiert. Daten bleiben für Steuerzwecke erhalten.",
+      "confirm": "Mietverhältnis beenden",
+      "cancel": "Abbrechen"
+    },
+    "emptyState": {
+      "title": "Noch keine Mieter",
+      "description": "Laden Sie Ihren ersten Mieter per E-Mail ein.",
+      "cta": "Mieter einladen"
+    },
+    "emptyFiltered": {
+      "title": "Nichts hier",
+      "description": "Für den gewählten Filter haben wir keine Mieter."
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "profile": {
+      "title": "Profil",
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "save": "Profil speichern"
+    },
+    "language": {
+      "title": "Sprache und Region",
+      "language": "Sprache",
+      "currency": "Währung",
+      "dateFormat": "Datumsformat"
+    },
+    "appearance": {
+      "title": "Erscheinungsbild",
+      "theme": "Design",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System"
+    },
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "email": "E-Mail-Benachrichtigungen",
+      "push": "Push-Benachrichtigungen",
+      "quietHours": "Ruhige Stunden (22:00–7:00)",
+      "emailHint": "Benachrichtigungen bei Fälligkeit und Zahlungsbestätigungen",
+      "pushHint": "Sofortige Benachrichtigungen im Browser",
+      "quietHoursHint": "Keine Benachrichtigungen 22:00–7:00"
+    },
+    "billing": {
+      "title": "Abonnement und Abrechnung",
+      "plan": "Aktueller Plan",
+      "upgrade": "Upgraden",
+      "cancel": "Abonnement kündigen",
+      "currentPlan": "Ihr Plan",
+      "manageBilling": "Abrechnung verwalten",
+      "stripeNote": "Zahlungsmethoden und Rechnungen werden über Stripe verwaltet.",
+      "annualSaving": "2 Monate pro Jahr sparen",
+      "features": {
+        "free": [
+          "1 Objekt",
+          "Basis-Dashboard",
+          "Mieter & Zahlungen",
+          "Mieterportal"
+        ],
+        "starter": [
+          "3 Objekte",
+          "Automatische Erinnerungen",
+          "CSV-Export",
+          "E-Mail-Benachrichtigungen"
+        ],
+        "growth": [
+          "7 Objekte",
+          "Alles aus Starter",
+          "Energiemodul",
+          "Steuerunterlagen"
+        ],
+        "pro": [
+          "15 Objekte",
+          "Alles aus Growth",
+          "Erweiterte Berichte",
+          "Prioritätssupport"
+        ],
+        "portfolio": [
+          "30 Objekte",
+          "Alles aus Pro",
+          "API-Zugang",
+          "Multi-User (3 Accounts)"
+        ]
+      }
+    },
+    "danger": {
+      "title": "Gefahrenzone",
+      "exportData": "Daten exportieren",
+      "deleteAccount": "Konto löschen",
+      "deleteWarning": "Diese Aktion ist unwiderruflich. Alle Ihre Daten werden dauerhaft gelöscht.",
+      "exportDescription": "Laden Sie ein Archiv aller Ihrer Daten im JSON-Format herunter."
+    },
+    "saveSuccess": "Änderungen gespeichert"
+  },
+  "errors": {
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+      "cta": "Zur Übersicht"
+    },
+    "unauthorized": {
+      "title": "Zugriff verweigert",
+      "description": "Sie haben keinen Zugriff auf diese Seite.",
+      "cta": "Anmelden"
+    },
+    "serverError": {
+      "title": "Serverfehler",
+      "description": "Auf unserer Seite ist etwas schief gelaufen. Wir arbeiten daran.",
+      "cta": "Erneut versuchen"
+    }
+  },
+  "documents": {
+    "title": "Dokumente",
+    "subtitle": "Verträge, Rechnungen und gesamte Dokumentation.",
+    "upload": "Dokument hochladen",
+    "download": "Herunterladen",
+    "delete": "Löschen",
+    "count_one": "{{count}} Dokument",
+    "count_other": "{{count}} Dokumente",
+    "search": "Dokument suchen…",
+    "searchEmpty": "Keine Ergebnisse für „{{query}}\".",
+    "filter": {
+      "all": "Alle",
+      "lease": "Verträge",
+      "protocol": "Protokolle",
+      "invoice": "Rechnungen",
+      "insurance": "Versicherung",
+      "correspondence": "Korrespondenz",
+      "other": "Sonstige"
+    },
+    "category": {
+      "lease": "Mietvertrag",
+      "protocol": "Übergabeprotokoll",
+      "invoice": "Rechnung",
+      "insurance": "Versicherungsvertrag",
+      "correspondence": "Korrespondenz",
+      "other": "Sonstige"
+    },
+    "row": {
+      "noProperty": "Kein Objekt",
+      "noTenant": "Kein Mieter"
+    },
+    "uploadModal": {
+      "title": "Dokument hochladen",
+      "name": "Dokumentname",
+      "namePlaceholder": "Mietvertrag 2026…",
+      "category": "Kategorie",
+      "property": "Objekt (optional)",
+      "propertyNone": "— keines —",
+      "tenant": "Mieter (optional)",
+      "tenantNone": "— kein —",
+      "file": "Datei",
+      "filePlaceholder": "Klicken Sie zur Dateiauswahl…",
+      "fileSelected": "{{name}} · {{size}}",
+      "confirm": "Hochladen"
+    },
+    "deleteModal": {
+      "title": "Dokument löschen",
+      "message": "Möchten Sie „{{name}}\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+      "confirm": "Löschen"
+    },
+    "emptyState": {
+      "title": "Keine Dokumente",
+      "description": "Laden Sie Verträge, Protokolle und weitere Dokumente hoch.",
+      "cta": "Erstes Dokument hochladen"
+    },
+    "emptyFiltered": {
+      "title": "Nichts hier",
+      "description": "Für den gewählten Filter oder die Suche haben wir keine Dokumente."
+    }
+  },
+  "energy": {
+    "title": "Energie",
+    "subtitle": "Zählerablesung und Verbrauch nach Objekt.",
+    "addReading": "Ablesung hinzufügen",
+    "anomaly": "Anomalie",
+    "filter": {
+      "allTypes": "Alle Medien",
+      "allProperties": "Alle Objekte"
+    },
+    "typeFilter": {
+      "all": "Alle",
+      "elektrina": "Strom",
+      "plyn": "Gas",
+      "voda": "Wasser",
+      "teplo": "Wärme"
+    },
+    "modal": {
+      "title": "Neue Zählerablesung",
+      "description": "Geben Sie den Zählerstand und das Ablesedatum ein.",
+      "property": "Objekt",
+      "propertyRequired": "Bitte wählen Sie ein Objekt.",
+      "type": "Typ",
+      "value": "Zählerstand",
+      "valueRequired": "Geben Sie einen gültigen Wert ein.",
+      "date": "Ablesedatum",
+      "note": "Notiz",
+      "notePlaceholder": "Optionale Notiz…",
+      "submit": "Ablesung speichern",
+      "meterId": "Zähler-ID",
+      "meterIdPlaceholder": "z.B. 123456789",
+      "provider": "Anbieter",
+      "photo": "Foto des Belegs",
+      "photoPlaceholder": "Klicken Sie zum Anhängen eines Fotos oder PDFs…",
+      "photoSelected": "{{name}} ({{size}})"
+    },
+    "chart": {
+      "title": "Verbrauch — letzte 12 Monate",
+      "noData": "Fügen Sie mehr Ablesungen hinzu, um den Verbrauchstrend anzuzeigen."
+    },
+    "anomalyBanner": {
+      "title_one": "Neue Verbrauchsanomalie",
+      "title_other": "{{count}} Verbrauchsanomalien",
+      "description": "Der Verbrauch hat den 12-Monats-Durchschnitt um mehr als 30 % überschritten.",
+      "dismiss": "Als gelesen markieren"
+    },
+    "emptyState": {
+      "title": "Noch keine Ablesungen",
+      "description": "Fügen Sie Ihre erste Zählerablesung hinzu."
+    },
+    "emptyFiltered": {
+      "title": "Keine Ablesungen",
+      "description": "Keine Ablesungen entsprechen dem gewählten Filter."
+    },
+    "import": {
+      "button": "CSV importieren",
+      "title": "Import vom Anbieterportal",
+      "subtitle": "CSV-Export von MůjČEZ, E.ON oder PRE hochladen.",
+      "provider": "Anbieter",
+      "property": "Objekt",
+      "parsing": "Datei wird verarbeitet…",
+      "importing": "Importiere…",
+      "supported": "Unterstützt: CSV, TXT · Max. 5 MB",
+      "confirm_one": "{{count}} Ablesung importieren",
+      "confirm_other": "{{count}} Ablesungen importieren",
+      "dropzone": {
+        "title": "Datei hier ablegen oder klicken",
+        "hint": "CSV- oder TXT-Export Ihres Energieversorgers"
+      },
+      "preview": {
+        "date": "Datum",
+        "type": "Typ",
+        "value": "Zählerstand",
+        "consumption": "Verbrauch",
+        "meterId": "Zählernummer",
+        "rowCount_one": "{{count}} Zeile",
+        "rowCount_other": "{{count}} Zeilen",
+        "warnings_one": "{{count}} Zeile übersprungen",
+        "warnings_other": "{{count}} Zeilen übersprungen",
+        "showMore": "{{count}} weitere anzeigen",
+        "showLess": "Weniger anzeigen"
+      },
+      "done": {
+        "title": "Import abgeschlossen",
+        "summary": "{{imported}} Ablesungen importiert, {{skipped}} Duplikate übersprungen.",
+        "close": "Schließen"
+      },
+      "error": {
+        "noRows": "Die Datei enthält keine gültigen Daten.",
+        "parse": "Die Datei konnte nicht verarbeitet werden."
+      }
+    }
+  },
+  "tenant": {
+    "nav": {
+      "dashboard": "Übersicht",
+      "payments": "Meine Zahlungen",
+      "documents": "Meine Dokumente",
+      "contact": "Kontakt"
+    },
+    "welcome": "Willkommen zurück, {{name}}.",
+    "logout": "Abmelden",
+    "propertyLabel": "{{name}}, {{city}}",
+    "dashboard": {
+      "nextPayment": {
+        "title": "Nächste Zahlung",
+        "dueOn": "Fällig am {{date}}",
+        "allPaid": "Alles bezahlt",
+        "noPending": "Keine fällige Zahlung"
+      },
+      "lease": {
+        "title": "Mietvertrag",
+        "since": "Vertrag seit {{date}}",
+        "untilDate": "Bis {{date}}",
+        "indefinite": "Unbefristet",
+        "monthlyRent": "Monatliche Miete",
+        "paymentDay": "Fälligkeitstag",
+        "paymentDayValue": "{{day}}. des Monats"
+      },
+      "recentDocs": {
+        "title": "Letzte Dokumente",
+        "viewAll": "Alle anzeigen",
+        "empty": "Keine Dokumente"
+      }
+    },
+    "payments": {
+      "title": "Meine Zahlungen",
+      "subtitle": "Zahlungshistorie",
+      "count_one": "{{count}} Zahlung",
+      "count_other": "{{count}} Zahlungen",
+      "emptyState": {
+        "title": "Keine Zahlungen",
+        "description": "Sie haben noch keine Zahlungseinträge."
+      }
+    },
+    "documents": {
+      "title": "Meine Dokumente",
+      "subtitle": "Verträge und Dokumente zu Ihrem Mietverhältnis",
+      "download": "Herunterladen",
+      "emptyState": {
+        "title": "Keine Dokumente",
+        "description": "Ihr Vermieter hat noch keine Dokumente geteilt."
+      }
+    },
+    "contact": {
+      "title": "Kontakt",
+      "landlordSection": "Ihr Vermieter",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "messagingNote": "Direktnachrichten werden bald verfügbar sein."
+    },
+    "role": "Mieter"
+  },
+  "b2b": {
+    "nav": "B2B Panel",
+    "title": "B2B Panel",
+    "subtitle": "Verwaltung Ihrer Organisation und Ihres Teams",
+    "org": {
+      "title": "Organisation",
+      "name": "Organisationsname",
+      "slug": "Kennung (Slug)",
+      "owner": "Eigentümer",
+      "plan": "Plan",
+      "memberCount_one": "{{count}} Mitglied",
+      "memberCount_other": "{{count}} Mitglieder"
+    },
+    "members": {
+      "title": "Teammitglieder",
+      "invite": "Mitglied einladen",
+      "email": "E-Mail",
+      "role": "Rolle",
+      "joined": "Beigetreten",
+      "actions": "Aktionen",
+      "remove": "Entfernen",
+      "removeConfirm": "Dieses Mitglied wirklich entfernen?",
+      "emptyState": {
+        "title": "Noch keine Mitglieder",
+        "description": "Laden Sie das erste Teammitglied ein."
+      }
+    },
+    "roles": {
+      "admin": "Administrator",
+      "manager": "Manager",
+      "accountant": "Buchhalter",
+      "viewer": "Betrachter"
+    },
+    "roleDescriptions": {
+      "admin": "Vollzugriff, Mitglieder- und Einstellungsverwaltung",
+      "manager": "Verwaltung von Objekten, Mietern und Zahlungen",
+      "accountant": "Zugriff auf Zahlungen und Steuerberichte (nur Lesen)",
+      "viewer": "Nur Daten anzeigen"
+    },
+    "invite": {
+      "title": "Neues Mitglied einladen",
+      "emailPlaceholder": "max.muster@firma.de",
+      "roleLabel": "Rolle zuweisen",
+      "send": "Einladung senden",
+      "sending": "Wird gesendet…",
+      "success": "Einladung gesendet",
+      "linkCopied": "Link kopiert",
+      "copyLink": "Link kopieren",
+      "note": "Die Einladung ist 72 Stunden gültig und kann nur einmal verwendet werden.",
+      "resendNote": "Einladungsverwaltung per E-Mail wird in der nächsten Phase verfügbar sein."
+    }
+  },
+  "subscription": {
+    "banner": {
+      "nearLimit": "Sie nutzen {{count}} von {{limit}} Objekten. Bald am Limit.",
+      "atLimit": "Sie haben das Limit von {{limit}} Objekten erreicht. Upgraden Sie für mehr.",
+      "locked": "Ihr Abonnement ist inaktiv. Daten sind sicher, Bearbeitung ist gesperrt.",
+      "upgradeCta": "Plan upgraden"
+    }
+  },
+  "cuzk": {
+    "modal": {
+      "title": "Search ČÚZK registry",
+      "description": "Enter an address or land registry number to auto-fill from the cadastre.",
+      "tab": { "address": "By address", "lv": "By LV / parcel" },
+      "addressLabel": "Property address",
+      "addressPlaceholder": "Street 42, City…",
+      "changeAddress": "Change address",
+      "confirm": "Continue",
+      "lvHint": "Enter the cadastral area code and the land registry number.",
+      "kuCode": "KÚ code",
+      "lvNumber": "Land registry (LV)",
+      "search": "Search"
+    },
+    "error": {
+      "ruianFailed": "Address search failed. Please try again.",
+      "wsdpFailed": "ČÚZK query failed. Check the KÚ code and LV number."
+    },
+    "detail": {
+      "title": "Land Registry (ČÚZK)",
+      "lv": "Land registry number",
+      "ku": "Cadastral area",
+      "parcel": "Parcel number",
+      "owners": "Owners",
+      "encumbrances": "Encumbrances",
+      "refresh": "Refresh from ČÚZK",
+      "refreshed": "Updated {{date}}",
+      "noData": "No cadastral data available.",
+      "noEncumbrances": "No encumbrances"
+    }
+  }
+}

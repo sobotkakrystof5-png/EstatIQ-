@@ -1,0 +1,863 @@
+{
+  "common": {
+    "loading": "Načítavam…",
+    "error": "Niečo sa pokazilo",
+    "retry": "Skúsiť znova",
+    "save": "Uložiť",
+    "cancel": "Zrušiť",
+    "delete": "Zmazať",
+    "edit": "Upraviť",
+    "add": "Pridať",
+    "confirm": "Potvrdiť",
+    "close": "Zavrieť",
+    "back": "Späť",
+    "next": "Ďalej",
+    "search": "Hľadať…",
+    "noResults": "Žiadne výsledky",
+    "optional": "voliteľné",
+    "currency": "EUR",
+    "emptyState": {
+      "title": "Zatiaľ nič",
+      "description": "Začnite pridaním prvého záznamu."
+    }
+  },
+  "nav": {
+    "dashboard": "Prehľad",
+    "properties": "Nehnuteľnosti",
+    "tenants": "Nájomníci",
+    "payments": "Platby",
+    "documents": "Dokumenty",
+    "energy": "Energia",
+    "taxes": "Dane",
+    "messages": "Správy",
+    "b2b": "B2B Panel",
+    "settings": "Nastavenia",
+    "logout": "Odhlásiť sa",
+    "collapseMenu": "Zbaliť menu",
+    "expandMenu": "Rozbaliť menu"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Správa nehnuteľností novej generácie",
+      "headline": "Prenájom, ktorý sa riadi sám.",
+      "subheadline": "Všetko na jednom mieste. Platby, zmluvy, nájomníci — bez chaosu.",
+      "cta": "Začať zadarmo",
+      "ctaSecondary": "Ako to funguje",
+      "socialProof": "Viac ako 1 200 prenajímateľov už šetrí čas",
+      "paymentCard": {
+        "title": "Nájom zaplatený",
+        "tenant": "Ján Novák",
+        "property": "Hlavná 42, Bratislava",
+        "amount": "650 €",
+        "date": "Dnes, 8:14"
+      }
+    },
+    "features": {
+      "title": "Pasívny príjem naozaj pasívny.",
+      "subtitle": "EstatIQ automatizuje každý krok správy prenájmu — od zmluvy po daňový výkaz.",
+      "items": {
+        "payments": {
+          "title": "Platby bez starostí",
+          "description": "Automatické pripomienky, upomienky a prehľad platobného kalendára."
+        },
+        "tenants": {
+          "title": "Nájomníci pod kontrolou",
+          "description": "Pozvite nájomníka jedným kliknutím. Zmluvy, dokumenty a komunikácia na jednom mieste."
+        },
+        "analytics": {
+          "title": "Výnosy v reálnom čase",
+          "description": "Dashboard s grafom príjmov, obsadenosti a nákladov."
+        },
+        "taxes": {
+          "title": "Dane bez účtovníka",
+          "description": "Automatický prehľad výdavkov a príjmov pre daňové priznanie."
+        },
+        "documents": {
+          "title": "Dokumenty v bezpečí",
+          "description": "Zmluvy, odovzdávacie protokoly, poistky — vždy po ruke, s upozornením na expiráciu."
+        },
+        "mobile": {
+          "title": "Vždy po ruke",
+          "description": "Plne responzívny web a budúca mobilná aplikácia."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Vyberte plán, ktorý vám vyhovuje.",
+      "subtitle": "Začnite zadarmo. Upgradujte, keď budete pripravení.",
+      "badge": "Najobľúbenejší",
+      "perMonth": "/ mes.",
+      "perYear": "/ rok",
+      "saveLabel": "2 mesiace zadarmo",
+      "billingMonthly": "Mesačne",
+      "billingYearly": "Ročne",
+      "unitLimit_one": "{{count}} nehnuteľnosť",
+      "unitLimit_few": "{{count}} nehnuteľnosti",
+      "unitLimit_other": "{{count}} nehnuteľností",
+      "free": {
+        "name": "Free",
+        "price": "0",
+        "yearlyPrice": "0",
+        "limit": "1 nehnuteľnosť",
+        "description": "Začnite zadarmo. Bez kreditnej karty.",
+        "cta": "Začať zadarmo"
+      },
+      "starter": {
+        "name": "Starter",
+        "price": "199",
+        "yearlyPrice": "1 990",
+        "limit": "3 nehnuteľnosti",
+        "description": "Automatické upomienky a export dát.",
+        "cta": "Vybrať Starter"
+      },
+      "growth": {
+        "name": "Growth",
+        "price": "349",
+        "yearlyPrice": "3 490",
+        "limit": "7 nehnuteľností",
+        "description": "Energetický modul a daňové podklady.",
+        "cta": "Vybrať Growth"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "549",
+        "yearlyPrice": "5 490",
+        "limit": "15 nehnuteľností",
+        "description": "Pokročilé reporty a prioritná podpora.",
+        "cta": "Vybrať Pro"
+      },
+      "portfolio": {
+        "name": "Portfolio",
+        "price": "999",
+        "yearlyPrice": "9 990",
+        "limit": "30 nehnuteľností",
+        "description": "API prístup, multi-user (3 účty) a prispôsobenie.",
+        "cta": "Vybrať Portfolio"
+      },
+      "b2b": {
+        "title": "Správcovské firmy",
+        "subtitle": "Spravujete nehnuteľnosti pre klientov? Máme plán pre vás.",
+        "cta": "Dohodnúť demo",
+        "tiers": {
+          "start": { "name": "B2B Start", "price": "2 900", "limit": "do 50 jednotiek" },
+          "growth": { "name": "B2B Growth", "price": "8 500", "limit": "51–150 jednotiek" },
+          "scale": { "name": "B2B Scale", "price": "18 500", "limit": "151–400 jednotiek" },
+          "enterprise": { "name": "Enterprise", "price": "od 25 000", "limit": "400+ jednotiek" }
+        }
+      }
+    },
+    "cta": {
+      "headline": "Pridaj. Prenajmi. Zarábaj.",
+      "subheadline": "Registrácia za 60 sekúnd. Kreditná karta nie je potrebná.",
+      "button": "Začať zadarmo"
+    },
+    "footer": {
+      "tagline": "Prenájom, ktorý sa riadi sám.",
+      "product": "Produkt",
+      "features": "Funkcie",
+      "pricing": "Ceny",
+      "changelog": "Novinky",
+      "company": "Firma",
+      "about": "O nás",
+      "blog": "Blog",
+      "careers": "Kariéra",
+      "legal": "Právne",
+      "privacy": "Ochrana súkromia",
+      "terms": "Podmienky používania",
+      "gdpr": "GDPR",
+      "rights": "Všetky práva vyhradené.",
+      "madeIn": "Vyrobené s láskou v Prahe"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Vitajte späť",
+      "subtitle": "Prihláste sa k svojmu účtu EstatIQ",
+      "email": "E-mailová adresa",
+      "password": "Heslo",
+      "forgotPassword": "Zabudli ste heslo?",
+      "submit": "Prihlásiť sa",
+      "noAccount": "Nemáte účet?",
+      "register": "Zaregistrovať sa",
+      "orContinueWith": "alebo pokračujte cez",
+      "error": "Nesprávny e-mail alebo heslo. Skúste to znova."
+    },
+    "register": {
+      "title": "Začnite zadarmo",
+      "subtitle": "Vytvorte si účet za 60 sekúnd",
+      "name": "Celé meno",
+      "email": "E-mailová adresa",
+      "password": "Heslo",
+      "passwordHint": "Aspoň 8 znakov",
+      "submit": "Vytvoriť účet",
+      "hasAccount": "Už máte účet?",
+      "login": "Prihlásiť sa",
+      "terms": "Súhlasím s podmienkami používania a ochranou súkromia",
+      "role": {
+        "label": "Som",
+        "landlord": "Prenajímateľ",
+        "tenant": "Nájomník",
+        "manager": "Správcovská firma"
+      },
+      "phone": "Telefónne číslo",
+      "country": "Krajina",
+      "city": "Mesto",
+      "street": "Ulica",
+      "houseNumber": "Súpisné číslo",
+      "preferredCurrency": "Preferovaná mena",
+      "contactSection": "Kontaktné a lokalizačné údaje",
+      "detectLocation": "Zistiť polohu automaticky",
+      "detectingLocation": "Zisťujem polohu…",
+      "locationError": "Polohu sa nepodarilo zistiť. Vyplňte adresu ručne.",
+      "locationSuccess": "Adresa predvyplnená z vašej polohy.",
+      "checkCadastre": "Overiť v katastri nehnuteľností (ČÚZK)"
+    },
+    "forgotPassword": {
+      "title": "Obnovenie hesla",
+      "subtitle": "Zadajte svoj e-mail a pošleme vám odkaz na obnovenie hesla.",
+      "email": "E-mailová adresa",
+      "submit": "Odoslať odkaz",
+      "back": "Späť na prihlásenie",
+      "successTitle": "Odkaz odoslaný",
+      "successMessage": "Skontrolujte svoj e-mail a kliknite na odkaz na obnovenie hesla.",
+      "error": "Nepodarilo sa odoslať odkaz. Skontrolujte e-mailovú adresu."
+    },
+    "acceptInvite": {
+      "validating": "Overujeme pozvánku…",
+      "invalidTitle": "Pozvánka neplatná",
+      "invalidMessage": "Odkaz vypršal alebo bol už použitý. Požiadajte správcu o novú pozvánku.",
+      "backToLogin": "Späť na prihlásenie",
+      "tenantTitle": "Prijmite pozvánku nájomníka",
+      "tenantSubtitle": "Váš prenajímateľ vás pozýva do portálu EstatIQ. Nastavte si heslo.",
+      "memberTitle": "Prijmite pozvánku do tímu",
+      "memberSubtitle": "Boli ste pozvaní do organizácie. Nastavte si heslo.",
+      "name": "Celé meno",
+      "email": "E-mailová adresa",
+      "password": "Nové heslo",
+      "passwordHint": "Aspoň 8 znakov",
+      "passwordConfirm": "Potvrďte heslo",
+      "passwordMismatch": "Heslá sa nezhodujú",
+      "submit": "Aktivovať účet",
+      "successTitle": "Účet aktivovaný!",
+      "successMessage": "O chvíľu budete presmerovaní…",
+      "confirmEmailTitle": "Potvrďte svoj e-mail",
+      "confirmEmailMessage": "Odoslali sme potvrdzovací odkaz na {{email}}.",
+      "submitError": "Aktiváciu účtu sa nepodarilo dokončiť. Skúste to znova.",
+      "errorAlreadyRegistered": "Tento e-mail je už registrovaný. Skúste sa prihlásiť."
+    }
+  },
+  "onboarding": {
+    "stepLabel": "Krok {{current}} z {{total}}",
+    "back": "Späť",
+    "next": "Pokračovať",
+    "skip": "Preskočiť",
+    "skipSetup": "Preskočiť zatiaľ",
+    "welcome": {
+      "title": "Vitaj v EstatIQ.",
+      "subtitle": "Za minútu máš prvú nehnuteľnosť online a prenájom, ktorý sa riadi sám.",
+      "points": {
+        "property": "Pridaj prvú nehnuteľnosť",
+        "tenant": "Pozvi nájomníka jedným e-mailom",
+        "relax": "A nechaj appku hlídať platby za teba"
+      },
+      "cta": "Poďme na to"
+    },
+    "property": {
+      "title": "Tvoja prvá nehnuteľnosť",
+      "subtitle": "Stačí pár údajov. Zvyšok doplníš kedykoľvek neskôr.",
+      "name": "Názov nehnuteľnosti",
+      "namePlaceholder": "Byt Hlavná",
+      "street": "Ulica a číslo",
+      "streetPlaceholder": "Hlavná 42",
+      "city": "Mesto",
+      "cityPlaceholder": "Bratislava",
+      "zip": "PSČ",
+      "zipPlaceholder": "811 01",
+      "rent": "Mesačný nájom",
+      "rentPlaceholder": "650",
+      "nameRequired": "Pomenuj nehnuteľnosť.",
+      "rentRequired": "Zadaj mesačný nájom."
+    },
+    "tenant": {
+      "title": "Pozvi nájomníka",
+      "subtitle": "Pošleme mu pozvánku e-mailom. Zvyšok si vyplní sám.",
+      "name": "Meno nájomníka",
+      "namePlaceholder": "Ján Novák",
+      "email": "E-mail nájomníka",
+      "emailPlaceholder": "jan@email.sk",
+      "nameRequired": "Zadaj meno nájomníka.",
+      "emailInvalid": "Zadaj platný e-mail.",
+      "inviteNote": "Pozvánka platí 72 hodín a dá sa použiť iba raz.",
+      "skipHint": "Nemáš teraz nájomníka po ruke? Pokojne preskočí — pozveš ho kedykoľvek neskôr."
+    },
+    "done": {
+      "title": "Hotovo. Všetko beží.",
+      "subtitle": "Od teraz ti EstatIQ hlídi platby za teba.",
+      "summary": {
+        "property": "Nehnuteľnosť {{name}} pridaná",
+        "tenant": "Pozvánka pre {{email}} na ceste",
+        "tenantSkipped": "Nájomníka pozveš neskôr",
+        "automation": "Hlídanie platieb aktívne"
+      },
+      "inviteLink": {
+        "label": "Odkaz pre nájomníka — skopíruj a pošli ručne",
+        "copy": "Skopírovať odkaz",
+        "hint": "E-mail zatiaľ neodosielame automaticky. Pošli odkaz nájomníkovi priamo."
+      },
+      "cta": "Vstúpiť do prehľadu",
+      "creating": "Pripravujeme všetko…"
+    },
+    "error": {
+      "generic": "Niečo sa pokazilo. Skús to znova.",
+      "unitLimitExceeded": "Dosiahol si limit nehnuteľností svojho plánu. Pre pridanie ďalšej upgraduj predplatné."
+    }
+  },
+  "dashboard": {
+    "greeting": {
+      "morning": "Dobré ráno,",
+      "afternoon": "Dobré popoludnie,",
+      "evening": "Dobrý večer,"
+    },
+    "cards": {
+      "income": { "title": "Príjmy tento mesiac", "trend": "oproti minulému mesiacu" },
+      "properties": { "title": "Nehnuteľnosti", "occupied": "obsadené", "total": "celkom" },
+      "unpaid": {
+        "title": "Nezaplatené nájmy",
+        "count_one": "{{count}} platba čaká",
+        "count_other": "{{count}} platieb čaká"
+      },
+      "expenses": { "title": "Výdavky tento mesiac" },
+      "pending": { "title": "Čaká na platbu" },
+      "overdue": { "title": "Po splatnosti" },
+      "occupancy": { "title": "Obsadenosť" }
+    },
+    "recentPayments": { "title": "Posledné platby", "viewAll": "Zobraziť všetko" },
+    "upcomingPayments": {
+      "title": "Nadchádzajúce platby",
+      "dueIn": "Splatnosť za {{days}} dní",
+      "dueToday": "Splatnosť dnes",
+      "overdue": "Po splatnosti {{days}} dní"
+    },
+    "occupancyChart": {
+      "title": "Obsadenosť a príjmy",
+      "income": "Príjmy",
+      "occupancy": "Obsadenosť (%)"
+    },
+    "emptyState": {
+      "title": "Všetko v pokoji",
+      "description": "Žiadne nezaplatené nájmy ani urgentné úlohy."
+    },
+    "notifications": {
+      "title": "Notifikácie",
+      "empty": "Žiadne nové notifikácie",
+      "markRead": "Označiť ako prečítané"
+    }
+  },
+  "properties": {
+    "title": "Nehnuteľnosti",
+    "subtitle": "Všetky tvoje nehnuteľnosti na jednom mieste.",
+    "add": "Pridať nehnuteľnosť",
+    "search": "Hľadať podľa názvu alebo adresy…",
+    "searchEmpty": "Nič nezodpovedá hľadaniu „{{query}}\".",
+    "count_one": "{{count}} nehnuteľnosť",
+    "count_few": "{{count}} nehnuteľnosti",
+    "count_other": "{{count}} nehnuteľností",
+    "filter": {
+      "all": "Všetko",
+      "active": "Prenajaté",
+      "vacant": "Voľné",
+      "maintenance": "Údržba",
+      "archived": "Archív"
+    },
+    "status": {
+      "active": "Prenajaté",
+      "vacant": "Voľné",
+      "maintenance": "Údržba",
+      "archived": "Archivované"
+    },
+    "card": {
+      "rentPerMonth": "/ mesiac",
+      "viewDetail": "Detail",
+      "tenants_one": "{{count}} nájomník",
+      "tenants_other": "{{count}} nájomníkov",
+      "noTenants": "Bez nájomníka",
+      "unpaid_one": "{{count}} nezaplatená platba",
+      "unpaid_other": "{{count}} nezaplatených platieb"
+    },
+    "units": {
+      "area": "{{value}} m²",
+      "rooms_one": "{{count}} izba",
+      "rooms_other": "{{count}} izieb",
+      "floor": "{{value}}. poschodie"
+    },
+    "form": {
+      "createTitle": "Nová nehnuteľnosť",
+      "createSubtitle": "Vyplň základné údaje. Všetko môžeš kedykoľvek upraviť.",
+      "editTitle": "Upraviť nehnuteľnosť",
+      "editSubtitle": "Zmeny sa prejavia okamžite.",
+      "name": "Názov",
+      "namePlaceholder": "Byt Hlavná",
+      "street": "Ulica a číslo",
+      "streetPlaceholder": "Hlavná 42",
+      "city": "Mesto",
+      "cityPlaceholder": "Bratislava",
+      "zip": "PSČ",
+      "zipPlaceholder": "811 01",
+      "rooms": "Počet izieb",
+      "area": "Plocha (m²)",
+      "rent": "Mesačný nájom",
+      "status": "Stav",
+      "notes": "Poznámka",
+      "notesPlaceholder": "Voliteľná interná poznámka…",
+      "nameRequired": "Zadaj názov nehnuteľnosti.",
+      "rentRequired": "Zadaj mesačný nájom.",
+      "create": "Pridať nehnuteľnosť",
+      "save": "Uložiť zmeny"
+    },
+    "detail": {
+      "back": "Späť na nehnuteľnosti",
+      "edit": "Upraviť",
+      "archive": "Archivovať",
+      "restore": "Obnoviť",
+      "overview": "Prehľad",
+      "address": "Adresa",
+      "area": "Plocha",
+      "rooms": "Izby",
+      "floor": "Poschodie",
+      "rent": "Mesačný nájom",
+      "status": "Stav",
+      "tenants": "Nájomníci",
+      "lastPayment": "Posledná platba",
+      "nextPayment": "Ďalšia platba",
+      "noPayment": "Zatiaľ žiadna platba",
+      "notes": "Poznámka",
+      "noNotes": "Žiadna poznámka.",
+      "notFound": "Nehnuteľnosť nenájdená",
+      "notFoundDesc": "Táto nehnuteľnosť neexistuje alebo bola odstránená."
+    },
+    "archiveDialog": {
+      "title": "Archivovať nehnuteľnosť?",
+      "message": "„{{name}}\" sa presunie do archívu. Dáta zostanú zachované kvôli daniam.",
+      "confirm": "Archivovať",
+      "cancel": "Zrušiť"
+    },
+    "emptyState": {
+      "title": "Zatiaľ žiadna nehnuteľnosť",
+      "description": "Pridaj svoju prvú nehnuteľnosť.",
+      "cta": "Pridať nehnuteľnosť"
+    },
+    "emptyFiltered": {
+      "title": "Nič tu nie je",
+      "description": "Pre zvolený filter nemáme žiadne nehnuteľnosti."
+    }
+  },
+  "payments": {
+    "title": "Platby",
+    "subtitle": "Prehľad nájmov a ich stav.",
+    "generate": "Generovať nájmy",
+    "export": "Exportovať CSV",
+    "search": "Hľadať nájomníka alebo nehnuteľnosť…",
+    "searchEmpty": "Nič nezodpovedá hľadaniu „{{query}}\".",
+    "count_one": "{{count}} platba",
+    "count_other": "{{count}} platieb",
+    "filter": {
+      "all": "Všetko",
+      "paid": "Zaplatené",
+      "pending": "Čaká",
+      "overdue": "Po splatnosti"
+    },
+    "status": {
+      "paid": "Zaplatené",
+      "pending": "Čaká",
+      "overdue": "Po splatnosti",
+      "canceled": "Zrušené"
+    },
+    "stats": {
+      "collected": "Vybrané tento mesiac",
+      "expected": "K výberu tento mesiac",
+      "overdueAmount": "Po splatnosti celkom",
+      "rate": "Platobná morálka"
+    },
+    "row": {
+      "markPaid": "Označiť ako zaplatené",
+      "remind": "Pripomenúť platbu",
+      "remindSent": "Pripomienka odoslaná",
+      "dunning": "Poslať upomienku",
+      "dunningSent": "Upomienka odoslaná",
+      "paidOn": "Zaplatené {{date}}",
+      "dueToday": "Splatnosť dnes",
+      "dueIn_one": "Splatnosť za {{count}} deň",
+      "dueIn_other": "Splatnosť za {{count}} dní",
+      "overdueDays_one": "{{count}} deň po splatnosti",
+      "overdueDays_other": "{{count}} dní po splatnosti"
+    },
+    "markPaidModal": {
+      "title": "Označiť ako zaplatené",
+      "subtitle": "{{month}} · {{tenant}}",
+      "paidAt": "Dátum platby",
+      "note": "Poznámka",
+      "notePlaceholder": "Hotovosť, bankový prevod…",
+      "confirm": "Potvrdiť platbu"
+    },
+    "generateDialog": {
+      "title": "Generovať platby",
+      "subtitle": "Vytvorí čakajúce platby pre všetkých aktívnych nájomníkov, ktorí daný mesiac ešte nemajú.",
+      "month": "Mesiac",
+      "alreadyExists": "Pre {{month}} sú platby už vygenerované.",
+      "confirm": "Generovať"
+    },
+    "emptyState": {
+      "title": "Žiadne platby",
+      "description": "Generujte platby po pridaní nehnuteľností a nájomníkov.",
+      "cta": "Generovať platby"
+    },
+    "emptyFiltered": {
+      "title": "Nič tu nie je",
+      "description": "Pre zvolený filter alebo hľadanie nemáme žiadne platby."
+    }
+  },
+  "tenants": {
+    "title": "Nájomníci",
+    "subtitle": "Všetci tvoji nájomníci a ich stav.",
+    "invite": "Pozvať nájomníka",
+    "search": "Hľadať meno, e-mail alebo nehnuteľnosť…",
+    "searchEmpty": "Nič nezodpovedá hľadaniu „{{query}}\".",
+    "count_one": "{{count}} nájomník",
+    "count_other": "{{count}} nájomníkov",
+    "filter": {
+      "all": "Všetko",
+      "active": "Aktívni",
+      "invited": "Pozvaní",
+      "ended": "Ukončení"
+    },
+    "status": {
+      "active": "Aktívny",
+      "invited": "Pozvánka odoslaná",
+      "ended": "Ukončené"
+    },
+    "statusShort": { "active": "Aktívny", "invited": "Pozvaný", "ended": "Ukončené" },
+    "row": {
+      "property": "Nehnuteľnosť",
+      "rent": "Nájom",
+      "since": "Nájomník od",
+      "inviteExpires": "Platí do {{date}}",
+      "inviteExpired": "Pozvánka expirovala",
+      "paid": "Zaplatené",
+      "unpaid_one": "{{count}} nezaplatené",
+      "unpaid_other": "{{count}} nezaplatených"
+    },
+    "invite_modal": {
+      "title": "Pozvať nájomníka",
+      "subtitle": "Nájomník dostane e-mail s pozvánkou. Pozvánka platí 72 hodín.",
+      "name": "Meno",
+      "namePlaceholder": "Ján Novák",
+      "email": "E-mail",
+      "emailPlaceholder": "jan@email.sk",
+      "property": "Nehnuteľnosť",
+      "propertyPlaceholder": "Vyberte nehnuteľnosť",
+      "rent": "Mesačný nájom",
+      "nameRequired": "Zadaj meno nájomníka.",
+      "emailInvalid": "Zadaj platný e-mail.",
+      "propertyRequired": "Vyber nehnuteľnosť.",
+      "rentRequired": "Zadaj mesačný nájom.",
+      "submit": "Odoslať pozvánku",
+      "note": "Pozvánka platí 72 hodín a dá sa použiť iba raz.",
+      "successTitle": "Pozvánka vytvorená",
+      "successDesc": "Skopíruj odkaz a pošli ho nájomníkovi.",
+      "successExpiry": "Platí do {{date}}",
+      "copyLink": "Kopírovať odkaz",
+      "copied": "Skopírované"
+    },
+    "detail": {
+      "back": "Späť na nájomníkov",
+      "contact": "Kontakt",
+      "email": "E-mail",
+      "phone": "Telefón",
+      "noPhone": "Telefón nevyplnený",
+      "lease": "Nájomná zmluva",
+      "property": "Nehnuteľnosť",
+      "rent": "Mesačný nájom",
+      "deposit": "Kaucia",
+      "paymentDay": "Splatnosť {{day}}. v mesiaci",
+      "leaseStart": "Začiatok nájmu",
+      "leaseEnd": "Koniec nájmu",
+      "leaseIndefinite": "Na dobu neurčitú",
+      "invitation": "Pozvánka",
+      "inviteSent": "Odoslané",
+      "inviteExpires": "Platí do {{date}}",
+      "inviteExpired": "Pozvánka expirovala",
+      "resendInvite": "Znovu odoslať",
+      "endTenancy": "Ukončiť nájom",
+      "notFound": "Nájomník nenájdený",
+      "notFoundDesc": "Tento nájomník neexistuje alebo bol odstránený."
+    },
+    "endDialog": {
+      "title": "Ukončiť nájom?",
+      "message": "Nájom pre {{name}} bude označený ako ukončený. Dáta zostanú zachované kvôli daniam.",
+      "confirm": "Ukončiť nájom",
+      "cancel": "Zrušiť"
+    },
+    "emptyState": {
+      "title": "Zatiaľ žiadni nájomníci",
+      "description": "Pozvi prvého nájomníka e-mailom.",
+      "cta": "Pozvať nájomníka"
+    },
+    "emptyFiltered": {
+      "title": "Nič tu nie je",
+      "description": "Pre zvolený filter nemáme žiadnych nájomníkov."
+    }
+  },
+  "settings": {
+    "title": "Nastavenia",
+    "profile": { "title": "Profil", "name": "Meno", "email": "E-mail", "phone": "Telefón", "save": "Uložiť profil" },
+    "language": { "title": "Jazyk a región", "language": "Jazyk", "currency": "Mena", "dateFormat": "Formát dátumu" },
+    "appearance": { "title": "Vzhľad", "theme": "Téma", "light": "Svetlé", "dark": "Tmavé", "system": "Systémové" },
+    "notifications": {
+      "title": "Upozornenia",
+      "email": "E-mailové upozornenia",
+      "push": "Push upozornenia",
+      "quietHours": "Tiché hodiny (22:00–7:00)",
+      "emailHint": "Upozornenia po splatnosti a potvrdenia platieb",
+      "pushHint": "Okamžité upozornenia v prehliadači",
+      "quietHoursHint": "Tiché hodiny 22:00–7:00"
+    },
+    "billing": {
+      "title": "Predplatné a fakturácia",
+      "plan": "Aktuálny plán",
+      "upgrade": "Upgradovať",
+      "cancel": "Zrušiť predplatné",
+      "currentPlan": "Váš plán",
+      "manageBilling": "Správa fakturácie",
+      "stripeNote": "Platobné metódy a faktúry spravujete cez Stripe.",
+      "annualSaving": "Ušetríte 2 mesiace ročne",
+      "features": {
+        "free": ["1 nehnuteľnosť", "Základný dashboard", "Nájomníci a platby", "Portál nájomníka"],
+        "starter": ["3 nehnuteľnosti", "Automatické upomienky", "Export CSV", "E-mailové upozornenia"],
+        "growth": ["7 nehnuteľností", "Všetko zo Startera", "Energetický modul", "Daňové podklady"],
+        "pro": ["15 nehnuteľností", "Všetko z Growthu", "Pokročilé reporty", "Prioritná podpora"],
+        "portfolio": ["30 nehnuteľností", "Všetko z Pro", "API prístup", "Multi-user (3 účty)"]
+      }
+    },
+    "danger": {
+      "title": "Nebezpečná zóna",
+      "exportData": "Exportovať dáta",
+      "deleteAccount": "Zmazať účet",
+      "deleteWarning": "Táto akcia je nevratná. Všetky vaše dáta budú trvalo zmazané.",
+      "exportDescription": "Stiahnite si archív všetkých svojich dát vo formáte JSON."
+    },
+    "saveSuccess": "Zmeny uložené"
+  },
+  "errors": {
+    "notFound": { "title": "Stránka nenájdená", "description": "Stránka, ktorú hľadáte, neexistuje alebo bola presunutá.", "cta": "Späť na prehľad" },
+    "unauthorized": { "title": "Prístup odmietnutý", "description": "Na túto stránku nemáte prístup.", "cta": "Prihlásiť sa" },
+    "serverError": { "title": "Chyba servera", "description": "Niečo sa pokazilo na našej strane. Skúsime to opraviť čo najskôr.", "cta": "Skúsiť znova" }
+  },
+  "documents": {
+    "title": "Dokumenty",
+    "subtitle": "Zmluvy, faktúry a všetka dokumentácia.",
+    "upload": "Nahrať dokument",
+    "download": "Stiahnuť",
+    "delete": "Zmazať",
+    "count_one": "{{count}} dokument",
+    "count_other": "{{count}} dokumentov",
+    "search": "Hľadať dokument…",
+    "searchEmpty": "Nič nezodpovedá hľadaniu „{{query}}\".",
+    "filter": {
+      "all": "Všetko",
+      "lease": "Zmluvy",
+      "protocol": "Protokoly",
+      "invoice": "Faktúry",
+      "insurance": "Poistenie",
+      "correspondence": "Korešpondencia",
+      "other": "Ostatné"
+    },
+    "category": {
+      "lease": "Nájomná zmluva",
+      "protocol": "Odovzdávací protokol",
+      "invoice": "Faktúra",
+      "insurance": "Poistná zmluva",
+      "correspondence": "Korešpondencia",
+      "other": "Ostatné"
+    },
+    "row": { "noProperty": "Bez nehnuteľnosti", "noTenant": "Bez nájomníka" },
+    "uploadModal": {
+      "title": "Nahrať dokument",
+      "name": "Názov dokumentu",
+      "namePlaceholder": "Nájomná zmluva 2026…",
+      "category": "Kategória",
+      "property": "Nehnuteľnosť (voliteľné)",
+      "propertyNone": "— žiadna —",
+      "tenant": "Nájomník (voliteľné)",
+      "tenantNone": "— žiadny —",
+      "file": "Súbor",
+      "filePlaceholder": "Klikni pre výber súboru…",
+      "fileSelected": "{{name}} · {{size}}",
+      "confirm": "Nahrať"
+    },
+    "deleteModal": {
+      "title": "Zmazať dokument",
+      "message": "Naozaj chcete zmazať „{{name}}\"? Túto akciu nie je možné vrátiť.",
+      "confirm": "Zmazať"
+    },
+    "emptyState": {
+      "title": "Žiadne dokumenty",
+      "description": "Nahrajte zmluvy, protokoly a ďalšie dokumenty.",
+      "cta": "Nahrať prvý dokument"
+    },
+    "emptyFiltered": { "title": "Nič tu nie je", "description": "Pre zvolený filter alebo hľadanie nemáme žiadne dokumenty." }
+  },
+  "energy": {
+    "title": "Energia",
+    "subtitle": "Odpočty meračov a spotreba podľa nehnuteľností.",
+    "addReading": "Pridať odpočet",
+    "anomaly": "Anomália",
+    "filter": { "allTypes": "Všetky médiá", "allProperties": "Všetky nehnuteľnosti" },
+    "typeFilter": { "all": "Všetko", "elektrina": "Elektrina", "plyn": "Plyn", "voda": "Voda", "teplo": "Teplo" },
+    "modal": {
+      "title": "Nový odpočet merača",
+      "description": "Zadajte stav merača a dátum odpočtu.",
+      "property": "Nehnuteľnosť",
+      "propertyRequired": "Vyberte nehnuteľnosť.",
+      "type": "Médium",
+      "value": "Stav merača",
+      "valueRequired": "Zadajte platnú hodnotu.",
+      "date": "Dátum odpočtu",
+      "note": "Poznámka",
+      "notePlaceholder": "Voliteľná poznámka…",
+      "submit": "Uložiť odpočet",
+      "meterId": "ID merača",
+      "meterIdPlaceholder": "Napr. 123456789",
+      "provider": "Dodávateľ",
+      "photo": "Foto dokladu",
+      "photoPlaceholder": "Klikni pre priloženie fotky alebo PDF…",
+      "photoSelected": "{{name}} ({{size}})"
+    },
+    "chart": { "title": "Spotreba — posledných 12 mesiacov", "noData": "Pridaj viac odpočtov a trend spotreby sa zobrazí tu." },
+    "anomalyBanner": {
+      "title_one": "Nová anomália spotreby",
+      "title_other": "{{count}} anomálií spotreby",
+      "description": "Spotreba prekročila 12-mesačný priemer o viac ako 30 %.",
+      "dismiss": "Označiť ako prečítané"
+    },
+    "emptyState": { "title": "Zatiaľ žiadne odpočty", "description": "Pridaj prvý odpočet merača a sleduj spotrebu energie." },
+    "emptyFiltered": { "title": "Žiadne odpočty", "description": "Pre zvolený filter nemáme žiadne odpočty." }
+  },
+  "tenant": {
+    "nav": { "dashboard": "Prehľad", "payments": "Moje platby", "documents": "Moje dokumenty", "contact": "Kontakt" },
+    "welcome": "Vitaj späť, {{name}}.",
+    "logout": "Odhlásiť sa",
+    "propertyLabel": "{{name}}, {{city}}",
+    "dashboard": {
+      "nextPayment": { "title": "Ďalšia platba", "dueOn": "Splatnosť {{date}}", "allPaid": "Všetko zaplatené", "noPending": "Žiadna splatná platba" },
+      "lease": {
+        "title": "Nájomná zmluva",
+        "since": "Zmluva od {{date}}",
+        "untilDate": "Do {{date}}",
+        "indefinite": "Na dobu neurčitú",
+        "monthlyRent": "Mesačný nájom",
+        "paymentDay": "Deň splatnosti",
+        "paymentDayValue": "{{day}}. deň v mesiaci"
+      },
+      "recentDocs": { "title": "Posledné dokumenty", "viewAll": "Zobraziť všetko", "empty": "Žiadne dokumenty" }
+    },
+    "payments": {
+      "title": "Moje platby",
+      "subtitle": "História platieb nájomného",
+      "count_one": "{{count}} platba",
+      "count_other": "{{count}} platieb",
+      "emptyState": { "title": "Žiadne platby", "description": "Zatiaľ nemáte žiadne záznamy platieb." }
+    },
+    "documents": {
+      "title": "Moje dokumenty",
+      "subtitle": "Zmluvy a dokumenty k vášmu nájmu",
+      "download": "Stiahnuť",
+      "emptyState": { "title": "Žiadne dokumenty", "description": "Prenajímateľ zatiaľ nezdieľal žiadne dokumenty." }
+    },
+    "contact": { "title": "Kontakt", "landlordSection": "Váš prenajímateľ", "email": "E-mail", "phone": "Telefón", "messagingNote": "Priame správy budú dostupné čoskoro." },
+    "role": "Nájomník"
+  },
+  "b2b": {
+    "nav": "B2B Panel",
+    "title": "B2B Panel",
+    "subtitle": "Správa vašej organizácie a tímu",
+    "org": {
+      "title": "Organizácia",
+      "name": "Názov organizácie",
+      "slug": "Identifikátor (slug)",
+      "owner": "Vlastník",
+      "plan": "Plán",
+      "memberCount_one": "{{count}} člen",
+      "memberCount_other": "{{count}} členov"
+    },
+    "members": {
+      "title": "Členovia tímu",
+      "invite": "Pozvať člena",
+      "email": "E-mail",
+      "role": "Rola",
+      "joined": "Pripojený",
+      "actions": "Akcie",
+      "remove": "Odobrať",
+      "removeConfirm": "Naozaj odobrať tohto člena?",
+      "emptyState": { "title": "Zatiaľ žiadni členovia", "description": "Pozvaním prvého člena tímu rozšírite prístup k vašej organizácii." }
+    },
+    "roles": { "admin": "Administrátor", "manager": "Správca", "accountant": "Účtovník", "viewer": "Prehliadač" },
+    "roleDescriptions": {
+      "admin": "Plný prístup, správa členov a nastavení",
+      "manager": "Správa nehnuteľností, nájomníkov a platieb",
+      "accountant": "Prístup k platbám a daňovým výkazom (iba čítanie)",
+      "viewer": "Iba zobrazenie dát"
+    },
+    "invite": {
+      "title": "Pozvať nového člena",
+      "emailPlaceholder": "jan.novak@firma.sk",
+      "roleLabel": "Priradiť rolu",
+      "send": "Odoslať pozvánku",
+      "sending": "Odosielam…",
+      "success": "Pozvánka odoslaná",
+      "linkCopied": "Odkaz skopírovaný",
+      "copyLink": "Skopírovať odkaz",
+      "note": "Pozvánka je platná 72 hodín a možno ju použiť iba raz.",
+      "resendNote": "Správa pozvánok cez e-mail bude k dispozícii v ďalšej fáze."
+    }
+  },
+  "subscription": {
+    "banner": {
+      "nearLimit": "Používate {{count}} z {{limit}} nehnuteľností. Čoskoro dosiahnete limit.",
+      "atLimit": "Dosiahli ste limit {{limit}} nehnuteľností. Pridajte ďalšie po upgradovaní.",
+      "locked": "Vaše predplatné nie je aktívne. Dáta sú v bezpečí, úpravy sú blokované.",
+      "upgradeCta": "Upgradovať plán"
+    }
+  },
+  "theme": { "light": "Svetlé", "dark": "Tmavé", "system": "Systém", "toggle": "Prepnúť vzhľad" },
+  "cuzk": {
+    "modal": {
+      "title": "Search ČÚZK registry",
+      "description": "Enter an address or land registry number to auto-fill from the cadastre.",
+      "tab": { "address": "By address", "lv": "By LV / parcel" },
+      "addressLabel": "Property address",
+      "addressPlaceholder": "Street 42, City…",
+      "changeAddress": "Change address",
+      "confirm": "Continue",
+      "lvHint": "Enter the cadastral area code and the land registry number.",
+      "kuCode": "KÚ code",
+      "lvNumber": "Land registry (LV)",
+      "search": "Search"
+    },
+    "error": {
+      "ruianFailed": "Address search failed. Please try again.",
+      "wsdpFailed": "ČÚZK query failed. Check the KÚ code and LV number."
+    },
+    "detail": {
+      "title": "Land Registry (ČÚZK)",
+      "lv": "Land registry number",
+      "ku": "Cadastral area",
+      "parcel": "Parcel number",
+      "owners": "Owners",
+      "encumbrances": "Encumbrances",
+      "refresh": "Refresh from ČÚZK",
+      "refreshed": "Updated {{date}}",
+      "noData": "No cadastral data available.",
+      "noEncumbrances": "No encumbrances"
+    }
+  }
+}

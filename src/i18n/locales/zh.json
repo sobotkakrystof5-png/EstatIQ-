@@ -1,0 +1,481 @@
+{
+  "common": {
+    "loading": "加载中…",
+    "error": "出现错误",
+    "retry": "重试",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "confirm": "确认",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "search": "搜索…",
+    "noResults": "无结果",
+    "optional": "可选",
+    "currency": "CNY",
+    "emptyState": { "title": "暂无数据", "description": "开始添加您的第一条记录。" }
+  },
+  "nav": {
+    "dashboard": "概览",
+    "properties": "房产",
+    "tenants": "租客",
+    "payments": "付款",
+    "documents": "文件",
+    "energy": "能源",
+    "taxes": "税务",
+    "messages": "消息",
+    "b2b": "B2B 面板",
+    "settings": "设置",
+    "logout": "退出登录",
+    "collapseMenu": "收起菜单",
+    "expandMenu": "展开菜单"
+  },
+  "landing": {
+    "hero": {
+      "badge": "新一代房产管理平台",
+      "headline": "租赁自动化管理。",
+      "subheadline": "一站式平台。付款、合同、租客——告别混乱。",
+      "cta": "免费开始",
+      "ctaSecondary": "了解更多",
+      "socialProof": "超过 1,200 位房东已节省时间",
+      "paymentCard": { "title": "租金已付", "tenant": "张三", "property": "中关村大街42号，北京", "amount": "¥6,500", "date": "今天，8:14" }
+    },
+    "features": {
+      "title": "真正被动的被动收入。",
+      "subtitle": "EstatIQ 自动化租赁管理的每个步骤——从合同到税务申报。",
+      "items": {
+        "payments": { "title": "无忧付款", "description": "自动提醒、催款和付款日历。" },
+        "tenants": { "title": "租客管理", "description": "一键邀请租客。合同、文件和沟通集中管理。" },
+        "analytics": { "title": "实时收益", "description": "收入、入住率和费用仪表板。" },
+        "taxes": { "title": "轻松税务", "description": "自动统计支出和收入，用于税务申报。" },
+        "documents": { "title": "文件安全", "description": "合同、交接协议、保险——随时查阅，到期提醒。" },
+        "mobile": { "title": "随时可用", "description": "全响应式网页，未来还将推出移动应用。" }
+      }
+    },
+    "pricing": {
+      "title": "选择适合您的套餐。",
+      "subtitle": "免费开始。随时升级。",
+      "badge": "最受欢迎",
+      "perMonth": "/ 月",
+      "perYear": "/ 年",
+      "saveLabel": "免费使用2个月",
+      "billingMonthly": "按月",
+      "billingYearly": "按年",
+      "unitLimit_one": "{{count}} 套房产",
+      "unitLimit_other": "{{count}} 套房产",
+      "free": { "name": "免费版", "price": "0", "yearlyPrice": "0", "limit": "1套房产", "description": "免费开始，无需银行卡。", "cta": "免费开始" },
+      "starter": { "name": "入门版", "price": "69", "yearlyPrice": "690", "limit": "3套房产", "description": "自动提醒和数据导出。", "cta": "选择入门版" },
+      "growth": { "name": "成长版", "price": "139", "yearlyPrice": "1,390", "limit": "7套房产", "description": "能源模块和税务文件。", "cta": "选择成长版" },
+      "pro": { "name": "专业版", "price": "219", "yearlyPrice": "2,190", "limit": "15套房产", "description": "高级报告和优先支持。", "cta": "选择专业版" },
+      "portfolio": { "name": "组合版", "price": "369", "yearlyPrice": "3,690", "limit": "30套房产", "description": "API访问、多用户（3个账户）和自定义。", "cta": "选择组合版" },
+      "b2b": {
+        "title": "物业管理公司",
+        "subtitle": "为客户管理房产？我们有专属套餐。",
+        "cta": "预约演示",
+        "tiers": {
+          "start": { "name": "B2B 入门", "price": "1,099", "limit": "最多50套" },
+          "growth": { "name": "B2B 成长", "price": "2,799", "limit": "51–150套" },
+          "scale": { "name": "B2B 规模", "price": "5,999", "limit": "151–400套" },
+          "enterprise": { "name": "企业版", "price": "询价", "limit": "400套以上" }
+        }
+      }
+    },
+    "cta": { "headline": "添加。出租。盈利。", "subheadline": "60秒完成注册，无需银行卡。", "button": "免费开始" },
+    "footer": {
+      "tagline": "租赁自动化管理。",
+      "product": "产品", "features": "功能", "pricing": "定价", "changelog": "更新日志",
+      "company": "公司", "about": "关于我们", "blog": "博客", "careers": "招聘",
+      "legal": "法律", "privacy": "隐私政策", "terms": "服务条款", "gdpr": "GDPR",
+      "rights": "版权所有。", "madeIn": "用心制造于布拉格"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "欢迎回来",
+      "subtitle": "登录您的 EstatIQ 账户",
+      "email": "电子邮件",
+      "password": "密码",
+      "forgotPassword": "忘记密码？",
+      "submit": "登录",
+      "noAccount": "没有账户？",
+      "register": "注册",
+      "orContinueWith": "或通过以下方式继续",
+      "error": "邮箱或密码不正确，请重试。"
+    },
+    "register": {
+      "title": "免费开始",
+      "subtitle": "60秒创建账户",
+      "name": "全名",
+      "email": "电子邮件",
+      "password": "密码",
+      "passwordHint": "至少8个字符",
+      "submit": "创建账户",
+      "hasAccount": "已有账户？",
+      "login": "登录",
+      "terms": "我接受服务条款和隐私政策",
+      "role": { "label": "我是", "landlord": "房东", "tenant": "租客", "manager": "物业管理公司" },
+      "phone": "电话号码",
+      "country": "国家",
+      "city": "城市",
+      "street": "街道",
+      "houseNumber": "门牌号",
+      "preferredCurrency": "首选货币",
+      "contactSection": "联系方式和位置信息",
+      "detectLocation": "自动检测位置",
+      "detectingLocation": "正在检测位置…",
+      "locationError": "无法检测位置，请手动填写地址。",
+      "locationSuccess": "已根据您的位置自动填写地址。",
+      "checkCadastre": "在不动产登记处验证 (ČÚZK)"
+    },
+    "forgotPassword": {
+      "title": "重置密码",
+      "subtitle": "输入您的邮箱，我们将发送重置链接。",
+      "email": "电子邮件",
+      "submit": "发送链接",
+      "back": "返回登录",
+      "successTitle": "链接已发送",
+      "successMessage": "请查收邮件并点击重置密码链接。",
+      "error": "无法发送链接，请检查邮箱地址。"
+    },
+    "acceptInvite": {
+      "validating": "验证邀请中…",
+      "invalidTitle": "邀请无效",
+      "invalidMessage": "链接已过期或已被使用，请向管理员申请新的邀请。",
+      "backToLogin": "返回登录",
+      "tenantTitle": "接受租客邀请",
+      "tenantSubtitle": "您的房东邀请您加入 EstatIQ 门户，请设置密码。",
+      "memberTitle": "接受团队邀请",
+      "memberSubtitle": "您已被邀请加入组织，请设置密码。",
+      "name": "全名", "email": "电子邮件",
+      "password": "新密码", "passwordHint": "至少8个字符",
+      "passwordConfirm": "确认密码", "passwordMismatch": "密码不匹配",
+      "submit": "激活账户",
+      "successTitle": "账户已激活！", "successMessage": "即将跳转…",
+      "confirmEmailTitle": "确认您的邮箱", "confirmEmailMessage": "我们已向 {{email}} 发送确认链接。",
+      "submitError": "账户激活失败，请重试。",
+      "errorAlreadyRegistered": "该邮箱已注册，请尝试登录。"
+    }
+  },
+  "onboarding": {
+    "stepLabel": "第 {{current}} 步，共 {{total}} 步",
+    "back": "返回", "next": "继续", "skip": "跳过", "skipSetup": "暂时跳过",
+    "welcome": {
+      "title": "欢迎使用 EstatIQ。",
+      "subtitle": "一分钟内让您的第一套房产上线。",
+      "points": { "property": "添加第一套房产", "tenant": "通过邮件邀请租客", "relax": "让应用为您监控付款" },
+      "cta": "开始吧"
+    },
+    "property": {
+      "title": "您的第一套房产",
+      "subtitle": "只需几项信息，其余可以稍后填写。",
+      "name": "房产名称", "namePlaceholder": "中关村公寓",
+      "street": "街道和门牌号", "streetPlaceholder": "中关村大街42号",
+      "city": "城市", "cityPlaceholder": "北京",
+      "zip": "邮政编码", "zipPlaceholder": "100080",
+      "rent": "月租金", "rentPlaceholder": "6500",
+      "nameRequired": "请为房产命名。",
+      "rentRequired": "请输入月租金。"
+    },
+    "tenant": {
+      "title": "邀请租客",
+      "subtitle": "我们将通过邮件发送邀请。",
+      "name": "租客姓名", "namePlaceholder": "张三",
+      "email": "租客邮箱", "emailPlaceholder": "zhang@email.com",
+      "nameRequired": "请输入租客姓名。",
+      "emailInvalid": "请输入有效的邮箱地址。",
+      "inviteNote": "邀请链接有效期72小时，且只能使用一次。",
+      "skipHint": "现在没有租客？跳过即可——稍后可以邀请。"
+    },
+    "done": {
+      "title": "完成！一切就绪。",
+      "subtitle": "EstatIQ 现在将为您监控付款。",
+      "summary": { "property": "房产 {{name}} 已添加", "tenant": "邀请已发送至 {{email}}", "tenantSkipped": "稍后邀请租客", "automation": "付款监控已启动" },
+      "inviteLink": { "label": "邀请链接——复制并手动发送", "copy": "复制链接", "hint": "目前邮件不会自动发送，请直接将链接发给租客。" },
+      "cta": "进入仪表板",
+      "creating": "正在准备…"
+    },
+    "error": { "generic": "出现错误，请重试。", "unitLimitExceeded": "您已达到套餐的房产上限，请升级订阅。" }
+  },
+  "dashboard": {
+    "greeting": { "morning": "早上好，", "afternoon": "下午好，", "evening": "晚上好，" },
+    "cards": {
+      "income": { "title": "本月收入", "trend": "与上月相比" },
+      "properties": { "title": "房产", "occupied": "已出租", "total": "合计" },
+      "unpaid": { "title": "未付租金", "count_one": "{{count}} 笔待付", "count_other": "{{count}} 笔待付" },
+      "expenses": { "title": "本月支出" },
+      "pending": { "title": "待付款" },
+      "overdue": { "title": "已逾期" },
+      "occupancy": { "title": "入住率" }
+    },
+    "recentPayments": { "title": "最近付款", "viewAll": "查看全部" },
+    "upcomingPayments": { "title": "即将到期", "dueIn": "{{days}} 天后到期", "dueToday": "今天到期", "overdue": "逾期 {{days}} 天" },
+    "occupancyChart": { "title": "入住率与收入", "income": "收入", "occupancy": "入住率 (%)" },
+    "emptyState": { "title": "一切正常", "description": "没有未付租金或紧急任务。" },
+    "notifications": { "title": "通知", "empty": "没有新通知", "markRead": "标记为已读" }
+  },
+  "properties": {
+    "title": "房产",
+    "subtitle": "您所有的房产集中管理。",
+    "add": "添加房产",
+    "search": "按名称或地址搜索…",
+    "searchEmpty": "「{{query}}」没有匹配结果。",
+    "count_one": "{{count}} 套房产",
+    "count_other": "{{count}} 套房产",
+    "filter": { "all": "全部", "active": "已出租", "vacant": "空置", "maintenance": "维修中", "archived": "已归档" },
+    "status": { "active": "已出租", "vacant": "空置", "maintenance": "维修中", "archived": "已归档" },
+    "card": {
+      "rentPerMonth": "/ 月", "viewDetail": "详情",
+      "tenants_one": "{{count}} 位租客", "tenants_other": "{{count}} 位租客", "noTenants": "无租客",
+      "unpaid_one": "{{count}} 笔未付款", "unpaid_other": "{{count}} 笔未付款"
+    },
+    "units": { "area": "{{value}} ㎡", "rooms_one": "{{count}} 室", "rooms_other": "{{count}} 室", "floor": "{{value}} 层" },
+    "form": {
+      "createTitle": "新增房产", "createSubtitle": "填写基本信息，其余可随时修改。",
+      "editTitle": "编辑房产", "editSubtitle": "更改立即生效。",
+      "name": "名称", "namePlaceholder": "中关村公寓",
+      "street": "街道和门牌号", "streetPlaceholder": "中关村大街42号",
+      "city": "城市", "cityPlaceholder": "北京",
+      "zip": "邮政编码", "zipPlaceholder": "100080",
+      "rooms": "房间数", "area": "面积（㎡）", "rent": "月租金", "status": "状态",
+      "notes": "备注", "notesPlaceholder": "可选内部备注…",
+      "nameRequired": "请输入房产名称。",
+      "rentRequired": "请输入月租金。",
+      "create": "添加房产", "save": "保存修改"
+    },
+    "detail": {
+      "back": "返回房产列表", "edit": "编辑", "archive": "归档", "restore": "恢复",
+      "overview": "概览", "address": "地址", "area": "面积", "rooms": "房间数", "floor": "楼层",
+      "rent": "月租金", "status": "状态", "tenants": "租客",
+      "lastPayment": "最近付款", "nextPayment": "下次付款", "noPayment": "暂无付款记录",
+      "notes": "备注", "noNotes": "无备注。",
+      "notFound": "未找到房产", "notFoundDesc": "该房产不存在或已被删除。"
+    },
+    "archiveDialog": { "title": "归档房产？", "message": "「{{name}}」将移入归档，数据将保留用于税务目的。", "confirm": "归档", "cancel": "取消" },
+    "emptyState": { "title": "暂无房产", "description": "添加您的第一套房产。", "cta": "添加房产" },
+    "emptyFiltered": { "title": "无结果", "description": "所选筛选条件下没有房产。" }
+  },
+  "payments": {
+    "title": "付款",
+    "subtitle": "租金概览及状态。",
+    "generate": "生成租金", "export": "导出 CSV",
+    "search": "搜索租客或房产…", "searchEmpty": "「{{query}}」没有匹配结果。",
+    "count_one": "{{count}} 笔付款", "count_other": "{{count}} 笔付款",
+    "filter": { "all": "全部", "paid": "已付", "pending": "待付", "overdue": "逾期" },
+    "status": { "paid": "已付", "pending": "待付", "overdue": "逾期", "canceled": "已取消" },
+    "stats": { "collected": "本月已收", "expected": "本月待收", "overdueAmount": "逾期总额", "rate": "付款率" },
+    "row": {
+      "markPaid": "标记为已付", "remind": "发送提醒", "remindSent": "提醒已发送",
+      "dunning": "发送催款", "dunningSent": "催款已发送",
+      "paidOn": "{{date}} 已付", "dueToday": "今天到期",
+      "dueIn_one": "{{count}} 天后到期", "dueIn_other": "{{count}} 天后到期",
+      "overdueDays_one": "逾期 {{count}} 天", "overdueDays_other": "逾期 {{count}} 天"
+    },
+    "markPaidModal": { "title": "标记为已付", "subtitle": "{{month}} · {{tenant}}", "paidAt": "付款日期", "note": "备注", "notePlaceholder": "现金、转账…", "confirm": "确认付款" },
+    "generateDialog": { "title": "生成付款", "subtitle": "为本月尚未有付款记录的所有活跃租客创建待付款项。", "month": "月份", "alreadyExists": "{{month}} 的付款已生成。", "confirm": "生成" },
+    "emptyState": { "title": "无付款记录", "description": "添加房产和租客后生成付款。", "cta": "生成付款" },
+    "emptyFiltered": { "title": "无结果", "description": "所选筛选或搜索条件下没有付款记录。" }
+  },
+  "tenants": {
+    "title": "租客",
+    "subtitle": "您所有的租客及其状态。",
+    "invite": "邀请租客",
+    "search": "搜索姓名、邮箱或房产…", "searchEmpty": "「{{query}}」没有匹配结果。",
+    "count_one": "{{count}} 位租客", "count_other": "{{count}} 位租客",
+    "filter": { "all": "全部", "active": "活跃", "invited": "已邀请", "ended": "已结束" },
+    "status": { "active": "活跃", "invited": "邀请已发送", "ended": "已结束" },
+    "statusShort": { "active": "活跃", "invited": "已邀请", "ended": "已结束" },
+    "row": {
+      "property": "房产", "rent": "租金", "since": "租客自",
+      "inviteExpires": "有效期至 {{date}}", "inviteExpired": "邀请已过期",
+      "paid": "已付", "unpaid_one": "{{count}} 笔未付", "unpaid_other": "{{count}} 笔未付"
+    },
+    "invite_modal": {
+      "title": "邀请租客",
+      "subtitle": "租客将收到邮件邀请，有效期72小时。",
+      "name": "姓名", "namePlaceholder": "张三",
+      "email": "邮箱", "emailPlaceholder": "zhang@email.com",
+      "property": "房产", "propertyPlaceholder": "选择房产",
+      "rent": "月租金",
+      "nameRequired": "请输入租客姓名。",
+      "emailInvalid": "请输入有效的邮箱地址。",
+      "propertyRequired": "请选择房产。",
+      "rentRequired": "请输入租金。",
+      "submit": "发送邀请",
+      "note": "邀请链接有效期72小时，且只能使用一次。",
+      "successTitle": "邀请已创建", "successDesc": "复制链接发送给租客。",
+      "successExpiry": "有效期至 {{date}}", "copyLink": "复制链接", "copied": "已复制"
+    },
+    "detail": {
+      "back": "返回租客列表", "contact": "联系方式", "email": "邮箱", "phone": "电话", "noPhone": "未填写电话",
+      "lease": "租赁合同", "property": "房产", "rent": "月租金", "deposit": "押金",
+      "paymentDay": "每月 {{day}} 日到期", "leaseStart": "租期开始", "leaseEnd": "租期结束", "leaseIndefinite": "无固定期限",
+      "invitation": "邀请", "inviteSent": "已发送", "inviteExpires": "有效期至 {{date}}", "inviteExpired": "邀请已过期",
+      "resendInvite": "重新发送", "endTenancy": "结束租赁",
+      "notFound": "未找到租客", "notFoundDesc": "该租客不存在或已被删除。"
+    },
+    "endDialog": { "title": "结束租赁？", "message": "{{name}} 的租赁将标记为已结束，数据将保留用于税务目的。", "confirm": "结束租赁", "cancel": "取消" },
+    "emptyState": { "title": "暂无租客", "description": "通过邮件邀请您的第一位租客。", "cta": "邀请租客" },
+    "emptyFiltered": { "title": "无结果", "description": "所选筛选条件下没有租客。" }
+  },
+  "settings": {
+    "title": "设置",
+    "profile": { "title": "个人资料", "name": "姓名", "email": "邮箱", "phone": "电话", "save": "保存资料" },
+    "language": { "title": "语言和地区", "language": "语言", "currency": "货币", "dateFormat": "日期格式" },
+    "appearance": { "title": "外观", "theme": "主题", "light": "浅色", "dark": "深色", "system": "跟随系统" },
+    "notifications": {
+      "title": "通知",
+      "email": "邮件通知", "push": "推送通知",
+      "quietHours": "免打扰时段（22:00–7:00）",
+      "emailHint": "逾期通知和付款确认",
+      "pushHint": "浏览器即时通知",
+      "quietHoursHint": "22:00 至 7:00 静音"
+    },
+    "billing": {
+      "title": "订阅与账单",
+      "plan": "当前套餐", "upgrade": "升级", "cancel": "取消订阅",
+      "currentPlan": "您的套餐", "manageBilling": "管理账单",
+      "stripeNote": "付款方式和发票通过 Stripe 管理。",
+      "annualSaving": "每年节省2个月费用",
+      "features": {
+        "free": ["1套房产", "基础仪表板", "租客和付款", "租客门户"],
+        "starter": ["3套房产", "自动提醒", "导出CSV", "邮件通知"],
+        "growth": ["7套房产", "入门版全部功能", "能源模块", "税务文件"],
+        "pro": ["15套房产", "成长版全部功能", "高级报告", "优先支持"],
+        "portfolio": ["30套房产", "专业版全部功能", "API访问", "多用户（3个账户）"]
+      }
+    },
+    "danger": {
+      "title": "危险区域",
+      "exportData": "导出数据", "deleteAccount": "删除账户",
+      "deleteWarning": "此操作不可撤销，您的所有数据将被永久删除。",
+      "exportDescription": "下载 JSON 格式的所有数据存档。"
+    },
+    "saveSuccess": "更改已保存"
+  },
+  "errors": {
+    "notFound": { "title": "页面未找到", "description": "您要找的页面不存在或已被移动。", "cta": "返回仪表板" },
+    "unauthorized": { "title": "访问被拒绝", "description": "您没有权限访问此页面。", "cta": "登录" },
+    "serverError": { "title": "服务器错误", "description": "服务器出现错误，我们正在修复。", "cta": "重试" }
+  },
+  "documents": {
+    "title": "文件",
+    "subtitle": "合同、发票和所有文档。",
+    "upload": "上传文件", "download": "下载", "delete": "删除",
+    "count_one": "{{count}} 个文件", "count_other": "{{count}} 个文件",
+    "search": "搜索文件…", "searchEmpty": "「{{query}}」没有匹配结果。",
+    "filter": { "all": "全部", "lease": "合同", "protocol": "交接协议", "invoice": "发票", "insurance": "保险", "correspondence": "往来函件", "other": "其他" },
+    "category": { "lease": "租赁合同", "protocol": "交接协议", "invoice": "发票", "insurance": "保险合同", "correspondence": "往来函件", "other": "其他" },
+    "row": { "noProperty": "无房产", "noTenant": "无租客" },
+    "uploadModal": {
+      "title": "上传文件",
+      "name": "文件名称", "namePlaceholder": "租赁合同2026…",
+      "category": "类别",
+      "property": "房产（可选）", "propertyNone": "— 无 —",
+      "tenant": "租客（可选）", "tenantNone": "— 无 —",
+      "file": "文件", "filePlaceholder": "点击选择文件…",
+      "fileSelected": "{{name}} · {{size}}",
+      "confirm": "上传"
+    },
+    "deleteModal": { "title": "删除文件", "message": "确定要删除「{{name}}」吗？此操作无法撤销。", "confirm": "删除" },
+    "emptyState": { "title": "无文件", "description": "上传合同、协议和其他文档。", "cta": "上传第一个文件" },
+    "emptyFiltered": { "title": "无结果", "description": "所选筛选或搜索条件下没有文件。" }
+  },
+  "energy": {
+    "title": "能源",
+    "subtitle": "仪表读数和各房产能耗。",
+    "addReading": "添加读数", "anomaly": "异常",
+    "filter": { "allTypes": "所有类型", "allProperties": "所有房产" },
+    "typeFilter": { "all": "全部", "elektrina": "电力", "plyn": "天然气", "voda": "水", "teplo": "供热" },
+    "modal": {
+      "title": "新仪表读数",
+      "description": "输入仪表读数和记录日期。",
+      "property": "房产", "propertyRequired": "请选择房产。",
+      "type": "类型", "value": "仪表读数", "valueRequired": "请输入有效数值。",
+      "date": "记录日期", "note": "备注", "notePlaceholder": "可选备注…",
+      "submit": "保存读数",
+      "meterId": "仪表编号", "meterIdPlaceholder": "如 123456789",
+      "provider": "供应商",
+      "photo": "凭证照片", "photoPlaceholder": "点击上传照片或PDF…", "photoSelected": "{{name}} ({{size}})"
+    },
+    "chart": { "title": "能耗——近12个月", "noData": "添加更多读数以显示能耗趋势。" },
+    "anomalyBanner": { "title_one": "新能耗异常", "title_other": "{{count}} 个能耗异常", "description": "能耗超过12个月平均值30%以上。", "dismiss": "标记为已读" },
+    "emptyState": { "title": "暂无读数", "description": "添加您的第一个仪表读数。" },
+    "emptyFiltered": { "title": "无读数", "description": "所选筛选条件下没有读数。" }
+  },
+  "tenant": {
+    "nav": { "dashboard": "概览", "payments": "我的付款", "documents": "我的文件", "contact": "联系方式" },
+    "welcome": "欢迎回来，{{name}}。",
+    "logout": "退出登录",
+    "propertyLabel": "{{name}}，{{city}}",
+    "dashboard": {
+      "nextPayment": { "title": "下次付款", "dueOn": "到期日 {{date}}", "allPaid": "全部已付", "noPending": "无待付款项" },
+      "lease": { "title": "租赁合同", "since": "合同自 {{date}}", "untilDate": "至 {{date}}", "indefinite": "无固定期限", "monthlyRent": "月租金", "paymentDay": "付款日", "paymentDayValue": "每月 {{day}} 日" },
+      "recentDocs": { "title": "最近文件", "viewAll": "查看全部", "empty": "无文件" }
+    },
+    "payments": { "title": "我的付款", "subtitle": "租金付款历史", "count_one": "{{count}} 笔付款", "count_other": "{{count}} 笔付款", "emptyState": { "title": "无付款记录", "description": "暂无付款记录。" } },
+    "documents": { "title": "我的文件", "subtitle": "您的租赁合同和文件", "download": "下载", "emptyState": { "title": "无文件", "description": "您的房东尚未共享任何文件。" } },
+    "contact": { "title": "联系方式", "landlordSection": "您的房东", "email": "邮箱", "phone": "电话", "messagingNote": "直接消息功能即将推出。" },
+    "role": "租客"
+  },
+  "b2b": {
+    "nav": "B2B 面板", "title": "B2B 面板", "subtitle": "管理您的组织和团队",
+    "org": { "title": "组织", "name": "组织名称", "slug": "标识符 (slug)", "owner": "所有者", "plan": "套餐", "memberCount_one": "{{count}} 位成员", "memberCount_other": "{{count}} 位成员" },
+    "members": {
+      "title": "团队成员", "invite": "邀请成员",
+      "email": "邮箱", "role": "角色", "joined": "加入时间", "actions": "操作", "remove": "移除", "removeConfirm": "确定移除该成员？",
+      "emptyState": { "title": "暂无成员", "description": "邀请您的第一位团队成员。" }
+    },
+    "roles": { "admin": "管理员", "manager": "经理", "accountant": "会计", "viewer": "查看者" },
+    "roleDescriptions": { "admin": "完整访问权限，管理成员和设置", "manager": "管理房产、租客和付款", "accountant": "访问付款和税务报告（只读）", "viewer": "仅查看数据" },
+    "invite": {
+      "title": "邀请新成员", "emailPlaceholder": "zhang.san@gongsi.com",
+      "roleLabel": "分配角色", "send": "发送邀请", "sending": "发送中…",
+      "success": "邀请已发送", "linkCopied": "链接已复制", "copyLink": "复制链接",
+      "note": "邀请链接有效期72小时，且只能使用一次。",
+      "resendNote": "邮件邀请管理将在下一阶段提供。"
+    }
+  },
+  "subscription": {
+    "banner": {
+      "nearLimit": "您已使用 {{count}}/{{limit}} 套房产，即将达到上限。",
+      "atLimit": "您已达到 {{limit}} 套房产的上限，升级后可添加更多。",
+      "locked": "您的订阅已停用，数据安全保留，编辑功能已锁定。",
+      "upgradeCta": "升级套餐"
+    }
+  },
+  "theme": { "light": "浅色", "dark": "深色", "system": "跟随系统", "toggle": "切换主题" },
+  "cuzk": {
+    "modal": {
+      "title": "Search ČÚZK registry",
+      "description": "Enter an address or land registry number to auto-fill from the cadastre.",
+      "tab": { "address": "By address", "lv": "By LV / parcel" },
+      "addressLabel": "Property address",
+      "addressPlaceholder": "Street 42, City…",
+      "changeAddress": "Change address",
+      "confirm": "Continue",
+      "lvHint": "Enter the cadastral area code and the land registry number.",
+      "kuCode": "KÚ code",
+      "lvNumber": "Land registry (LV)",
+      "search": "Search"
+    },
+    "error": {
+      "ruianFailed": "Address search failed. Please try again.",
+      "wsdpFailed": "ČÚZK query failed. Check the KÚ code and LV number."
+    },
+    "detail": {
+      "title": "Land Registry (ČÚZK)",
+      "lv": "Land registry number",
+      "ku": "Cadastral area",
+      "parcel": "Parcel number",
+      "owners": "Owners",
+      "encumbrances": "Encumbrances",
+      "refresh": "Refresh from ČÚZK",
+      "refreshed": "Updated {{date}}",
+      "noData": "No cadastral data available.",
+      "noEncumbrances": "No encumbrances"
+    }
+  }
+}

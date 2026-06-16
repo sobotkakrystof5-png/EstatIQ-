@@ -1,0 +1,573 @@
+{
+  "common": {
+    "loading": "Chargement…",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "add": "Ajouter",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "search": "Rechercher…",
+    "noResults": "Aucun résultat",
+    "optional": "optionnel",
+    "currency": "EUR",
+    "emptyState": {
+      "title": "Rien pour l'instant",
+      "description": "Commencez par ajouter votre premier enregistrement."
+    }
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "properties": "Biens",
+    "tenants": "Locataires",
+    "payments": "Paiements",
+    "documents": "Documents",
+    "energy": "Énergie",
+    "taxes": "Impôts",
+    "messages": "Messages",
+    "b2b": "Panel B2B",
+    "settings": "Paramètres",
+    "logout": "Se déconnecter",
+    "collapseMenu": "Réduire le menu",
+    "expandMenu": "Développer le menu"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Gestion immobilière de nouvelle génération",
+      "headline": "Location qui se gère elle-même.",
+      "subheadline": "Tout en un seul endroit. Paiements, contrats, locataires — sans chaos.",
+      "cta": "Commencer gratuitement",
+      "ctaSecondary": "Comment ça marche",
+      "socialProof": "Plus de 1 200 propriétaires économisent déjà du temps",
+      "paymentCard": {
+        "title": "Loyer payé",
+        "tenant": "Jean Martin",
+        "property": "Rue de Rivoli 42, Paris",
+        "amount": "1 850 €",
+        "date": "Aujourd'hui, 8h14"
+      }
+    },
+    "features": {
+      "title": "Revenus passifs vraiment passifs.",
+      "subtitle": "EstatIQ automatise chaque étape de la gestion locative — du contrat à la déclaration fiscale.",
+      "items": {
+        "payments": { "title": "Paiements sans souci", "description": "Rappels automatiques, relances et calendrier de paiement." },
+        "tenants": { "title": "Locataires sous contrôle", "description": "Invitez un locataire en un clic. Contrats, documents et communication au même endroit." },
+        "analytics": { "title": "Revenus en temps réel", "description": "Tableau de bord avec graphique des revenus, occupation et coûts." },
+        "taxes": { "title": "Impôts sans comptable", "description": "Aperçu automatique des dépenses et revenus pour la déclaration fiscale." },
+        "documents": { "title": "Documents en sécurité", "description": "Contrats, états des lieux, assurances — toujours à portée, avec alerte d'expiration." },
+        "mobile": { "title": "Toujours disponible", "description": "Web entièrement responsive et future application mobile." }
+      }
+    },
+    "pricing": {
+      "title": "Choisissez le plan qui vous convient.",
+      "subtitle": "Commencez gratuitement. Passez au niveau supérieur quand vous êtes prêt.",
+      "badge": "Le plus populaire",
+      "perMonth": "/ mois",
+      "perYear": "/ an",
+      "saveLabel": "2 mois offerts",
+      "billingMonthly": "Mensuel",
+      "billingYearly": "Annuel",
+      "unitLimit_one": "{{count}} bien",
+      "unitLimit_other": "{{count}} biens",
+      "free": { "name": "Free", "price": "0", "yearlyPrice": "0", "limit": "1 bien", "description": "Commencez gratuitement. Sans carte bancaire.", "cta": "Commencer gratuitement" },
+      "starter": { "name": "Starter", "price": "9", "yearlyPrice": "90", "limit": "3 biens", "description": "Rappels automatiques et export des données.", "cta": "Choisir Starter" },
+      "growth": { "name": "Growth", "price": "19", "yearlyPrice": "190", "limit": "7 biens", "description": "Module énergie et documents fiscaux.", "cta": "Choisir Growth" },
+      "pro": { "name": "Pro", "price": "29", "yearlyPrice": "290", "limit": "15 biens", "description": "Rapports avancés et support prioritaire.", "cta": "Choisir Pro" },
+      "portfolio": { "name": "Portfolio", "price": "49", "yearlyPrice": "490", "limit": "30 biens", "description": "Accès API, multi-utilisateur (3 comptes) et personnalisation.", "cta": "Choisir Portfolio" },
+      "b2b": {
+        "title": "Agences immobilières",
+        "subtitle": "Vous gérez des biens pour des clients ? Nous avons le bon plan.",
+        "cta": "Réserver une démo",
+        "tiers": {
+          "start": { "name": "B2B Start", "price": "150", "limit": "jusqu'à 50 unités" },
+          "growth": { "name": "B2B Growth", "price": "350", "limit": "51–150 unités" },
+          "scale": { "name": "B2B Scale", "price": "800", "limit": "151–400 unités" },
+          "enterprise": { "name": "Enterprise", "price": "sur devis", "limit": "400+ unités" }
+        }
+      }
+    },
+    "cta": {
+      "headline": "Ajoutez. Louez. Gagnez.",
+      "subheadline": "Inscription en 60 secondes. Aucune carte bancaire requise.",
+      "button": "Commencer gratuitement"
+    },
+    "footer": {
+      "tagline": "Location qui se gère elle-même.",
+      "product": "Produit",
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "changelog": "Nouveautés",
+      "company": "Entreprise",
+      "about": "À propos",
+      "blog": "Blog",
+      "careers": "Carrières",
+      "legal": "Légal",
+      "privacy": "Confidentialité",
+      "terms": "Conditions d'utilisation",
+      "gdpr": "RGPD",
+      "rights": "Tous droits réservés.",
+      "madeIn": "Fait avec amour à Prague"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Bon retour",
+      "subtitle": "Connectez-vous à votre compte EstatIQ",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "forgotPassword": "Mot de passe oublié ?",
+      "submit": "Se connecter",
+      "noAccount": "Pas de compte ?",
+      "register": "S'inscrire",
+      "orContinueWith": "ou continuer avec",
+      "error": "E-mail ou mot de passe incorrect. Veuillez réessayer."
+    },
+    "register": {
+      "title": "Commencer gratuitement",
+      "subtitle": "Créez votre compte en 60 secondes",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "passwordHint": "Au moins 8 caractères",
+      "submit": "Créer un compte",
+      "hasAccount": "Vous avez déjà un compte ?",
+      "login": "Se connecter",
+      "terms": "J'accepte les conditions d'utilisation et la politique de confidentialité",
+      "role": { "label": "Je suis", "landlord": "Propriétaire", "tenant": "Locataire", "manager": "Agence immobilière" },
+      "phone": "Numéro de téléphone",
+      "country": "Pays",
+      "city": "Ville",
+      "street": "Rue",
+      "houseNumber": "Numéro",
+      "preferredCurrency": "Devise préférée",
+      "contactSection": "Coordonnées et localisation",
+      "detectLocation": "Détecter la localisation automatiquement",
+      "detectingLocation": "Détection en cours…",
+      "locationError": "Impossible de détecter la localisation. Veuillez saisir l'adresse manuellement.",
+      "locationSuccess": "Adresse pré-remplie depuis votre localisation.",
+      "checkCadastre": "Vérifier au cadastre (ČÚZK)"
+    },
+    "forgotPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "subtitle": "Entrez votre e-mail et nous vous enverrons un lien de réinitialisation.",
+      "email": "Adresse e-mail",
+      "submit": "Envoyer le lien",
+      "back": "Retour à la connexion",
+      "successTitle": "Lien envoyé",
+      "successMessage": "Vérifiez votre e-mail et cliquez sur le lien de réinitialisation.",
+      "error": "Impossible d'envoyer le lien. Vérifiez l'adresse e-mail."
+    },
+    "acceptInvite": {
+      "validating": "Vérification de l'invitation…",
+      "invalidTitle": "Invitation invalide",
+      "invalidMessage": "Le lien a expiré ou a déjà été utilisé. Demandez une nouvelle invitation.",
+      "backToLogin": "Retour à la connexion",
+      "tenantTitle": "Accepter l'invitation locataire",
+      "tenantSubtitle": "Votre propriétaire vous invite dans le portail EstatIQ. Définissez un mot de passe.",
+      "memberTitle": "Accepter l'invitation d'équipe",
+      "memberSubtitle": "Vous avez été invité dans une organisation. Définissez un mot de passe.",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "password": "Nouveau mot de passe",
+      "passwordHint": "Au moins 8 caractères",
+      "passwordConfirm": "Confirmer le mot de passe",
+      "passwordMismatch": "Les mots de passe ne correspondent pas",
+      "submit": "Activer le compte",
+      "successTitle": "Compte activé !",
+      "successMessage": "Vous allez être redirigé…",
+      "confirmEmailTitle": "Confirmez votre e-mail",
+      "confirmEmailMessage": "Nous avons envoyé un lien de confirmation à {{email}}.",
+      "submitError": "L'activation du compte a échoué. Veuillez réessayer.",
+      "errorAlreadyRegistered": "Cet e-mail est déjà enregistré. Essayez de vous connecter."
+    }
+  },
+  "onboarding": {
+    "stepLabel": "Étape {{current}} sur {{total}}",
+    "back": "Retour",
+    "next": "Continuer",
+    "skip": "Passer",
+    "skipSetup": "Passer pour l'instant",
+    "welcome": {
+      "title": "Bienvenue dans EstatIQ.",
+      "subtitle": "En une minute, votre premier bien est en ligne.",
+      "points": { "property": "Ajouter votre premier bien", "tenant": "Inviter un locataire par e-mail", "relax": "Laisser l'app surveiller les paiements" },
+      "cta": "C'est parti"
+    },
+    "property": {
+      "title": "Votre premier bien",
+      "subtitle": "Quelques informations suffisent. Vous compléterez plus tard.",
+      "name": "Nom du bien",
+      "namePlaceholder": "Appartement Rivoli",
+      "street": "Rue et numéro",
+      "streetPlaceholder": "Rue de Rivoli 42",
+      "city": "Ville",
+      "cityPlaceholder": "Paris",
+      "zip": "Code postal",
+      "zipPlaceholder": "75001",
+      "rent": "Loyer mensuel",
+      "rentPlaceholder": "1 200",
+      "nameRequired": "Veuillez nommer le bien.",
+      "rentRequired": "Veuillez indiquer le loyer mensuel."
+    },
+    "tenant": {
+      "title": "Inviter un locataire",
+      "subtitle": "Nous lui enverrons une invitation par e-mail.",
+      "name": "Nom du locataire",
+      "namePlaceholder": "Jean Martin",
+      "email": "E-mail du locataire",
+      "emailPlaceholder": "jean@email.fr",
+      "nameRequired": "Veuillez indiquer le nom du locataire.",
+      "emailInvalid": "Veuillez indiquer un e-mail valide.",
+      "inviteNote": "L'invitation est valable 72 heures et ne peut être utilisée qu'une seule fois.",
+      "skipHint": "Pas de locataire sous la main ? Passez — vous pourrez inviter plus tard."
+    },
+    "done": {
+      "title": "Terminé. Tout fonctionne.",
+      "subtitle": "EstatIQ surveille désormais vos paiements.",
+      "summary": {
+        "property": "Bien {{name}} ajouté",
+        "tenant": "Invitation pour {{email}} en route",
+        "tenantSkipped": "Inviter le locataire plus tard",
+        "automation": "Surveillance des paiements active"
+      },
+      "inviteLink": { "label": "Lien d'invitation — copier et envoyer manuellement", "copy": "Copier le lien", "hint": "L'e-mail n'est pas encore envoyé automatiquement. Envoyez le lien directement au locataire." },
+      "cta": "Accéder au tableau de bord",
+      "creating": "Tout est en cours de préparation…"
+    },
+    "error": {
+      "generic": "Une erreur s'est produite. Veuillez réessayer.",
+      "unitLimitExceeded": "Vous avez atteint la limite de biens de votre plan. Mettez à niveau votre abonnement."
+    }
+  },
+  "dashboard": {
+    "greeting": { "morning": "Bonjour,", "afternoon": "Bon après-midi,", "evening": "Bonsoir," },
+    "cards": {
+      "income": { "title": "Revenus ce mois", "trend": "par rapport au mois dernier" },
+      "properties": { "title": "Biens", "occupied": "occupés", "total": "total" },
+      "unpaid": { "title": "Loyers impayés", "count_one": "{{count}} paiement en attente", "count_other": "{{count}} paiements en attente" },
+      "expenses": { "title": "Dépenses ce mois" },
+      "pending": { "title": "Paiements en attente" },
+      "overdue": { "title": "En retard" },
+      "occupancy": { "title": "Taux d'occupation" }
+    },
+    "recentPayments": { "title": "Paiements récents", "viewAll": "Tout afficher" },
+    "upcomingPayments": { "title": "Paiements à venir", "dueIn": "Échéance dans {{days}} jours", "dueToday": "Échéance aujourd'hui", "overdue": "{{days}} jours de retard" },
+    "occupancyChart": { "title": "Occupation et revenus", "income": "Revenus", "occupancy": "Occupation (%)" },
+    "emptyState": { "title": "Tout est calme", "description": "Aucun loyer impayé ni tâche urgente." },
+    "notifications": { "title": "Notifications", "empty": "Aucune nouvelle notification", "markRead": "Marquer comme lu" }
+  },
+  "properties": {
+    "title": "Biens",
+    "subtitle": "Tous vos biens au même endroit.",
+    "add": "Ajouter un bien",
+    "search": "Rechercher par nom ou adresse…",
+    "searchEmpty": "Aucun résultat pour « {{query}} ».",
+    "count_one": "{{count}} bien",
+    "count_other": "{{count}} biens",
+    "filter": { "all": "Tous", "active": "Loués", "vacant": "Vacants", "maintenance": "Entretien", "archived": "Archivés" },
+    "status": { "active": "Loué", "vacant": "Vacant", "maintenance": "Entretien", "archived": "Archivé" },
+    "card": {
+      "rentPerMonth": "/ mois",
+      "viewDetail": "Détail",
+      "tenants_one": "{{count}} locataire",
+      "tenants_other": "{{count}} locataires",
+      "noTenants": "Aucun locataire",
+      "unpaid_one": "{{count}} paiement impayé",
+      "unpaid_other": "{{count}} paiements impayés"
+    },
+    "units": { "area": "{{value}} m²", "rooms_one": "{{count}} pièce", "rooms_other": "{{count}} pièces", "floor": "{{value}}e étage" },
+    "form": {
+      "createTitle": "Nouveau bien",
+      "createSubtitle": "Remplissez les informations de base. Tout peut être modifié plus tard.",
+      "editTitle": "Modifier le bien",
+      "editSubtitle": "Les modifications prennent effet immédiatement.",
+      "name": "Nom",
+      "namePlaceholder": "Appartement Rivoli",
+      "street": "Rue et numéro",
+      "streetPlaceholder": "Rue de Rivoli 42",
+      "city": "Ville",
+      "cityPlaceholder": "Paris",
+      "zip": "Code postal",
+      "zipPlaceholder": "75001",
+      "rooms": "Nombre de pièces",
+      "area": "Surface (m²)",
+      "rent": "Loyer mensuel",
+      "status": "Statut",
+      "notes": "Notes",
+      "notesPlaceholder": "Note interne optionnelle…",
+      "nameRequired": "Veuillez nommer le bien.",
+      "rentRequired": "Veuillez indiquer le loyer mensuel.",
+      "create": "Ajouter le bien",
+      "save": "Enregistrer les modifications"
+    },
+    "detail": {
+      "back": "Retour aux biens", "edit": "Modifier", "archive": "Archiver", "restore": "Restaurer",
+      "overview": "Aperçu", "address": "Adresse", "area": "Surface", "rooms": "Pièces", "floor": "Étage",
+      "rent": "Loyer mensuel", "status": "Statut", "tenants": "Locataires",
+      "lastPayment": "Dernier paiement", "nextPayment": "Prochain paiement", "noPayment": "Aucun paiement encore",
+      "notes": "Notes", "noNotes": "Aucune note.",
+      "notFound": "Bien non trouvé", "notFoundDesc": "Ce bien n'existe pas ou a été supprimé."
+    },
+    "archiveDialog": { "title": "Archiver le bien ?", "message": "« {{name}} » sera déplacé dans l'archive. Les données sont conservées pour des raisons fiscales.", "confirm": "Archiver", "cancel": "Annuler" },
+    "emptyState": { "title": "Aucun bien pour l'instant", "description": "Ajoutez votre premier bien.", "cta": "Ajouter un bien" },
+    "emptyFiltered": { "title": "Rien ici", "description": "Aucun bien pour le filtre sélectionné." }
+  },
+  "payments": {
+    "title": "Paiements",
+    "subtitle": "Aperçu des loyers et leur statut.",
+    "generate": "Générer les loyers",
+    "export": "Exporter CSV",
+    "search": "Rechercher un locataire ou un bien…",
+    "searchEmpty": "Aucun résultat pour « {{query}} ».",
+    "count_one": "{{count}} paiement",
+    "count_other": "{{count}} paiements",
+    "filter": { "all": "Tous", "paid": "Payé", "pending": "En attente", "overdue": "En retard" },
+    "status": { "paid": "Payé", "pending": "En attente", "overdue": "En retard", "canceled": "Annulé" },
+    "stats": { "collected": "Collecté ce mois", "expected": "À collecter ce mois", "overdueAmount": "En retard total", "rate": "Taux de paiement" },
+    "row": {
+      "markPaid": "Marquer comme payé",
+      "remind": "Rappeler le paiement",
+      "remindSent": "Rappel envoyé",
+      "dunning": "Envoyer une relance",
+      "dunningSent": "Relance envoyée",
+      "paidOn": "Payé le {{date}}",
+      "dueToday": "Échéance aujourd'hui",
+      "dueIn_one": "Échéance dans {{count}} jour",
+      "dueIn_other": "Échéance dans {{count}} jours",
+      "overdueDays_one": "{{count}} jour de retard",
+      "overdueDays_other": "{{count}} jours de retard"
+    },
+    "markPaidModal": { "title": "Marquer comme payé", "subtitle": "{{month}} · {{tenant}}", "paidAt": "Date de paiement", "note": "Note", "notePlaceholder": "Espèces, virement…", "confirm": "Confirmer le paiement" },
+    "generateDialog": { "title": "Générer les paiements", "subtitle": "Crée des paiements en attente pour tous les locataires actifs qui n'en ont pas encore ce mois.", "month": "Mois", "alreadyExists": "Les paiements pour {{month}} ont déjà été générés.", "confirm": "Générer" },
+    "emptyState": { "title": "Aucun paiement", "description": "Générez des paiements après avoir ajouté des biens et des locataires.", "cta": "Générer les paiements" },
+    "emptyFiltered": { "title": "Rien ici", "description": "Aucun paiement pour le filtre ou la recherche sélectionnée." }
+  },
+  "tenants": {
+    "title": "Locataires",
+    "subtitle": "Tous vos locataires et leur statut.",
+    "invite": "Inviter un locataire",
+    "search": "Rechercher nom, e-mail ou bien…",
+    "searchEmpty": "Aucun résultat pour « {{query}} ».",
+    "count_one": "{{count}} locataire",
+    "count_other": "{{count}} locataires",
+    "filter": { "all": "Tous", "active": "Actifs", "invited": "Invités", "ended": "Terminés" },
+    "status": { "active": "Actif", "invited": "Invitation envoyée", "ended": "Terminé" },
+    "statusShort": { "active": "Actif", "invited": "Invité", "ended": "Terminé" },
+    "row": {
+      "property": "Bien", "rent": "Loyer", "since": "Locataire depuis",
+      "inviteExpires": "Valide jusqu'au {{date}}", "inviteExpired": "Invitation expirée",
+      "paid": "Payé", "unpaid_one": "{{count}} impayé", "unpaid_other": "{{count}} impayés"
+    },
+    "invite_modal": {
+      "title": "Inviter un locataire",
+      "subtitle": "Le locataire recevra une invitation par e-mail. Valide 72 heures.",
+      "name": "Nom", "namePlaceholder": "Jean Martin",
+      "email": "E-mail", "emailPlaceholder": "jean@email.fr",
+      "property": "Bien", "propertyPlaceholder": "Sélectionner un bien",
+      "rent": "Loyer mensuel",
+      "nameRequired": "Veuillez indiquer le nom du locataire.",
+      "emailInvalid": "Veuillez indiquer un e-mail valide.",
+      "propertyRequired": "Veuillez sélectionner un bien.",
+      "rentRequired": "Veuillez indiquer le loyer.",
+      "submit": "Envoyer l'invitation",
+      "note": "L'invitation est valable 72 heures et ne peut être utilisée qu'une seule fois.",
+      "successTitle": "Invitation créée",
+      "successDesc": "Copiez le lien et envoyez-le au locataire.",
+      "successExpiry": "Valide jusqu'au {{date}}",
+      "copyLink": "Copier le lien",
+      "copied": "Copié"
+    },
+    "detail": {
+      "back": "Retour aux locataires", "contact": "Contact", "email": "E-mail", "phone": "Téléphone", "noPhone": "Téléphone non renseigné",
+      "lease": "Bail", "property": "Bien", "rent": "Loyer mensuel", "deposit": "Dépôt de garantie",
+      "paymentDay": "Échéance le {{day}} du mois", "leaseStart": "Début du bail", "leaseEnd": "Fin du bail", "leaseIndefinite": "Sans durée déterminée",
+      "invitation": "Invitation", "inviteSent": "Envoyée", "inviteExpires": "Valide jusqu'au {{date}}", "inviteExpired": "Invitation expirée",
+      "resendInvite": "Renvoyer", "endTenancy": "Terminer la location",
+      "notFound": "Locataire non trouvé", "notFoundDesc": "Ce locataire n'existe pas ou a été supprimé."
+    },
+    "endDialog": { "title": "Terminer la location ?", "message": "La location de {{name}} sera marquée comme terminée. Les données sont conservées pour des raisons fiscales.", "confirm": "Terminer la location", "cancel": "Annuler" },
+    "emptyState": { "title": "Aucun locataire pour l'instant", "description": "Invitez votre premier locataire par e-mail.", "cta": "Inviter un locataire" },
+    "emptyFiltered": { "title": "Rien ici", "description": "Aucun locataire pour le filtre sélectionné." }
+  },
+  "settings": {
+    "title": "Paramètres",
+    "profile": { "title": "Profil", "name": "Nom", "email": "E-mail", "phone": "Téléphone", "save": "Enregistrer le profil" },
+    "language": { "title": "Langue et région", "language": "Langue", "currency": "Devise", "dateFormat": "Format de date" },
+    "appearance": { "title": "Apparence", "theme": "Thème", "light": "Clair", "dark": "Sombre", "system": "Système" },
+    "notifications": {
+      "title": "Notifications",
+      "email": "Notifications par e-mail",
+      "push": "Notifications push",
+      "quietHours": "Heures calmes (22h00–7h00)",
+      "emailHint": "Notifications d'échéance et confirmations de paiement",
+      "pushHint": "Notifications immédiates dans le navigateur",
+      "quietHoursHint": "Silence de 22h00 à 7h00"
+    },
+    "billing": {
+      "title": "Abonnement et facturation",
+      "plan": "Plan actuel",
+      "upgrade": "Mettre à niveau",
+      "cancel": "Annuler l'abonnement",
+      "currentPlan": "Votre plan",
+      "manageBilling": "Gérer la facturation",
+      "stripeNote": "Les méthodes de paiement et les factures sont gérées via Stripe.",
+      "annualSaving": "Économisez 2 mois par an",
+      "features": {
+        "free": ["1 bien", "Tableau de bord basique", "Locataires et paiements", "Portail locataire"],
+        "starter": ["3 biens", "Rappels automatiques", "Export CSV", "Notifications e-mail"],
+        "growth": ["7 biens", "Tout de Starter", "Module énergie", "Documents fiscaux"],
+        "pro": ["15 biens", "Tout de Growth", "Rapports avancés", "Support prioritaire"],
+        "portfolio": ["30 biens", "Tout de Pro", "Accès API", "Multi-utilisateur (3 comptes)"]
+      }
+    },
+    "danger": {
+      "title": "Zone dangereuse",
+      "exportData": "Exporter les données",
+      "deleteAccount": "Supprimer le compte",
+      "deleteWarning": "Cette action est irréversible. Toutes vos données seront définitivement supprimées.",
+      "exportDescription": "Téléchargez une archive de toutes vos données au format JSON."
+    },
+    "saveSuccess": "Modifications enregistrées"
+  },
+  "errors": {
+    "notFound": { "title": "Page non trouvée", "description": "La page que vous recherchez n'existe pas ou a été déplacée.", "cta": "Retour au tableau de bord" },
+    "unauthorized": { "title": "Accès refusé", "description": "Vous n'avez pas accès à cette page.", "cta": "Se connecter" },
+    "serverError": { "title": "Erreur serveur", "description": "Une erreur s'est produite de notre côté. Nous travaillons à la résoudre.", "cta": "Réessayer" }
+  },
+  "documents": {
+    "title": "Documents",
+    "subtitle": "Contrats, factures et toute la documentation.",
+    "upload": "Télécharger un document",
+    "download": "Télécharger",
+    "delete": "Supprimer",
+    "count_one": "{{count}} document",
+    "count_other": "{{count}} documents",
+    "search": "Rechercher un document…",
+    "searchEmpty": "Aucun résultat pour « {{query}} ».",
+    "filter": { "all": "Tous", "lease": "Contrats", "protocol": "États des lieux", "invoice": "Factures", "insurance": "Assurances", "correspondence": "Correspondance", "other": "Autres" },
+    "category": { "lease": "Bail", "protocol": "État des lieux", "invoice": "Facture", "insurance": "Contrat d'assurance", "correspondence": "Correspondance", "other": "Autres" },
+    "row": { "noProperty": "Sans bien", "noTenant": "Sans locataire" },
+    "uploadModal": {
+      "title": "Télécharger un document",
+      "name": "Nom du document", "namePlaceholder": "Bail 2026…",
+      "category": "Catégorie",
+      "property": "Bien (optionnel)", "propertyNone": "— aucun —",
+      "tenant": "Locataire (optionnel)", "tenantNone": "— aucun —",
+      "file": "Fichier", "filePlaceholder": "Cliquez pour sélectionner un fichier…",
+      "fileSelected": "{{name}} · {{size}}",
+      "confirm": "Télécharger"
+    },
+    "deleteModal": { "title": "Supprimer le document", "message": "Voulez-vous vraiment supprimer « {{name}} » ? Cette action ne peut pas être annulée.", "confirm": "Supprimer" },
+    "emptyState": { "title": "Aucun document", "description": "Téléchargez des contrats, états des lieux et autres documents.", "cta": "Télécharger le premier document" },
+    "emptyFiltered": { "title": "Rien ici", "description": "Aucun document pour le filtre ou la recherche sélectionnée." }
+  },
+  "energy": {
+    "title": "Énergie",
+    "subtitle": "Relevés de compteurs et consommation par bien.",
+    "addReading": "Ajouter un relevé",
+    "anomaly": "Anomalie",
+    "filter": { "allTypes": "Tous les types", "allProperties": "Tous les biens" },
+    "typeFilter": { "all": "Tout", "elektrina": "Électricité", "plyn": "Gaz", "voda": "Eau", "teplo": "Chaleur" },
+    "modal": {
+      "title": "Nouveau relevé de compteur",
+      "description": "Entrez la valeur du compteur et la date de relevé.",
+      "property": "Bien", "propertyRequired": "Sélectionnez un bien.",
+      "type": "Type", "value": "Valeur du compteur", "valueRequired": "Entrez une valeur valide.",
+      "date": "Date de relevé", "note": "Note", "notePlaceholder": "Note optionnelle…",
+      "submit": "Enregistrer le relevé",
+      "meterId": "ID du compteur", "meterIdPlaceholder": "Ex. 123456789",
+      "provider": "Fournisseur",
+      "photo": "Photo du justificatif", "photoPlaceholder": "Cliquez pour joindre une photo ou un PDF…", "photoSelected": "{{name}} ({{size}})"
+    },
+    "chart": { "title": "Consommation — 12 derniers mois", "noData": "Ajoutez plus de relevés pour afficher la tendance de consommation." },
+    "anomalyBanner": { "title_one": "Nouvelle anomalie de consommation", "title_other": "{{count}} anomalies de consommation", "description": "La consommation a dépassé la moyenne sur 12 mois de plus de 30 %.", "dismiss": "Marquer comme lu" },
+    "emptyState": { "title": "Aucun relevé", "description": "Ajoutez votre premier relevé de compteur." },
+    "emptyFiltered": { "title": "Aucun relevé", "description": "Aucun relevé ne correspond au filtre sélectionné." }
+  },
+  "tenant": {
+    "nav": { "dashboard": "Tableau de bord", "payments": "Mes paiements", "documents": "Mes documents", "contact": "Contact" },
+    "welcome": "Bon retour, {{name}}.",
+    "logout": "Se déconnecter",
+    "propertyLabel": "{{name}}, {{city}}",
+    "dashboard": {
+      "nextPayment": { "title": "Prochain paiement", "dueOn": "Échéance le {{date}}", "allPaid": "Tout est payé", "noPending": "Aucun paiement dû" },
+      "lease": { "title": "Bail", "since": "Bail depuis le {{date}}", "untilDate": "Jusqu'au {{date}}", "indefinite": "Sans durée déterminée", "monthlyRent": "Loyer mensuel", "paymentDay": "Jour d'échéance", "paymentDayValue": "Le {{day}} du mois" },
+      "recentDocs": { "title": "Documents récents", "viewAll": "Tout afficher", "empty": "Aucun document" }
+    },
+    "payments": { "title": "Mes paiements", "subtitle": "Historique des paiements de loyer", "count_one": "{{count}} paiement", "count_other": "{{count}} paiements", "emptyState": { "title": "Aucun paiement", "description": "Vous n'avez pas encore d'enregistrements de paiement." } },
+    "documents": { "title": "Mes documents", "subtitle": "Contrats et documents de votre location", "download": "Télécharger", "emptyState": { "title": "Aucun document", "description": "Votre propriétaire n'a pas encore partagé de documents." } },
+    "contact": { "title": "Contact", "landlordSection": "Votre propriétaire", "email": "E-mail", "phone": "Téléphone", "messagingNote": "Les messages directs seront disponibles prochainement." },
+    "role": "Locataire"
+  },
+  "b2b": {
+    "nav": "Panel B2B",
+    "title": "Panel B2B",
+    "subtitle": "Gestion de votre organisation et de votre équipe",
+    "org": { "title": "Organisation", "name": "Nom de l'organisation", "slug": "Identifiant (slug)", "owner": "Propriétaire", "plan": "Plan", "memberCount_one": "{{count}} membre", "memberCount_other": "{{count}} membres" },
+    "members": {
+      "title": "Membres de l'équipe", "invite": "Inviter un membre",
+      "email": "E-mail", "role": "Rôle", "joined": "Rejoint", "actions": "Actions", "remove": "Supprimer", "removeConfirm": "Vraiment supprimer ce membre ?",
+      "emptyState": { "title": "Aucun membre pour l'instant", "description": "Invitez le premier membre de l'équipe." }
+    },
+    "roles": { "admin": "Administrateur", "manager": "Gestionnaire", "accountant": "Comptable", "viewer": "Observateur" },
+    "roleDescriptions": { "admin": "Accès complet, gestion des membres et des paramètres", "manager": "Gestion des biens, locataires et paiements", "accountant": "Accès aux paiements et rapports fiscaux (lecture seule)", "viewer": "Affichage des données uniquement" },
+    "invite": {
+      "title": "Inviter un nouveau membre",
+      "emailPlaceholder": "jean.martin@agence.fr",
+      "roleLabel": "Attribuer un rôle",
+      "send": "Envoyer l'invitation",
+      "sending": "Envoi en cours…",
+      "success": "Invitation envoyée",
+      "linkCopied": "Lien copié",
+      "copyLink": "Copier le lien",
+      "note": "L'invitation est valable 72 heures et ne peut être utilisée qu'une seule fois.",
+      "resendNote": "La gestion des invitations par e-mail sera disponible à la prochaine phase."
+    }
+  },
+  "subscription": {
+    "banner": {
+      "nearLimit": "Vous utilisez {{count}} sur {{limit}} biens. Vous approchez de la limite.",
+      "atLimit": "Vous avez atteint la limite de {{limit}} biens. Mettez à niveau pour en ajouter.",
+      "locked": "Votre abonnement est inactif. Les données sont sécurisées, les modifications sont bloquées.",
+      "upgradeCta": "Mettre à niveau le plan"
+    }
+  },
+  "theme": { "light": "Clair", "dark": "Sombre", "system": "Système", "toggle": "Changer le thème" },
+  "cuzk": {
+    "modal": {
+      "title": "Search ČÚZK registry",
+      "description": "Enter an address or land registry number to auto-fill from the cadastre.",
+      "tab": { "address": "By address", "lv": "By LV / parcel" },
+      "addressLabel": "Property address",
+      "addressPlaceholder": "Street 42, City…",
+      "changeAddress": "Change address",
+      "confirm": "Continue",
+      "lvHint": "Enter the cadastral area code and the land registry number.",
+      "kuCode": "KÚ code",
+      "lvNumber": "Land registry (LV)",
+      "search": "Search"
+    },
+    "error": {
+      "ruianFailed": "Address search failed. Please try again.",
+      "wsdpFailed": "ČÚZK query failed. Check the KÚ code and LV number."
+    },
+    "detail": {
+      "title": "Land Registry (ČÚZK)",
+      "lv": "Land registry number",
+      "ku": "Cadastral area",
+      "parcel": "Parcel number",
+      "owners": "Owners",
+      "encumbrances": "Encumbrances",
+      "refresh": "Refresh from ČÚZK",
+      "refreshed": "Updated {{date}}",
+      "noData": "No cadastral data available.",
+      "noEncumbrances": "No encumbrances"
+    }
+  }
+}

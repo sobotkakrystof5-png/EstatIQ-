@@ -1,0 +1,486 @@
+{
+  "common": {
+    "loading": "Cargando…",
+    "error": "Algo salió mal",
+    "retry": "Reintentar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "add": "Añadir",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "search": "Buscar…",
+    "noResults": "Sin resultados",
+    "optional": "opcional",
+    "currency": "EUR",
+    "emptyState": { "title": "Nada por aquí", "description": "Empiece añadiendo su primer registro." }
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "properties": "Propiedades",
+    "tenants": "Inquilinos",
+    "payments": "Pagos",
+    "documents": "Documentos",
+    "energy": "Energía",
+    "taxes": "Impuestos",
+    "messages": "Mensajes",
+    "b2b": "Panel B2B",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión",
+    "collapseMenu": "Colapsar menú",
+    "expandMenu": "Expandir menú"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Gestión inmobiliaria de nueva generación",
+      "headline": "Alquiler que se gestiona solo.",
+      "subheadline": "Todo en un solo lugar. Pagos, contratos, inquilinos — sin caos.",
+      "cta": "Empezar gratis",
+      "ctaSecondary": "Cómo funciona",
+      "socialProof": "Más de 1.200 propietarios ya ahorran tiempo",
+      "paymentCard": { "title": "Alquiler pagado", "tenant": "Juan García", "property": "Calle Mayor 42, Madrid", "amount": "1.200 €", "date": "Hoy, 8:14" }
+    },
+    "features": {
+      "title": "Ingresos pasivos realmente pasivos.",
+      "subtitle": "EstatIQ automatiza cada paso de la gestión de alquileres — del contrato a la declaración fiscal.",
+      "items": {
+        "payments": { "title": "Pagos sin preocupaciones", "description": "Recordatorios automáticos, avisos y calendario de pagos." },
+        "tenants": { "title": "Inquilinos bajo control", "description": "Invite a un inquilino con un clic. Contratos, documentos y comunicación en un solo lugar." },
+        "analytics": { "title": "Ingresos en tiempo real", "description": "Panel con gráfico de ingresos, ocupación y costes." },
+        "taxes": { "title": "Impuestos sin contable", "description": "Resumen automático de gastos e ingresos para la declaración fiscal." },
+        "documents": { "title": "Documentos seguros", "description": "Contratos, actas de entrega, seguros — siempre a mano, con alerta de vencimiento." },
+        "mobile": { "title": "Siempre disponible", "description": "Web totalmente responsive y futura app móvil." }
+      }
+    },
+    "pricing": {
+      "title": "Elige el plan que mejor se adapta.",
+      "subtitle": "Empieza gratis. Actualiza cuando estés listo.",
+      "badge": "Más popular",
+      "perMonth": "/ mes",
+      "perYear": "/ año",
+      "saveLabel": "2 meses gratis",
+      "billingMonthly": "Mensual",
+      "billingYearly": "Anual",
+      "unitLimit_one": "{{count}} propiedad",
+      "unitLimit_other": "{{count}} propiedades",
+      "free": { "name": "Free", "price": "0", "yearlyPrice": "0", "limit": "1 propiedad", "description": "Empieza gratis. Sin tarjeta bancaria.", "cta": "Empezar gratis" },
+      "starter": { "name": "Starter", "price": "9", "yearlyPrice": "90", "limit": "3 propiedades", "description": "Recordatorios automáticos y exportación de datos.", "cta": "Elegir Starter" },
+      "growth": { "name": "Growth", "price": "19", "yearlyPrice": "190", "limit": "7 propiedades", "description": "Módulo energético y documentos fiscales.", "cta": "Elegir Growth" },
+      "pro": { "name": "Pro", "price": "29", "yearlyPrice": "290", "limit": "15 propiedades", "description": "Informes avanzados y soporte prioritario.", "cta": "Elegir Pro" },
+      "portfolio": { "name": "Portfolio", "price": "49", "yearlyPrice": "490", "limit": "30 propiedades", "description": "Acceso API, multi-usuario (3 cuentas) y personalización.", "cta": "Elegir Portfolio" },
+      "b2b": {
+        "title": "Agencias inmobiliarias",
+        "subtitle": "¿Gestiona propiedades para clientes? Tenemos el plan adecuado.",
+        "cta": "Reservar una demo",
+        "tiers": {
+          "start": { "name": "B2B Start", "price": "150", "limit": "hasta 50 unidades" },
+          "growth": { "name": "B2B Growth", "price": "350", "limit": "51–150 unidades" },
+          "scale": { "name": "B2B Scale", "price": "800", "limit": "151–400 unidades" },
+          "enterprise": { "name": "Enterprise", "price": "a consultar", "limit": "400+ unidades" }
+        }
+      }
+    },
+    "cta": { "headline": "Añade. Alquila. Gana.", "subheadline": "Registro en 60 segundos. Sin tarjeta bancaria.", "button": "Empezar gratis" },
+    "footer": {
+      "tagline": "Alquiler que se gestiona solo.",
+      "product": "Producto", "features": "Características", "pricing": "Precios", "changelog": "Novedades",
+      "company": "Empresa", "about": "Acerca de", "blog": "Blog", "careers": "Empleo",
+      "legal": "Legal", "privacy": "Privacidad", "terms": "Términos de uso", "gdpr": "RGPD",
+      "rights": "Todos los derechos reservados.", "madeIn": "Hecho con amor en Praga"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Bienvenido de nuevo",
+      "subtitle": "Inicia sesión en tu cuenta EstatIQ",
+      "email": "Dirección de correo",
+      "password": "Contraseña",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "submit": "Iniciar sesión",
+      "noAccount": "¿No tienes cuenta?",
+      "register": "Registrarse",
+      "orContinueWith": "o continuar con",
+      "error": "Correo o contraseña incorrectos. Por favor, inténtelo de nuevo."
+    },
+    "register": {
+      "title": "Empezar gratis",
+      "subtitle": "Crea tu cuenta en 60 segundos",
+      "name": "Nombre completo",
+      "email": "Dirección de correo",
+      "password": "Contraseña",
+      "passwordHint": "Al menos 8 caracteres",
+      "submit": "Crear cuenta",
+      "hasAccount": "¿Ya tienes cuenta?",
+      "login": "Iniciar sesión",
+      "terms": "Acepto los términos de uso y la política de privacidad",
+      "role": { "label": "Soy", "landlord": "Propietario", "tenant": "Inquilino", "manager": "Agencia inmobiliaria" },
+      "phone": "Número de teléfono",
+      "country": "País",
+      "city": "Ciudad",
+      "street": "Calle",
+      "houseNumber": "Número",
+      "preferredCurrency": "Moneda preferida",
+      "contactSection": "Datos de contacto y ubicación",
+      "detectLocation": "Detectar ubicación automáticamente",
+      "detectingLocation": "Detectando ubicación…",
+      "locationError": "No se pudo detectar la ubicación. Por favor, ingrese la dirección manualmente.",
+      "locationSuccess": "Dirección autocompletada desde su ubicación.",
+      "checkCadastre": "Verificar en el catastro (ČÚZK)"
+    },
+    "forgotPassword": {
+      "title": "Restablecer contraseña",
+      "subtitle": "Introduce tu correo y te enviaremos un enlace para restablecerla.",
+      "email": "Dirección de correo",
+      "submit": "Enviar enlace",
+      "back": "Volver al inicio de sesión",
+      "successTitle": "Enlace enviado",
+      "successMessage": "Revisa tu correo y haz clic en el enlace para restablecer la contraseña.",
+      "error": "No se pudo enviar el enlace. Comprueba la dirección de correo."
+    },
+    "acceptInvite": {
+      "validating": "Verificando la invitación…",
+      "invalidTitle": "Invitación no válida",
+      "invalidMessage": "El enlace ha caducado o ya fue usado. Solicita una nueva invitación al administrador.",
+      "backToLogin": "Volver al inicio de sesión",
+      "tenantTitle": "Aceptar la invitación de inquilino",
+      "tenantSubtitle": "Tu propietario te invita al portal EstatIQ. Establece una contraseña.",
+      "memberTitle": "Aceptar la invitación de equipo",
+      "memberSubtitle": "Has sido invitado a una organización. Establece una contraseña.",
+      "name": "Nombre completo", "email": "Dirección de correo",
+      "password": "Nueva contraseña", "passwordHint": "Al menos 8 caracteres",
+      "passwordConfirm": "Confirmar contraseña", "passwordMismatch": "Las contraseñas no coinciden",
+      "submit": "Activar cuenta",
+      "successTitle": "¡Cuenta activada!", "successMessage": "En un momento serás redirigido…",
+      "confirmEmailTitle": "Confirma tu correo", "confirmEmailMessage": "Hemos enviado un enlace de confirmación a {{email}}.",
+      "submitError": "No se pudo completar la activación. Por favor, inténtelo de nuevo.",
+      "errorAlreadyRegistered": "Este correo ya está registrado. Intenta iniciar sesión."
+    }
+  },
+  "onboarding": {
+    "stepLabel": "Paso {{current}} de {{total}}",
+    "back": "Volver", "next": "Continuar", "skip": "Saltar", "skipSetup": "Saltar por ahora",
+    "welcome": {
+      "title": "Bienvenido a EstatIQ.",
+      "subtitle": "En un minuto tienes tu primera propiedad en línea.",
+      "points": { "property": "Añadir tu primera propiedad", "tenant": "Invitar a un inquilino por correo", "relax": "Dejar que la app vigile los pagos por ti" },
+      "cta": "¡Vamos allá!"
+    },
+    "property": {
+      "title": "Tu primera propiedad",
+      "subtitle": "Solo necesitas unos datos. El resto puedes completarlo más tarde.",
+      "name": "Nombre de la propiedad", "namePlaceholder": "Piso Calle Mayor",
+      "street": "Calle y número", "streetPlaceholder": "Calle Mayor 42",
+      "city": "Ciudad", "cityPlaceholder": "Madrid",
+      "zip": "Código postal", "zipPlaceholder": "28001",
+      "rent": "Alquiler mensual", "rentPlaceholder": "900",
+      "nameRequired": "Por favor, pon nombre a la propiedad.",
+      "rentRequired": "Por favor, indica el alquiler mensual."
+    },
+    "tenant": {
+      "title": "Invitar a un inquilino",
+      "subtitle": "Le enviaremos una invitación por correo.",
+      "name": "Nombre del inquilino", "namePlaceholder": "Juan García",
+      "email": "Correo del inquilino", "emailPlaceholder": "juan@email.es",
+      "nameRequired": "Por favor, indica el nombre del inquilino.",
+      "emailInvalid": "Por favor, indica un correo válido.",
+      "inviteNote": "La invitación es válida 72 horas y solo se puede usar una vez.",
+      "skipHint": "¿No tienes inquilino ahora? Salta — puedes invitar más tarde."
+    },
+    "done": {
+      "title": "Listo. Todo en marcha.",
+      "subtitle": "EstatIQ vigilará tus pagos a partir de ahora.",
+      "summary": { "property": "Propiedad {{name}} añadida", "tenant": "Invitación a {{email}} en camino", "tenantSkipped": "Invitar al inquilino más tarde", "automation": "Vigilancia de pagos activa" },
+      "inviteLink": { "label": "Enlace de invitación — copiar y enviar manualmente", "copy": "Copiar enlace", "hint": "El correo aún no se envía automáticamente. Envía el enlace directamente al inquilino." },
+      "cta": "Ir al panel",
+      "creating": "Preparando todo…"
+    },
+    "error": { "generic": "Algo salió mal. Por favor, inténtalo de nuevo.", "unitLimitExceeded": "Has alcanzado el límite de propiedades de tu plan. Actualiza tu suscripción." }
+  },
+  "dashboard": {
+    "greeting": { "morning": "Buenos días,", "afternoon": "Buenas tardes,", "evening": "Buenas noches," },
+    "cards": {
+      "income": { "title": "Ingresos este mes", "trend": "respecto al mes pasado" },
+      "properties": { "title": "Propiedades", "occupied": "alquiladas", "total": "total" },
+      "unpaid": { "title": "Alquileres sin pagar", "count_one": "{{count}} pago pendiente", "count_other": "{{count}} pagos pendientes" },
+      "expenses": { "title": "Gastos este mes" },
+      "pending": { "title": "Pagos pendientes" },
+      "overdue": { "title": "Vencido" },
+      "occupancy": { "title": "Ocupación" }
+    },
+    "recentPayments": { "title": "Pagos recientes", "viewAll": "Ver todo" },
+    "upcomingPayments": { "title": "Próximos pagos", "dueIn": "Vence en {{days}} días", "dueToday": "Vence hoy", "overdue": "{{days}} días de retraso" },
+    "occupancyChart": { "title": "Ocupación e ingresos", "income": "Ingresos", "occupancy": "Ocupación (%)" },
+    "emptyState": { "title": "Todo tranquilo", "description": "Sin alquileres sin pagar ni tareas urgentes." },
+    "notifications": { "title": "Notificaciones", "empty": "Sin nuevas notificaciones", "markRead": "Marcar como leído" }
+  },
+  "properties": {
+    "title": "Propiedades",
+    "subtitle": "Todas tus propiedades en un solo lugar.",
+    "add": "Añadir propiedad",
+    "search": "Buscar por nombre o dirección…",
+    "searchEmpty": "Sin resultados para «{{query}}».",
+    "count_one": "{{count}} propiedad",
+    "count_other": "{{count}} propiedades",
+    "filter": { "all": "Todas", "active": "Alquiladas", "vacant": "Vacías", "maintenance": "Mantenimiento", "archived": "Archivadas" },
+    "status": { "active": "Alquilada", "vacant": "Vacía", "maintenance": "Mantenimiento", "archived": "Archivada" },
+    "card": {
+      "rentPerMonth": "/ mes", "viewDetail": "Detalle",
+      "tenants_one": "{{count}} inquilino", "tenants_other": "{{count}} inquilinos", "noTenants": "Sin inquilino",
+      "unpaid_one": "{{count}} pago sin pagar", "unpaid_other": "{{count}} pagos sin pagar"
+    },
+    "units": { "area": "{{value}} m²", "rooms_one": "{{count}} habitación", "rooms_other": "{{count}} habitaciones", "floor": "Planta {{value}}" },
+    "form": {
+      "createTitle": "Nueva propiedad", "createSubtitle": "Rellena los datos básicos. Todo se puede modificar más tarde.",
+      "editTitle": "Editar propiedad", "editSubtitle": "Los cambios se aplican de inmediato.",
+      "name": "Nombre", "namePlaceholder": "Piso Calle Mayor",
+      "street": "Calle y número", "streetPlaceholder": "Calle Mayor 42",
+      "city": "Ciudad", "cityPlaceholder": "Madrid",
+      "zip": "Código postal", "zipPlaceholder": "28001",
+      "rooms": "Número de habitaciones", "area": "Superficie (m²)", "rent": "Alquiler mensual", "status": "Estado",
+      "notes": "Notas", "notesPlaceholder": "Nota interna opcional…",
+      "nameRequired": "Por favor, indica el nombre de la propiedad.",
+      "rentRequired": "Por favor, indica el alquiler mensual.",
+      "create": "Añadir propiedad", "save": "Guardar cambios"
+    },
+    "detail": {
+      "back": "Volver a propiedades", "edit": "Editar", "archive": "Archivar", "restore": "Restaurar",
+      "overview": "Resumen", "address": "Dirección", "area": "Superficie", "rooms": "Habitaciones", "floor": "Planta",
+      "rent": "Alquiler mensual", "status": "Estado", "tenants": "Inquilinos",
+      "lastPayment": "Último pago", "nextPayment": "Próximo pago", "noPayment": "Sin pagos todavía",
+      "notes": "Notas", "noNotes": "Sin notas.",
+      "notFound": "Propiedad no encontrada", "notFoundDesc": "Esta propiedad no existe o ha sido eliminada."
+    },
+    "archiveDialog": { "title": "¿Archivar la propiedad?", "message": "«{{name}}» se moverá al archivo. Los datos se conservan por motivos fiscales.", "confirm": "Archivar", "cancel": "Cancelar" },
+    "emptyState": { "title": "Sin propiedades todavía", "description": "Añade tu primera propiedad.", "cta": "Añadir propiedad" },
+    "emptyFiltered": { "title": "Nada aquí", "description": "No hay propiedades para el filtro seleccionado." }
+  },
+  "payments": {
+    "title": "Pagos",
+    "subtitle": "Resumen de alquileres y su estado.",
+    "generate": "Generar alquileres",
+    "export": "Exportar CSV",
+    "search": "Buscar inquilino o propiedad…",
+    "searchEmpty": "Sin resultados para «{{query}}».",
+    "count_one": "{{count}} pago",
+    "count_other": "{{count}} pagos",
+    "filter": { "all": "Todos", "paid": "Pagado", "pending": "Pendiente", "overdue": "Vencido" },
+    "status": { "paid": "Pagado", "pending": "Pendiente", "overdue": "Vencido", "canceled": "Cancelado" },
+    "stats": { "collected": "Cobrado este mes", "expected": "Por cobrar este mes", "overdueAmount": "Vencido total", "rate": "Tasa de pago" },
+    "row": {
+      "markPaid": "Marcar como pagado", "remind": "Recordar pago", "remindSent": "Recordatorio enviado",
+      "dunning": "Enviar aviso", "dunningSent": "Aviso enviado",
+      "paidOn": "Pagado el {{date}}", "dueToday": "Vence hoy",
+      "dueIn_one": "Vence en {{count}} día", "dueIn_other": "Vence en {{count}} días",
+      "overdueDays_one": "{{count}} día de retraso", "overdueDays_other": "{{count}} días de retraso"
+    },
+    "markPaidModal": { "title": "Marcar como pagado", "subtitle": "{{month}} · {{tenant}}", "paidAt": "Fecha de pago", "note": "Nota", "notePlaceholder": "Efectivo, transferencia…", "confirm": "Confirmar pago" },
+    "generateDialog": { "title": "Generar pagos", "subtitle": "Crea pagos pendientes para todos los inquilinos activos que aún no tienen uno este mes.", "month": "Mes", "alreadyExists": "Los pagos para {{month}} ya han sido generados.", "confirm": "Generar" },
+    "emptyState": { "title": "Sin pagos", "description": "Genera pagos después de añadir propiedades e inquilinos.", "cta": "Generar pagos" },
+    "emptyFiltered": { "title": "Nada aquí", "description": "No hay pagos para el filtro o búsqueda seleccionada." }
+  },
+  "tenants": {
+    "title": "Inquilinos",
+    "subtitle": "Todos tus inquilinos y su estado.",
+    "invite": "Invitar inquilino",
+    "search": "Buscar nombre, correo o propiedad…",
+    "searchEmpty": "Sin resultados para «{{query}}».",
+    "count_one": "{{count}} inquilino",
+    "count_other": "{{count}} inquilinos",
+    "filter": { "all": "Todos", "active": "Activos", "invited": "Invitados", "ended": "Finalizados" },
+    "status": { "active": "Activo", "invited": "Invitación enviada", "ended": "Finalizado" },
+    "statusShort": { "active": "Activo", "invited": "Invitado", "ended": "Finalizado" },
+    "row": {
+      "property": "Propiedad", "rent": "Alquiler", "since": "Inquilino desde",
+      "inviteExpires": "Válido hasta {{date}}", "inviteExpired": "Invitación caducada",
+      "paid": "Pagado", "unpaid_one": "{{count}} sin pagar", "unpaid_other": "{{count}} sin pagar"
+    },
+    "invite_modal": {
+      "title": "Invitar inquilino",
+      "subtitle": "El inquilino recibirá una invitación por correo. Válida 72 horas.",
+      "name": "Nombre", "namePlaceholder": "Juan García",
+      "email": "Correo", "emailPlaceholder": "juan@email.es",
+      "property": "Propiedad", "propertyPlaceholder": "Seleccionar propiedad",
+      "rent": "Alquiler mensual",
+      "nameRequired": "Por favor, indica el nombre del inquilino.",
+      "emailInvalid": "Por favor, indica un correo válido.",
+      "propertyRequired": "Por favor, selecciona una propiedad.",
+      "rentRequired": "Por favor, indica el alquiler.",
+      "submit": "Enviar invitación",
+      "note": "La invitación es válida 72 horas y solo se puede usar una vez.",
+      "successTitle": "Invitación creada", "successDesc": "Copia el enlace y envíaselo al inquilino.",
+      "successExpiry": "Válida hasta {{date}}", "copyLink": "Copiar enlace", "copied": "Copiado"
+    },
+    "detail": {
+      "back": "Volver a inquilinos", "contact": "Contacto", "email": "Correo", "phone": "Teléfono", "noPhone": "Teléfono no indicado",
+      "lease": "Contrato de alquiler", "property": "Propiedad", "rent": "Alquiler mensual", "deposit": "Depósito",
+      "paymentDay": "Vence el día {{day}} del mes", "leaseStart": "Inicio del contrato", "leaseEnd": "Fin del contrato", "leaseIndefinite": "Sin fecha de vencimiento",
+      "invitation": "Invitación", "inviteSent": "Enviada", "inviteExpires": "Válida hasta {{date}}", "inviteExpired": "Invitación caducada",
+      "resendInvite": "Reenviar", "endTenancy": "Finalizar alquiler",
+      "notFound": "Inquilino no encontrado", "notFoundDesc": "Este inquilino no existe o ha sido eliminado."
+    },
+    "endDialog": { "title": "¿Finalizar el alquiler?", "message": "El alquiler de {{name}} se marcará como finalizado. Los datos se conservan por motivos fiscales.", "confirm": "Finalizar alquiler", "cancel": "Cancelar" },
+    "emptyState": { "title": "Sin inquilinos todavía", "description": "Invita a tu primer inquilino por correo.", "cta": "Invitar inquilino" },
+    "emptyFiltered": { "title": "Nada aquí", "description": "No hay inquilinos para el filtro seleccionado." }
+  },
+  "settings": {
+    "title": "Configuración",
+    "profile": { "title": "Perfil", "name": "Nombre", "email": "Correo", "phone": "Teléfono", "save": "Guardar perfil" },
+    "language": { "title": "Idioma y región", "language": "Idioma", "currency": "Divisa", "dateFormat": "Formato de fecha" },
+    "appearance": { "title": "Apariencia", "theme": "Tema", "light": "Claro", "dark": "Oscuro", "system": "Sistema" },
+    "notifications": {
+      "title": "Notificaciones",
+      "email": "Notificaciones por correo", "push": "Notificaciones push",
+      "quietHours": "Horas tranquilas (22:00–7:00)",
+      "emailHint": "Notificaciones de vencimiento y confirmaciones de pago",
+      "pushHint": "Notificaciones inmediatas en el navegador",
+      "quietHoursHint": "Sin notificaciones de 22:00 a 7:00"
+    },
+    "billing": {
+      "title": "Suscripción y facturación",
+      "plan": "Plan actual", "upgrade": "Actualizar", "cancel": "Cancelar suscripción",
+      "currentPlan": "Tu plan", "manageBilling": "Gestionar facturación",
+      "stripeNote": "Los métodos de pago y facturas se gestionan a través de Stripe.",
+      "annualSaving": "Ahorra 2 meses al año",
+      "features": {
+        "free": ["1 propiedad", "Panel básico", "Inquilinos y pagos", "Portal del inquilino"],
+        "starter": ["3 propiedades", "Recordatorios automáticos", "Exportar CSV", "Notificaciones por correo"],
+        "growth": ["7 propiedades", "Todo de Starter", "Módulo energético", "Documentos fiscales"],
+        "pro": ["15 propiedades", "Todo de Growth", "Informes avanzados", "Soporte prioritario"],
+        "portfolio": ["30 propiedades", "Todo de Pro", "Acceso API", "Multi-usuario (3 cuentas)"]
+      }
+    },
+    "danger": {
+      "title": "Zona peligrosa",
+      "exportData": "Exportar datos", "deleteAccount": "Eliminar cuenta",
+      "deleteWarning": "Esta acción es irreversible. Todos tus datos serán eliminados permanentemente.",
+      "exportDescription": "Descarga un archivo con todos tus datos en formato JSON."
+    },
+    "saveSuccess": "Cambios guardados"
+  },
+  "errors": {
+    "notFound": { "title": "Página no encontrada", "description": "La página que busca no existe o ha sido movida.", "cta": "Volver al panel" },
+    "unauthorized": { "title": "Acceso denegado", "description": "No tiene acceso a esta página.", "cta": "Iniciar sesión" },
+    "serverError": { "title": "Error del servidor", "description": "Algo salió mal de nuestra parte. Estamos trabajando en ello.", "cta": "Reintentar" }
+  },
+  "documents": {
+    "title": "Documentos",
+    "subtitle": "Contratos, facturas y toda la documentación.",
+    "upload": "Subir documento", "download": "Descargar", "delete": "Eliminar",
+    "count_one": "{{count}} documento", "count_other": "{{count}} documentos",
+    "search": "Buscar documento…", "searchEmpty": "Sin resultados para «{{query}}».",
+    "filter": { "all": "Todos", "lease": "Contratos", "protocol": "Actas", "invoice": "Facturas", "insurance": "Seguros", "correspondence": "Correspondencia", "other": "Otros" },
+    "category": { "lease": "Contrato de alquiler", "protocol": "Acta de entrega", "invoice": "Factura", "insurance": "Contrato de seguro", "correspondence": "Correspondencia", "other": "Otros" },
+    "row": { "noProperty": "Sin propiedad", "noTenant": "Sin inquilino" },
+    "uploadModal": {
+      "title": "Subir documento",
+      "name": "Nombre del documento", "namePlaceholder": "Contrato de alquiler 2026…",
+      "category": "Categoría",
+      "property": "Propiedad (opcional)", "propertyNone": "— ninguna —",
+      "tenant": "Inquilino (opcional)", "tenantNone": "— ninguno —",
+      "file": "Archivo", "filePlaceholder": "Haz clic para seleccionar un archivo…",
+      "fileSelected": "{{name}} · {{size}}",
+      "confirm": "Subir"
+    },
+    "deleteModal": { "title": "Eliminar documento", "message": "¿Seguro que deseas eliminar «{{name}}»? Esta acción no se puede deshacer.", "confirm": "Eliminar" },
+    "emptyState": { "title": "Sin documentos", "description": "Sube contratos, actas y otros documentos.", "cta": "Subir primer documento" },
+    "emptyFiltered": { "title": "Nada aquí", "description": "No hay documentos para el filtro o búsqueda seleccionada." }
+  },
+  "energy": {
+    "title": "Energía",
+    "subtitle": "Lecturas de contadores y consumo por propiedad.",
+    "addReading": "Agregar lectura", "anomaly": "Anomalía",
+    "filter": { "allTypes": "Todos los tipos", "allProperties": "Todas las propiedades" },
+    "typeFilter": { "all": "Todo", "elektrina": "Electricidad", "plyn": "Gas", "voda": "Agua", "teplo": "Calor" },
+    "modal": {
+      "title": "Nueva lectura de contador",
+      "description": "Ingrese el valor del contador y la fecha de lectura.",
+      "property": "Propiedad", "propertyRequired": "Seleccione una propiedad.",
+      "type": "Tipo", "value": "Valor del contador", "valueRequired": "Ingrese un valor válido.",
+      "date": "Fecha de lectura", "note": "Nota", "notePlaceholder": "Nota opcional…",
+      "submit": "Guardar lectura",
+      "meterId": "ID del contador", "meterIdPlaceholder": "Ej. 123456789",
+      "provider": "Proveedor",
+      "photo": "Foto del justificante", "photoPlaceholder": "Haz clic para adjuntar una foto o PDF…", "photoSelected": "{{name}} ({{size}})"
+    },
+    "chart": { "title": "Consumo — últimos 12 meses", "noData": "Agregue más lecturas para mostrar la tendencia de consumo." },
+    "anomalyBanner": { "title_one": "Nueva anomalía de consumo", "title_other": "{{count}} anomalías de consumo", "description": "El consumo superó el promedio de 12 meses en más de un 30 %.", "dismiss": "Marcar como leído" },
+    "emptyState": { "title": "Sin lecturas", "description": "Agregue su primera lectura de contador." },
+    "emptyFiltered": { "title": "Sin lecturas", "description": "Ninguna lectura coincide con el filtro seleccionado." }
+  },
+  "tenant": {
+    "nav": { "dashboard": "Panel", "payments": "Mis pagos", "documents": "Mis documentos", "contact": "Contacto" },
+    "welcome": "Bienvenido de nuevo, {{name}}.",
+    "logout": "Cerrar sesión",
+    "propertyLabel": "{{name}}, {{city}}",
+    "dashboard": {
+      "nextPayment": { "title": "Próximo pago", "dueOn": "Vence el {{date}}", "allPaid": "Todo pagado", "noPending": "Sin pago pendiente" },
+      "lease": { "title": "Contrato de alquiler", "since": "Contrato desde {{date}}", "untilDate": "Hasta {{date}}", "indefinite": "Sin fecha de vencimiento", "monthlyRent": "Alquiler mensual", "paymentDay": "Día de vencimiento", "paymentDayValue": "El día {{day}} del mes" },
+      "recentDocs": { "title": "Documentos recientes", "viewAll": "Ver todo", "empty": "Sin documentos" }
+    },
+    "payments": { "title": "Mis pagos", "subtitle": "Historial de pagos de alquiler", "count_one": "{{count}} pago", "count_other": "{{count}} pagos", "emptyState": { "title": "Sin pagos", "description": "Aún no tiene registros de pagos." } },
+    "documents": { "title": "Mis documentos", "subtitle": "Contratos y documentos de tu alquiler", "download": "Descargar", "emptyState": { "title": "Sin documentos", "description": "Tu propietario aún no ha compartido documentos." } },
+    "contact": { "title": "Contacto", "landlordSection": "Tu propietario", "email": "Correo", "phone": "Teléfono", "messagingNote": "Los mensajes directos estarán disponibles próximamente." },
+    "role": "Inquilino"
+  },
+  "b2b": {
+    "nav": "Panel B2B", "title": "Panel B2B", "subtitle": "Gestión de tu organización y equipo",
+    "org": { "title": "Organización", "name": "Nombre de la organización", "slug": "Identificador (slug)", "owner": "Propietario", "plan": "Plan", "memberCount_one": "{{count}} miembro", "memberCount_other": "{{count}} miembros" },
+    "members": {
+      "title": "Miembros del equipo", "invite": "Invitar miembro",
+      "email": "Correo", "role": "Rol", "joined": "Se unió", "actions": "Acciones", "remove": "Eliminar", "removeConfirm": "¿Eliminar realmente a este miembro?",
+      "emptyState": { "title": "Sin miembros todavía", "description": "Invita al primer miembro del equipo." }
+    },
+    "roles": { "admin": "Administrador", "manager": "Gestor", "accountant": "Contable", "viewer": "Observador" },
+    "roleDescriptions": { "admin": "Acceso completo, gestión de miembros y configuración", "manager": "Gestión de propiedades, inquilinos y pagos", "accountant": "Acceso a pagos e informes fiscales (solo lectura)", "viewer": "Solo visualización de datos" },
+    "invite": {
+      "title": "Invitar nuevo miembro", "emailPlaceholder": "juan.garcia@agencia.es",
+      "roleLabel": "Asignar rol", "send": "Enviar invitación", "sending": "Enviando…",
+      "success": "Invitación enviada", "linkCopied": "Enlace copiado", "copyLink": "Copiar enlace",
+      "note": "La invitación es válida 72 horas y solo se puede usar una vez.",
+      "resendNote": "La gestión de invitaciones por correo estará disponible en la próxima fase."
+    }
+  },
+  "subscription": {
+    "banner": {
+      "nearLimit": "Estás usando {{count}} de {{limit}} propiedades. Pronto alcanzarás el límite.",
+      "atLimit": "Has alcanzado el límite de {{limit}} propiedades. Actualiza para añadir más.",
+      "locked": "Tu suscripción está inactiva. Los datos están seguros, las ediciones están bloqueadas.",
+      "upgradeCta": "Actualizar plan"
+    }
+  },
+  "theme": { "light": "Claro", "dark": "Oscuro", "system": "Sistema", "toggle": "Cambiar tema" },
+  "cuzk": {
+    "modal": {
+      "title": "Search ČÚZK registry",
+      "description": "Enter an address or land registry number to auto-fill from the cadastre.",
+      "tab": { "address": "By address", "lv": "By LV / parcel" },
+      "addressLabel": "Property address",
+      "addressPlaceholder": "Street 42, City…",
+      "changeAddress": "Change address",
+      "confirm": "Continue",
+      "lvHint": "Enter the cadastral area code and the land registry number.",
+      "kuCode": "KÚ code",
+      "lvNumber": "Land registry (LV)",
+      "search": "Search"
+    },
+    "error": {
+      "ruianFailed": "Address search failed. Please try again.",
+      "wsdpFailed": "ČÚZK query failed. Check the KÚ code and LV number."
+    },
+    "detail": {
+      "title": "Land Registry (ČÚZK)",
+      "lv": "Land registry number",
+      "ku": "Cadastral area",
+      "parcel": "Parcel number",
+      "owners": "Owners",
+      "encumbrances": "Encumbrances",
+      "refresh": "Refresh from ČÚZK",
+      "refreshed": "Updated {{date}}",
+      "noData": "No cadastral data available.",
+      "noEncumbrances": "No encumbrances"
+    }
+  }
+}
