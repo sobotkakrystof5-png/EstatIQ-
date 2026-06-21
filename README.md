@@ -1,73 +1,120 @@
-# React + TypeScript + Vite
+# EstatIQ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PropTech platforma pro správu nájmů. Řeší fragmentaci (Excel, WhatsApp, papírové faktury) a vytváří Single Source of Truth pro celý životní cyklus nájmu — od smlouvy po daňový export.
 
-Currently, two official plugins are available:
+Live demo: https://estat-iq.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Vrstva | Technologie |
+|---|---|
+| Frontend | React 18 + Vite, TypeScript (strict) |
+| Styling | Tailwind CSS |
+| Routing | React Router v6 |
+| Animace | Framer Motion |
+| Komponenty | Radix UI / Headless UI |
+| Grafy | Recharts |
+| Data fetching | TanStack Query (React Query) |
+| Backend | Supabase (PostgreSQL, Auth, Edge Functions, Storage, RLS) |
+| Platby | Stripe |
+| E-maily | Resend + React Email |
+| Hosting | Vercel |
+| i18n | react-i18next (cs, en, de, fr, es, zh, sk, ru) |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Lokální setup
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. Závislosti
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Proměnné prostředí
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Zkopíruj `.env.example` do `.env.local` a vyplň hodnoty:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cp .env.example .env.local
 ```
+
+Povinné proměnné:
+
+| Proměnná | Kde získat |
+|---|---|
+| `VITE_SUPABASE_URL` | Supabase Dashboard → Project Settings → API |
+| `VITE_SUPABASE_ANON_KEY` | Supabase Dashboard → Project Settings → API |
+| `VITE_STRIPE_PUBLISHABLE_KEY` | Stripe Dashboard → Developers → API keys |
+
+Serverové proměnné (nastavit jako Supabase Edge Function Secrets, **nikdy** do `.env.local`):
+
+```bash
+supabase secrets set CUZK_USERNAME=...
+supabase secrets set CUZK_PASSWORD=...
+supabase secrets set RESEND_API_KEY=re_...
+```
+
+### 3. Supabase (lokální vývoj)
+
+```bash
+npx supabase start          # spustí lokální Supabase stack (Docker)
+npx supabase db reset       # aplikuje migrace + seed
+npx supabase gen types typescript --local > src/types/supabase.ts
+```
+
+Po každé změně schématu vždy znovu vygeneruj typy.
+
+### 4. Spuštění
+
+```bash
+npm run dev        # Vite dev server na http://localhost:5173
+npm run build      # produkční build (musí projít bez chyb)
+npm run lint       # ESLint — vyžaduje 0 errors, 0 warnings
+npm run typecheck  # tsc --noEmit
+```
+
+---
+
+## Struktura projektu
+
+```
+src/
+  app/              # routing, layouty (AppShell, AuthLayout, TenantLayout)
+  components/ui/    # design systém (Button, Card, Input, Dialog, …)
+  features/         # moduly podle domény:
+    auth/           #   přihlášení, registrace, ochrana rout
+    dashboard/      #   hlavní přehled, landing, login stránky
+    properties/     #   nemovitosti + ČÚZK vyhledávání
+    tenants/        #   nájemníci, pozvánky
+    payments/       #   platební engine, QR kódy, exporty
+    energy/         #   odečty měřičů, anomálie
+    documents/      #   nahrávání, kategorizace, expiry alerts
+    settings/       #   profil, tarify, GDPR, 2FA
+    tenant-portal/  #   portál nájemníka (platby, smlouvy, závady)
+    onboarding/     #   4-krokový wizard pro nové pronajímatele
+    b2b/            #   B2B panel pro správcovské firmy
+  hooks/            # sdílené hooky (useTheme, useCurrency, useProfile, …)
+  i18n/             # config + locales/{cs,en,de,fr,es,zh,sk,ru}.json
+  lib/              # supabase client, stripe, formatters, utils
+  types/            # generované Supabase typy + doménové typy
+supabase/
+  migrations/       # SQL migrace (chronologické)
+  functions/        # Edge Functions:
+                    #   payment-scheduler, reminder-cron,
+                    #   energy-anomaly-check, document-expiry-alert,
+                    #   subscription-enforcement, gdpr-export
+```
+
+---
+
+## Klíčové konvence
+
+- **RLS je zapnuté na všech tabulkách** — každý dotaz musí respektovat hierarchii rolí (Super-Admin / Správce / Vlastník / Pronajímatel / Nájemník).
+- **Žádná byznys logika v komponentách** — vše do hooků a `lib/`. Automatizované workflow výhradně do `supabase/functions/`.
+- **i18n povinné** — žádný text natvrdo v JSX, vše přes `t('klic')`.
+- **Částky vždy `tabular-nums`** + formátování přes `lib/formatters` (Intl).
+- **TypeScript strict** — `any` je zakázané, build musí vždy projít.
+- Commity: `feat:` / `fix:` / `refactor:` / `style:` / `chore:` / `i18n:`.

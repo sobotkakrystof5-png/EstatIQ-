@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import {
   Check,
   CheckCircle2,
@@ -12,6 +12,10 @@ import {
   TrendingUp,
   BarChart3,
   ArrowUpRight,
+  ShieldCheck,
+  ShieldOff,
+  Smartphone,
+  X,
 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
@@ -23,6 +27,7 @@ import { useProfile } from '@/hooks/useProfile'
 import { useCurrency, type SupportedCurrency } from '@/hooks/useCurrency'
 import { useSubscriptionUsage } from '@/hooks/useSubscriptionUsage'
 import { redirectToCheckout, redirectToPortal } from '@/lib/stripe'
+import { supabase } from '@/lib/supabase'
 import i18n from '@/i18n/config'
 import { cn } from '@/lib/utils'
 
@@ -285,17 +290,21 @@ export default function SettingsPage() {
 
   const [language, setLanguage] = useState(i18n.language.slice(0, 2))
 
-  // Sync form fields once profile loads
+  // Initialises editable form fields once async profile data arrives from Supabase.
+  // setState calls here are intentional: one-time sync from an external async source;
+  // the fields must remain independently editable after initialisation.
   useEffect(() => {
     if (profile) {
+      /* eslint-disable react-hooks/set-state-in-effect */
       setProfileName(profile.full_name ?? '')
       setProfilePhone(profile.phone ?? '')
       setLanguage(profile.locale ?? i18n.language.slice(0, 2))
       if (profile.currency_preference) {
         setCurrency(profile.currency_preference as SupportedCurrency)
       }
+      /* eslint-enable react-hooks/set-state-in-effect */
     }
-  }, [profile])
+  }, [profile, setCurrency])
 
   const themeOptions: SegmentOption<string>[] = [
     { value: 'light', label: t('settings.appearance.light') },
@@ -414,12 +423,139 @@ export default function SettingsPage() {
     }
   }
 
-  function handleExport() {
-    // TODO(fáze 2): call Supabase Edge Function to generate GDPR export
+  // ── Security / 2FA state ──────────────────────────────────────────────────────
+  const [mfaFactorId, setMfaFactorId] = useState<string | null>(null)
+  const [mfaLoading, setMfaLoading] = useState(false)
+  const [mfaEnrolling, setMfaEnrolling] = useState(false)
+  const [mfaQrUri, setMfaQrUri] = useState<string | null>(null)
+  const [mfaSecret, setMfaSecret] = useState<string | null>(null)
+  const [mfaCode, setMfaCode] = useState('')
+  const [mfaError, setMfaError] = useState<string | null>(null)
+  const [mfaSuccess, setMfaSuccess] = useState<string | null>(null)
+  const [showDisable2fa, setShowDisable2fa] = useState(false)
+  const enrollFactorIdRef = useRef<string | null>(null)
+
+  useEffect(() => {
+    void (async () => {
+      setMfaLoading(true)
+      const { data } = await supabase.auth.mfa.listFactors()
+      const totp = data?.totp?.find((f) => f.status === 'verified')
+      setMfaFactorId(totp?.id ?? null)
+      setMfaLoading(false)
+    })()
+  }, [])
+
+  async function handleEnable2fa() {
+    setMfaError(null)
+    setMfaLoading(true)
+    const { data, error } = await supabase.auth.mfa.enroll({ factorType: 'totp', issuer: 'EstatIQ' })
+    setMfaLoading(false)
+    if (error || !data) { setMfaError(error?.message ?? 'Chyba'); return }
+    enrollFactorIdRef.current = data.id
+    setMfaQrUri(data.totp.qr_code)
+    setMfaSecret(data.totp.secret)
+    setMfaEnrolling(true)
   }
 
-  function handleDeleteAccount() {
-    // TODO(fáze 2): confirm dialog → delete all data → sign out
+  async function handleVerify2fa() {
+    if (!enrollFactorIdRef.current) return
+    setMfaError(null)
+    setMfaLoading(true)
+    const { data: challengeData, error: cErr } = await supabase.auth.mfa.challenge({
+      factorId: enrollFactorIdRef.current,
+    })
+    if (cErr || !challengeData) {
+      setMfaError(cErr?.message ?? t('settings.security.twofa.errorInvalidCode'))
+      setMfaLoading(false)
+      return
+    }
+    const { error: vErr } = await supabase.auth.mfa.verify({
+      factorId: enrollFactorIdRef.current,
+      challengeId: challengeData.id,
+      code: mfaCode.trim(),
+    })
+    setMfaLoading(false)
+    if (vErr) {
+      setMfaError(t('settings.security.twofa.errorInvalidCode'))
+      return
+    }
+    setMfaFactorId(enrollFactorIdRef.current)
+    setMfaEnrolling(false)
+    setMfaQrUri(null)
+    setMfaCode('')
+    setMfaSuccess(t('settings.security.twofa.successEnabled'))
+    setTimeout(() => setMfaSuccess(null), 4000)
+  }
+
+  async function handleDisable2fa() {
+    if (!mfaFactorId) return
+    setMfaError(null)
+    setMfaLoading(true)
+    const { error } = await supabase.auth.mfa.unenroll({ factorId: mfaFactorId })
+    setMfaLoading(false)
+    if (error) { setMfaError(error.message); return }
+    setMfaFactorId(null)
+    setShowDisable2fa(false)
+    setMfaSuccess(t('settings.security.twofa.successDisabled'))
+    setTimeout(() => setMfaSuccess(null), 4000)
+  }
+
+  // ── GDPR state ────────────────────────────────────────────────────────────────
+  const [exportLoading, setExportLoading] = useState(false)
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
+  const [deleteWord, setDeleteWord] = useState('')
+  const [deleteLoading, setDeleteLoading] = useState(false)
+  const [deleteError, setDeleteError] = useState<string | null>(null)
+
+  async function handleExport() {
+    setExportLoading(true)
+    try {
+      const { data: { session } } = await supabase.auth.getSession()
+      if (!session) return
+      const res = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/gdpr-export`,
+        { headers: { Authorization: `Bearer ${session.access_token}` } }
+      )
+      const blob = await res.blob()
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `estatiq-export-${new Date().toISOString().slice(0, 10)}.json`
+      a.click()
+      URL.revokeObjectURL(url)
+    } finally {
+      setExportLoading(false)
+    }
+  }
+
+  async function handleDeleteAccount() {
+    const confirmWord = t('settings.danger.deleteWord')
+    if (deleteWord !== confirmWord) return
+    setDeleteError(null)
+    setDeleteLoading(true)
+    try {
+      const { data: { session } } = await supabase.auth.getSession()
+      if (!session) return
+      const res = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/gdpr-delete`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ confirm: 'SMAZAT' }),
+        }
+      )
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}))
+        setDeleteError((body as { error?: string }).error ?? 'Chyba při mazání')
+        return
+      }
+      await supabase.auth.signOut()
+    } finally {
+      setDeleteLoading(false)
+    }
   }
 
   return (
@@ -570,6 +706,197 @@ export default function SettingsPage() {
         </Card>
       </motion.div>
 
+      {/* ── Security / 2FA ──────────────────────────────────────────────── */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.25, ease: EASE_OUT, delay: 0.17 }}
+      >
+        <SectionHeader title={t('settings.security.title')} />
+        <Card className="p-5">
+          {/* Status row */}
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className={cn(
+                'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl',
+                mfaFactorId
+                  ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400'
+                  : 'bg-surface-100 text-surface-400 dark:bg-surface-800',
+              )}>
+                {mfaFactorId ? <ShieldCheck size={18} /> : <ShieldOff size={18} />}
+              </span>
+              <div>
+                <p className="text-sm font-medium text-surface-800 dark:text-surface-200">
+                  {t('settings.security.twofa.title')}
+                </p>
+                <p className="mt-0.5 text-xs text-surface-400">
+                  {mfaLoading
+                    ? '…'
+                    : mfaFactorId
+                    ? t('settings.security.twofa.enabled')
+                    : t('settings.security.twofa.disabled')}
+                </p>
+              </div>
+            </div>
+
+            {!mfaEnrolling && (
+              mfaFactorId ? (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setShowDisable2fa(true)}
+                  disabled={mfaLoading}
+                >
+                  <ShieldOff size={14} />
+                  {t('settings.security.twofa.disable')}
+                </Button>
+              ) : (
+                <Button
+                  size="sm"
+                  onClick={() => void handleEnable2fa()}
+                  disabled={mfaLoading}
+                >
+                  <ShieldCheck size={14} />
+                  {t('settings.security.twofa.enable')}
+                </Button>
+              )
+            )}
+          </div>
+
+          <p className="mt-3 text-xs text-surface-400">{t('settings.security.twofa.description')}</p>
+
+          {/* Success banner */}
+          <AnimatePresence>
+            {mfaSuccess && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="mt-3 overflow-hidden rounded-xl bg-emerald-50 px-4 py-3 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400"
+              >
+                {mfaSuccess}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* QR enrolment flow */}
+          <AnimatePresence>
+            {mfaEnrolling && (
+              <motion.div
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.2, ease: EASE_OUT }}
+                className="mt-5 space-y-4"
+              >
+                <div className="border-t border-surface-100 pt-4 dark:border-surface-800" />
+
+                <p className="text-sm font-medium text-surface-800 dark:text-surface-200">
+                  {t('settings.security.twofa.scanQr')}
+                </p>
+                <p className="text-xs text-surface-400">{t('settings.security.twofa.scanQrHint')}</p>
+
+                {/* QR image from data URI */}
+                {mfaQrUri && (
+                  <div className="flex justify-center">
+                    <img
+                      src={mfaQrUri}
+                      alt="2FA QR code"
+                      className="h-40 w-40 rounded-xl border border-surface-100 dark:border-surface-800"
+                    />
+                  </div>
+                )}
+
+                {/* Manual secret fallback */}
+                {mfaSecret && (
+                  <div className="rounded-lg bg-surface-50 px-3 py-2 text-center font-mono text-xs tracking-widest text-surface-600 dark:bg-surface-800 dark:text-surface-300">
+                    {mfaSecret}
+                  </div>
+                )}
+
+                <div className="flex gap-2">
+                  <Input
+                    label={t('settings.security.twofa.code')}
+                    value={mfaCode}
+                    onChange={(e) => setMfaCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                    placeholder={t('settings.security.twofa.codePlaceholder')}
+                    inputMode="numeric"
+                    maxLength={6}
+                    className="flex-1"
+                  />
+                </div>
+
+                {mfaError && (
+                  <p className="text-xs text-red-500">{mfaError}</p>
+                )}
+
+                <div className="flex gap-2">
+                  <Button
+                    onClick={() => void handleVerify2fa()}
+                    disabled={mfaCode.length !== 6 || mfaLoading}
+                  >
+                    <Smartphone size={14} />
+                    {mfaLoading ? t('settings.security.twofa.verifying') : t('settings.security.twofa.verify')}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => { setMfaEnrolling(false); setMfaQrUri(null); setMfaCode(''); setMfaError(null) }}
+                  >
+                    {t('settings.security.twofa.cancel')}
+                  </Button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </Card>
+
+        {/* Disable 2FA confirm modal */}
+        <AnimatePresence>
+          {showDisable2fa && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm"
+              onClick={() => setShowDisable2fa(false)}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.18, ease: EASE_OUT }}
+                onClick={(e) => e.stopPropagation()}
+                className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-2xl dark:bg-surface-900"
+              >
+                <div className="mb-1 flex items-start justify-between">
+                  <h3 className="font-semibold text-surface-900 dark:text-surface-50">
+                    {t('settings.security.twofa.disableConfirmTitle')}
+                  </h3>
+                  <button
+                    onClick={() => setShowDisable2fa(false)}
+                    className="ml-2 text-surface-400 hover:text-surface-600 dark:hover:text-surface-200"
+                  >
+                    <X size={16} />
+                  </button>
+                </div>
+                <p className="mt-2 text-sm text-surface-500 dark:text-surface-400">
+                  {t('settings.security.twofa.disableConfirmBody')}
+                </p>
+                {mfaError && <p className="mt-3 text-xs text-red-500">{mfaError}</p>}
+                <div className="mt-5 flex justify-end gap-2">
+                  <Button variant="outline" size="sm" onClick={() => setShowDisable2fa(false)}>
+                    {t('settings.security.twofa.cancel')}
+                  </Button>
+                  <Button variant="danger" size="sm" onClick={() => void handleDisable2fa()} disabled={mfaLoading}>
+                    {mfaLoading ? '…' : t('settings.security.twofa.disableConfirm')}
+                  </Button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+
       {/* ── Billing ──────────────────────────────────────────────────────── */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
@@ -659,9 +986,9 @@ export default function SettingsPage() {
               </p>
               <p className="mt-0.5 text-xs text-surface-400">{t('settings.danger.exportDescription')}</p>
             </div>
-            <Button variant="outline" size="sm" onClick={handleExport}>
+            <Button variant="outline" size="sm" onClick={() => void handleExport()} disabled={exportLoading}>
               <Download size={14} />
-              {t('settings.danger.exportData')}
+              {exportLoading ? t('settings.danger.exportLoading') : t('settings.danger.exportData')}
             </Button>
           </div>
 
@@ -673,7 +1000,7 @@ export default function SettingsPage() {
               </p>
               <p className="mt-0.5 text-xs text-surface-400">{t('settings.danger.deleteWarning')}</p>
             </div>
-            <Button variant="danger" size="sm" onClick={handleDeleteAccount}>
+            <Button variant="danger" size="sm" onClick={() => setShowDeleteConfirm(true)}>
               <Trash2 size={14} />
               {t('settings.danger.deleteAccount')}
             </Button>
@@ -688,6 +1015,80 @@ export default function SettingsPage() {
 
       {/* Bottom spacing for mobile */}
       <div className="h-6" />
+
+      {/* ── Delete account confirm modal ────────────────────────────────── */}
+      <AnimatePresence>
+        {showDeleteConfirm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm"
+            onClick={() => { if (!deleteLoading) { setShowDeleteConfirm(false); setDeleteWord(''); setDeleteError(null) } }}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.18, ease: EASE_OUT }}
+              onClick={(e) => e.stopPropagation()}
+              className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-2xl dark:bg-surface-900"
+            >
+              <div className="mb-1 flex items-start justify-between">
+                <h3 className="font-semibold text-surface-900 dark:text-surface-50">
+                  {t('settings.danger.deleteConfirmTitle')}
+                </h3>
+                {!deleteLoading && (
+                  <button
+                    onClick={() => { setShowDeleteConfirm(false); setDeleteWord(''); setDeleteError(null) }}
+                    className="ml-2 text-surface-400 hover:text-surface-600 dark:hover:text-surface-200"
+                  >
+                    <X size={16} />
+                  </button>
+                )}
+              </div>
+
+              <p className="mt-2 text-sm text-surface-500 dark:text-surface-400">
+                {t('settings.danger.deleteConfirmBody')}
+              </p>
+
+              <div className="mt-4">
+                <Input
+                  label=""
+                  value={deleteWord}
+                  onChange={(e) => setDeleteWord(e.target.value)}
+                  placeholder={t('settings.danger.deleteConfirmPlaceholder')}
+                  disabled={deleteLoading}
+                />
+              </div>
+
+              {deleteError && (
+                <p className="mt-2 text-xs text-red-500">{deleteError}</p>
+              )}
+
+              <div className="mt-5 flex justify-end gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => { setShowDeleteConfirm(false); setDeleteWord(''); setDeleteError(null) }}
+                  disabled={deleteLoading}
+                >
+                  {t('settings.security.twofa.cancel')}
+                </Button>
+                <Button
+                  variant="danger"
+                  size="sm"
+                  onClick={() => void handleDeleteAccount()}
+                  disabled={deleteWord !== t('settings.danger.deleteWord') || deleteLoading}
+                >
+                  <Trash2 size={14} />
+                  {deleteLoading ? t('settings.danger.deleteLoading') : t('settings.danger.deleteConfirmButton')}
+                </Button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

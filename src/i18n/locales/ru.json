@@ -16,7 +16,10 @@
     "noResults": "Нет результатов",
     "optional": "необязательно",
     "currency": "EUR",
-    "emptyState": { "title": "Пока пусто", "description": "Начните с добавления первой записи." }
+    "emptyState": {
+      "title": "Пока пусто",
+      "description": "Начните с добавления первой записи."
+    }
   },
   "nav": {
     "dashboard": "Обзор",
@@ -41,18 +44,42 @@
       "cta": "Начать бесплатно",
       "ctaSecondary": "Как это работает",
       "socialProof": "Более 1 200 арендодателей уже экономят время",
-      "paymentCard": { "title": "Аренда оплачена", "tenant": "Иван Иванов", "property": "ул. Тверская 42, Москва", "amount": "50 000 ₽", "date": "Сегодня, 8:14" }
+      "paymentCard": {
+        "title": "Аренда оплачена",
+        "tenant": "Иван Иванов",
+        "property": "ул. Тверская 42, Москва",
+        "amount": "50 000 ₽",
+        "date": "Сегодня, 8:14"
+      }
     },
     "features": {
       "title": "Пассивный доход действительно пассивный.",
       "subtitle": "EstatIQ автоматизирует каждый шаг управления арендой — от договора до налоговой декларации.",
       "items": {
-        "payments": { "title": "Платежи без забот", "description": "Автоматические напоминания, уведомления и календарь платежей." },
-        "tenants": { "title": "Арендаторы под контролем", "description": "Пригласите арендатора одним кликом. Договоры, документы и общение в одном месте." },
-        "analytics": { "title": "Доходы в реальном времени", "description": "Дашборд с графиком доходов, заполняемости и расходов." },
-        "taxes": { "title": "Налоги без бухгалтера", "description": "Автоматический учёт расходов и доходов для налоговой декларации." },
-        "documents": { "title": "Документы в безопасности", "description": "Договоры, акты, страховки — всегда под рукой, с оповещением об истечении срока." },
-        "mobile": { "title": "Всегда доступно", "description": "Полностью адаптивный сайт и будущее мобильное приложение." }
+        "payments": {
+          "title": "Платежи без забот",
+          "description": "Автоматические напоминания, уведомления и календарь платежей."
+        },
+        "tenants": {
+          "title": "Арендаторы под контролем",
+          "description": "Пригласите арендатора одним кликом. Договоры, документы и общение в одном месте."
+        },
+        "analytics": {
+          "title": "Доходы в реальном времени",
+          "description": "Дашборд с графиком доходов, заполняемости и расходов."
+        },
+        "taxes": {
+          "title": "Налоги без бухгалтера",
+          "description": "Автоматический учёт расходов и доходов для налоговой декларации."
+        },
+        "documents": {
+          "title": "Документы в безопасности",
+          "description": "Договоры, акты, страховки — всегда под рукой, с оповещением об истечении срока."
+        },
+        "mobile": {
+          "title": "Всегда доступно",
+          "description": "Полностью адаптивный сайт и будущее мобильное приложение."
+        }
       }
     },
     "pricing": {
@@ -67,30 +94,95 @@
       "unitLimit_one": "{{count}} объект",
       "unitLimit_few": "{{count}} объекта",
       "unitLimit_other": "{{count}} объектов",
-      "free": { "name": "Free", "price": "0", "yearlyPrice": "0", "limit": "1 объект", "description": "Начните бесплатно. Без банковской карты.", "cta": "Начать бесплатно" },
-      "starter": { "name": "Starter", "price": "599", "yearlyPrice": "5 990", "limit": "3 объекта", "description": "Автоматические напоминания и экспорт данных.", "cta": "Выбрать Starter" },
-      "growth": { "name": "Growth", "price": "999", "yearlyPrice": "9 990", "limit": "7 объектов", "description": "Энергетический модуль и налоговые материалы.", "cta": "Выбрать Growth" },
-      "pro": { "name": "Pro", "price": "1 699", "yearlyPrice": "16 990", "limit": "15 объектов", "description": "Расширенные отчёты и приоритетная поддержка.", "cta": "Выбрать Pro" },
-      "portfolio": { "name": "Portfolio", "price": "2 999", "yearlyPrice": "29 990", "limit": "30 объектов", "description": "API доступ, мультипользователь (3 аккаунта) и персонализация.", "cta": "Выбрать Portfolio" },
+      "free": {
+        "name": "Free",
+        "price": "0",
+        "yearlyPrice": "0",
+        "limit": "1 объект",
+        "description": "Начните бесплатно. Без банковской карты.",
+        "cta": "Начать бесплатно"
+      },
+      "starter": {
+        "name": "Starter",
+        "price": "599",
+        "yearlyPrice": "5 990",
+        "limit": "3 объекта",
+        "description": "Автоматические напоминания и экспорт данных.",
+        "cta": "Выбрать Starter"
+      },
+      "growth": {
+        "name": "Growth",
+        "price": "999",
+        "yearlyPrice": "9 990",
+        "limit": "7 объектов",
+        "description": "Энергетический модуль и налоговые материалы.",
+        "cta": "Выбрать Growth"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "1 699",
+        "yearlyPrice": "16 990",
+        "limit": "15 объектов",
+        "description": "Расширенные отчёты и приоритетная поддержка.",
+        "cta": "Выбрать Pro"
+      },
+      "portfolio": {
+        "name": "Portfolio",
+        "price": "2 999",
+        "yearlyPrice": "29 990",
+        "limit": "30 объектов",
+        "description": "API доступ, мультипользователь (3 аккаунта) и персонализация.",
+        "cta": "Выбрать Portfolio"
+      },
       "b2b": {
         "title": "Управляющие компании",
         "subtitle": "Управляете объектами для клиентов? У нас есть нужный тариф.",
         "cta": "Заказать демо",
         "tiers": {
-          "start": { "name": "B2B Start", "price": "7 500", "limit": "до 50 объектов" },
-          "growth": { "name": "B2B Growth", "price": "19 500", "limit": "51–150 объектов" },
-          "scale": { "name": "B2B Scale", "price": "45 000", "limit": "151–400 объектов" },
-          "enterprise": { "name": "Enterprise", "price": "по запросу", "limit": "400+ объектов" }
+          "start": {
+            "name": "B2B Start",
+            "price": "7 500",
+            "limit": "до 50 объектов"
+          },
+          "growth": {
+            "name": "B2B Growth",
+            "price": "19 500",
+            "limit": "51–150 объектов"
+          },
+          "scale": {
+            "name": "B2B Scale",
+            "price": "45 000",
+            "limit": "151–400 объектов"
+          },
+          "enterprise": {
+            "name": "Enterprise",
+            "price": "по запросу",
+            "limit": "400+ объектов"
+          }
         }
       }
     },
-    "cta": { "headline": "Добавьте. Сдайте. Зарабатывайте.", "subheadline": "Регистрация за 60 секунд. Банковская карта не нужна.", "button": "Начать бесплатно" },
+    "cta": {
+      "headline": "Добавьте. Сдайте. Зарабатывайте.",
+      "subheadline": "Регистрация за 60 секунд. Банковская карта не нужна.",
+      "button": "Начать бесплатно"
+    },
     "footer": {
       "tagline": "Аренда, которая управляет собой.",
-      "product": "Продукт", "features": "Возможности", "pricing": "Цены", "changelog": "Новости",
-      "company": "Компания", "about": "О нас", "blog": "Блог", "careers": "Карьера",
-      "legal": "Правовая информация", "privacy": "Конфиденциальность", "terms": "Условия использования", "gdpr": "GDPR",
-      "rights": "Все права защищены.", "madeIn": "Сделано с любовью в Праге"
+      "product": "Продукт",
+      "features": "Возможности",
+      "pricing": "Цены",
+      "changelog": "Новости",
+      "company": "Компания",
+      "about": "О нас",
+      "blog": "Блог",
+      "careers": "Карьера",
+      "legal": "Правовая информация",
+      "privacy": "Конфиденциальность",
+      "terms": "Условия использования",
+      "gdpr": "GDPR",
+      "rights": "Все права защищены.",
+      "madeIn": "Сделано с любовью в Праге"
     }
   },
   "auth": {
@@ -117,7 +209,12 @@
       "hasAccount": "Уже есть аккаунт?",
       "login": "Войти",
       "terms": "Я принимаю условия использования и политику конфиденциальности",
-      "role": { "label": "Я", "landlord": "Арендодатель", "tenant": "Арендатор", "manager": "Управляющая компания" },
+      "role": {
+        "label": "Я",
+        "landlord": "Арендодатель",
+        "tenant": "Арендатор",
+        "manager": "Управляющая компания"
+      },
       "phone": "Номер телефона",
       "country": "Страна",
       "city": "Город",
@@ -150,41 +247,60 @@
       "tenantSubtitle": "Ваш арендодатель приглашает вас на портал EstatIQ. Установите пароль.",
       "memberTitle": "Принять приглашение в команду",
       "memberSubtitle": "Вас пригласили в организацию. Установите пароль.",
-      "name": "Полное имя", "email": "Электронная почта",
-      "password": "Новый пароль", "passwordHint": "Не менее 8 символов",
-      "passwordConfirm": "Подтвердите пароль", "passwordMismatch": "Пароли не совпадают",
+      "name": "Полное имя",
+      "email": "Электронная почта",
+      "password": "Новый пароль",
+      "passwordHint": "Не менее 8 символов",
+      "passwordConfirm": "Подтвердите пароль",
+      "passwordMismatch": "Пароли не совпадают",
       "submit": "Активировать аккаунт",
-      "successTitle": "Аккаунт активирован!", "successMessage": "Сейчас вы будете перенаправлены…",
-      "confirmEmailTitle": "Подтвердите email", "confirmEmailMessage": "Мы отправили ссылку подтверждения на {{email}}.",
+      "successTitle": "Аккаунт активирован!",
+      "successMessage": "Сейчас вы будете перенаправлены…",
+      "confirmEmailTitle": "Подтвердите email",
+      "confirmEmailMessage": "Мы отправили ссылку подтверждения на {{email}}.",
       "submitError": "Не удалось активировать аккаунт. Попробуйте снова.",
       "errorAlreadyRegistered": "Этот email уже зарегистрирован. Попробуйте войти."
     }
   },
   "onboarding": {
     "stepLabel": "Шаг {{current}} из {{total}}",
-    "back": "Назад", "next": "Продолжить", "skip": "Пропустить", "skipSetup": "Пропустить пока",
+    "back": "Назад",
+    "next": "Продолжить",
+    "skip": "Пропустить",
+    "skipSetup": "Пропустить пока",
     "welcome": {
       "title": "Добро пожаловать в EstatIQ.",
       "subtitle": "За минуту ваш первый объект будет онлайн.",
-      "points": { "property": "Добавить первый объект", "tenant": "Пригласить арендатора по email", "relax": "Позволить приложению отслеживать платежи за вас" },
+      "points": {
+        "property": "Добавить первый объект",
+        "tenant": "Пригласить арендатора по email",
+        "relax": "Позволить приложению отслеживать платежи за вас"
+      },
       "cta": "Начнём"
     },
     "property": {
       "title": "Ваш первый объект",
       "subtitle": "Нужно всего несколько данных. Остальное можно добавить позже.",
-      "name": "Название объекта", "namePlaceholder": "Квартира Тверская",
-      "street": "Улица и номер", "streetPlaceholder": "ул. Тверская 42",
-      "city": "Город", "cityPlaceholder": "Москва",
-      "zip": "Индекс", "zipPlaceholder": "123456",
-      "rent": "Ежемесячная аренда", "rentPlaceholder": "50000",
+      "name": "Название объекта",
+      "namePlaceholder": "Квартира Тверская",
+      "street": "Улица и номер",
+      "streetPlaceholder": "ул. Тверская 42",
+      "city": "Город",
+      "cityPlaceholder": "Москва",
+      "zip": "Индекс",
+      "zipPlaceholder": "123456",
+      "rent": "Ежемесячная аренда",
+      "rentPlaceholder": "50000",
       "nameRequired": "Пожалуйста, назовите объект.",
       "rentRequired": "Пожалуйста, укажите ежемесячную аренду."
     },
     "tenant": {
       "title": "Пригласить арендатора",
       "subtitle": "Мы отправим ему приглашение по email.",
-      "name": "Имя арендатора", "namePlaceholder": "Иван Иванов",
-      "email": "Email арендатора", "emailPlaceholder": "ivan@email.ru",
+      "name": "Имя арендатора",
+      "namePlaceholder": "Иван Иванов",
+      "email": "Email арендатора",
+      "emailPlaceholder": "ivan@email.ru",
       "nameRequired": "Пожалуйста, укажите имя арендатора.",
       "emailInvalid": "Пожалуйста, укажите действительный email.",
       "inviteNote": "Приглашение действительно 72 часа и может быть использовано только один раз.",
@@ -193,29 +309,84 @@
     "done": {
       "title": "Готово. Всё работает.",
       "subtitle": "EstatIQ теперь отслеживает ваши платежи.",
-      "summary": { "property": "Объект {{name}} добавлен", "tenant": "Приглашение для {{email}} в пути", "tenantSkipped": "Пригласить арендатора позже", "automation": "Отслеживание платежей активно" },
-      "inviteLink": { "label": "Ссылка приглашения — скопируйте и отправьте вручную", "copy": "Скопировать ссылку", "hint": "Email пока не отправляется автоматически. Отправьте ссылку арендатору напрямую." },
+      "summary": {
+        "property": "Объект {{name}} добавлен",
+        "tenant": "Приглашение для {{email}} в пути",
+        "tenantSkipped": "Пригласить арендатора позже",
+        "automation": "Отслеживание платежей активно"
+      },
+      "inviteLink": {
+        "label": "Ссылка приглашения — скопируйте и отправьте вручную",
+        "copy": "Скопировать ссылку",
+        "hint": "Email пока не отправляется автоматически. Отправьте ссылку арендатору напрямую."
+      },
       "cta": "Перейти к панели",
       "creating": "Подготавливаем всё…"
     },
-    "error": { "generic": "Что-то пошло не так. Попробуйте снова.", "unitLimitExceeded": "Вы достигли лимита объектов вашего тарифа. Обновите подписку." }
+    "error": {
+      "generic": "Что-то пошло не так. Попробуйте снова.",
+      "unitLimitExceeded": "Вы достигли лимита объектов вашего тарифа. Обновите подписку."
+    }
   },
   "dashboard": {
-    "greeting": { "morning": "Доброе утро,", "afternoon": "Добрый день,", "evening": "Добрый вечер," },
-    "cards": {
-      "income": { "title": "Доходы в этом месяце", "trend": "по сравнению с прошлым месяцем" },
-      "properties": { "title": "Объекты", "occupied": "сданы", "total": "всего" },
-      "unpaid": { "title": "Неоплаченная аренда", "count_one": "{{count}} платёж ожидает", "count_few": "{{count}} платежа ожидают", "count_other": "{{count}} платежей ожидают" },
-      "expenses": { "title": "Расходы в этом месяце" },
-      "pending": { "title": "Ожидают оплаты" },
-      "overdue": { "title": "Просрочено" },
-      "occupancy": { "title": "Заполняемость" }
+    "greeting": {
+      "morning": "Доброе утро,",
+      "afternoon": "Добрый день,",
+      "evening": "Добрый вечер,"
     },
-    "recentPayments": { "title": "Последние платежи", "viewAll": "Показать всё" },
-    "upcomingPayments": { "title": "Предстоящие платежи", "dueIn": "Срок через {{days}} дн.", "dueToday": "Срок сегодня", "overdue": "Просрочено на {{days}} дн." },
-    "occupancyChart": { "title": "Заполняемость и доходы", "income": "Доходы", "occupancy": "Заполняемость (%)" },
-    "emptyState": { "title": "Всё спокойно", "description": "Нет неоплаченной аренды и срочных задач." },
-    "notifications": { "title": "Уведомления", "empty": "Нет новых уведомлений", "markRead": "Отметить как прочитанное" }
+    "cards": {
+      "income": {
+        "title": "Доходы в этом месяце",
+        "trend": "по сравнению с прошлым месяцем"
+      },
+      "properties": {
+        "title": "Объекты",
+        "occupied": "сданы",
+        "total": "всего"
+      },
+      "unpaid": {
+        "title": "Неоплаченная аренда",
+        "count_one": "{{count}} платёж ожидает",
+        "count_few": "{{count}} платежа ожидают",
+        "count_other": "{{count}} платежей ожидают"
+      },
+      "expenses": {
+        "title": "Расходы в этом месяце"
+      },
+      "pending": {
+        "title": "Ожидают оплаты"
+      },
+      "overdue": {
+        "title": "Просрочено"
+      },
+      "occupancy": {
+        "title": "Заполняемость"
+      }
+    },
+    "recentPayments": {
+      "title": "Последние платежи",
+      "viewAll": "Показать всё"
+    },
+    "upcomingPayments": {
+      "title": "Предстоящие платежи",
+      "dueIn": "Срок через {{days}} дн.",
+      "dueToday": "Срок сегодня",
+      "overdue": "Просрочено на {{days}} дн."
+    },
+    "occupancyChart": {
+      "title": "Заполняемость и доходы",
+      "income": "Доходы",
+      "occupancy": "Заполняемость (%)"
+    },
+    "emptyState": {
+      "title": "Всё спокойно",
+      "description": "Нет неоплаченной аренды и срочных задач."
+    },
+    "notifications": {
+      "title": "Уведомления",
+      "empty": "Нет новых уведомлений",
+      "markRead": "Отметить как прочитанное"
+    }
   },
   "properties": {
     "title": "Объекты",
@@ -226,38 +397,97 @@
     "count_one": "{{count}} объект",
     "count_few": "{{count}} объекта",
     "count_other": "{{count}} объектов",
-    "filter": { "all": "Все", "active": "Сданы", "vacant": "Свободны", "maintenance": "Ремонт", "archived": "Архив" },
-    "status": { "active": "Сдан", "vacant": "Свободен", "maintenance": "Ремонт", "archived": "В архиве" },
-    "card": {
-      "rentPerMonth": "/ мес.", "viewDetail": "Подробнее",
-      "tenants_one": "{{count}} арендатор", "tenants_few": "{{count}} арендатора", "tenants_other": "{{count}} арендаторов", "noTenants": "Нет арендатора",
-      "unpaid_one": "{{count}} неоплаченный платёж", "unpaid_few": "{{count}} неоплаченных платежа", "unpaid_other": "{{count}} неоплаченных платежей"
+    "filter": {
+      "all": "Все",
+      "active": "Сданы",
+      "vacant": "Свободны",
+      "maintenance": "Ремонт",
+      "archived": "Архив"
     },
-    "units": { "area": "{{value}} м²", "rooms_one": "{{count}} комната", "rooms_few": "{{count}} комнаты", "rooms_other": "{{count}} комнат", "floor": "{{value}} этаж" },
+    "status": {
+      "active": "Сдан",
+      "vacant": "Свободен",
+      "maintenance": "Ремонт",
+      "archived": "В архиве"
+    },
+    "card": {
+      "rentPerMonth": "/ мес.",
+      "viewDetail": "Подробнее",
+      "tenants_one": "{{count}} арендатор",
+      "tenants_few": "{{count}} арендатора",
+      "tenants_other": "{{count}} арендаторов",
+      "noTenants": "Нет арендатора",
+      "unpaid_one": "{{count}} неоплаченный платёж",
+      "unpaid_few": "{{count}} неоплаченных платежа",
+      "unpaid_other": "{{count}} неоплаченных платежей"
+    },
+    "units": {
+      "area": "{{value}} м²",
+      "rooms_one": "{{count}} комната",
+      "rooms_few": "{{count}} комнаты",
+      "rooms_other": "{{count}} комнат",
+      "floor": "{{value}} этаж"
+    },
     "form": {
-      "createTitle": "Новый объект", "createSubtitle": "Заполните основные данные. Всё можно изменить позже.",
-      "editTitle": "Редактировать объект", "editSubtitle": "Изменения вступают в силу немедленно.",
-      "name": "Название", "namePlaceholder": "Квартира Тверская",
-      "street": "Улица и номер", "streetPlaceholder": "ул. Тверская 42",
-      "city": "Город", "cityPlaceholder": "Москва",
-      "zip": "Индекс", "zipPlaceholder": "123456",
-      "rooms": "Количество комнат", "area": "Площадь (м²)", "rent": "Ежемесячная аренда", "status": "Статус",
-      "notes": "Примечания", "notesPlaceholder": "Необязательная внутренняя заметка…",
+      "createTitle": "Новый объект",
+      "createSubtitle": "Заполните основные данные. Всё можно изменить позже.",
+      "editTitle": "Редактировать объект",
+      "editSubtitle": "Изменения вступают в силу немедленно.",
+      "name": "Название",
+      "namePlaceholder": "Квартира Тверская",
+      "street": "Улица и номер",
+      "streetPlaceholder": "ул. Тверская 42",
+      "city": "Город",
+      "cityPlaceholder": "Москва",
+      "zip": "Индекс",
+      "zipPlaceholder": "123456",
+      "rooms": "Количество комнат",
+      "area": "Площадь (м²)",
+      "rent": "Ежемесячная аренда",
+      "status": "Статус",
+      "notes": "Примечания",
+      "notesPlaceholder": "Необязательная внутренняя заметка…",
       "nameRequired": "Пожалуйста, укажите название объекта.",
       "rentRequired": "Пожалуйста, укажите ежемесячную аренду.",
-      "create": "Добавить объект", "save": "Сохранить изменения"
+      "create": "Добавить объект",
+      "save": "Сохранить изменения"
     },
     "detail": {
-      "back": "Вернуться к объектам", "edit": "Редактировать", "archive": "В архив", "restore": "Восстановить",
-      "overview": "Обзор", "address": "Адрес", "area": "Площадь", "rooms": "Комнаты", "floor": "Этаж",
-      "rent": "Ежемесячная аренда", "status": "Статус", "tenants": "Арендаторы",
-      "lastPayment": "Последний платёж", "nextPayment": "Следующий платёж", "noPayment": "Платежей пока нет",
-      "notes": "Примечания", "noNotes": "Нет примечаний.",
-      "notFound": "Объект не найден", "notFoundDesc": "Этот объект не существует или был удалён."
+      "back": "Вернуться к объектам",
+      "edit": "Редактировать",
+      "archive": "В архив",
+      "restore": "Восстановить",
+      "overview": "Обзор",
+      "address": "Адрес",
+      "area": "Площадь",
+      "rooms": "Комнаты",
+      "floor": "Этаж",
+      "rent": "Ежемесячная аренда",
+      "status": "Статус",
+      "tenants": "Арендаторы",
+      "lastPayment": "Последний платёж",
+      "nextPayment": "Следующий платёж",
+      "noPayment": "Платежей пока нет",
+      "notes": "Примечания",
+      "noNotes": "Нет примечаний.",
+      "notFound": "Объект не найден",
+      "notFoundDesc": "Этот объект не существует или был удалён."
     },
-    "archiveDialog": { "title": "Переместить в архив?", "message": "«{{name}}» будет перемещён в архив. Данные сохраняются для налоговых целей.", "confirm": "В архив", "cancel": "Отмена" },
-    "emptyState": { "title": "Объектов пока нет", "description": "Добавьте свой первый объект.", "cta": "Добавить объект" },
-    "emptyFiltered": { "title": "Здесь ничего нет", "description": "Нет объектов для выбранного фильтра." }
+    "archiveDialog": {
+      "title": "Переместить в архив?",
+      "message": "«{{name}}» будет перемещён в архив. Данные сохраняются для налоговых целей.",
+      "confirm": "В архив",
+      "cancel": "Отмена"
+    },
+    "emptyState": {
+      "title": "Объектов пока нет",
+      "description": "Добавьте свой первый объект.",
+      "cta": "Добавить объект"
+    },
+    "emptyFiltered": {
+      "title": "Здесь ничего нет",
+      "description": "Нет объектов для выбранного фильтра."
+    }
   },
   "payments": {
     "title": "Платежи",
@@ -269,20 +499,63 @@
     "count_one": "{{count}} платёж",
     "count_few": "{{count}} платежа",
     "count_other": "{{count}} платежей",
-    "filter": { "all": "Все", "paid": "Оплачено", "pending": "Ожидает", "overdue": "Просрочено" },
-    "status": { "paid": "Оплачено", "pending": "Ожидает", "overdue": "Просрочено", "canceled": "Отменено" },
-    "stats": { "collected": "Собрано в этом месяце", "expected": "К сбору в этом месяце", "overdueAmount": "Просрочено всего", "rate": "Платёжная дисциплина" },
-    "row": {
-      "markPaid": "Отметить как оплаченный", "remind": "Напомнить об оплате", "remindSent": "Напоминание отправлено",
-      "dunning": "Отправить уведомление", "dunningSent": "Уведомление отправлено",
-      "paidOn": "Оплачено {{date}}", "dueToday": "Срок оплаты сегодня",
-      "dueIn_one": "Срок через {{count}} день", "dueIn_few": "Срок через {{count}} дня", "dueIn_other": "Срок через {{count}} дней",
-      "overdueDays_one": "{{count}} день просрочки", "overdueDays_few": "{{count}} дня просрочки", "overdueDays_other": "{{count}} дней просрочки"
+    "filter": {
+      "all": "Все",
+      "paid": "Оплачено",
+      "pending": "Ожидает",
+      "overdue": "Просрочено"
     },
-    "markPaidModal": { "title": "Отметить как оплаченный", "subtitle": "{{month}} · {{tenant}}", "paidAt": "Дата оплаты", "note": "Примечание", "notePlaceholder": "Наличные, перевод…", "confirm": "Подтвердить оплату" },
-    "generateDialog": { "title": "Создать платежи", "subtitle": "Создаёт ожидающие платежи для всех активных арендаторов, у которых их ещё нет в этом месяце.", "month": "Месяц", "alreadyExists": "Платежи за {{month}} уже созданы.", "confirm": "Создать" },
-    "emptyState": { "title": "Нет платежей", "description": "Создайте платежи после добавления объектов и арендаторов.", "cta": "Создать платежи" },
-    "emptyFiltered": { "title": "Здесь ничего нет", "description": "Нет платежей для выбранного фильтра или поиска." }
+    "status": {
+      "paid": "Оплачено",
+      "pending": "Ожидает",
+      "overdue": "Просрочено",
+      "canceled": "Отменено"
+    },
+    "stats": {
+      "collected": "Собрано в этом месяце",
+      "expected": "К сбору в этом месяце",
+      "overdueAmount": "Просрочено всего",
+      "rate": "Платёжная дисциплина"
+    },
+    "row": {
+      "markPaid": "Отметить как оплаченный",
+      "remind": "Напомнить об оплате",
+      "remindSent": "Напоминание отправлено",
+      "dunning": "Отправить уведомление",
+      "dunningSent": "Уведомление отправлено",
+      "paidOn": "Оплачено {{date}}",
+      "dueToday": "Срок оплаты сегодня",
+      "dueIn_one": "Срок через {{count}} день",
+      "dueIn_few": "Срок через {{count}} дня",
+      "dueIn_other": "Срок через {{count}} дней",
+      "overdueDays_one": "{{count}} день просрочки",
+      "overdueDays_few": "{{count}} дня просрочки",
+      "overdueDays_other": "{{count}} дней просрочки"
+    },
+    "markPaidModal": {
+      "title": "Отметить как оплаченный",
+      "subtitle": "{{month}} · {{tenant}}",
+      "paidAt": "Дата оплаты",
+      "note": "Примечание",
+      "notePlaceholder": "Наличные, перевод…",
+      "confirm": "Подтвердить оплату"
+    },
+    "generateDialog": {
+      "title": "Создать платежи",
+      "subtitle": "Создаёт ожидающие платежи для всех активных арендаторов, у которых их ещё нет в этом месяце.",
+      "month": "Месяц",
+      "alreadyExists": "Платежи за {{month}} уже созданы.",
+      "confirm": "Создать"
+    },
+    "emptyState": {
+      "title": "Нет платежей",
+      "description": "Создайте платежи после добавления объектов и арендаторов.",
+      "cta": "Создать платежи"
+    },
+    "emptyFiltered": {
+      "title": "Здесь ничего нет",
+      "description": "Нет платежей для выбранного фильтра или поиска."
+    }
   },
   "tenants": {
     "title": "Арендаторы",
@@ -293,20 +566,42 @@
     "count_one": "{{count}} арендатор",
     "count_few": "{{count}} арендатора",
     "count_other": "{{count}} арендаторов",
-    "filter": { "all": "Все", "active": "Активные", "invited": "Приглашённые", "ended": "Завершённые" },
-    "status": { "active": "Активный", "invited": "Приглашение отправлено", "ended": "Завершено" },
-    "statusShort": { "active": "Активный", "invited": "Приглашён", "ended": "Завершено" },
+    "filter": {
+      "all": "Все",
+      "active": "Активные",
+      "invited": "Приглашённые",
+      "ended": "Завершённые"
+    },
+    "status": {
+      "active": "Активный",
+      "invited": "Приглашение отправлено",
+      "ended": "Завершено"
+    },
+    "statusShort": {
+      "active": "Активный",
+      "invited": "Приглашён",
+      "ended": "Завершено"
+    },
     "row": {
-      "property": "Объект", "rent": "Аренда", "since": "Арендатор с",
-      "inviteExpires": "Действует до {{date}}", "inviteExpired": "Приглашение истекло",
-      "paid": "Оплачено", "unpaid_one": "{{count}} неоплаченный", "unpaid_few": "{{count}} неоплаченных", "unpaid_other": "{{count}} неоплаченных"
+      "property": "Объект",
+      "rent": "Аренда",
+      "since": "Арендатор с",
+      "inviteExpires": "Действует до {{date}}",
+      "inviteExpired": "Приглашение истекло",
+      "paid": "Оплачено",
+      "unpaid_one": "{{count}} неоплаченный",
+      "unpaid_few": "{{count}} неоплаченных",
+      "unpaid_other": "{{count}} неоплаченных"
     },
     "invite_modal": {
       "title": "Пригласить арендатора",
       "subtitle": "Арендатор получит приглашение по email. Действительно 72 часа.",
-      "name": "Имя", "namePlaceholder": "Иван Иванов",
-      "email": "Email", "emailPlaceholder": "ivan@email.ru",
-      "property": "Объект", "propertyPlaceholder": "Выберите объект",
+      "name": "Имя",
+      "namePlaceholder": "Иван Иванов",
+      "email": "Email",
+      "emailPlaceholder": "ivan@email.ru",
+      "property": "Объект",
+      "propertyPlaceholder": "Выберите объект",
       "rent": "Ежемесячная аренда",
       "nameRequired": "Пожалуйста, укажите имя арендатора.",
       "emailInvalid": "Пожалуйста, укажите действительный email.",
@@ -314,29 +609,77 @@
       "rentRequired": "Пожалуйста, укажите аренду.",
       "submit": "Отправить приглашение",
       "note": "Приглашение действительно 72 часа и может быть использовано только один раз.",
-      "successTitle": "Приглашение создано", "successDesc": "Скопируйте ссылку и отправьте арендатору.",
-      "successExpiry": "Действует до {{date}}", "copyLink": "Скопировать ссылку", "copied": "Скопировано"
+      "successTitle": "Приглашение создано",
+      "successDesc": "Скопируйте ссылку и отправьте арендатору.",
+      "successExpiry": "Действует до {{date}}",
+      "copyLink": "Скопировать ссылку",
+      "copied": "Скопировано"
     },
     "detail": {
-      "back": "Вернуться к арендаторам", "contact": "Контакт", "email": "Email", "phone": "Телефон", "noPhone": "Телефон не указан",
-      "lease": "Договор аренды", "property": "Объект", "rent": "Ежемесячная аренда", "deposit": "Залог",
-      "paymentDay": "Срок оплаты {{day}}-го числа", "leaseStart": "Начало аренды", "leaseEnd": "Конец аренды", "leaseIndefinite": "Бессрочно",
-      "invitation": "Приглашение", "inviteSent": "Отправлено", "inviteExpires": "Действует до {{date}}", "inviteExpired": "Приглашение истекло",
-      "resendInvite": "Отправить повторно", "endTenancy": "Завершить аренду",
-      "notFound": "Арендатор не найден", "notFoundDesc": "Этот арендатор не существует или был удалён."
+      "back": "Вернуться к арендаторам",
+      "contact": "Контакт",
+      "email": "Email",
+      "phone": "Телефон",
+      "noPhone": "Телефон не указан",
+      "lease": "Договор аренды",
+      "property": "Объект",
+      "rent": "Ежемесячная аренда",
+      "deposit": "Залог",
+      "paymentDay": "Срок оплаты {{day}}-го числа",
+      "leaseStart": "Начало аренды",
+      "leaseEnd": "Конец аренды",
+      "leaseIndefinite": "Бессрочно",
+      "invitation": "Приглашение",
+      "inviteSent": "Отправлено",
+      "inviteExpires": "Действует до {{date}}",
+      "inviteExpired": "Приглашение истекло",
+      "resendInvite": "Отправить повторно",
+      "endTenancy": "Завершить аренду",
+      "notFound": "Арендатор не найден",
+      "notFoundDesc": "Этот арендатор не существует или был удалён."
     },
-    "endDialog": { "title": "Завершить аренду?", "message": "Аренда {{name}} будет отмечена как завершённая. Данные сохраняются для налоговых целей.", "confirm": "Завершить аренду", "cancel": "Отмена" },
-    "emptyState": { "title": "Арендаторов пока нет", "description": "Пригласите первого арендатора по email.", "cta": "Пригласить арендатора" },
-    "emptyFiltered": { "title": "Здесь ничего нет", "description": "Нет арендаторов для выбранного фильтра." }
+    "endDialog": {
+      "title": "Завершить аренду?",
+      "message": "Аренда {{name}} будет отмечена как завершённая. Данные сохраняются для налоговых целей.",
+      "confirm": "Завершить аренду",
+      "cancel": "Отмена"
+    },
+    "emptyState": {
+      "title": "Арендаторов пока нет",
+      "description": "Пригласите первого арендатора по email.",
+      "cta": "Пригласить арендатора"
+    },
+    "emptyFiltered": {
+      "title": "Здесь ничего нет",
+      "description": "Нет арендаторов для выбранного фильтра."
+    }
   },
   "settings": {
     "title": "Настройки",
-    "profile": { "title": "Профиль", "name": "Имя", "email": "Email", "phone": "Телефон", "save": "Сохранить профиль" },
-    "language": { "title": "Язык и регион", "language": "Язык", "currency": "Валюта", "dateFormat": "Формат даты" },
-    "appearance": { "title": "Внешний вид", "theme": "Тема", "light": "Светлая", "dark": "Тёмная", "system": "Системная" },
+    "profile": {
+      "title": "Профиль",
+      "name": "Имя",
+      "email": "Email",
+      "phone": "Телефон",
+      "save": "Сохранить профиль"
+    },
+    "language": {
+      "title": "Язык и регион",
+      "language": "Язык",
+      "currency": "Валюта",
+      "dateFormat": "Формат даты"
+    },
+    "appearance": {
+      "title": "Внешний вид",
+      "theme": "Тема",
+      "light": "Светлая",
+      "dark": "Тёмная",
+      "system": "Системная"
+    },
     "notifications": {
       "title": "Уведомления",
-      "email": "Email-уведомления", "push": "Push-уведомления",
+      "email": "Email-уведомления",
+      "push": "Push-уведомления",
       "quietHours": "Тихие часы (22:00–7:00)",
       "emailHint": "Уведомления о просрочке и подтверждения платежей",
       "pushHint": "Мгновенные уведомления в браузере",
@@ -344,105 +687,329 @@
     },
     "billing": {
       "title": "Подписка и выставление счетов",
-      "plan": "Текущий тариф", "upgrade": "Обновить", "cancel": "Отменить подписку",
-      "currentPlan": "Ваш тариф", "manageBilling": "Управление платежами",
+      "plan": "Текущий тариф",
+      "upgrade": "Обновить",
+      "cancel": "Отменить подписку",
+      "currentPlan": "Ваш тариф",
+      "manageBilling": "Управление платежами",
       "stripeNote": "Методы оплаты и счета управляются через Stripe.",
       "annualSaving": "Сэкономьте 2 месяца в год",
       "features": {
-        "free": ["1 объект", "Базовая панель", "Арендаторы и платежи", "Портал арендатора"],
-        "starter": ["3 объекта", "Автоматические напоминания", "Экспорт CSV", "Email-уведомления"],
-        "growth": ["7 объектов", "Всё из Starter", "Энергетический модуль", "Налоговые материалы"],
-        "pro": ["15 объектов", "Всё из Growth", "Расширенные отчёты", "Приоритетная поддержка"],
-        "portfolio": ["30 объектов", "Всё из Pro", "API доступ", "Мультипользователь (3 аккаунта)"]
+        "free": [
+          "1 объект",
+          "Базовая панель",
+          "Арендаторы и платежи",
+          "Портал арендатора"
+        ],
+        "starter": [
+          "3 объекта",
+          "Автоматические напоминания",
+          "Экспорт CSV",
+          "Email-уведомления"
+        ],
+        "growth": [
+          "7 объектов",
+          "Всё из Starter",
+          "Энергетический модуль",
+          "Налоговые материалы"
+        ],
+        "pro": [
+          "15 объектов",
+          "Всё из Growth",
+          "Расширенные отчёты",
+          "Приоритетная поддержка"
+        ],
+        "portfolio": [
+          "30 объектов",
+          "Всё из Pro",
+          "API доступ",
+          "Мультипользователь (3 аккаунта)"
+        ]
       }
     },
     "danger": {
       "title": "Опасная зона",
-      "exportData": "Экспортировать данные", "deleteAccount": "Удалить аккаунт",
+      "exportData": "Экспортировать данные",
+      "deleteAccount": "Удалить аккаунт",
       "deleteWarning": "Это действие необратимо. Все ваши данные будут удалены безвозвратно.",
-      "exportDescription": "Скачайте архив всех ваших данных в формате JSON."
+      "exportDescription": "Skachayte arkhiv vsekh vashikh dannykh v formate JSON (GDPR st. 20).",
+      "exportLoading": "Podgotovka eksporta...",
+      "deleteConfirmTitle": "Deystvitelno udalit akkaunt?",
+      "deleteConfirmBody": "Eto neobratimoe deystvie. Lichnye dannye budut anonimizirovany; finansovye zapisi budut khranitsya soglasno zakonu (5-10 let). Vvedite UDALIT dlya podtverzhdeniya.",
+      "deleteConfirmPlaceholder": "Vvedite UDALIT dlya podtverzhdeniya",
+      "deleteConfirmButton": "Navsegda udalit akkaunt",
+      "deleteLoading": "Udalenie akkaunta...",
+      "deleteWord": "UDALIT"
     },
-    "saveSuccess": "Изменения сохранены"
+    "saveSuccess": "Изменения сохранены",
+    "security": {
+      "title": "Bezopasnost",
+      "twofa": {
+        "title": "Dvuhfaktornaya autentifikaciya (2FA)",
+        "description": "Zaschitite akkaunt s pomoshchyu prilojeniya-autentifikatora (Google Authenticator, Authy i dr.).",
+        "enable": "Vklyuchit 2FA",
+        "disable": "Otklyuchit 2FA",
+        "enabled": "Vklyucheno",
+        "disabled": "Otklyucheno",
+        "scanQr": "Skanirovat QR-kod",
+        "scanQrHint": "Skaniruyte QR-kod v prilozhenii-autentifikatore i vvedite shestiznaсhnyy kod.",
+        "code": "Kod podtverzhdeniya",
+        "codePlaceholder": "000000",
+        "verify": "Podtverdit i aktivirovat",
+        "verifying": "Proveryayu...",
+        "cancel": "Otmena",
+        "successEnabled": "Dvuhfaktornaya autentifikaciya uspeshno aktivirovana.",
+        "successDisabled": "Dvuhfaktornaya autentifikaciya otklyuchena.",
+        "errorInvalidCode": "Neviernyy kod. Poprobujte esche raz.",
+        "disableConfirmTitle": "Otklyuchit 2FA?",
+        "disableConfirmBody": "Bez 2FA vash akkaunt menee zashchishchen. Vy deystvitelno khotite otklyuchit dvuhfaktornuyu autentifikaciyu?",
+        "disableConfirm": "Da, otklyuchit",
+        "required_b2b": "Dvuhfaktornaya autentifikaciya obyazatelna dlya B2B-akkauntov."
+      }
+    }
   },
   "errors": {
-    "notFound": { "title": "Страница не найдена", "description": "Страница, которую вы ищете, не существует или была перемещена.", "cta": "Вернуться на панель" },
-    "unauthorized": { "title": "Доступ запрещён", "description": "У вас нет доступа к этой странице.", "cta": "Войти" },
-    "serverError": { "title": "Ошибка сервера", "description": "Что-то пошло не так с нашей стороны. Мы работаем над устранением.", "cta": "Повторить" }
+    "notFound": {
+      "title": "Страница не найдена",
+      "description": "Страница, которую вы ищете, не существует или была перемещена.",
+      "cta": "Вернуться на панель"
+    },
+    "unauthorized": {
+      "title": "Доступ запрещён",
+      "description": "У вас нет доступа к этой странице.",
+      "cta": "Войти"
+    },
+    "serverError": {
+      "title": "Ошибка сервера",
+      "description": "Что-то пошло не так с нашей стороны. Мы работаем над устранением.",
+      "cta": "Повторить"
+    }
   },
   "documents": {
     "title": "Документы",
     "subtitle": "Договоры, счета и вся документация.",
-    "upload": "Загрузить документ", "download": "Скачать", "delete": "Удалить",
-    "count_one": "{{count}} документ", "count_few": "{{count}} документа", "count_other": "{{count}} документов",
-    "search": "Поиск документа…", "searchEmpty": "Нет результатов для «{{query}}».",
-    "filter": { "all": "Все", "lease": "Договоры", "protocol": "Акты", "invoice": "Счета", "insurance": "Страховки", "correspondence": "Переписка", "other": "Прочее" },
-    "category": { "lease": "Договор аренды", "protocol": "Акт приёма-передачи", "invoice": "Счёт", "insurance": "Договор страхования", "correspondence": "Переписка", "other": "Прочее" },
-    "row": { "noProperty": "Без объекта", "noTenant": "Без арендатора" },
+    "upload": "Загрузить документ",
+    "download": "Скачать",
+    "delete": "Удалить",
+    "count_one": "{{count}} документ",
+    "count_few": "{{count}} документа",
+    "count_other": "{{count}} документов",
+    "search": "Поиск документа…",
+    "searchEmpty": "Нет результатов для «{{query}}».",
+    "filter": {
+      "all": "Все",
+      "lease": "Договоры",
+      "protocol": "Акты",
+      "invoice": "Счета",
+      "insurance": "Страховки",
+      "correspondence": "Переписка",
+      "other": "Прочее"
+    },
+    "category": {
+      "lease": "Договор аренды",
+      "protocol": "Акт приёма-передачи",
+      "invoice": "Счёт",
+      "insurance": "Договор страхования",
+      "correspondence": "Переписка",
+      "other": "Прочее"
+    },
+    "row": {
+      "noProperty": "Без объекта",
+      "noTenant": "Без арендатора"
+    },
     "uploadModal": {
       "title": "Загрузить документ",
-      "name": "Название документа", "namePlaceholder": "Договор аренды 2026…",
+      "name": "Название документа",
+      "namePlaceholder": "Договор аренды 2026…",
       "category": "Категория",
-      "property": "Объект (необязательно)", "propertyNone": "— нет —",
-      "tenant": "Арендатор (необязательно)", "tenantNone": "— нет —",
-      "file": "Файл", "filePlaceholder": "Нажмите для выбора файла…",
+      "property": "Объект (необязательно)",
+      "propertyNone": "— нет —",
+      "tenant": "Арендатор (необязательно)",
+      "tenantNone": "— нет —",
+      "file": "Файл",
+      "filePlaceholder": "Нажмите для выбора файла…",
       "fileSelected": "{{name}} · {{size}}",
       "confirm": "Загрузить"
     },
-    "deleteModal": { "title": "Удалить документ", "message": "Вы уверены, что хотите удалить «{{name}}»? Это действие нельзя отменить.", "confirm": "Удалить" },
-    "emptyState": { "title": "Нет документов", "description": "Загрузите договоры, акты и другие документы.", "cta": "Загрузить первый документ" },
-    "emptyFiltered": { "title": "Здесь ничего нет", "description": "Нет документов для выбранного фильтра или поиска." }
+    "deleteModal": {
+      "title": "Удалить документ",
+      "message": "Вы уверены, что хотите удалить «{{name}}»? Это действие нельзя отменить.",
+      "confirm": "Удалить"
+    },
+    "emptyState": {
+      "title": "Нет документов",
+      "description": "Загрузите договоры, акты и другие документы.",
+      "cta": "Загрузить первый документ"
+    },
+    "emptyFiltered": {
+      "title": "Здесь ничего нет",
+      "description": "Нет документов для выбранного фильтра или поиска."
+    }
   },
   "energy": {
     "title": "Энергия",
     "subtitle": "Показания счётчиков и потребление по объектам.",
-    "addReading": "Добавить показание", "anomaly": "Аномалия",
-    "filter": { "allTypes": "Все типы", "allProperties": "Все объекты" },
-    "typeFilter": { "all": "Всё", "elektrina": "Электричество", "plyn": "Газ", "voda": "Вода", "teplo": "Тепло" },
+    "addReading": "Добавить показание",
+    "anomaly": "Аномалия",
+    "filter": {
+      "allTypes": "Все типы",
+      "allProperties": "Все объекты"
+    },
+    "typeFilter": {
+      "all": "Всё",
+      "elektrina": "Электричество",
+      "plyn": "Газ",
+      "voda": "Вода",
+      "teplo": "Тепло"
+    },
     "modal": {
       "title": "Новое показание счётчика",
       "description": "Введите показание счётчика и дату снятия.",
-      "property": "Объект", "propertyRequired": "Выберите объект.",
-      "type": "Тип", "value": "Показание счётчика", "valueRequired": "Введите допустимое значение.",
-      "date": "Дата снятия показания", "note": "Примечание", "notePlaceholder": "Необязательное примечание…",
+      "property": "Объект",
+      "propertyRequired": "Выберите объект.",
+      "type": "Тип",
+      "value": "Показание счётчика",
+      "valueRequired": "Введите допустимое значение.",
+      "date": "Дата снятия показания",
+      "note": "Примечание",
+      "notePlaceholder": "Необязательное примечание…",
       "submit": "Сохранить показание",
-      "meterId": "ID счётчика", "meterIdPlaceholder": "Напр. 123456789",
+      "meterId": "ID счётчика",
+      "meterIdPlaceholder": "Напр. 123456789",
       "provider": "Поставщик",
-      "photo": "Фото документа", "photoPlaceholder": "Нажмите для прикрепления фото или PDF…", "photoSelected": "{{name}} ({{size}})"
+      "photo": "Фото документа",
+      "photoPlaceholder": "Нажмите для прикрепления фото или PDF…",
+      "photoSelected": "{{name}} ({{size}})"
     },
-    "chart": { "title": "Потребление — последние 12 месяцев", "noData": "Добавьте больше показаний, чтобы отобразить тенденцию потребления." },
-    "anomalyBanner": { "title_one": "Новая аномалия потребления", "title_other": "{{count}} аномалий потребления", "description": "Потребление превысило 12-месячное среднее более чем на 30 %.", "dismiss": "Отметить как прочитанное" },
-    "emptyState": { "title": "Показаний пока нет", "description": "Добавьте первое показание счётчика." },
-    "emptyFiltered": { "title": "Нет показаний", "description": "Нет показаний для выбранного фильтра." }
+    "chart": {
+      "title": "Потребление — последние 12 месяцев",
+      "noData": "Добавьте больше показаний, чтобы отобразить тенденцию потребления."
+    },
+    "anomalyBanner": {
+      "title_one": "Новая аномалия потребления",
+      "title_other": "{{count}} аномалий потребления",
+      "description": "Потребление превысило 12-месячное среднее более чем на 30 %.",
+      "dismiss": "Отметить как прочитанное"
+    },
+    "emptyState": {
+      "title": "Показаний пока нет",
+      "description": "Добавьте первое показание счётчика."
+    },
+    "emptyFiltered": {
+      "title": "Нет показаний",
+      "description": "Нет показаний для выбранного фильтра."
+    }
   },
   "tenant": {
-    "nav": { "dashboard": "Обзор", "payments": "Мои платежи", "documents": "Мои документы", "contact": "Контакт" },
+    "nav": {
+      "dashboard": "Обзор",
+      "payments": "Мои платежи",
+      "documents": "Мои документы",
+      "contact": "Контакт"
+    },
     "welcome": "С возвращением, {{name}}.",
     "logout": "Выйти",
     "propertyLabel": "{{name}}, {{city}}",
     "dashboard": {
-      "nextPayment": { "title": "Следующий платёж", "dueOn": "Срок {{date}}", "allPaid": "Всё оплачено", "noPending": "Нет предстоящих платежей" },
-      "lease": { "title": "Договор аренды", "since": "Договор с {{date}}", "untilDate": "До {{date}}", "indefinite": "Бессрочно", "monthlyRent": "Ежемесячная аренда", "paymentDay": "День оплаты", "paymentDayValue": "{{day}}-е число месяца" },
-      "recentDocs": { "title": "Последние документы", "viewAll": "Показать всё", "empty": "Нет документов" }
+      "nextPayment": {
+        "title": "Следующий платёж",
+        "dueOn": "Срок {{date}}",
+        "allPaid": "Всё оплачено",
+        "noPending": "Нет предстоящих платежей"
+      },
+      "lease": {
+        "title": "Договор аренды",
+        "since": "Договор с {{date}}",
+        "untilDate": "До {{date}}",
+        "indefinite": "Бессрочно",
+        "monthlyRent": "Ежемесячная аренда",
+        "paymentDay": "День оплаты",
+        "paymentDayValue": "{{day}}-е число месяца"
+      },
+      "recentDocs": {
+        "title": "Последние документы",
+        "viewAll": "Показать всё",
+        "empty": "Нет документов"
+      }
     },
-    "payments": { "title": "Мои платежи", "subtitle": "История арендных платежей", "count_one": "{{count}} платёж", "count_few": "{{count}} платежа", "count_other": "{{count}} платежей", "emptyState": { "title": "Нет платежей", "description": "У вас пока нет записей о платежах." } },
-    "documents": { "title": "Мои документы", "subtitle": "Договоры и документы по вашей аренде", "download": "Скачать", "emptyState": { "title": "Нет документов", "description": "Ваш арендодатель пока не поделился документами." } },
-    "contact": { "title": "Контакт", "landlordSection": "Ваш арендодатель", "email": "Email", "phone": "Телефон", "messagingNote": "Прямые сообщения будут доступны в ближайшее время." },
+    "payments": {
+      "title": "Мои платежи",
+      "subtitle": "История арендных платежей",
+      "count_one": "{{count}} платёж",
+      "count_few": "{{count}} платежа",
+      "count_other": "{{count}} платежей",
+      "emptyState": {
+        "title": "Нет платежей",
+        "description": "У вас пока нет записей о платежах."
+      }
+    },
+    "documents": {
+      "title": "Мои документы",
+      "subtitle": "Договоры и документы по вашей аренде",
+      "download": "Скачать",
+      "emptyState": {
+        "title": "Нет документов",
+        "description": "Ваш арендодатель пока не поделился документами."
+      }
+    },
+    "contact": {
+      "title": "Контакт",
+      "landlordSection": "Ваш арендодатель",
+      "email": "Email",
+      "phone": "Телефон",
+      "messagingNote": "Прямые сообщения будут доступны в ближайшее время."
+    },
     "role": "Арендатор"
   },
   "b2b": {
-    "nav": "B2B Панель", "title": "B2B Панель", "subtitle": "Управление вашей организацией и командой",
-    "org": { "title": "Организация", "name": "Название организации", "slug": "Идентификатор (slug)", "owner": "Владелец", "plan": "Тариф", "memberCount_one": "{{count}} участник", "memberCount_few": "{{count}} участника", "memberCount_other": "{{count}} участников" },
-    "members": {
-      "title": "Участники команды", "invite": "Пригласить участника",
-      "email": "Email", "role": "Роль", "joined": "Присоединился", "actions": "Действия", "remove": "Удалить", "removeConfirm": "Действительно удалить этого участника?",
-      "emptyState": { "title": "Участников пока нет", "description": "Пригласите первого участника команды." }
+    "nav": "B2B Панель",
+    "title": "B2B Панель",
+    "subtitle": "Управление вашей организацией и командой",
+    "org": {
+      "title": "Организация",
+      "name": "Название организации",
+      "slug": "Идентификатор (slug)",
+      "owner": "Владелец",
+      "plan": "Тариф",
+      "memberCount_one": "{{count}} участник",
+      "memberCount_few": "{{count}} участника",
+      "memberCount_other": "{{count}} участников"
     },
-    "roles": { "admin": "Администратор", "manager": "Менеджер", "accountant": "Бухгалтер", "viewer": "Наблюдатель" },
-    "roleDescriptions": { "admin": "Полный доступ, управление участниками и настройками", "manager": "Управление объектами, арендаторами и платежами", "accountant": "Доступ к платежам и налоговым отчётам (только чтение)", "viewer": "Только просмотр данных" },
+    "members": {
+      "title": "Участники команды",
+      "invite": "Пригласить участника",
+      "email": "Email",
+      "role": "Роль",
+      "joined": "Присоединился",
+      "actions": "Действия",
+      "remove": "Удалить",
+      "removeConfirm": "Действительно удалить этого участника?",
+      "emptyState": {
+        "title": "Участников пока нет",
+        "description": "Пригласите первого участника команды."
+      }
+    },
+    "roles": {
+      "admin": "Администратор",
+      "manager": "Менеджер",
+      "accountant": "Бухгалтер",
+      "viewer": "Наблюдатель"
+    },
+    "roleDescriptions": {
+      "admin": "Полный доступ, управление участниками и настройками",
+      "manager": "Управление объектами, арендаторами и платежами",
+      "accountant": "Доступ к платежам и налоговым отчётам (только чтение)",
+      "viewer": "Только просмотр данных"
+    },
     "invite": {
-      "title": "Пригласить нового участника", "emailPlaceholder": "ivan.ivanov@kompaniya.ru",
-      "roleLabel": "Назначить роль", "send": "Отправить приглашение", "sending": "Отправка…",
-      "success": "Приглашение отправлено", "linkCopied": "Ссылка скопирована", "copyLink": "Скопировать ссылку",
+      "title": "Пригласить нового участника",
+      "emailPlaceholder": "ivan.ivanov@kompaniya.ru",
+      "roleLabel": "Назначить роль",
+      "send": "Отправить приглашение",
+      "sending": "Отправка…",
+      "success": "Приглашение отправлено",
+      "linkCopied": "Ссылка скопирована",
+      "copyLink": "Скопировать ссылку",
       "note": "Приглашение действительно 72 часа и может быть использовано только один раз.",
       "resendNote": "Управление приглашениями по email будет доступно в следующей фазе."
     }
@@ -455,12 +1022,20 @@
       "upgradeCta": "Обновить тариф"
     }
   },
-  "theme": { "light": "Светлая", "dark": "Тёмная", "system": "Системная", "toggle": "Сменить тему" },
+  "theme": {
+    "light": "Светлая",
+    "dark": "Тёмная",
+    "system": "Системная",
+    "toggle": "Сменить тему"
+  },
   "cuzk": {
     "modal": {
       "title": "Search ČÚZK registry",
       "description": "Enter an address or land registry number to auto-fill from the cadastre.",
-      "tab": { "address": "By address", "lv": "By LV / parcel" },
+      "tab": {
+        "address": "By address",
+        "lv": "By LV / parcel"
+      },
       "addressLabel": "Property address",
       "addressPlaceholder": "Street 42, City…",
       "changeAddress": "Change address",

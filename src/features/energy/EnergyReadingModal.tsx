@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Camera, Hash, Zap } from 'lucide-react'
 import { Modal } from '@/components/ui/Dialog'
@@ -48,16 +48,11 @@ export function EnergyReadingModal({ open, onOpenChange, defaultPropertyId }: Pr
   const [valueError, setValueError] = useState<string | undefined>()
   const [submitError, setSubmitError] = useState<string | null>(null)
 
-  // Auto-select first property when list loads and no default given
-  useEffect(() => {
-    if (!propertyId && properties.length > 0) {
-      setPropertyId(defaultPropertyId ?? properties[0].id)
-    }
-  }, [properties]) // eslint-disable-line react-hooks/exhaustive-deps
+  // Derive effective property: explicit selection > default prop > first in list
+  const resolvedPropertyId = propertyId || defaultPropertyId || properties[0]?.id || ''
 
-  // Reset fields on close
-  useEffect(() => {
-    if (!open) {
+  function handleOpenChange(next: boolean) {
+    if (!next) {
       setValue('')
       setMeterId('')
       setProvider('')
@@ -66,12 +61,13 @@ export function EnergyReadingModal({ open, onOpenChange, defaultPropertyId }: Pr
       setValueError(undefined)
       setSubmitError(null)
     }
-  }, [open])
+    onOpenChange(next)
+  }
 
   const unit = ENERGY_TYPE_UNITS[type]
 
   async function handleSubmit() {
-    if (!propertyId) {
+    if (!resolvedPropertyId) {
       setSubmitError(t('energy.modal.propertyRequired'))
       return
     }
@@ -85,7 +81,7 @@ export function EnergyReadingModal({ open, onOpenChange, defaultPropertyId }: Pr
     setSubmitError(null)
     try {
       await mutateAsync({
-        property_id: propertyId,
+        property_id: resolvedPropertyId,
         type,
         reading_value: num,
         reading_date: date,
@@ -94,7 +90,7 @@ export function EnergyReadingModal({ open, onOpenChange, defaultPropertyId }: Pr
         provider: (provider as EnergyProvider) || null,
         photo_file: photo,
       })
-      onOpenChange(false)
+      handleOpenChange(false)
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : t('common.error'))
     }
@@ -105,12 +101,12 @@ export function EnergyReadingModal({ open, onOpenChange, defaultPropertyId }: Pr
   return (
     <Modal
       open={open}
-      onOpenChange={onOpenChange}
+      onOpenChange={handleOpenChange}
       title={t('energy.modal.title')}
       description={t('energy.modal.description')}
       footer={
         <>
-          <Button variant="outline" onClick={() => onOpenChange(false)} disabled={isPending}>
+          <Button variant="outline" onClick={() => handleOpenChange(false)} disabled={isPending}>
             {t('common.cancel')}
           </Button>
           <Button onClick={handleSubmit} loading={isPending}>
@@ -124,7 +120,7 @@ export function EnergyReadingModal({ open, onOpenChange, defaultPropertyId }: Pr
         {properties.length > 1 && (
           <Select
             label={t('energy.modal.property')}
-            value={propertyId}
+            value={resolvedPropertyId}
             onValueChange={(v) => { setPropertyId(v); setSubmitError(null) }}
             options={propertyOptions}
           />

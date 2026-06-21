@@ -721,9 +721,41 @@
       "exportData": "Export data",
       "deleteAccount": "Delete account",
       "deleteWarning": "This action is irreversible. All your data will be permanently deleted.",
-      "exportDescription": "Download an archive of all your data in JSON format."
+      "exportDescription": "Download an archive of all your data in JSON format (GDPR Art. 20).",
+      "exportLoading": "Preparing export...",
+      "deleteConfirmTitle": "Really delete your account?",
+      "deleteConfirmBody": "This action is irreversible. Personal data will be anonymised; financial records are retained as required by accounting law (5-10 years). Type DELETE to confirm.",
+      "deleteConfirmPlaceholder": "Type DELETE to confirm",
+      "deleteConfirmButton": "Permanently delete account",
+      "deleteLoading": "Deleting account...",
+      "deleteWord": "DELETE"
     },
-    "saveSuccess": "Changes saved"
+    "saveSuccess": "Changes saved",
+    "security": {
+      "title": "Security",
+      "twofa": {
+        "title": "Two-factor authentication (2FA)",
+        "description": "Protect your account with an authenticator app (Google Authenticator, Authy, etc.).",
+        "enable": "Enable 2FA",
+        "disable": "Disable 2FA",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "scanQr": "Scan QR code",
+        "scanQrHint": "Scan the QR code in your authenticator app and enter the six-digit code to verify.",
+        "code": "Verification code",
+        "codePlaceholder": "000000",
+        "verify": "Verify & activate",
+        "verifying": "Verifying...",
+        "cancel": "Cancel",
+        "successEnabled": "Two-factor authentication has been successfully enabled.",
+        "successDisabled": "Two-factor authentication has been disabled.",
+        "errorInvalidCode": "Invalid code. Please try again.",
+        "disableConfirmTitle": "Disable 2FA?",
+        "disableConfirmBody": "Without 2FA your account is less protected. Are you sure you want to disable two-factor authentication?",
+        "disableConfirm": "Yes, disable",
+        "required_b2b": "Two-factor authentication is mandatory for B2B accounts."
+      }
+    }
   },
   "errors": {
     "notFound": {

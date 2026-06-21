@@ -746,9 +746,40 @@
       "exportData": "Exportovat data",
       "deleteAccount": "Smazat účet",
       "deleteWarning": "Tato akce je nevratná. Všechna vaše data budou trvale smazána.",
-      "exportDescription": "Stáhněte si archiv všech svých dat ve formátu JSON."
+      "exportDescription": "Stáhněte si archiv všech svých dat ve formátu JSON (GDPR čl. 20).",
+      "exportLoading": "Připravuji export…",
+      "deleteConfirmTitle": "Opravdu chcete smazat účet?",
+      "deleteConfirmBody": "Tato akce je nevratná. Osobní údaje budou anonymizovány, finanční záznamy zůstanou uchovány dle zákona o účetnictví (5–10 let). Pro potvrzení napište SMAZAT.",
+      "deleteConfirmPlaceholder": "Napište SMAZAT pro potvrzení",
+      "deleteConfirmButton": "Trvale smazat účet",
+      "deleteLoading": "Mazání účtu…"
     },
-    "saveSuccess": "Změny uloženy"
+    "saveSuccess": "Změny uloženy",
+    "security": {
+      "title": "Bezpečnost",
+      "twofa": {
+        "title": "Dvoufaktorové ověření (2FA)",
+        "description": "Chraňte svůj účet pomocí autentifikační aplikace (Google Authenticator, Authy apod.).",
+        "enable": "Zapnout 2FA",
+        "disable": "Vypnout 2FA",
+        "enabled": "Zapnuto",
+        "disabled": "Vypnuto",
+        "scanQr": "Naskenujte QR kód",
+        "scanQrHint": "Naskenujte QR kód ve vaší autentifikační aplikaci a zadejte šestimístný kód pro ověření.",
+        "code": "Ověřovací kód",
+        "codePlaceholder": "000000",
+        "verify": "Ověřit a aktivovat",
+        "verifying": "Ověřuji…",
+        "cancel": "Zrušit",
+        "successEnabled": "Dvoufaktorové ověření bylo úspěšně aktivováno.",
+        "successDisabled": "Dvoufaktorové ověření bylo deaktivováno.",
+        "errorInvalidCode": "Neplatný kód. Zkuste to znovu.",
+        "disableConfirmTitle": "Vypnout 2FA?",
+        "disableConfirmBody": "Bez 2FA je váš účet méně chráněný. Opravdu chcete dvoufaktorové ověření vypnout?",
+        "disableConfirm": "Ano, vypnout",
+        "required_b2b": "Dvoufaktorové ověření je povinné pro B2B účty."
+      }
+    }
   },
   "errors": {
     "notFound": {

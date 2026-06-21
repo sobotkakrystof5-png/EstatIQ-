@@ -94,12 +94,7 @@ function AddressTab({
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
-    if (selected) return
-    if (!query.trim()) {
-      setCandidates([])
-      setOpen(false)
-      return
-    }
+    if (selected || !query.trim()) return
 
     if (debounceRef.current) clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(async () => {
@@ -156,8 +151,13 @@ function AddressTab({
           autoFocus
           autoComplete="off"
           onChange={(e) => {
-            setQuery(e.target.value)
+            const v = e.target.value
+            setQuery(v)
             if (selected) setSelected(null)
+            if (!v.trim()) {
+              setCandidates([])
+              setOpen(false)
+            }
           }}
         />
 

@@ -721,9 +721,41 @@
       "exportData": "Daten exportieren",
       "deleteAccount": "Konto löschen",
       "deleteWarning": "Diese Aktion ist unwiderruflich. Alle Ihre Daten werden dauerhaft gelöscht.",
-      "exportDescription": "Laden Sie ein Archiv aller Ihrer Daten im JSON-Format herunter."
+      "exportDescription": "Laden Sie ein Archiv aller Ihrer Daten im JSON-Format herunter (DSGVO Art. 20).",
+      "exportLoading": "Export wird vorbereitet...",
+      "deleteConfirmTitle": "Konto wirklich loschen?",
+      "deleteConfirmBody": "Diese Aktion ist unwiderruflich. Personenbezogene Daten werden anonymisiert; Finanzdaten werden gemass dem Buchfuhrungsgesetz aufbewahrt (5-10 Jahre). Geben Sie LOSCHEN ein um zu bestatigen.",
+      "deleteConfirmPlaceholder": "Geben Sie LOSCHEN ein",
+      "deleteConfirmButton": "Konto dauerhaft loschen",
+      "deleteLoading": "Konto wird geloscht...",
+      "deleteWord": "LOSCHEN"
     },
-    "saveSuccess": "Änderungen gespeichert"
+    "saveSuccess": "Änderungen gespeichert",
+    "security": {
+      "title": "Sicherheit",
+      "twofa": {
+        "title": "Zwei-Faktor-Authentifizierung (2FA)",
+        "description": "Schuetzen Sie Ihr Konto mit einer Authenticator-App (Google Authenticator, Authy usw.).",
+        "enable": "2FA aktivieren",
+        "disable": "2FA deaktivieren",
+        "enabled": "Aktiviert",
+        "disabled": "Deaktiviert",
+        "scanQr": "QR-Code scannen",
+        "scanQrHint": "Scannen Sie den QR-Code in Ihrer Authenticator-App und geben Sie den sechsstelligen Code ein.",
+        "code": "Bestatigungscode",
+        "codePlaceholder": "000000",
+        "verify": "Verifizieren & aktivieren",
+        "verifying": "Verifiziere...",
+        "cancel": "Abbrechen",
+        "successEnabled": "Zwei-Faktor-Authentifizierung wurde erfolgreich aktiviert.",
+        "successDisabled": "Zwei-Faktor-Authentifizierung wurde deaktiviert.",
+        "errorInvalidCode": "Ungultiger Code. Bitte erneut versuchen.",
+        "disableConfirmTitle": "2FA deaktivieren?",
+        "disableConfirmBody": "Ohne 2FA ist Ihr Konto weniger geschutzt. Mochten Sie die Zwei-Faktor-Authentifizierung wirklich deaktivieren?",
+        "disableConfirm": "Ja, deaktivieren",
+        "required_b2b": "Zwei-Faktor-Authentifizierung ist fur B2B-Konten verpflichtend."
+      }
+    }
   },
   "errors": {
     "notFound": {
@@ -1018,7 +1050,10 @@
     "modal": {
       "title": "Search ČÚZK registry",
       "description": "Enter an address or land registry number to auto-fill from the cadastre.",
-      "tab": { "address": "By address", "lv": "By LV / parcel" },
+      "tab": {
+        "address": "By address",
+        "lv": "By LV / parcel"
+      },
       "addressLabel": "Property address",
       "addressPlaceholder": "Street 42, City…",
       "changeAddress": "Change address",

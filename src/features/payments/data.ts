@@ -166,5 +166,5 @@ export function buildCSV(payments: PaymentWithContext[]): string {
     p.variable_symbol ?? '',
   ])
   const csv = [header, ...rows].map((r) => r.join(';')).join('\r\n')
-  return `data:text/csv;charset=utf-8,﻿${encodeURIComponent(csv)}`
+  return `data:text/csv;charset=utf-8,%EF%BB%BF${encodeURIComponent(csv)}`
 }
