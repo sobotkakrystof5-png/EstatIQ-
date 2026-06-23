@@ -1095,5 +1095,22 @@
       "noData": "No cadastral data available.",
       "noEncumbrances": "No encumbrances"
     }
+  },
+  "prelaunch": {
+    "eyebrow": "Prelaunch — limited early access",
+    "subheadline": "One system instead of Excel, WhatsApp and paper invoices. Rent management, payments, taxes — automatically.",
+    "emailPlaceholder": "your@email.com",
+    "cta": "Get first access",
+    "successTitle": "You're on the list!",
+    "successBody": "We sent a confirmation to your email. You'll get access first when we launch.",
+    "socialProof": "landlords already waiting · free, no commitment",
+    "errorMsg": "Something went wrong. Please try again.",
+    "features": {
+      "payments": { "title": "Payment autopilot", "desc": "QR codes & reminders auto-sent" },
+      "properties": { "title": "Property management", "desc": "Everything in one place" },
+      "documents": { "title": "Documents", "desc": "Leases, expiry alerts" },
+      "taxes": { "title": "Tax export", "desc": "PDF for accountant, one click" }
+    },
+    "footer": "Rental management, on autopilot 🇬🇧"
   }
 }

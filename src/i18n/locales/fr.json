@@ -1047,5 +1047,22 @@
       "noData": "No cadastral data available.",
       "noEncumbrances": "No encumbrances"
     }
+  },
+  "prelaunch": {
+    "eyebrow": "Prelancement — accès anticipé limité",
+    "subheadline": "Un système au lieu d'Excel, WhatsApp et factures papier. Gestion locative, paiements, impôts — automatiquement.",
+    "emailPlaceholder": "votre@email.fr",
+    "cta": "Obtenir un accès prioritaire",
+    "successTitle": "Vous êtes sur la liste !",
+    "successBody": "Nous avons envoyé une confirmation. Vous obtiendrez l'accès en premier au lancement.",
+    "socialProof": "propriétaires déjà inscrits · gratuit, sans engagement",
+    "errorMsg": "Quelque chose s'est mal passé. Veuillez réessayer.",
+    "features": {
+      "payments": { "title": "Paiements automatiques", "desc": "QR codes & rappels automatiques" },
+      "properties": { "title": "Gestion immobilière", "desc": "Tout en un seul endroit" },
+      "documents": { "title": "Documents", "desc": "Baux, alertes d'expiration" },
+      "taxes": { "title": "Export fiscal", "desc": "PDF pour le comptable, un clic" }
+    },
+    "footer": "Location qui se gère elle-même 🇫🇷"
   }
 }

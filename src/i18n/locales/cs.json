@@ -1123,5 +1123,22 @@
       "noData": "Data z katastru nejsou k dispozici.",
       "noEncumbrances": "Žádná věcná břemena"
     }
+  },
+  "prelaunch": {
+    "eyebrow": "Prelaunch — limitovaný early access",
+    "subheadline": "Jeden systém místo Excelu, WhatsAppu a papírových faktur. Správa nájmů, platby, daně — automaticky.",
+    "emailPlaceholder": "vas@email.cz",
+    "cta": "Chci první přístup",
+    "successTitle": "Jste na listině!",
+    "successBody": "Potvrzení jsme odeslali na váš e-mail. Při spuštění dostanete přístup jako první.",
+    "socialProof": "pronajímatelů už čeká · zdarma, bez závazků",
+    "errorMsg": "Něco se pokazilo. Zkuste to prosím znovu.",
+    "features": {
+      "payments": { "title": "Platební automat", "desc": "QR kódy & upomínky samy" },
+      "properties": { "title": "Správa nemovitostí", "desc": "Vše na jednom místě" },
+      "documents": { "title": "Dokumenty", "desc": "Smlouvy, expiry alerts" },
+      "taxes": { "title": "Daňový export", "desc": "PDF pro účetního, kliknutím" }
+    },
+    "footer": "Pronájem, který se řídí sám 🇨🇿"
   }
 }

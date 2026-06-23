@@ -1079,5 +1079,22 @@
       "noData": "No cadastral data available.",
       "noEncumbrances": "No encumbrances"
     }
+  },
+  "prelaunch": {
+    "eyebrow": "Prelaunch — begrenzter Early Access",
+    "subheadline": "Ein System statt Excel, WhatsApp und Papierrechnungen. Mietverwaltung, Zahlungen, Steuern — automatisch.",
+    "emailPlaceholder": "ihre@email.de",
+    "cta": "Ersten Zugang sichern",
+    "successTitle": "Sie sind auf der Liste!",
+    "successBody": "Wir haben eine Bestätigung gesendet. Sie erhalten beim Start als Erste Zugang.",
+    "socialProof": "Vermieter warten bereits · kostenlos, unverbindlich",
+    "errorMsg": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "features": {
+      "payments": { "title": "Zahlungsautomat", "desc": "QR-Codes & Erinnerungen auto" },
+      "properties": { "title": "Immobilienverwaltung", "desc": "Alles an einem Ort" },
+      "documents": { "title": "Dokumente", "desc": "Verträge, Ablaufwarnungen" },
+      "taxes": { "title": "Steuerexport", "desc": "PDF für den Buchhalter, ein Klick" }
+    },
+    "footer": "Vermietung, die sich selbst verwaltet 🇩🇪"
   }
 }

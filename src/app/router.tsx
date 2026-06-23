@@ -9,6 +9,7 @@ import ProtectedRoute from '@/features/auth/ProtectedRoute'
 
 // Lazy-loaded pages
 const LandingPage = lazy(() => import('@/features/dashboard/LandingPage'))
+const PrelaunchPage = lazy(() => import('@/features/dashboard/PrelaunchPage'))
 const LoginPage = lazy(() => import('@/features/dashboard/LoginPage'))
 const RegisterPage = lazy(() => import('@/features/dashboard/RegisterPage'))
 const OnboardingWizard = lazy(() => import('@/features/onboarding/OnboardingWizard'))
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: withSuspense(<LandingPage />),
+  },
+  {
+    path: '/prelaunch',
+    element: withSuspense(<PrelaunchPage />),
   },
   {
     element: <ProtectedRoute />,

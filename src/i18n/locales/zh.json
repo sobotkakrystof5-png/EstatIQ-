@@ -1047,5 +1047,22 @@
       "noData": "No cadastral data available.",
       "noEncumbrances": "No encumbrances"
     }
+  },
+  "prelaunch": {
+    "eyebrow": "预发布 — 限量早期访问",
+    "subheadline": "一个系统替代Excel、WhatsApp和纸质发票。租赁管理、付款、税务——自动完成。",
+    "emailPlaceholder": "您的@邮箱.com",
+    "cta": "获取优先访问权",
+    "successTitle": "您已加入候补名单！",
+    "successBody": "我们已发送确认邮件。上线时您将第一个获得访问权限。",
+    "socialProof": "位房东已在等待 · 免费，无需承诺",
+    "errorMsg": "出现错误，请重试。",
+    "features": {
+      "payments": { "title": "自动付款", "desc": "二维码和提醒自动发送" },
+      "properties": { "title": "房产管理", "desc": "一站式平台" },
+      "documents": { "title": "文档管理", "desc": "合同、到期提醒" },
+      "taxes": { "title": "税务导出", "desc": "一键生成会计PDF" }
+    },
+    "footer": "租赁自动化管理 🇨🇳"
   }
 }

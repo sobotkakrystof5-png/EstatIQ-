@@ -1049,5 +1049,22 @@
       "noData": "No cadastral data available.",
       "noEncumbrances": "No encumbrances"
     }
+  },
+  "prelaunch": {
+    "eyebrow": "Prelaunch — obmedzený early access",
+    "subheadline": "Jeden systém namiesto Excelu, WhatsAppu a papierových faktúr. Správa nájmov, platby, dane — automaticky.",
+    "emailPlaceholder": "vas@email.sk",
+    "cta": "Chcem prvý prístup",
+    "successTitle": "Ste na zozname!",
+    "successBody": "Potvrdenie sme odoslali na váš e-mail. Pri spustení dostanete prístup ako prví.",
+    "socialProof": "prenajímateľov už čaká · zadarmo, bez záväzkov",
+    "errorMsg": "Niečo sa pokazilo. Skúste to prosím znova.",
+    "features": {
+      "payments": { "title": "Platobný automat", "desc": "QR kódy & pripomienky samy" },
+      "properties": { "title": "Správa nehnuteľností", "desc": "Všetko na jednom mieste" },
+      "documents": { "title": "Dokumenty", "desc": "Zmluvy, expiry alerts" },
+      "taxes": { "title": "Daňový export", "desc": "PDF pre účtovníka, kliknutím" }
+    },
+    "footer": "Prenájom, ktorý sa riadi sám 🇸🇰"
   }
 }

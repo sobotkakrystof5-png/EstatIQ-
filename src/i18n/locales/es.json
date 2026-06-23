@@ -1047,5 +1047,22 @@
       "noData": "No cadastral data available.",
       "noEncumbrances": "No encumbrances"
     }
+  },
+  "prelaunch": {
+    "eyebrow": "Prelanzamiento — acceso anticipado limitado",
+    "subheadline": "Un sistema en lugar de Excel, WhatsApp y facturas en papel. Gestión de alquileres, pagos, impuestos — automáticamente.",
+    "emailPlaceholder": "tu@email.es",
+    "cta": "Quiero acceso anticipado",
+    "successTitle": "¡Estás en la lista!",
+    "successBody": "Hemos enviado una confirmación. Serás de los primeros en acceder al lanzamiento.",
+    "socialProof": "propietarios ya esperando · gratis, sin compromiso",
+    "errorMsg": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "features": {
+      "payments": { "title": "Pagos automáticos", "desc": "Códigos QR y recordatorios solos" },
+      "properties": { "title": "Gestión de propiedades", "desc": "Todo en un solo lugar" },
+      "documents": { "title": "Documentos", "desc": "Contratos, alertas de vencimiento" },
+      "taxes": { "title": "Exportación fiscal", "desc": "PDF para el contable, un clic" }
+    },
+    "footer": "Alquiler que se gestiona solo 🇪🇸"
   }
 }
