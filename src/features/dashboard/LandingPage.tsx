@@ -715,7 +715,13 @@ export default function LandingPage() {
           : 'bg-transparent',
       )}>
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link to="/" className="font-display text-xl font-bold text-surface-900 dark:text-surface-50">
+          <Link
+            to="/"
+            className={cn(
+              'font-display text-xl font-bold transition-colors',
+              scrolled ? 'text-surface-900 dark:text-surface-50' : 'text-white',
+            )}
+          >
             Estat<span className="text-emerald-500">IQ</span>
           </Link>
 
@@ -738,7 +744,15 @@ export default function LandingPage() {
 
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
-            <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
+            <Button
+              variant="ghost"
+              size="sm"
+              asChild
+              className={cn(
+                'hidden sm:inline-flex',
+                !scrolled && 'text-surface-200 hover:bg-white/10 hover:text-white',
+              )}
+            >
               <Link to="/auth/login">{t('auth.login.submit')}</Link>
             </Button>
             <Button size="sm" asChild className="hidden sm:inline-flex">
