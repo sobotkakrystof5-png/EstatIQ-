@@ -116,8 +116,25 @@ export async function createTenantAndInvite(
 
   if (invErr) throw invErr
 
-  // TODO(fáze 2): odeslat e-mail přes Resend Edge Function až bude RESEND_API_KEY nastaven
-  const inviteLink = `${window.location.origin}/invite/${invitation.token}`
+  const inviteLink = `https://app.estatiq.cz/auth/accept-invite?token=${invitation.token}`
+
+  // Fire-and-forget invite email
+  supabase
+    .from('properties')
+    .select('name')
+    .eq('id', propertyId)
+    .single()
+    .then(({ data: prop }) => {
+      void supabase.functions.invoke('send-invite', {
+        body: {
+          email:         tenantDraft.email,
+          tenant_name:   tenantDraft.full_name,
+          property_name: prop?.name ?? '',
+          invite_link:   inviteLink,
+          expires_at:    invitation.expires_at,
+        },
+      })
+    })
 
   return { tenant, lease, invitation, inviteLink }
 }

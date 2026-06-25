@@ -9,6 +9,18 @@ import { useTenants } from '@/features/tenants/hooks'
 import { type UploadDraft } from './data'
 import { useUploadDocument } from './hooks'
 
+const ALLOWED_MIME = new Set([
+  'application/pdf',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'image/jpeg',
+  'image/png',
+  'application/vnd.ms-excel',
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  'text/csv',
+])
+const MAX_SIZE_BYTES = 50 * 1024 * 1024 // 50 MB
+
 interface Props {
   open: boolean
   onOpenChange: (open: boolean) => void
@@ -40,6 +52,7 @@ function UploadForm({ onClose }: { onClose: () => void }) {
   const [propertyId, setPropertyId] = useState<string>('')
   const [tenantId, setTenantId] = useState<string>('')
   const [file, setFile] = useState<File | null>(null)
+  const [fileError, setFileError] = useState<string | null>(null)
 
   const categoryOptions: SelectOption[] = (
     ['lease', 'protocol', 'invoice', 'insurance', 'correspondence', 'other'] as DocumentCategory[]
@@ -61,6 +74,19 @@ function UploadForm({ onClose }: { onClose: () => void }) {
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0] ?? null
+    setFileError(null)
+    if (f) {
+      if (!ALLOWED_MIME.has(f.type)) {
+        setFileError(t('documents.uploadModal.errorType'))
+        e.target.value = ''
+        return
+      }
+      if (f.size > MAX_SIZE_BYTES) {
+        setFileError(t('documents.uploadModal.errorSize'))
+        e.target.value = ''
+        return
+      }
+    }
     setFile(f)
     if (f && !name) setName(f.name.replace(/\.[^.]+$/, ''))
   }
@@ -72,7 +98,7 @@ function UploadForm({ onClose }: { onClose: () => void }) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!file) return
+    if (!file || fileError) return
     const draft: UploadDraft = {
       name: name.trim() || file.name,
       category,
@@ -112,6 +138,12 @@ function UploadForm({ onClose }: { onClose: () => void }) {
           className="sr-only"
           onChange={handleFileChange}
         />
+        {fileError && (
+          <p className="text-xs text-red-500 dark:text-red-400">{fileError}</p>
+        )}
+        <p className="text-xs text-surface-400">
+          {t('documents.uploadModal.fileHint')}
+        </p>
       </div>
 
       <Input
@@ -147,7 +179,7 @@ function UploadForm({ onClose }: { onClose: () => void }) {
         <Button type="button" variant="ghost" onClick={onClose} disabled={upload.isPending}>
           {t('common.cancel')}
         </Button>
-        <Button type="submit" loading={upload.isPending} disabled={!file}>
+        <Button type="submit" loading={upload.isPending} disabled={!file || !!fileError}>
           {t('documents.uploadModal.confirm')}
         </Button>
       </div>

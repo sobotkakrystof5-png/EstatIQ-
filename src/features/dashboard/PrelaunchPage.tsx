@@ -54,8 +54,8 @@ export default function PrelaunchPage() {
   useEffect(() => {
     fetch('/api/waitlist-count')
       .then(r => r.json())
-      .then((data: { count: number }) => setCount(data.count + 200))
-      .catch(() => setCount(247))
+      .then((data: { count: number }) => setCount(data.count || null))
+      .catch(() => setCount(null))
   }, [])
 
   async function handleSubmit(e: React.FormEvent) {

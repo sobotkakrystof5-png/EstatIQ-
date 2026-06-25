@@ -15,14 +15,26 @@ const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 const SUPABASE_ANON_KEY         = Deno.env.get('SUPABASE_ANON_KEY')!
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+const ALLOWED_ORIGINS: string[] = (
+  Deno.env.get('ALLOWED_ORIGINS') ??
+  'https://estat-iq.vercel.app,http://localhost:5173,http://localhost:3000'
+).split(',').map((s) => s.trim()).filter(Boolean)
+
+function corsHeaders(origin: string | null): Record<string, string> {
+  const o = origin && ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0]
+  return {
+    'Access-Control-Allow-Origin': o,
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Vary': 'Origin',
+  }
 }
 
 Deno.serve(async (req: Request) => {
+  const origin = req.headers.get('Origin')
+
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders })
+    return new Response(null, { status: 204, headers: corsHeaders(origin) })
   }
 
   // ── Ověření identity uživatele ──────────────────────────────────────────────
@@ -30,7 +42,7 @@ Deno.serve(async (req: Request) => {
   if (!authHeader?.startsWith('Bearer ')) {
     return new Response(JSON.stringify({ error: 'Chybí autorizační token' }), {
       status: 401,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
     })
   }
 
@@ -41,7 +53,7 @@ Deno.serve(async (req: Request) => {
   if (userErr || !user) {
     return new Response(JSON.stringify({ error: 'Neplatný token' }), {
       status: 401,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
     })
   }
 
@@ -74,30 +86,32 @@ Deno.serve(async (req: Request) => {
     admin.from('profiles').select('*').eq('id', userId).single(),
     admin.from('tenants').select('*').eq('owner_id', userId),
 
-    // payments: vazba přes lease_id, ne přímo na user
     leaseIds.length > 0
       ? admin.from('payments').select('*').in('lease_id', leaseIds)
       : Promise.resolve({ data: [] }),
 
-    // energy_readings: vazba přes property_id
     propertyIds.length > 0
       ? admin.from('energy_readings').select('*').in('property_id', propertyIds)
       : Promise.resolve({ data: [] }),
 
-    // documents: sloupec je uploaded_by, ne owner_id
     admin.from('documents').select('*').eq('uploaded_by', userId),
 
-    // expenses: nemá owner_id, váže se přes property_id
     propertyIds.length > 0
       ? admin.from('expenses').select('*').in('property_id', propertyIds)
       : Promise.resolve({ data: [] }),
 
-    // tax_exports: sloupec je user_id, ne owner_id
     admin.from('tax_exports').select('*').eq('user_id', userId),
-
     admin.from('notifications').select('*').eq('user_id', userId),
     admin.from('subscriptions').select('*').eq('user_id', userId).maybeSingle(),
   ])
+
+  // Audit log pro export (GDPR čl. 15)
+  await admin.from('audit_logs').insert({
+    user_id:    userId,
+    action:     'gdpr_data_exported',
+    metadata:   { exported_at: new Date().toISOString() },
+    ip_address: req.headers.get('CF-Connecting-IP') ?? req.headers.get('X-Forwarded-For') ?? null,
+  }).maybeSingle()
 
   const exportData = {
     exported_at: new Date().toISOString(),
@@ -106,17 +120,17 @@ Deno.serve(async (req: Request) => {
       email:      user.email,
       created_at: user.created_at,
     },
-    profile:        profileRes.data,
-    subscription:   subscriptionRes.data,
-    properties:     propertiesData ?? [],
-    tenants:        tenantsRes.data ?? [],
-    leases:         leasesData ?? [],
-    payments:       paymentsRes.data ?? [],
+    profile:         profileRes.data,
+    subscription:    subscriptionRes.data,
+    properties:      propertiesData ?? [],
+    tenants:         tenantsRes.data ?? [],
+    leases:          leasesData ?? [],
+    payments:        paymentsRes.data ?? [],
     energy_readings: energyRes.data ?? [],
-    documents:      docsRes.data ?? [],
-    expenses:       expensesRes.data ?? [],
-    tax_exports:    taxExportsRes.data ?? [],
-    notifications:  notificationsRes.data ?? [],
+    documents:       docsRes.data ?? [],
+    expenses:        expensesRes.data ?? [],
+    tax_exports:     taxExportsRes.data ?? [],
+    notifications:   notificationsRes.data ?? [],
   }
 
   const filename = `estatiq-export-${userId}-${new Date().toISOString().slice(0, 10)}.json`
@@ -124,7 +138,7 @@ Deno.serve(async (req: Request) => {
   return new Response(JSON.stringify(exportData, null, 2), {
     status: 200,
     headers: {
-      ...corsHeaders,
+      ...corsHeaders(origin),
       'Content-Type':        'application/json',
       'Content-Disposition': `attachment; filename="${filename}"`,
     },

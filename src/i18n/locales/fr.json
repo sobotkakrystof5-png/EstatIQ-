@@ -19,7 +19,8 @@
     "emptyState": {
       "title": "Rien pour l'instant",
       "description": "Commencez par ajouter votre premier enregistrement."
-    }
+    },
+    "backHome": "Retour à l'accueil"
   },
   "nav": {
     "dashboard": "Tableau de bord",
@@ -432,7 +433,9 @@
         "label": "Je suis",
         "landlord": "Propriétaire",
         "tenant": "Locataire",
-        "manager": "Agence immobilière"
+        "manager": "Agence immobilière",
+        "landlordDesc": "1–30 unités, gestion personnelle",
+        "managerDesc": "Gestion professionnelle pour clients"
       },
       "phone": "Numéro de téléphone",
       "country": "Pays",
@@ -445,7 +448,12 @@
       "detectingLocation": "Détection en cours…",
       "locationError": "Impossible de détecter la localisation. Veuillez saisir l'adresse manuellement.",
       "locationSuccess": "Adresse pré-remplie depuis votre localisation.",
-      "checkCadastre": "Vérifier au cadastre (ČÚZK)"
+      "checkCadastre": "Vérifier au cadastre (ČÚZK)",
+      "checkEmail": {
+        "title": "Vérifiez votre e-mail",
+        "body": "Nous avons envoyé un lien de confirmation à {{email}}. Cliquez dessus pour vous connecter.",
+        "backToLogin": "Retour à la connexion"
+      }
     },
     "forgotPassword": {
       "title": "Réinitialiser le mot de passe",
@@ -1054,7 +1062,10 @@
       "file": "Fichier",
       "filePlaceholder": "Cliquez pour sélectionner un fichier…",
       "fileSelected": "{{name}} · {{size}}",
-      "confirm": "Télécharger"
+      "confirm": "Télécharger",
+      "errorType": "Type de fichier non supporté.",
+      "errorSize": "Fichier trop volumineux. Maximum 50 Mo.",
+      "fileHint": "PDF, Word, Excel, CSV, JPG, PNG — max. 50 Mo"
     },
     "deleteModal": {
       "title": "Supprimer le document",
@@ -1320,5 +1331,15 @@
       }
     },
     "footer": "Location qui se gère elle-même 🇫🇷"
+  },
+  "cookies": {
+    "banner": {
+      "ariaLabel": "Consentement cookies",
+      "title": "Nous utilisons des cookies",
+      "description": "Nous utilisons des cookies essentiels et analytiques pour améliorer l'application.",
+      "learnMore": "En savoir plus",
+      "accept": "Tout accepter",
+      "reject": "Refuser les optionnels"
+    }
   }
 }

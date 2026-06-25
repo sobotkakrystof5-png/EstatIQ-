@@ -19,7 +19,8 @@
     "emptyState": {
       "title": "暂无数据",
       "description": "开始添加您的第一条记录。"
-    }
+    },
+    "backHome": "返回首页"
   },
   "nav": {
     "dashboard": "概览",
@@ -432,7 +433,9 @@
         "label": "我是",
         "landlord": "房东",
         "tenant": "租客",
-        "manager": "物业管理公司"
+        "manager": "物业管理公司",
+        "landlordDesc": "1–30 套，个人管理",
+        "managerDesc": "为客户提供专业管理"
       },
       "phone": "电话号码",
       "country": "国家",
@@ -445,7 +448,12 @@
       "detectingLocation": "正在检测位置…",
       "locationError": "无法检测位置，请手动填写地址。",
       "locationSuccess": "已根据您的位置自动填写地址。",
-      "checkCadastre": "在不动产登记处验证 (ČÚZK)"
+      "checkCadastre": "在不动产登记处验证 (ČÚZK)",
+      "checkEmail": {
+        "title": "查看您的邮箱",
+        "body": "我们已向 {{email}} 发送了确认链接，点击即可登录。",
+        "backToLogin": "返回登录"
+      }
     },
     "forgotPassword": {
       "title": "重置密码",
@@ -1054,7 +1062,10 @@
       "file": "文件",
       "filePlaceholder": "点击选择文件…",
       "fileSelected": "{{name}} · {{size}}",
-      "confirm": "上传"
+      "confirm": "上传",
+      "errorType": "不支持的文件类型。",
+      "errorSize": "文件太大，最大50 MB。",
+      "fileHint": "PDF、Word、Excel、CSV、JPG、PNG — 最大50 MB"
     },
     "deleteModal": {
       "title": "删除文件",
@@ -1320,5 +1331,15 @@
       }
     },
     "footer": "租赁自动化管理 🇨🇳"
+  },
+  "cookies": {
+    "banner": {
+      "ariaLabel": "Cookie同意",
+      "title": "我们使用Cookie",
+      "description": "我们使用必要的Cookie和分析Cookie来改善应用程序。",
+      "learnMore": "了解更多",
+      "accept": "全部接受",
+      "reject": "拒绝可选项"
+    }
   }
 }

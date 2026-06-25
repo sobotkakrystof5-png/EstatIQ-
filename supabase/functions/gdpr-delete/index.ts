@@ -11,55 +11,76 @@
  *
  * Pořadí kroků:
  * 1. Ověřit JWT a požadavek na potvrzení
- * 2. Anonymizovat profil (full_name, phone → null; email setrvá jen v auth.users)
- * 3. Anonymizovat nájemníky (full_name → "Anonymizovaný nájemník", email/phone → null)
- * 4. Smazat dokumenty / notifikace / pozvánky (nevyžadovány zákonem)
- * 5. Smazat auth.users záznam → kaskádou smaže profiles row
+ * 2. Vložit audit log záznam (před smazáním, aby byl dohledatelný)
+ * 3. Anonymizovat profil (full_name, phone → null; email setrvá jen v auth.users)
+ * 4. Anonymizovat nájemníky (full_name → "Anonymizovaný nájemník", email/phone → null)
+ * 5. Smazat dokumenty / notifikace / pozvánky (nevyžadovány zákonem)
+ * 6. Smazat auth.users záznam → kaskádou smaže profiles row
  */
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
-const SUPABASE_URL             = Deno.env.get('SUPABASE_URL')!
+const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-const SUPABASE_ANON_KEY        = Deno.env.get('SUPABASE_ANON_KEY')!
+const SUPABASE_ANON_KEY         = Deno.env.get('SUPABASE_ANON_KEY')!
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+const ALLOWED_ORIGINS: string[] = (
+  Deno.env.get('ALLOWED_ORIGINS') ??
+  'https://estat-iq.vercel.app,http://localhost:5173,http://localhost:3000'
+).split(',').map((s) => s.trim()).filter(Boolean)
+
+function corsHeaders(origin: string | null): Record<string, string> {
+  const o = origin && ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0]
+  return {
+    'Access-Control-Allow-Origin': o,
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Vary': 'Origin',
+  }
 }
 
-function err(msg: string, status = 400) {
+function err(msg: string, status = 400, origin: string | null = null) {
   return new Response(JSON.stringify({ error: msg }), {
     status,
-    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
   })
 }
 
 Deno.serve(async (req: Request) => {
+  const origin = req.headers.get('Origin')
+
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders })
+    return new Response(null, { status: 204, headers: corsHeaders(origin) })
   }
-  if (req.method !== 'POST') return err('Metoda není povolena', 405)
+  if (req.method !== 'POST') return err('Metoda není povolena', 405, origin)
 
   // ── Ověření identity ────────────────────────────────────────────────────────
   const authHeader = req.headers.get('Authorization')
-  if (!authHeader?.startsWith('Bearer ')) return err('Chybí autorizační token', 401)
+  if (!authHeader?.startsWith('Bearer ')) return err('Chybí autorizační token', 401, origin)
 
   const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
     global: { headers: { Authorization: authHeader } },
   })
   const { data: { user }, error: userErr } = await userClient.auth.getUser()
-  if (userErr || !user) return err('Neplatný token', 401)
+  if (userErr || !user) return err('Neplatný token', 401, origin)
 
   // ── Povinné potvrzení ────────────────────────────────────────────────────────
   let body: { confirm?: string } = {}
   try { body = await req.json() } catch { /* prázdné tělo */ }
   if (body.confirm !== 'SMAZAT') {
-    return err('Potvrzení vyžadováno: body.confirm musí být "SMAZAT"')
+    return err('Potvrzení vyžadováno: body.confirm musí být "SMAZAT"', 400, origin)
   }
 
   const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
   const userId = user.id
+
+  // ── Audit log — zaznamenat PŘED smazáním (GDPR čl. 5 odst. 2) ───────────────
+  await admin.from('audit_logs').insert({
+    user_id:    userId,
+    action:     'gdpr_account_deleted',
+    metadata:   { email: user.email, requested_at: new Date().toISOString() },
+    ip_address: req.headers.get('CF-Connecting-IP') ?? req.headers.get('X-Forwarded-For') ?? null,
+  }).maybeSingle()
 
   // ── 1. Zjistit vlastněné property IDs ────────────────────────────────────────
   const { data: properties } = await admin
@@ -82,7 +103,7 @@ Deno.serve(async (req: Request) => {
         full_name: 'Anonymizovaný nájemník',
         email: null,
         phone: null,
-        id_number: null,  // schema: id_number, not national_id
+        id_number: null,
       })
       .eq('owner_id', userId)
   }
@@ -92,7 +113,6 @@ Deno.serve(async (req: Request) => {
   await admin.from('invitations').delete().eq('invited_by', userId)
 
   if (propertyIds.length > 0) {
-    // Dokumenty jsou smazány (žádný zákon nevyžaduje uchovávat naskenované kopie)
     const { data: leases } = await admin
       .from('leases')
       .select('id')
@@ -102,7 +122,6 @@ Deno.serve(async (req: Request) => {
     if (leaseIds.length > 0) {
       await admin.from('documents').delete().in('lease_id', leaseIds)
     }
-    // documents: uploaded_by je správný sloupec (schema nemá owner_id)
     await admin.from('documents').delete().eq('uploaded_by', userId)
   }
 
@@ -110,11 +129,11 @@ Deno.serve(async (req: Request) => {
   const { error: deleteErr } = await admin.auth.admin.deleteUser(userId)
   if (deleteErr) {
     console.error('[gdpr-delete] deleteUser error', deleteErr.message)
-    return err('Nepodařilo se smazat účet: ' + deleteErr.message, 500)
+    return err('Nepodařilo se smazat účet', 500, origin)
   }
 
-  return new Response(JSON.stringify({ deleted: true, user_id: userId }), {
+  return new Response(JSON.stringify({ deleted: true }), {
     status: 200,
-    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
   })
 })

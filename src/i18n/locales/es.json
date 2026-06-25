@@ -19,7 +19,8 @@
     "emptyState": {
       "title": "Nada por aquí",
       "description": "Empiece añadiendo su primer registro."
-    }
+    },
+    "backHome": "Volver al inicio"
   },
   "nav": {
     "dashboard": "Panel",
@@ -432,7 +433,9 @@
         "label": "Soy",
         "landlord": "Propietario",
         "tenant": "Inquilino",
-        "manager": "Agencia inmobiliaria"
+        "manager": "Agencia inmobiliaria",
+        "landlordDesc": "1–30 unidades, gestión personal",
+        "managerDesc": "Gestión profesional para clientes"
       },
       "phone": "Número de teléfono",
       "country": "País",
@@ -445,7 +448,12 @@
       "detectingLocation": "Detectando ubicación…",
       "locationError": "No se pudo detectar la ubicación. Por favor, ingrese la dirección manualmente.",
       "locationSuccess": "Dirección autocompletada desde su ubicación.",
-      "checkCadastre": "Verificar en el catastro (ČÚZK)"
+      "checkCadastre": "Verificar en el catastro (ČÚZK)",
+      "checkEmail": {
+        "title": "Revisa tu correo",
+        "body": "Enviamos un enlace de confirmación a {{email}}. Haz clic para iniciar sesión.",
+        "backToLogin": "Volver al inicio de sesión"
+      }
     },
     "forgotPassword": {
       "title": "Restablecer contraseña",
@@ -1054,7 +1062,10 @@
       "file": "Archivo",
       "filePlaceholder": "Haz clic para seleccionar un archivo…",
       "fileSelected": "{{name}} · {{size}}",
-      "confirm": "Subir"
+      "confirm": "Subir",
+      "errorType": "Tipo de archivo no soportado.",
+      "errorSize": "Archivo demasiado grande. Máximo 50 MB.",
+      "fileHint": "PDF, Word, Excel, CSV, JPG, PNG — máx. 50 MB"
     },
     "deleteModal": {
       "title": "Eliminar documento",
@@ -1320,5 +1331,15 @@
       }
     },
     "footer": "Alquiler que se gestiona solo 🇪🇸"
+  },
+  "cookies": {
+    "banner": {
+      "ariaLabel": "Consentimiento de cookies",
+      "title": "Usamos cookies",
+      "description": "Utilizamos cookies esenciales y analíticas para mejorar la aplicación.",
+      "learnMore": "Más información",
+      "accept": "Aceptar todo",
+      "reject": "Rechazar opcionales"
+    }
   }
 }

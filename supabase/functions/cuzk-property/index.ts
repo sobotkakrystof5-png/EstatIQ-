@@ -39,15 +39,25 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
 // ── CORS ──────────────────────────────────────────────────────────────────────
 
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+const ALLOWED_ORIGINS: string[] = (
+  Deno.env.get('ALLOWED_ORIGINS') ??
+  'https://estat-iq.vercel.app,http://localhost:5173,http://localhost:3000'
+).split(',').map((s) => s.trim()).filter(Boolean)
+
+function corsHeaders(origin: string | null): Record<string, string> {
+  const o = origin && ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0]
+  return {
+    'Access-Control-Allow-Origin': o,
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Vary': 'Origin',
+  }
 }
 
-function json(body: unknown, status = 200): Response {
+function json(body: unknown, status = 200, origin: string | null = null): Response {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
   })
 }
 
@@ -294,12 +304,14 @@ async function isWithinRateLimit(
 // ── Main handler ──────────────────────────────────────────────────────────────
 
 Deno.serve(async (req: Request): Promise<Response> => {
+  const origin = req.headers.get('Origin')
+
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: CORS_HEADERS })
+    return new Response(null, { status: 204, headers: corsHeaders(origin) })
   }
 
   if (req.method !== 'POST') {
-    return json({ error: 'Method not allowed' }, 405)
+    return json({ error: 'Method not allowed' }, 405, origin)
   }
 
   // ── Check API key ────────────────────────────────────────────────────────────
@@ -307,7 +319,7 @@ Deno.serve(async (req: Request): Promise<Response> => {
   if (!apiKey) {
     return json({
       error: 'ČÚZK API key není nakonfigurován. Kontaktujte správce aplikace.',
-    }, 503)
+    }, 503, origin)
   }
 
   // ── Authenticate user ────────────────────────────────────────────────────────
@@ -323,14 +335,14 @@ Deno.serve(async (req: Request): Promise<Response> => {
   )
 
   const { data: { user }, error: authErr } = await sb.auth.getUser(token)
-  if (authErr || !user) return json({ error: 'Unauthorized' }, 401)
+  if (authErr || !user) return json({ error: 'Unauthorized' }, 401, origin)
 
   // ── Parse body ───────────────────────────────────────────────────────────────
   let body: Record<string, unknown>
   try {
     body = await req.json()
   } catch {
-    return json({ error: 'Invalid JSON body' }, 400)
+    return json({ error: 'Invalid JSON body' }, 400, origin)
   }
 
   const { action } = body
@@ -339,7 +351,7 @@ Deno.serve(async (req: Request): Promise<Response> => {
     // ── SEARCH ───────────────────────────────────────────────────────────────────
     if (action === 'search') {
       const address = String(body.address ?? '').trim()
-      if (address.length < 3) return json({ error: 'Adresa musí mít alespoň 3 znaky' }, 400)
+      if (address.length < 3) return json({ error: 'Adresa musí mít alespoň 3 znaky' }, 400, origin)
 
       const encoded = encodeURIComponent(address)
 
@@ -377,7 +389,7 @@ Deno.serve(async (req: Request): Promise<Response> => {
       append(rParcely, 'parcela')
       append(rBudovy, 'budova')
 
-      return json(candidates)
+      return json(candidates, 200, origin)
     }
 
     // ── VERIFY ───────────────────────────────────────────────────────────────────
@@ -386,14 +398,14 @@ Deno.serve(async (req: Request): Promise<Response> => {
       const type      = String(body.type ?? '') as 'budova' | 'parcela' | 'jednotka'
       const propertyId = typeof body.propertyId === 'string' ? body.propertyId : undefined
 
-      if (!cuzkId) return json({ error: 'cuzkId je povinný' }, 400)
+      if (!cuzkId) return json({ error: 'cuzkId je povinný' }, 400, origin)
       if (!['budova', 'parcela', 'jednotka'].includes(type)) {
-        return json({ error: 'type musí být budova, parcela nebo jednotka' }, 400)
+        return json({ error: 'type musí být budova, parcela nebo jednotka' }, 400, origin)
       }
 
       // Rate limit check
       if (!(await isWithinRateLimit(sb, user.id))) {
-        return json({ error: 'Překročen limit 10 ověření za hodinu. Zkuste to za hodinu.' }, 429)
+        return json({ error: 'Překročen limit 10 ověření za hodinu. Zkuste to za hodinu.' }, 429, origin)
       }
 
       // Record the attempt before the KN call so even failed calls count
@@ -419,7 +431,7 @@ Deno.serve(async (req: Request): Promise<Response> => {
           allOwners: [],
           propertyDetail: null,
           verificationId: null,
-        })
+        }, 200, origin)
       }
 
       const obj = detail.data
@@ -501,13 +513,13 @@ Deno.serve(async (req: Request): Promise<Response> => {
           encumbrances,
         },
         verificationId: verRow?.id ?? null,
-      })
+      }, 200, origin)
     }
 
-    return json({ error: `Neznámá akce: ${String(action)}` }, 400)
+    return json({ error: `Neznámá akce: ${String(action)}` }, 400, origin)
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Interní chyba'
     console.error('[cuzk-property]', message)
-    return json({ error: message }, 500)
+    return json({ error: 'Interní chyba serveru' }, 500, origin)
   }
 })

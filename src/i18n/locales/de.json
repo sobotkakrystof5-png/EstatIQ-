@@ -19,7 +19,8 @@
     "emptyState": {
       "title": "Noch nichts hier",
       "description": "Beginnen Sie mit dem Hinzufügen des ersten Eintrags."
-    }
+    },
+    "backHome": "Zurück zur Startseite"
   },
   "nav": {
     "dashboard": "Übersicht",
@@ -432,7 +433,9 @@
         "label": "Ich bin",
         "landlord": "Vermieter",
         "tenant": "Mieter",
-        "manager": "Hausverwaltung"
+        "manager": "Hausverwaltung",
+        "landlordDesc": "1–30 Einheiten, persönliche Verwaltung",
+        "managerDesc": "Professionelle Verwaltung für Kunden"
       },
       "phone": "Telefonnummer",
       "country": "Land",
@@ -445,7 +448,12 @@
       "detectingLocation": "Standort wird ermittelt…",
       "locationError": "Standort konnte nicht ermittelt werden. Bitte Adresse manuell eingeben.",
       "locationSuccess": "Adresse aus Ihrem Standort vorausgefüllt.",
-      "checkCadastre": "Im Grundbuch prüfen (ČÚZK)"
+      "checkCadastre": "Im Grundbuch prüfen (ČÚZK)",
+      "checkEmail": {
+        "title": "E-Mail überprüfen",
+        "body": "Wir haben einen Bestätigungslink an {{email}} gesendet. Klicken Sie darauf, um sich anzumelden.",
+        "backToLogin": "Zurück zur Anmeldung"
+      }
     },
     "forgotPassword": {
       "title": "Passwort zurücksetzen",
@@ -1054,7 +1062,10 @@
       "file": "Datei",
       "filePlaceholder": "Klicken Sie zur Dateiauswahl…",
       "fileSelected": "{{name}} · {{size}}",
-      "confirm": "Hochladen"
+      "confirm": "Hochladen",
+      "errorType": "Nicht unterstützter Dateityp.",
+      "errorSize": "Datei zu groß. Maximum 50 MB.",
+      "fileHint": "PDF, Word, Excel, CSV, JPG, PNG — max. 50 MB"
     },
     "deleteModal": {
       "title": "Dokument löschen",
@@ -1352,5 +1363,15 @@
       }
     },
     "footer": "Vermietung, die sich selbst verwaltet 🇩🇪"
+  },
+  "cookies": {
+    "banner": {
+      "ariaLabel": "Cookie-Einwilligung",
+      "title": "Wir verwenden Cookies",
+      "description": "Wir nutzen notwendige Cookies für die App und analytische Cookies zur Verbesserung.",
+      "learnMore": "Mehr erfahren",
+      "accept": "Alle akzeptieren",
+      "reject": "Optionale ablehnen"
+    }
   }
 }

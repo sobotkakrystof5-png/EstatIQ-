@@ -22,18 +22,19 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 const APP_URL = Deno.env.get('APP_URL') ?? 'https://estatiq.app'
 
 Deno.serve(async (req: Request) => {
-  if (req.method === 'OPTIONS') return cors()
+  const origin = req.headers.get('Origin')
+  if (req.method === 'OPTIONS') return cors(origin)
 
   // ── Auth ──────────────────────────────────────────────────────────────────
   const authHeader = req.headers.get('Authorization')
-  if (!authHeader) return json({ error: 'Missing Authorization header' }, 401)
+  if (!authHeader) return json({ error: 'Missing Authorization header' }, 401, origin)
 
   const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
   const supabaseAnon = createClient(SUPABASE_URL, Deno.env.get('SUPABASE_ANON_KEY')!)
   const { data: { user }, error: authError } = await supabaseAnon.auth.getUser(
     authHeader.replace('Bearer ', ''),
   )
-  if (authError || !user) return json({ error: 'Unauthorized' }, 401)
+  if (authError || !user) return json({ error: 'Unauthorized' }, 401, origin)
 
   // ── Lookup Stripe customer ────────────────────────────────────────────────
   const { data: sub } = await supabase
@@ -46,14 +47,14 @@ Deno.serve(async (req: Request) => {
 
   const customerId = sub?.stripe_customer_id
   if (!customerId) {
-    return json({ error: 'No Stripe customer found. Complete a checkout first.' }, 400)
+    return json({ error: 'No Stripe customer found. Complete a checkout first.' }, 400, origin)
   }
 
   // ── Create Portal Session ─────────────────────────────────────────────────
   const session = await stripe.billingPortal.sessions.create({
     customer: customerId,
-    return_url: `${APP_URL}/settings`,
+    return_url: `${APP_URL}/app/settings`,
   })
 
-  return json({ url: session.url })
+  return json({ url: session.url }, 200, origin)
 })

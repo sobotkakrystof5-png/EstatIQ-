@@ -22,18 +22,19 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 const APP_URL = Deno.env.get('APP_URL') ?? 'https://estatiq.app'
 
 Deno.serve(async (req: Request) => {
-  if (req.method === 'OPTIONS') return cors()
+  const origin = req.headers.get('Origin')
+  if (req.method === 'OPTIONS') return cors(origin)
 
   // ── Auth ──────────────────────────────────────────────────────────────────
   const authHeader = req.headers.get('Authorization')
-  if (!authHeader) return json({ error: 'Missing Authorization header' }, 401)
+  if (!authHeader) return json({ error: 'Missing Authorization header' }, 401, origin)
 
   const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
   const supabaseAnon = createClient(SUPABASE_URL, Deno.env.get('SUPABASE_ANON_KEY')!)
   const { data: { user }, error: authError } = await supabaseAnon.auth.getUser(
     authHeader.replace('Bearer ', ''),
   )
-  if (authError || !user) return json({ error: 'Unauthorized' }, 401)
+  if (authError || !user) return json({ error: 'Unauthorized' }, 401, origin)
 
   // ── Parse body ────────────────────────────────────────────────────────────
   let tier: Tier
@@ -43,12 +44,12 @@ Deno.serve(async (req: Request) => {
     tier = body.tier
     billingCycle = body.billing_cycle ?? 'monthly'
   } catch {
-    return json({ error: 'Invalid JSON body' }, 400)
+    return json({ error: 'Invalid JSON body' }, 400, origin)
   }
 
   const priceId = getPriceId(tier, billingCycle)
   if (!priceId) {
-    return json({ error: `Price ID for ${tier}/${billingCycle} not configured` }, 500)
+    return json({ error: `Price ID for ${tier}/${billingCycle} not configured` }, 500, origin)
   }
 
   // ── Get or create Stripe customer ─────────────────────────────────────────
@@ -81,8 +82,8 @@ Deno.serve(async (req: Request) => {
     customer: customerId,
     mode: 'subscription',
     line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${APP_URL}/dashboard?stripe=success`,
-    cancel_url: `${APP_URL}/settings?stripe=cancel`,
+    success_url: `${APP_URL}/app/dashboard?stripe=success`,
+    cancel_url: `${APP_URL}/app/settings?stripe=cancel`,
     allow_promotion_codes: true,
     subscription_data: {
       metadata: { user_id: user.id },
@@ -90,5 +91,5 @@ Deno.serve(async (req: Request) => {
     metadata: { user_id: user.id, tier, billing_cycle: billingCycle },
   })
 
-  return json({ url: session.url })
+  return json({ url: session.url }, 200, origin)
 })

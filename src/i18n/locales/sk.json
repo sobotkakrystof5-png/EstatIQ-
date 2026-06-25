@@ -19,7 +19,8 @@
     "emptyState": {
       "title": "Zatiaľ nič",
       "description": "Začnite pridaním prvého záznamu."
-    }
+    },
+    "backHome": "Späť na hlavnú stránku"
   },
   "nav": {
     "dashboard": "Prehľad",
@@ -433,7 +434,9 @@
         "label": "Som",
         "landlord": "Prenajímateľ",
         "tenant": "Nájomník",
-        "manager": "Správcovská firma"
+        "manager": "Správcovská firma",
+        "landlordDesc": "1–30 jednotiek, osobná správa",
+        "managerDesc": "Profesionálna správa pre klientov"
       },
       "phone": "Telefónne číslo",
       "country": "Krajina",
@@ -446,7 +449,12 @@
       "detectingLocation": "Zisťujem polohu…",
       "locationError": "Polohu sa nepodarilo zistiť. Vyplňte adresu ručne.",
       "locationSuccess": "Adresa predvyplnená z vašej polohy.",
-      "checkCadastre": "Overiť v katastri nehnuteľností (ČÚZK)"
+      "checkCadastre": "Overiť v katastri nehnuteľností (ČÚZK)",
+      "checkEmail": {
+        "title": "Skontrolujte e-mail",
+        "body": "Odoslali sme potvrdzovací odkaz na {{email}}. Po kliknutí sa prihlásite.",
+        "backToLogin": "Späť na prihlásenie"
+      }
     },
     "forgotPassword": {
       "title": "Obnovenie hesla",
@@ -1056,7 +1064,10 @@
       "file": "Súbor",
       "filePlaceholder": "Klikni pre výber súboru…",
       "fileSelected": "{{name}} · {{size}}",
-      "confirm": "Nahrať"
+      "confirm": "Nahrať",
+      "errorType": "Nepodporovaný typ súboru.",
+      "errorSize": "Súbor je príliš veľký. Maximum 50 MB.",
+      "fileHint": "PDF, Word, Excel, CSV, JPG, PNG — max. 50 MB"
     },
     "deleteModal": {
       "title": "Zmazať dokument",
@@ -1322,5 +1333,15 @@
       }
     },
     "footer": "Prenájom, ktorý sa riadi sám 🇸🇰"
+  },
+  "cookies": {
+    "banner": {
+      "ariaLabel": "Súhlas s cookies",
+      "title": "Používame cookies",
+      "description": "Používame nevyhnutné cookies na fungovanie aplikácie a analytické na jej zlepšovanie.",
+      "learnMore": "Viac informácií",
+      "accept": "Prijať všetky",
+      "reject": "Odmietnuť voliteľné"
+    }
   }
 }

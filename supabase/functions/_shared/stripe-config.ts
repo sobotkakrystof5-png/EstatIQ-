@@ -40,24 +40,41 @@ export function getPriceId(tier: Tier, billingCycle: 'monthly' | 'yearly'): stri
   return Deno.env.get(key) ?? null
 }
 
-export function json(body: unknown, status = 200): Response {
+// Allowed origins loaded from env (comma-separated) or sensible defaults.
+// Set ALLOWED_ORIGINS in Supabase secrets for production.
+const ALLOWED_ORIGINS: string[] = (
+  Deno.env.get('ALLOWED_ORIGINS') ??
+  'https://estat-iq.vercel.app,http://localhost:5173,http://localhost:3000'
+)
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean)
+
+function resolveOrigin(requestOrigin: string | null): string {
+  if (requestOrigin && ALLOWED_ORIGINS.includes(requestOrigin)) return requestOrigin
+  return ALLOWED_ORIGINS[0]
+}
+
+export function json(body: unknown, status = 200, origin: string | null = null): Response {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': resolveOrigin(origin),
       'Access-Control-Allow-Headers': 'authorization, content-type',
+      'Vary': 'Origin',
     },
   })
 }
 
-export function cors(): Response {
+export function cors(origin: string | null = null): Response {
   return new Response(null, {
     status: 204,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': resolveOrigin(origin),
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'authorization, content-type',
+      'Vary': 'Origin',
     },
   })
 }

@@ -19,7 +19,8 @@
     "emptyState": {
       "title": "Nothing here yet",
       "description": "Start by adding your first record."
-    }
+    },
+    "backHome": "Back to home"
   },
   "nav": {
     "dashboard": "Dashboard",
@@ -211,10 +212,26 @@
       "title": "Set up in 5 minutes.",
       "subtitle": "Four steps from sign-up to self-managing rentals.",
       "steps": {
-        "property": { "number": "01", "title": "Add a property", "desc": "Name, address, monthly rent. Done in a minute." },
-        "tenant": { "number": "02", "title": "Invite a tenant", "desc": "By email. The tenant activates their own account." },
-        "payments": { "number": "03", "title": "Payments run automatically", "desc": "The system generates payments and sends reminders automatically." },
-        "relax": { "number": "04", "title": "Track results", "desc": "Dashboard, tax export, energy usage overview." }
+        "property": {
+          "number": "01",
+          "title": "Add a property",
+          "desc": "Name, address, monthly rent. Done in a minute."
+        },
+        "tenant": {
+          "number": "02",
+          "title": "Invite a tenant",
+          "desc": "By email. The tenant activates their own account."
+        },
+        "payments": {
+          "number": "03",
+          "title": "Payments run automatically",
+          "desc": "The system generates payments and sends reminders automatically."
+        },
+        "relax": {
+          "number": "04",
+          "title": "Track results",
+          "desc": "Dashboard, tax export, energy usage overview."
+        }
       }
     },
     "featurePayments": {
@@ -222,10 +239,22 @@
       "title": "Never miss a rent payment again.",
       "subtitle": "Automatic payment generation, QR codes for tenants, and a reminder system that works for you.",
       "points": {
-        "auto": { "title": "Automatic generation", "desc": "On the 1st of every month the system creates a payment for every tenant." },
-        "qr": { "title": "QR code in email", "desc": "Tenants get a reminder with a QR code 5 days before the due date." },
-        "reminders": { "title": "Smart reminder system", "desc": "If unpaid, the system sends reminders on day 7 and day 14 after the due date." },
-        "status": { "title": "Overview at a glance", "desc": "Who paid, who hasn't, how much is left to collect — instantly." }
+        "auto": {
+          "title": "Automatic generation",
+          "desc": "On the 1st of every month the system creates a payment for every tenant."
+        },
+        "qr": {
+          "title": "QR code in email",
+          "desc": "Tenants get a reminder with a QR code 5 days before the due date."
+        },
+        "reminders": {
+          "title": "Smart reminder system",
+          "desc": "If unpaid, the system sends reminders on day 7 and day 14 after the due date."
+        },
+        "status": {
+          "title": "Overview at a glance",
+          "desc": "Who paid, who hasn't, how much is left to collect — instantly."
+        }
       }
     },
     "featureTenants": {
@@ -233,10 +262,22 @@
       "title": "Tenant online in 2 minutes.",
       "subtitle": "Invite a tenant by email. They activate their account and see their portal with leases and payments.",
       "points": {
-        "invite": { "title": "One-click invitation", "desc": "Token valid for 72 hours. The tenant activates their account themselves." },
-        "portal": { "title": "Tenant portal", "desc": "Tenants see payments, contracts, and your contact — no more emails." },
-        "docs": { "title": "Document sharing", "desc": "Leases, handover protocols — available immediately after upload." },
-        "comms": { "title": "Everything documented", "desc": "No lost messages. Communication and documents in one place." }
+        "invite": {
+          "title": "One-click invitation",
+          "desc": "Token valid for 72 hours. The tenant activates their account themselves."
+        },
+        "portal": {
+          "title": "Tenant portal",
+          "desc": "Tenants see payments, contracts, and your contact — no more emails."
+        },
+        "docs": {
+          "title": "Document sharing",
+          "desc": "Leases, handover protocols — available immediately after upload."
+        },
+        "comms": {
+          "title": "Everything documented",
+          "desc": "No lost messages. Communication and documents in one place."
+        }
       }
     },
     "featureEnergy": {
@@ -244,10 +285,22 @@
       "title": "Catch anomalies before they get costly.",
       "subtitle": "Log meter readings. The system tracks consumption and alerts you to every anomaly.",
       "points": {
-        "reading": { "title": "Manual meter entry", "desc": "Electricity, gas, water, heat — clearly organized per property." },
-        "chart": { "title": "Consumption chart", "desc": "12-month consumption trend for every property." },
-        "alert": { "title": "Anomaly alerts", "desc": "Consumption 30% above average? Immediate notification." },
-        "import": { "title": "Import from supplier portal", "desc": "Load a CSV export from your energy supplier in one click." }
+        "reading": {
+          "title": "Manual meter entry",
+          "desc": "Electricity, gas, water, heat — clearly organized per property."
+        },
+        "chart": {
+          "title": "Consumption chart",
+          "desc": "12-month consumption trend for every property."
+        },
+        "alert": {
+          "title": "Anomaly alerts",
+          "desc": "Consumption 30% above average? Immediate notification."
+        },
+        "import": {
+          "title": "Import from supplier portal",
+          "desc": "Load a CSV export from your energy supplier in one click."
+        }
       }
     },
     "featureDocuments": {
@@ -255,10 +308,22 @@
       "title": "Contracts safe, taxes stress-free.",
       "subtitle": "All documentation in one place with expiry alerts. Tax export for your accountant in one click.",
       "points": {
-        "storage": { "title": "Secure storage", "desc": "Leases, protocols, insurance, invoices — categorized and accessible." },
-        "expiry": { "title": "Expiry alerts", "desc": "60, 30 and 14 days before a lease or insurance expires." },
-        "tax": { "title": "Tax export", "desc": "PDF for your accountant structured for tax returns. Export in one click." },
-        "categories": { "title": "Document categories", "desc": "Leases, protocols, insurance, invoices, correspondence, inspections." }
+        "storage": {
+          "title": "Secure storage",
+          "desc": "Leases, protocols, insurance, invoices — categorized and accessible."
+        },
+        "expiry": {
+          "title": "Expiry alerts",
+          "desc": "60, 30 and 14 days before a lease or insurance expires."
+        },
+        "tax": {
+          "title": "Tax export",
+          "desc": "PDF for your accountant structured for tax returns. Export in one click."
+        },
+        "categories": {
+          "title": "Document categories",
+          "desc": "Leases, protocols, insurance, invoices, correspondence, inspections."
+        }
       }
     },
     "dashboardPreview": {
@@ -271,10 +336,22 @@
       "title": "Managing properties for clients?",
       "subtitle": "EstatIQ B2B is a platform for professional property managers. Multi-tenant architecture, roles and permissions, client portal.",
       "points": {
-        "multiTenant": { "title": "Multi-tenant architecture", "desc": "Every client only sees their own properties. Data is strictly separated." },
-        "roles": { "title": "Roles and permissions", "desc": "Super-Admin, Manager, Accountant, Viewer — everyone sees what they should." },
-        "clientPortal": { "title": "Client portal", "desc": "Property owners get a read-only overview. No more monthly PDFs." },
-        "reports": { "title": "Reports and exports", "desc": "Occupancy, income, and expense reports for every client." }
+        "multiTenant": {
+          "title": "Multi-tenant architecture",
+          "desc": "Every client only sees their own properties. Data is strictly separated."
+        },
+        "roles": {
+          "title": "Roles and permissions",
+          "desc": "Super-Admin, Manager, Accountant, Viewer — everyone sees what they should."
+        },
+        "clientPortal": {
+          "title": "Client portal",
+          "desc": "Property owners get a read-only overview. No more monthly PDFs."
+        },
+        "reports": {
+          "title": "Reports and exports",
+          "desc": "Occupancy, income, and expense reports for every client."
+        }
       },
       "cta": "Book a demo"
     },
@@ -282,22 +359,228 @@
       "eyebrow": "Landlords on EstatIQ",
       "title": "What our users say.",
       "items": {
-        "1": { "text": "I've finally stopped chasing tenants for payments. Reminders go out automatically and I see everything in one dashboard.", "name": "Thomas K.", "role": "Landlord, 8 apartments in Prague" },
-        "2": { "text": "The tax export saved me two days of work at year-end. Great app — I recommend it to anyone with more than one property.", "name": "Petra M.", "role": "Landlord, 4 apartments in Brno" },
-        "3": { "text": "We moved 120 units to EstatIQ. Clients love the portal — no more monthly Excel reports.", "name": "Jan R.", "role": "Director, property management firm" }
+        "1": {
+          "text": "I've finally stopped chasing tenants for payments. Reminders go out automatically and I see everything in one dashboard.",
+          "name": "Thomas K.",
+          "role": "Landlord, 8 apartments in Prague"
+        },
+        "2": {
+          "text": "The tax export saved me two days of work at year-end. Great app — I recommend it to anyone with more than one property.",
+          "name": "Petra M.",
+          "role": "Landlord, 4 apartments in Brno"
+        },
+        "3": {
+          "text": "We moved 120 units to EstatIQ. Clients love the portal — no more monthly Excel reports.",
+          "name": "Jan R.",
+          "role": "Director, property management firm"
+        }
       }
     },
     "faq": {
       "eyebrow": "FAQ",
       "title": "Questions? We have answers.",
       "items": {
-        "1": { "q": "How quickly can I get started?", "a": "Sign-up takes 60 seconds. After logging in the onboarding wizard walks you through everything — you can have your first property and tenant online in 5 minutes." },
-        "2": { "q": "Do I need a credit card right away?", "a": "No. The Free plan is completely free with no time limit. You only enter a credit card when upgrading to a paid plan." },
-        "3": { "q": "What happens to my data if I cancel?", "a": "Your data stays safe. You move to read-only mode — you can see everything but can't add new records. You can return any time." },
-        "4": { "q": "How does the tenant invitation work?", "a": "You enter the tenant's name and email. The system sends an invitation with a one-time token valid for 72 hours. The tenant activates their own account." },
-        "5": { "q": "Is EstatIQ GDPR compliant?", "a": "Yes. Data is stored on European servers. Tenants can request an export or deletion of their data any time through the portal." },
-        "6": { "q": "Does EstatIQ work for property management firms?", "a": "Yes, we have B2B plans from CZK 2,500/month for firms managing 50–400+ units. Contact us for a demo." }
+        "1": {
+          "q": "How quickly can I get started?",
+          "a": "Sign-up takes 60 seconds. After logging in the onboarding wizard walks you through everything — you can have your first property and tenant online in 5 minutes."
+        },
+        "2": {
+          "q": "Do I need a credit card right away?",
+          "a": "No. The Free plan is completely free with no time limit. You only enter a credit card when upgrading to a paid plan."
+        },
+        "3": {
+          "q": "What happens to my data if I cancel?",
+          "a": "Your data stays safe. You move to read-only mode — you can see everything but can't add new records. You can return any time."
+        },
+        "4": {
+          "q": "How does the tenant invitation work?",
+          "a": "You enter the tenant's name and email. The system sends an invitation with a one-time token valid for 72 hours. The tenant activates their own account."
+        },
+        "5": {
+          "q": "Is EstatIQ GDPR compliant?",
+          "a": "Yes. Data is stored on European servers. Tenants can request an export or deletion of their data any time through the portal."
+        },
+        "6": {
+          "q": "Does EstatIQ work for property management firms?",
+          "a": "Yes, we have B2B plans from CZK 2,500/month for firms managing 50–400+ units. Contact us for a demo."
+        },
+        "7": {
+          "q": "Does EstatIQ work on mobile?",
+          "a": "Yes. EstatIQ is fully responsive — it works perfectly on your phone, tablet and desktop. No installation needed, just open your browser."
+        },
+        "8": {
+          "q": "What is the tenant portal?",
+          "a": "After you invite your tenant, they get their own login where they can see their payment status, contracts, and send you a message. Fewer calls and emails for you."
+        }
       }
+    },
+    "foundingMembers": {
+      "eyebrow": "Founding members",
+      "title": "Be first. Shape the product.",
+      "subtitle": "EstatIQ is looking for its first founding members. The benefits you get now, later users will never have.",
+      "urgency": "Accepting the first 50 paying founding members",
+      "cta": "Become a founding member",
+      "benefits": {
+        "1": {
+          "title": "Price locked forever",
+          "desc": "The founder plan never increases in price. You pay today's price forever — no matter what comes next."
+        },
+        "2": {
+          "title": "Direct access to the founder",
+          "desc": "Krystof will personally help you with setup and onboarding. Your feedback goes straight into the roadmap."
+        },
+        "3": {
+          "title": "Influence what we build",
+          "desc": "Features designed by founding members get priority. You decide what comes next."
+        }
+      }
+    },
+    "whatWeDo": {
+      "eyebrow": "What is EstatIQ",
+      "title": "A rental management assistant — simply.",
+      "subtitle": "Imagine someone watching over payments every month for you, sending reminders to tenants, archiving contracts and preparing a tax overview. That's exactly what EstatIQ does.",
+      "cards": {
+        "1": {
+          "icon": "home",
+          "title": "Everything in one place",
+          "desc": "Instead of three different apps and a folder of papers, you have everything — contracts, payments, tenants, energy — in one simple application on desktop and mobile."
+        },
+        "2": {
+          "icon": "zap",
+          "title": "Works automatically for you",
+          "desc": "EstatIQ generates payments every month, sends tenants a reminder with a QR code, and alerts you if someone hasn't paid. Without any effort from you."
+        },
+        "3": {
+          "icon": "file",
+          "title": "Taxes and documents without the stress",
+          "desc": "With one click you get an income and expense overview ready for your accountant or tax return. No more manual spreadsheets in Excel."
+        }
+      }
+    },
+    "timeSavings": {
+      "eyebrow": "Time savings",
+      "title": "3 hours saved every week.",
+      "subtitle": "Count it yourself: checking payments every month, writing reminders, finding contracts, preparing reports — that's dozens of hours a year. EstatIQ handles it all — automatically, reliably, without errors.",
+      "stats": {
+        "hours": "3+ hrs",
+        "hoursLabel": "saved every week",
+        "payments": "0",
+        "paymentsLabel": "forgotten payments",
+        "setup": "5 min",
+        "setupLabel": "to first setup",
+        "reminders": "100%",
+        "remindersLabel": "reminders sent automatically"
+      },
+      "items": {
+        "1": {
+          "title": "We check payments for you",
+          "desc": "The system tracks who paid and who didn't. You see it on a clear dashboard in real time — no more going through bank statements."
+        },
+        "2": {
+          "title": "We send reminders for you",
+          "desc": "5 days before, on the due date, and 7 and 14 days after — the tenant gets an email with a QR code for immediate payment. You don't have to do anything."
+        },
+        "3": {
+          "title": "Tax export in a minute",
+          "desc": "No manual compilation. Export an income and expense overview by property in one click, whenever you need — for yourself or your accountant."
+        }
+      }
+    },
+    "whyUs": {
+      "eyebrow": "Why EstatIQ",
+      "title": "6 reasons landlords choose EstatIQ.",
+      "subtitle": "An app alone isn't enough. You need a system you trust that actually works for you. Here's why EstatIQ delivers.",
+      "advantages": {
+        "1": {
+          "title": "Everything in one place",
+          "desc": "Payments, contracts, tenants, energy, taxes — no switching between Excel, email and a folder."
+        },
+        "2": {
+          "title": "Set up in 5 minutes",
+          "desc": "No complex configuration. A wizard walks you through step by step. Then the system works on its own — every month."
+        },
+        "3": {
+          "title": "Bank-level security",
+          "desc": "Data stored in the EU, encrypted. Fully GDPR compliant. Your contracts and payments are safe."
+        },
+        "4": {
+          "title": "Happy tenant",
+          "desc": "A dedicated tenant portal — they see payments, contracts and a QR code. Fewer calls and emails to you."
+        },
+        "5": {
+          "title": "Tax export in one click",
+          "desc": "Structured overview for your accountant ready instantly. Save hours of work before every tax deadline."
+        },
+        "6": {
+          "title": "Support within 24 hours",
+          "desc": "Real people who will respond. No chatbots, no week-long waits. We reply in English and Czech."
+        }
+      }
+    },
+    "comparison": {
+      "eyebrow": "Comparison",
+      "title": "How is EstatIQ better than what you use now?",
+      "subtitle": "Most landlords start with Excel and WhatsApp. It works — but only for a while. See what you're missing.",
+      "colExcel": "Excel / WhatsApp",
+      "colOther": "Other software",
+      "colEstatiq": "EstatIQ",
+      "features": {
+        "1": "Automatic payment reminders",
+        "2": "QR codes for instant payment",
+        "3": "Tenant portal",
+        "4": "Energy audit and anomaly detection",
+        "5": "Tax export in one click",
+        "6": "Contract expiry alerts",
+        "7": "Secure document storage",
+        "8": "Real-time dashboard",
+        "9": "Customer support in your language"
+      },
+      "note": "Comparison is indicative. EstatIQ continuously adds new features — always free for existing users."
+    },
+    "about": {
+      "eyebrow": "About us",
+      "title": "We built this because rental management frustrated us.",
+      "story": "I was a landlord with four apartments and every month I spent hours checking payments in Excel, writing reminders via WhatsApp, and hunting for contracts in email. Once I forgot about an insurance expiry. That was the turning point. I created EstatIQ so it would never happen to anyone else.",
+      "signature": "Krystof, founder of EstatIQ",
+      "location": "Prague, Czech Republic",
+      "missionEyebrow": "Our mission",
+      "missionTitle": "Rental as passive income — for real.",
+      "missionDesc": "We believe property management shouldn't be a second job. Landlords should focus on what brings them joy — not paperwork. EstatIQ automates the routine so you can live your life.",
+      "values": {
+        "1": {
+          "title": "Simplicity",
+          "desc": "Even someone who has never seen property management software can use it. We design for people, not technicians."
+        },
+        "2": {
+          "title": "Trust",
+          "desc": "We treat money and contracts as our own. Security and GDPR compliance are a given."
+        },
+        "3": {
+          "title": "Automation",
+          "desc": "If a computer can do it, we won't bother you with it. Your time is precious."
+        }
+      }
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "We're here for you.",
+      "subtitle": "Have a question? Want to see a demo? Or just want to talk before signing up? Write to us — we respond within 24 hours on business days.",
+      "emailLabel": "Email",
+      "emailValue": "hello@estatiq.cz",
+      "phoneLabel": "Phone",
+      "phoneValue": "+420 774 123 456",
+      "hoursLabel": "Working hours",
+      "hoursValue": "Mon–Fri, 9:00–17:00",
+      "responseLabel": "Response time",
+      "responseValue": "Within 24 hours",
+      "formName": "Your name",
+      "formEmail": "Your email",
+      "formMessage": "Your message or question",
+      "formSubmit": "Send message",
+      "formNote": "We respond within 24 business hours. No spam, no sales calls.",
+      "demoTitle": "Prefer a demo?",
+      "demoDesc": "30 minutes online — we'll show you everything live with your data.",
+      "demoCta": "Book a demo"
     }
   },
   "auth": {
@@ -328,7 +611,9 @@
         "label": "I am a",
         "landlord": "Landlord",
         "tenant": "Tenant",
-        "manager": "Property management firm"
+        "manager": "Property management firm",
+        "landlordDesc": "1–30 units, personal management",
+        "managerDesc": "Professional management for clients"
       },
       "phone": "Phone number",
       "country": "Country",
@@ -341,7 +626,12 @@
       "detectingLocation": "Detecting location…",
       "locationError": "Could not detect location. Please fill in the address manually.",
       "locationSuccess": "Address pre-filled from your location.",
-      "checkCadastre": "Verify in land register (ČÚZK)"
+      "checkCadastre": "Verify in land register (ČÚZK)",
+      "checkEmail": {
+        "title": "Check your email",
+        "body": "We sent a confirmation link to {{email}}. Click it to sign in.",
+        "backToLogin": "Back to sign in"
+      }
     },
     "forgotPassword": {
       "title": "Reset password",
@@ -731,7 +1021,12 @@
       "propertyRequired": "Select a property.",
       "rentRequired": "Enter the monthly rent.",
       "submit": "Send invite",
-      "note": "The invite is valid for 72 hours and can be used once."
+      "note": "The invite is valid for 72 hours and can be used once.",
+      "successTitle": "Invitation created",
+      "successDesc": "Copy the link and send it to your tenant.",
+      "successExpiry": "Valid until {{date}}",
+      "copyLink": "Copy link",
+      "copied": "Copied"
     },
     "detail": {
       "back": "Back to tenants",
@@ -950,7 +1245,10 @@
       "file": "File",
       "filePlaceholder": "Click to choose a file…",
       "fileSelected": "{{name}} · {{size}}",
-      "confirm": "Upload"
+      "confirm": "Upload",
+      "errorType": "Unsupported file type. Allowed: PDF, Word, Excel, CSV, JPG, PNG.",
+      "errorSize": "File too large. Maximum size is 50 MB.",
+      "fileHint": "PDF, Word, Excel, CSV, JPG, PNG — max. 50 MB"
     },
     "deleteModal": {
       "title": "Delete document",
@@ -1194,57 +1492,6 @@
     "toggle": "Toggle theme"
   },
   "cuzk": {
-    "modal": {
-      "title": "Search ČÚZK registry",
-      "description": "Enter an address or land registry number to auto-fill from the cadastre.",
-      "tab": {
-        "address": "By address",
-        "lv": "By LV / parcel"
-      },
-      "addressLabel": "Property address",
-      "addressPlaceholder": "42 Oak Street, Prague…",
-      "changeAddress": "Change address",
-      "confirm": "Continue",
-      "lvHint": "Enter the cadastral area code and the land registry number.",
-      "kuCode": "KÚ code",
-      "lvNumber": "Land registry (LV)",
-      "search": "Search"
-    },
-    "error": {
-      "ruianFailed": "Address search failed. Please try again.",
-      "wsdpFailed": "ČÚZK query failed. Check the KÚ code and LV number."
-    },
-    "detail": {
-      "title": "Land Registry (ČÚZK)",
-      "lv": "Land registry number",
-      "ku": "Cadastral area",
-      "parcel": "Parcel number",
-      "owners": "Owners",
-      "encumbrances": "Encumbrances",
-      "refresh": "Refresh from ČÚZK",
-      "refreshed": "Updated {{date}}",
-      "noData": "No cadastral data available.",
-      "noEncumbrances": "No encumbrances"
-    }
-  },
-  "prelaunch": {
-    "eyebrow": "Prelaunch — limited early access",
-    "subheadline": "One system instead of Excel, WhatsApp and paper invoices. Rent management, payments, taxes — automatically.",
-    "emailPlaceholder": "your@email.com",
-    "cta": "Get first access",
-    "successTitle": "You're on the list!",
-    "successBody": "We sent a confirmation to your email. You'll get access first when we launch.",
-    "socialProof": "landlords already waiting · free, no commitment",
-    "errorMsg": "Something went wrong. Please try again.",
-    "features": {
-      "payments": { "title": "Payment autopilot", "desc": "QR codes & reminders auto-sent" },
-      "properties": { "title": "Property management", "desc": "Everything in one place" },
-      "documents": { "title": "Documents", "desc": "Leases, expiry alerts" },
-      "taxes": { "title": "Tax export", "desc": "PDF for accountant, one click" }
-    },
-    "footer": "Rental management, on autopilot 🇬🇧"
-  },
-  "cuzk": {
     "steps": {
       "step1": "Search address",
       "step2": "Select property",
@@ -1284,5 +1531,44 @@
       "generic": "Verification failed. Please try again."
     },
     "reset": "Start over"
+  },
+  "prelaunch": {
+    "eyebrow": "Prelaunch — limited early access",
+    "subheadline": "One system instead of Excel, WhatsApp and paper invoices. Rent management, payments, taxes — automatically.",
+    "emailPlaceholder": "your@email.com",
+    "cta": "Get first access",
+    "successTitle": "You're on the list!",
+    "successBody": "We sent a confirmation to your email. You'll get access first when we launch.",
+    "socialProof": "landlords already waiting · free, no commitment",
+    "errorMsg": "Something went wrong. Please try again.",
+    "features": {
+      "payments": {
+        "title": "Payment autopilot",
+        "desc": "QR codes & reminders auto-sent"
+      },
+      "properties": {
+        "title": "Property management",
+        "desc": "Everything in one place"
+      },
+      "documents": {
+        "title": "Documents",
+        "desc": "Leases, expiry alerts"
+      },
+      "taxes": {
+        "title": "Tax export",
+        "desc": "PDF for accountant, one click"
+      }
+    },
+    "footer": "Rental management, on autopilot 🇬🇧"
+  },
+  "cookies": {
+    "banner": {
+      "ariaLabel": "Cookie consent",
+      "title": "We use cookies",
+      "description": "We use essential cookies for the app to work and analytical cookies to improve it.",
+      "learnMore": "Learn more",
+      "accept": "Accept all",
+      "reject": "Reject optional"
+    }
   }
 }

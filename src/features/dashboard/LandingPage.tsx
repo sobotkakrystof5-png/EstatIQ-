@@ -1305,48 +1305,63 @@ export default function LandingPage() {
         </div>
       </InViewSection>
 
-      {/* ── Testimonials ─────────────────────────────────────────────────────── */}
+      {/* ── Founding Members ─────────────────────────────────────────────────── */}
       <InViewSection className="bg-surface-50 py-24 dark:bg-surface-900/40">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
             <motion.div variants={fadeUp}>
-              <span className="mb-4 inline-block rounded-full border border-surface-200 bg-white px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-surface-500 dark:border-surface-700 dark:bg-surface-800 dark:text-surface-400">
-                {t('landing.testimonials.eyebrow')}
-              </span>
+              <Eyebrow label={t('landing.foundingMembers.eyebrow')} />
             </motion.div>
-            <motion.h2 variants={fadeUp} className="font-display mt-4 text-4xl font-bold tracking-tight text-surface-900 dark:text-surface-50">
-              {t('landing.testimonials.title')}
+            <motion.h2 variants={fadeUp} className="font-display mb-4 mt-5 text-4xl font-bold tracking-tight text-surface-900 dark:text-surface-50">
+              {t('landing.foundingMembers.title')}
             </motion.h2>
+            <motion.p variants={fadeUp} className="mx-auto max-w-xl text-lg text-surface-500 dark:text-surface-400">
+              {t('landing.foundingMembers.subtitle')}
+            </motion.p>
           </div>
-          <motion.div variants={stagger} className="grid gap-6 md:grid-cols-3">
-            {(['1', '2', '3'] as const).map((k, i) => (
+
+          <motion.div variants={stagger} className="mb-12 grid gap-6 md:grid-cols-3">
+            {([
+              { key: '1', Icon: Lock, color: 'emerald' },
+              { key: '2', Icon: Phone, color: 'indigo' },
+              { key: '3', Icon: Target, color: 'emerald' },
+            ] as const).map(({ key, Icon, color }) => (
               <motion.div
-                key={k}
+                key={key}
                 variants={fadeUp}
-                transition={{ delay: i * 0.1 }}
-                className="flex flex-col rounded-2xl border border-surface-100 bg-white p-7 shadow-card dark:border-surface-800 dark:bg-surface-900"
+                className="flex flex-col rounded-2xl border border-surface-100 bg-white p-8 shadow-card dark:border-surface-800 dark:bg-surface-900"
               >
-                <div className="mb-4 flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, si) => (
-                    <Star key={si} size={14} className="fill-amber-400 text-amber-400" />
-                  ))}
+                <div className={cn(
+                  'mb-5 flex h-12 w-12 items-center justify-center rounded-xl',
+                  color === 'emerald'
+                    ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400'
+                    : 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
+                )}>
+                  <Icon size={22} />
                 </div>
-                <p className="mb-6 flex-1 text-sm leading-relaxed text-surface-600 dark:text-surface-300">
-                  &ldquo;{t(`landing.testimonials.items.${k}.text`)}&rdquo;
+                <h3 className="mb-3 text-xl font-bold text-surface-900 dark:text-surface-50">
+                  {t(`landing.foundingMembers.benefits.${key}.title`)}
+                </h3>
+                <p className="flex-1 text-base leading-relaxed text-surface-500 dark:text-surface-400">
+                  {t(`landing.foundingMembers.benefits.${key}.desc`)}
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-xs font-bold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
-                    {t(`landing.testimonials.items.${k}.name`).slice(0, 2)}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-surface-900 dark:text-surface-50">
-                      {t(`landing.testimonials.items.${k}.name`)}
-                    </p>
-                    <p className="text-xs text-surface-400">{t(`landing.testimonials.items.${k}.role`)}</p>
-                  </div>
-                </div>
               </motion.div>
             ))}
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="text-center">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-medium text-amber-700 dark:border-amber-800/50 dark:bg-amber-900/20 dark:text-amber-400">
+              <AlertCircle size={14} />
+              {t('landing.foundingMembers.urgency')}
+            </div>
+            <div>
+              <Button size="lg" asChild>
+                <Link to="/auth/register">
+                  {t('landing.foundingMembers.cta')}
+                  <ArrowRight size={16} />
+                </Link>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </InViewSection>
@@ -1562,7 +1577,7 @@ export default function LandingPage() {
           <motion.div variants={fadeUp}>
             <Button size="lg" asChild>
               <Link to="/auth/register">
-                {t('landing.cta.button')}
+                {t('landing.hero.cta')}
                 <ArrowRight size={17} />
               </Link>
             </Button>
@@ -1618,9 +1633,9 @@ export default function LandingPage() {
                 {t('landing.footer.legal')}
               </p>
               <ul className="space-y-2 text-sm text-surface-500 dark:text-surface-400">
-                <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.privacy')}</a></li>
-                <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.terms')}</a></li>
-                <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.gdpr')}</a></li>
+                <li><Link to="/zasady-ochrany-soukromi" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.privacy')}</Link></li>
+                <li><Link to="/podminky-pouziti" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.terms')}</Link></li>
+                <li><Link to="/zasady-ochrany-soukromi#cookies" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.gdpr')}</Link></li>
               </ul>
               <div className="mt-6">
                 <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-surface-400">Kontakt</p>

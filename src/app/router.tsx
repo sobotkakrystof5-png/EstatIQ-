@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components -- route config file: it exports `router`, not refreshable components */
-import { createBrowserRouter, Navigate } from 'react-router-dom'
+import { createBrowserRouter, Navigate, Link } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import AppShell from './AppShell'
 import TenantLayout from '@/features/tenant-portal/TenantLayout'
@@ -30,6 +30,8 @@ const TenantDashboardPage = lazy(() => import('@/features/tenant-portal/TenantDa
 const TenantPaymentsPage = lazy(() => import('@/features/tenant-portal/TenantPaymentsPage'))
 const TenantDocumentsPage = lazy(() => import('@/features/tenant-portal/TenantDocumentsPage'))
 const TenantContactPage = lazy(() => import('@/features/tenant-portal/TenantContactPage'))
+const PrivacyPolicyPage = lazy(() => import('@/features/legal/PrivacyPolicyPage'))
+const TermsPage = lazy(() => import('@/features/legal/TermsPage'))
 
 // Placeholder for pages in later phases
 function ComingSoon({ title }: { title: string }) {
@@ -63,6 +65,14 @@ export const router = createBrowserRouter([
   {
     path: '/prelaunch',
     element: withSuspense(<PrelaunchPage />),
+  },
+  {
+    path: '/zasady-ochrany-soukromi',
+    element: withSuspense(<PrivacyPolicyPage />),
+  },
+  {
+    path: '/podminky-pouziti',
+    element: withSuspense(<TermsPage />),
   },
   {
     element: <ProtectedRoute />,
@@ -131,7 +141,7 @@ export const router = createBrowserRouter([
       <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-white dark:bg-surface-950">
         <p className="font-display text-6xl font-bold text-surface-200 dark:text-surface-800">404</p>
         <p className="text-lg font-medium text-surface-900 dark:text-surface-50">Stránka nenalezena</p>
-        <a href="/" className="text-sm text-emerald-600 hover:text-emerald-700">Zpět na hlavní stránku</a>
+        <Link to="/" className="text-sm text-emerald-600 hover:text-emerald-700">Zpět na hlavní stránku</Link>
       </div>
     ),
   },
