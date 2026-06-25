@@ -183,7 +183,123 @@
       "terms": "Podmínky použití",
       "gdpr": "GDPR",
       "rights": "Všechna práva vyhrazena.",
-      "madeIn": "Vyrobeno s láskou v Praze"
+      "madeIn": "Vyrobeno s láskou v Praze",
+      "pricing": "Ceník",
+      "changelog": "Novinky"
+    },
+    "stats": {
+      "landlords": "1 200+",
+      "landlordsLabel": "Aktivních pronajímatelů",
+      "payments": "48 000+",
+      "paymentsLabel": "Zpracovaných plateb",
+      "properties": "12 000+",
+      "propertiesLabel": "Spravovaných nemovitostí",
+      "saved": "3 hod.",
+      "savedLabel": "Ušetřeno týdně průměrně"
+    },
+    "problem": {
+      "eyebrow": "Problém, který znáte",
+      "title": "Správa nájmů bez systému je chaos.",
+      "subtitle": "Každý měsíc tatáž rutina: pátráte po platbách, hledáte smlouvy, sestavujete výkazy pro daně. Jde to lépe.",
+      "items": {
+        "excel": "Platby sledujete v Excelu nebo WhatsAppu",
+        "contracts": "Smlouvy roztroušené v e-mailu a na disku",
+        "reminders": "Upomínky posíláte ručně každý měsíc",
+        "taxes": "Daňový výkaz sestavujete týden před termínem"
+      }
+    },
+    "howItWorks": {
+      "eyebrow": "Jak to funguje",
+      "title": "Za 5 minut máte vše nastaveno.",
+      "subtitle": "Čtyři kroky od registrace ke správě, která se řídí sama.",
+      "steps": {
+        "property": { "number": "01", "title": "Přidejte nemovitost", "desc": "Název, adresa, měsíční nájem. Za minutu hotovo." },
+        "tenant": { "number": "02", "title": "Pozvěte nájemníka", "desc": "E-mailem. Nájemník si aktivuje účet sám." },
+        "payments": { "number": "03", "title": "Platby běží samy", "desc": "Systém generuje platby a posílá upomínky automaticky." },
+        "relax": { "number": "04", "title": "Sledujte výsledky", "desc": "Dashboard, daňový export, přehled spotřeby energie." }
+      }
+    },
+    "featurePayments": {
+      "eyebrow": "Platební automat",
+      "title": "Nikdy víc zapomenuté nájemné.",
+      "subtitle": "Automatické generování plateb, QR kódy pro nájemníky a upomínkový systém, který pracuje za vás.",
+      "points": {
+        "auto": { "title": "Automatické generování", "desc": "1. každého měsíce systém vytvoří platbu pro každého nájemníka." },
+        "qr": { "title": "QR kód v e-mailu", "desc": "Nájemník dostane připomínku s QR kódem 5 dní před splatností." },
+        "reminders": { "title": "Chytrý upomínkový systém", "desc": "Při nezaplacení systém posílá upomínky 7. a 14. den po splatnosti." },
+        "status": { "title": "Přehled jedním pohledem", "desc": "Kdo zaplatil, kdo nezaplatil, kolik zbývá vybrat — vše okamžitě." }
+      }
+    },
+    "featureTenants": {
+      "eyebrow": "Správa nájemníků",
+      "title": "Nájemník online za 2 minuty.",
+      "subtitle": "Pozvěte nájemníka e-mailem. Aktivuje si účet a vidí svůj portál se smlouvami a platbami.",
+      "points": {
+        "invite": { "title": "Pozvánka jedním klikem", "desc": "Token platí 72 hodin. Nájemník si aktivuje účet sám." },
+        "portal": { "title": "Portál pro nájemníka", "desc": "Nájemník vidí platby, smlouvy a kontakt na vás — bez e-mailů." },
+        "docs": { "title": "Sdílení dokumentů", "desc": "Smlouvy, předávací protokoly — dostupné ihned po nahrání." },
+        "comms": { "title": "Vše dokumentované", "desc": "Žádné ztracené zprávy. Komunikace a dokumenty pohromadě." }
+      }
+    },
+    "featureEnergy": {
+      "eyebrow": "Energetický modul",
+      "title": "Anomálie odhalíte dřív, než se prodraží.",
+      "subtitle": "Zadávejte stavy měřičů. Systém sleduje spotřebu a upozorní vás na každou anomálii.",
+      "points": {
+        "reading": { "title": "Ruční zadávání stavů", "desc": "Elektřina, plyn, voda, teplo — přehledně po nemovitostech." },
+        "chart": { "title": "Graf spotřeby", "desc": "12měsíční trend spotřeby pro každou nemovitost." },
+        "alert": { "title": "Alert při anomálii", "desc": "Spotřeba o 30 % nad průměrem? Okamžité upozornění." },
+        "import": { "title": "Import z portálu dodavatele", "desc": "CSV export z MůjČEZ, E.ON nebo PRE načtete jedním klikem." }
+      }
+    },
+    "featureDocuments": {
+      "eyebrow": "Dokumenty & Daně",
+      "title": "Smlouvy v bezpečí, daně bez stresu.",
+      "subtitle": "Veškerá dokumentace pohromadě s upozorněními na expiraci. Daňový export jedním klikem.",
+      "points": {
+        "storage": { "title": "Bezpečné úložiště", "desc": "Smlouvy, protokoly, pojistky, faktury — kategorizované a dostupné." },
+        "expiry": { "title": "Upozornění na expiraci", "desc": "60, 30 a 14 dní před vypršením smlouvy nebo pojistky." },
+        "tax": { "title": "Daňový export", "desc": "PDF pro účetního strukturovaný pro daňové přiznání. Export jedním kliknutím." },
+        "categories": { "title": "Kategorie dokumentů", "desc": "Smlouvy, protokoly, pojistky, faktury, korespondence, revize." }
+      }
+    },
+    "dashboardPreview": {
+      "eyebrow": "Přehled",
+      "title": "Vše, co potřebujete. Na jednom místě.",
+      "subtitle": "Dashboard navržený tak, abyste okamžitě věděli, jak na tom jste — příjmy, obsazenost, platby, upozornění."
+    },
+    "b2bFeature": {
+      "eyebrow": "Pro správcovské firmy",
+      "title": "Spravujete nemovitosti pro klienty?",
+      "subtitle": "EstatIQ B2B je platforma pro profesionální správce. Multi-tenant architektura, role a přístupová práva, klientský portál.",
+      "points": {
+        "multiTenant": { "title": "Multi-tenant architektura", "desc": "Každý klient vidí jen své nemovitosti. Data jsou přísně oddělena." },
+        "roles": { "title": "Role a práva", "desc": "Super-Admin, Správce, Účetní, Prohlížeč — každý vidí, co má." },
+        "clientPortal": { "title": "Klientský portál", "desc": "Vlastník nemovitosti vidí read-only přehled. Žádné PDF každý měsíc." },
+        "reports": { "title": "Reporty a exporty", "desc": "Přehledy obsazenosti, příjmů a výdajů pro každého klienta." }
+      },
+      "cta": "Domluvit demo"
+    },
+    "testimonials": {
+      "eyebrow": "Pronajímatelé o EstatIQ",
+      "title": "Co říkají naši uživatelé.",
+      "items": {
+        "1": { "text": "Konečně přestávám honit nájemníky kvůli platbám. Upomínky chodí samy a já vidím vše v jednom přehledu.", "name": "Tomáš K.", "role": "Pronajímatel, 8 bytů v Praze" },
+        "2": { "text": "Daňový export mi ušetřil dva dny práce na konci roku. Skvělá aplikace, doporučuji každému, kdo má více bytů.", "name": "Petra M.", "role": "Pronajímatelka, 4 byty v Brně" },
+        "3": { "text": "Přesunuli jsme 120 jednotek na EstatIQ. Klienti milují portál — žádné Excel zprávy každý měsíc.", "name": "Jan R.", "role": "Ředitel správcovské firmy" }
+      }
+    },
+    "faq": {
+      "eyebrow": "Časté otázky",
+      "title": "Máte otázky? Máme odpovědi.",
+      "items": {
+        "1": { "q": "Jak rychle mohu začít?", "a": "Registrace trvá 60 sekund. Po přihlášení vás provede onboarding wizard — za 5 minut máte první nemovitost a nájemníka online." },
+        "2": { "q": "Musím hned platit kreditní kartou?", "a": "Ne. Free plán je zdarma bez časového omezení. Kreditní kartu zadáváte pouze při upgradu na placený plán." },
+        "3": { "q": "Co se stane s daty při zrušení předplatného?", "a": "Data zůstávají v bezpečí. Přejdete do read-only módu — vidíte vše, ale nemůžete přidávat nové záznamy. Kdykoli se můžete vrátit." },
+        "4": { "q": "Jak funguje pozvánka pro nájemníka?", "a": "Zadáte jméno a e-mail nájemníka. Systém odešle pozvánku s jednorázovým tokenem platným 72 hodin. Nájemník si aktivuje účet sám." },
+        "5": { "q": "Je EstatIQ v souladu s GDPR?", "a": "Ano. Data jsou uložena na evropských serverech. Nájemníci mohou kdykoli požádat o export nebo výmaz svých dat přes portál." },
+        "6": { "q": "Funguje EstatIQ pro správcovské firmy?", "a": "Ano, máme B2B tarify od 2 500 Kč/měs. pro firmy spravující 50–400+ jednotek. Kontaktujte nás pro demo." }
+      }
     }
   },
   "auth": {
@@ -238,6 +354,23 @@
       "successTitle": "Odkaz odeslán",
       "successMessage": "Zkontrolujte svůj e-mail a klikněte na odkaz pro obnovení hesla.",
       "error": "Nepodařilo se odeslat odkaz. Zkontrolujte e-mailovou adresu."
+    },
+    "resetPassword": {
+      "title": "Nastavte nové heslo",
+      "subtitle": "Zadejte nové heslo pro svůj účet.",
+      "validating": "Ověřujeme odkaz…",
+      "password": "Nové heslo",
+      "passwordConfirm": "Potvrďte nové heslo",
+      "passwordHint": "Alespoň 8 znaků",
+      "passwordMismatch": "Hesla se neshodují",
+      "submit": "Uložit nové heslo",
+      "back": "Zpět na přihlášení",
+      "successTitle": "Heslo změněno",
+      "successMessage": "Vaše heslo bylo úspěšně změněno. Za chvíli budete přesměrováni…",
+      "invalidTitle": "Odkaz je neplatný",
+      "invalidMessage": "Tento odkaz pro obnovení hesla vypršel nebo byl již použit.",
+      "requestNew": "Požádat o nový odkaz",
+      "error": "Změnu hesla se nepodařilo dokončit. Zkuste to prosím znovu."
     },
     "acceptInvite": {
       "validating": "Ověřujeme pozvánku…",
@@ -1140,5 +1273,46 @@
       "taxes": { "title": "Daňový export", "desc": "PDF pro účetního, kliknutím" }
     },
     "footer": "Pronájem, který se řídí sám 🇨🇿"
+  },
+  "cuzk": {
+    "steps": {
+      "step1": "Hledat adresu",
+      "step2": "Vybrat nemovitost",
+      "step3": "Výsledek"
+    },
+    "search": {
+      "label": "Adresa nebo parcelní číslo",
+      "placeholder": "Např. Vinohradská 42, Praha…",
+      "searching": "Vyhledávám v katastru…",
+      "no_results": "Žádné výsledky — upřesněte adresu",
+      "select_property": "Vyberte nemovitost ze seznamu"
+    },
+    "candidates": {
+      "type_budova": "Budova",
+      "type_parcela": "Parcela",
+      "type_jednotka": "Bytová jednotka",
+      "select": "Vybrat"
+    },
+    "verify": {
+      "button": "Ověřit vlastnictví",
+      "verifying": "Ověřuji v katastru nemovitostí…"
+    },
+    "result": {
+      "verified": "Vlastnictví ověřeno",
+      "not_verified": "Vlastnictví neověřeno",
+      "name_mismatch": "Neshoda jmen",
+      "not_found": "Nemovitost nenalezena v katastru",
+      "confidence_exact": "Přesná shoda",
+      "confidence_fuzzy": "Přibližná shoda",
+      "owners_found": "Vlastníci v katastru",
+      "ku": "Katastrální území",
+      "legal_note": "Toto ověření je informativní. Pro právně závazný výpis vlastnictví použijte placenou službu ČÚZK WSDP."
+    },
+    "errors": {
+      "rate_limit": "Překročen limit 10 ověření za hodinu. Zkuste to znovu za hodinu.",
+      "api_not_configured": "Ověřování katastru není dostupné — kontaktujte podporu.",
+      "generic": "Ověření se nezdařilo. Zkuste to znovu."
+    },
+    "reset": "Začít znovu"
   }
 }
