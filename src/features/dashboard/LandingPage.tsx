@@ -22,6 +22,19 @@ import {
   LayoutDashboard,
   CreditCard,
   Mail,
+  Clock,
+  Heart,
+  Lock,
+  Phone,
+  Menu,
+  Check,
+  Minus,
+  Home,
+  Target,
+  Lightbulb,
+  MapPin,
+  HeadphonesIcon,
+  Sparkles,
 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
@@ -87,7 +100,7 @@ function InViewSection({
   )
 }
 
-// ── Shared sub-components for mock UIs ────────────────────────────────────────
+// ── Shared helpers ────────────────────────────────────────────────────────────
 function StatusBadge({ status }: { status: 'paid' | 'pending' | 'overdue' }) {
   const styles = {
     paid: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
@@ -112,6 +125,21 @@ function Initials({ chars, color = 'emerald' }: { chars: string; color?: 'emeral
     <div className={cn('flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold', colors[color])}>
       {chars}
     </div>
+  )
+}
+
+function Eyebrow({ label, dark = false }: { label: string; dark?: boolean }) {
+  if (dark) {
+    return (
+      <span className="inline-flex items-center gap-2 rounded-full border border-emerald-700/50 bg-emerald-900/30 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-400">
+        {label}
+      </span>
+    )
+  }
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-400">
+      {label}
+    </span>
   )
 }
 
@@ -377,29 +405,13 @@ function DashboardMockup() {
 interface FeaturePoint { title: string; desc: string }
 
 function FeatureSection({
-  eyebrow,
-  title,
-  subtitle,
-  points,
-  visual,
-  reverse = false,
-  bg = 'white',
-  id,
+  eyebrow, title, subtitle, points, visual, reverse = false, bg = 'white', id,
 }: {
-  eyebrow: string
-  title: string
-  subtitle: string
-  points: FeaturePoint[]
-  visual: React.ReactNode
-  reverse?: boolean
-  bg?: 'white' | 'gray'
-  id?: string
+  eyebrow: string; title: string; subtitle: string; points: FeaturePoint[]
+  visual: React.ReactNode; reverse?: boolean; bg?: 'white' | 'gray'; id?: string
 }) {
   return (
-    <InViewSection
-      id={id}
-      className={cn('py-24', bg === 'gray' ? 'bg-surface-50 dark:bg-surface-900/40' : 'bg-white dark:bg-surface-950')}
-    >
+    <InViewSection id={id} className={cn('py-24', bg === 'gray' ? 'bg-surface-50 dark:bg-surface-900/40' : 'bg-white dark:bg-surface-950')}>
       <div className="mx-auto max-w-6xl px-6">
         <div className={cn('grid items-center gap-16 lg:grid-cols-2', reverse && 'lg:[&>*:first-child]:order-last')}>
           <div className="space-y-6">
@@ -606,19 +618,42 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   )
 }
 
-// ── Eyebrow badge helper ──────────────────────────────────────────────────────
-function Eyebrow({ label, dark = false }: { label: string; dark?: boolean }) {
-  if (dark) {
-    return (
-      <span className="inline-flex items-center gap-2 rounded-full border border-emerald-700/50 bg-emerald-900/30 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-400">
-        {label}
-      </span>
-    )
-  }
+// ── Comparison table ──────────────────────────────────────────────────────────
+type ComparisonValue = 'yes' | 'no' | 'partial'
+
+const COMPARISON_DATA: { key: string; excel: ComparisonValue; other: ComparisonValue; estatiq: ComparisonValue }[] = [
+  { key: '1', excel: 'no',      other: 'yes',     estatiq: 'yes' },
+  { key: '2', excel: 'no',      other: 'no',      estatiq: 'yes' },
+  { key: '3', excel: 'no',      other: 'partial', estatiq: 'yes' },
+  { key: '4', excel: 'no',      other: 'no',      estatiq: 'yes' },
+  { key: '5', excel: 'no',      other: 'partial', estatiq: 'yes' },
+  { key: '6', excel: 'no',      other: 'partial', estatiq: 'yes' },
+  { key: '7', excel: 'no',      other: 'yes',     estatiq: 'yes' },
+  { key: '8', excel: 'no',      other: 'yes',     estatiq: 'yes' },
+  { key: '9', excel: 'no',      other: 'partial', estatiq: 'yes' },
+]
+
+function ComparisonCell({ value }: { value: ComparisonValue }) {
+  if (value === 'yes') return (
+    <div className="flex justify-center">
+      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/30">
+        <Check size={13} className="text-emerald-600 dark:text-emerald-400" />
+      </div>
+    </div>
+  )
+  if (value === 'no') return (
+    <div className="flex justify-center">
+      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-50 dark:bg-red-900/20">
+        <X size={13} className="text-red-400" />
+      </div>
+    </div>
+  )
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-400">
-      {label}
-    </span>
+    <div className="flex justify-center">
+      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-900/20">
+        <Minus size={13} className="text-amber-500" />
+      </div>
+    </div>
   )
 }
 
@@ -626,6 +661,7 @@ function Eyebrow({ label, dark = false }: { label: string; dark?: boolean }) {
 export default function LandingPage() {
   const { t } = useTranslation()
   const scrolled = useScrolled()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const featPaymentsPoints: FeaturePoint[] = (
     ['auto', 'qr', 'reminders', 'status'] as const
@@ -655,9 +691,18 @@ export default function LandingPage() {
     desc: t(`landing.featureDocuments.points.${k}.desc`),
   }))
 
-  const faqKeys = ['1', '2', '3', '4', '5', '6'] as const
+  const faqKeys = ['1', '2', '3', '4', '5', '6', '7', '8'] as const
   const problemKeys = ['excel', 'contracts', 'reminders', 'taxes'] as const
   const howItWorksKeys = ['property', 'tenant', 'payments', 'relax'] as const
+
+  const navLinks = [
+    { href: '#what-we-do', label: t('landing.whatWeDo.eyebrow') },
+    { href: '#features', label: t('landing.footer.features') },
+    { href: '#why-us', label: t('landing.whyUs.eyebrow') },
+    { href: '#pricing', label: t('landing.footer.pricing') },
+    { href: '#about', label: t('landing.footer.about') },
+    { href: '#contact', label: t('landing.contact.eyebrow') },
+  ]
 
   return (
     <div className="min-h-screen bg-white text-surface-900 dark:bg-surface-950 dark:text-surface-50">
@@ -674,52 +719,76 @@ export default function LandingPage() {
             Estat<span className="text-emerald-500">IQ</span>
           </Link>
 
-          <div className="hidden items-center gap-7 text-sm md:flex">
-            <a
-              href="#features"
-              className={cn('transition-colors', scrolled ? 'text-surface-600 hover:text-surface-900 dark:text-surface-400 dark:hover:text-surface-50' : 'text-surface-300 hover:text-white')}
-            >
-              {t('landing.footer.features')}
-            </a>
-            <a
-              href="#payments"
-              className={cn('transition-colors', scrolled ? 'text-surface-600 hover:text-surface-900 dark:text-surface-400 dark:hover:text-surface-50' : 'text-surface-300 hover:text-white')}
-            >
-              {t('nav.payments')}
-            </a>
-            <a
-              href="#energy"
-              className={cn('transition-colors', scrolled ? 'text-surface-600 hover:text-surface-900 dark:text-surface-400 dark:hover:text-surface-50' : 'text-surface-300 hover:text-white')}
-            >
-              {t('nav.energy')}
-            </a>
-            <a
-              href="#b2b"
-              className={cn('transition-colors', scrolled ? 'text-surface-600 hover:text-surface-900 dark:text-surface-400 dark:hover:text-surface-50' : 'text-surface-300 hover:text-white')}
-            >
-              B2B
-            </a>
-            <a
-              href="#pricing"
-              className={cn('transition-colors', scrolled ? 'text-surface-600 hover:text-surface-900 dark:text-surface-400 dark:hover:text-surface-50' : 'text-surface-300 hover:text-white')}
-            >
-              {t('landing.footer.pricing')}
-            </a>
+          <div className="hidden items-center gap-6 text-sm lg:flex">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'transition-colors',
+                  scrolled
+                    ? 'text-surface-600 hover:text-surface-900 dark:text-surface-400 dark:hover:text-surface-50'
+                    : 'text-surface-300 hover:text-white',
+                )}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
-            <Button variant="ghost" size="sm" asChild>
+            <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
               <Link to="/auth/login">{t('auth.login.submit')}</Link>
             </Button>
-            <Button size="sm" asChild>
+            <Button size="sm" asChild className="hidden sm:inline-flex">
               <Link to="/auth/register">
                 {t('landing.cta.button')}
                 <ChevronRight size={14} />
               </Link>
             </Button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="flex h-9 w-9 items-center justify-center rounded-lg text-surface-400 hover:text-surface-600 lg:hidden"
+              aria-label="Menu"
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </nav>
+
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="overflow-hidden border-t border-surface-100 bg-white/95 backdrop-blur-md dark:border-surface-800 dark:bg-surface-950/95 lg:hidden"
+            >
+              <div className="mx-auto max-w-6xl space-y-1 px-6 py-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block rounded-lg px-3 py-2.5 text-sm font-medium text-surface-700 hover:bg-surface-50 hover:text-surface-900 dark:text-surface-300 dark:hover:bg-surface-800 dark:hover:text-surface-50"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <div className="mt-3 flex gap-2 pt-3 border-t border-surface-100 dark:border-surface-800">
+                  <Button variant="outline" size="sm" className="flex-1" asChild>
+                    <Link to="/auth/login">{t('auth.login.submit')}</Link>
+                  </Button>
+                  <Button size="sm" className="flex-1" asChild>
+                    <Link to="/auth/register">{t('landing.cta.button')}</Link>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* ── Hero ────────────────────────────────────────────────────────────── */}
@@ -727,7 +796,6 @@ export default function LandingPage() {
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-emerald-600/10 blur-[100px]" />
           <div className="absolute right-1/4 top-1/2 h-[400px] w-[400px] rounded-full bg-indigo-600/8 blur-[80px]" />
-          {/* Grid lines */}
           <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
@@ -770,7 +838,7 @@ export default function LandingPage() {
                 asChild
                 className="border-surface-700 bg-transparent text-surface-300 hover:border-surface-500 hover:bg-surface-800/60 hover:text-white"
               >
-                <a href="#features">{t('landing.hero.ctaSecondary')}</a>
+                <a href="#what-we-do">{t('landing.hero.ctaSecondary')}</a>
               </Button>
             </motion.div>
 
@@ -802,6 +870,52 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ── Co je EstatIQ ────────────────────────────────────────────────────── */}
+      <InViewSection id="what-we-do" className="bg-white py-24 dark:bg-surface-950">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-16 text-center">
+            <motion.div variants={fadeUp}>
+              <Eyebrow label={t('landing.whatWeDo.eyebrow')} />
+            </motion.div>
+            <motion.h2 variants={fadeUp} className="font-display mb-4 mt-5 text-4xl font-bold tracking-tight text-surface-900 dark:text-surface-50">
+              {t('landing.whatWeDo.title')}
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-lg leading-relaxed text-surface-500 dark:text-surface-400">
+              {t('landing.whatWeDo.subtitle')}
+            </motion.p>
+          </div>
+
+          <motion.div variants={stagger} className="grid gap-6 md:grid-cols-3">
+            {([
+              { key: '1', Icon: Home, color: 'emerald' },
+              { key: '2', Icon: Zap, color: 'indigo' },
+              { key: '3', Icon: FileText, color: 'amber' },
+            ] as const).map(({ key, Icon, color }) => (
+              <motion.div
+                key={key}
+                variants={fadeUp}
+                className="group relative overflow-hidden rounded-2xl border border-surface-100 bg-white p-8 shadow-card transition-all hover:shadow-lg dark:border-surface-800 dark:bg-surface-900"
+              >
+                <div className={cn(
+                  'mb-5 flex h-12 w-12 items-center justify-center rounded-xl',
+                  color === 'emerald' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400'
+                    : color === 'indigo' ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400'
+                    : 'bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400'
+                )}>
+                  <Icon size={22} />
+                </div>
+                <h3 className="mb-3 text-xl font-bold text-surface-900 dark:text-surface-50">
+                  {t(`landing.whatWeDo.cards.${key}.title`)}
+                </h3>
+                <p className="text-base leading-relaxed text-surface-500 dark:text-surface-400">
+                  {t(`landing.whatWeDo.cards.${key}.desc`)}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </InViewSection>
+
       {/* ── Problem section ──────────────────────────────────────────────────── */}
       <InViewSection id="features" className="bg-surface-50 py-24 dark:bg-surface-900/40">
         <div className="mx-auto max-w-5xl px-6 text-center">
@@ -832,11 +946,17 @@ export default function LandingPage() {
               </motion.div>
             ))}
           </motion.div>
+          <motion.div variants={fadeUp} className="mt-8">
+            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400">
+              <Sparkles size={14} />
+              EstatIQ toto vše řeší automaticky — bez vaší práce.
+            </div>
+          </motion.div>
         </div>
       </InViewSection>
 
       {/* ── How it works ─────────────────────────────────────────────────────── */}
-      <InViewSection className="bg-white py-24 dark:bg-surface-950">
+      <InViewSection id="how-it-works" className="bg-white py-24 dark:bg-surface-950">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-16 text-center">
             <motion.div variants={fadeUp}>
@@ -918,6 +1038,180 @@ export default function LandingPage() {
         bg="white"
       />
 
+      {/* ── Time Savings ─────────────────────────────────────────────────────── */}
+      <InViewSection id="time-savings" className="bg-[#0B0F19] py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-16 text-center">
+            <motion.div variants={fadeUp}>
+              <Eyebrow label={t('landing.timeSavings.eyebrow')} dark />
+            </motion.div>
+            <motion.h2 variants={fadeUp} className="font-display mb-4 mt-5 text-4xl font-bold tracking-tight text-white md:text-5xl">
+              {t('landing.timeSavings.title')}
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-lg leading-relaxed text-surface-400">
+              {t('landing.timeSavings.subtitle')}
+            </motion.p>
+          </div>
+
+          {/* Stats grid */}
+          <motion.div variants={stagger} className="mb-16 grid grid-cols-2 gap-4 md:grid-cols-4">
+            {([
+              { v: t('landing.timeSavings.stats.hours'), l: t('landing.timeSavings.stats.hoursLabel'), color: 'emerald' },
+              { v: t('landing.timeSavings.stats.payments'), l: t('landing.timeSavings.stats.paymentsLabel'), color: 'emerald' },
+              { v: t('landing.timeSavings.stats.setup'), l: t('landing.timeSavings.stats.setupLabel'), color: 'indigo' },
+              { v: t('landing.timeSavings.stats.reminders'), l: t('landing.timeSavings.stats.remindersLabel'), color: 'emerald' },
+            ] as const).map((s, i) => (
+              <motion.div key={i} variants={fadeUp} className="rounded-2xl border border-surface-800 bg-surface-900/60 p-6 text-center">
+                <p className={cn(
+                  'font-display mb-1 text-4xl font-bold tabular-nums',
+                  s.color === 'emerald' ? 'text-emerald-400' : 'text-indigo-400',
+                )}>
+                  {s.v}
+                </p>
+                <p className="text-sm text-surface-400">{s.l}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Detail cards */}
+          <motion.div variants={stagger} className="grid gap-6 md:grid-cols-3">
+            {(['1', '2', '3'] as const).map((k, i) => {
+              const icons = [Clock, Mail, BarChart3]
+              const Icon = icons[i]
+              return (
+                <motion.div key={k} variants={fadeUp} className="rounded-2xl border border-surface-800 bg-surface-900/40 p-7">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-900/40">
+                    <Icon size={18} className="text-emerald-400" />
+                  </div>
+                  <h3 className="mb-2 font-semibold text-white">
+                    {t(`landing.timeSavings.items.${k}.title`)}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-surface-400">
+                    {t(`landing.timeSavings.items.${k}.desc`)}
+                  </p>
+                </motion.div>
+              )
+            })}
+          </motion.div>
+        </div>
+      </InViewSection>
+
+      {/* ── Why Us — 6 výhod ─────────────────────────────────────────────────── */}
+      <InViewSection id="why-us" className="bg-surface-50 py-24 dark:bg-surface-900/40">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-16 text-center">
+            <motion.div variants={fadeUp}>
+              <Eyebrow label={t('landing.whyUs.eyebrow')} />
+            </motion.div>
+            <motion.h2 variants={fadeUp} className="font-display mb-4 mt-5 text-4xl font-bold tracking-tight text-surface-900 dark:text-surface-50">
+              {t('landing.whyUs.title')}
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mx-auto max-w-lg text-lg text-surface-500 dark:text-surface-400">
+              {t('landing.whyUs.subtitle')}
+            </motion.p>
+          </div>
+
+          <motion.div variants={stagger} className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {([
+              { key: '1', Icon: Home, color: 'emerald' },
+              { key: '2', Icon: Zap, color: 'indigo' },
+              { key: '3', Icon: Lock, color: 'emerald' },
+              { key: '4', Icon: Users, color: 'indigo' },
+              { key: '5', Icon: BarChart3, color: 'emerald' },
+              { key: '6', Icon: HeadphonesIcon, color: 'indigo' },
+            ] as const).map(({ key, Icon, color }) => (
+              <motion.div
+                key={key}
+                variants={fadeUp}
+                className="flex gap-4 rounded-2xl border border-surface-100 bg-white p-6 shadow-card dark:border-surface-800 dark:bg-surface-900"
+              >
+                <div className={cn(
+                  'mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl',
+                  color === 'emerald'
+                    ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400'
+                    : 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400'
+                )}>
+                  <Icon size={18} />
+                </div>
+                <div>
+                  <h3 className="mb-1.5 font-semibold text-surface-900 dark:text-surface-50">
+                    {t(`landing.whyUs.advantages.${key}.title`)}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-surface-500 dark:text-surface-400">
+                    {t(`landing.whyUs.advantages.${key}.desc`)}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </InViewSection>
+
+      {/* ── Comparison table ──────────────────────────────────────────────────── */}
+      <InViewSection id="comparison" className="bg-white py-24 dark:bg-surface-950">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="mb-12 text-center">
+            <motion.div variants={fadeUp}>
+              <Eyebrow label={t('landing.comparison.eyebrow')} />
+            </motion.div>
+            <motion.h2 variants={fadeUp} className="font-display mb-4 mt-5 text-4xl font-bold tracking-tight text-surface-900 dark:text-surface-50">
+              {t('landing.comparison.title')}
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mx-auto max-w-xl text-lg text-surface-500 dark:text-surface-400">
+              {t('landing.comparison.subtitle')}
+            </motion.p>
+          </div>
+
+          <motion.div variants={fadeUp} className="overflow-hidden rounded-2xl border border-surface-200 bg-white shadow-card dark:border-surface-800 dark:bg-surface-900">
+            {/* Table header */}
+            <div className="grid grid-cols-[1fr_auto_auto_auto] border-b border-surface-100 dark:border-surface-800">
+              <div className="p-5" />
+              <div className="w-28 border-l border-surface-100 p-4 text-center dark:border-surface-800 md:w-36">
+                <p className="text-xs font-semibold text-surface-500 dark:text-surface-400">{t('landing.comparison.colExcel')}</p>
+              </div>
+              <div className="w-28 border-l border-surface-100 p-4 text-center dark:border-surface-800 md:w-36">
+                <p className="text-xs font-semibold text-surface-500 dark:text-surface-400">{t('landing.comparison.colOther')}</p>
+              </div>
+              <div className="w-28 border-l border-emerald-100 bg-emerald-50/50 p-4 text-center dark:border-emerald-900/30 dark:bg-emerald-900/10 md:w-36">
+                <p className="text-xs font-bold text-emerald-700 dark:text-emerald-400">
+                  Estat<span className="text-emerald-500">IQ</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Table rows */}
+            {COMPARISON_DATA.map((row, i) => (
+              <div
+                key={row.key}
+                className={cn(
+                  'grid grid-cols-[1fr_auto_auto_auto] border-b border-surface-50 last:border-0 dark:border-surface-800/50',
+                  i % 2 === 1 && 'bg-surface-50/50 dark:bg-surface-800/20',
+                )}
+              >
+                <div className="flex items-center px-5 py-4">
+                  <p className="text-sm font-medium text-surface-700 dark:text-surface-300">
+                    {t(`landing.comparison.features.${row.key}`)}
+                  </p>
+                </div>
+                <div className="w-28 border-l border-surface-100 p-4 dark:border-surface-800 md:w-36">
+                  <ComparisonCell value={row.excel} />
+                </div>
+                <div className="w-28 border-l border-surface-100 p-4 dark:border-surface-800 md:w-36">
+                  <ComparisonCell value={row.other} />
+                </div>
+                <div className="w-28 border-l border-emerald-100 bg-emerald-50/30 p-4 dark:border-emerald-900/20 dark:bg-emerald-900/5 md:w-36">
+                  <ComparisonCell value={row.estatiq} />
+                </div>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.p variants={fadeUp} className="mt-4 text-center text-xs text-surface-400">
+            {t('landing.comparison.note')}
+          </motion.p>
+        </div>
+      </InViewSection>
+
       {/* ── Dashboard preview ────────────────────────────────────────────────── */}
       <InViewSection className="bg-[#0B0F19] py-28">
         <div className="mx-auto max-w-6xl px-6">
@@ -998,11 +1292,11 @@ export default function LandingPage() {
       </InViewSection>
 
       {/* ── Testimonials ─────────────────────────────────────────────────────── */}
-      <InViewSection className="bg-white py-24 dark:bg-surface-950">
+      <InViewSection className="bg-surface-50 py-24 dark:bg-surface-900/40">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
             <motion.div variants={fadeUp}>
-              <span className="mb-4 inline-block rounded-full border border-surface-200 bg-surface-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-surface-500 dark:border-surface-700 dark:bg-surface-800 dark:text-surface-400">
+              <span className="mb-4 inline-block rounded-full border border-surface-200 bg-white px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-surface-500 dark:border-surface-700 dark:bg-surface-800 dark:text-surface-400">
                 {t('landing.testimonials.eyebrow')}
               </span>
             </motion.div>
@@ -1043,6 +1337,73 @@ export default function LandingPage() {
         </div>
       </InViewSection>
 
+      {/* ── About + Mission ───────────────────────────────────────────────────── */}
+      <InViewSection id="about" className="bg-white py-24 dark:bg-surface-950">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid items-start gap-16 lg:grid-cols-2">
+            {/* Founder story */}
+            <div>
+              <motion.div variants={fadeUp}>
+                <Eyebrow label={t('landing.about.eyebrow')} />
+              </motion.div>
+              <motion.h2 variants={fadeUp} className="font-display mb-6 mt-5 text-4xl font-bold tracking-tight text-surface-900 dark:text-surface-50">
+                {t('landing.about.title')}
+              </motion.h2>
+              <motion.div variants={fadeUp} className="relative">
+                <div className="absolute -left-4 top-0 h-full w-0.5 bg-emerald-100 dark:bg-emerald-900/30" />
+                <p className="pl-6 text-lg leading-relaxed text-surface-600 dark:text-surface-400 italic">
+                  &ldquo;{t('landing.about.story')}&rdquo;
+                </p>
+              </motion.div>
+              <motion.div variants={fadeUp} className="mt-6 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                  KS
+                </div>
+                <div>
+                  <p className="font-semibold text-surface-900 dark:text-surface-50">{t('landing.about.signature')}</p>
+                  <div className="flex items-center gap-1 text-xs text-surface-400">
+                    <MapPin size={11} />
+                    {t('landing.about.location')}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Mission + values */}
+            <div>
+              <motion.div variants={fadeUp}>
+                <span className="inline-flex items-center gap-2 rounded-full border border-surface-200 bg-surface-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-surface-500 dark:border-surface-700 dark:bg-surface-800 dark:text-surface-400">
+                  {t('landing.about.missionEyebrow')}
+                </span>
+              </motion.div>
+              <motion.h3 variants={fadeUp} className="font-display mb-4 mt-5 text-2xl font-bold text-surface-900 dark:text-surface-50">
+                {t('landing.about.missionTitle')}
+              </motion.h3>
+              <motion.p variants={fadeUp} className="mb-8 text-base leading-relaxed text-surface-500 dark:text-surface-400">
+                {t('landing.about.missionDesc')}
+              </motion.p>
+              <motion.div variants={stagger} className="space-y-4">
+                {(['1', '2', '3'] as const).map((k, i) => {
+                  const icons = [Lightbulb, Heart, Target]
+                  const Icon = icons[i]
+                  return (
+                    <motion.div key={k} variants={fadeUp} className="flex gap-4 rounded-xl border border-surface-100 p-4 dark:border-surface-800">
+                      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                        <Icon size={16} />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-surface-900 dark:text-surface-50">{t(`landing.about.values.${k}.title`)}</p>
+                        <p className="mt-0.5 text-sm text-surface-500 dark:text-surface-400">{t(`landing.about.values.${k}.desc`)}</p>
+                      </div>
+                    </motion.div>
+                  )
+                })}
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </InViewSection>
+
       {/* ── Pricing ──────────────────────────────────────────────────────────── */}
       <PricingSection />
 
@@ -1064,6 +1425,105 @@ export default function LandingPage() {
               <FAQItem key={k} q={t(`landing.faq.items.${k}.q`)} a={t(`landing.faq.items.${k}.a`)} />
             ))}
           </motion.div>
+        </div>
+      </InViewSection>
+
+      {/* ── Contact ──────────────────────────────────────────────────────────── */}
+      <InViewSection id="contact" className="bg-surface-50 py-24 dark:bg-surface-900/40">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-12 text-center">
+            <motion.div variants={fadeUp}>
+              <Eyebrow label={t('landing.contact.eyebrow')} />
+            </motion.div>
+            <motion.h2 variants={fadeUp} className="font-display mb-4 mt-5 text-4xl font-bold tracking-tight text-surface-900 dark:text-surface-50">
+              {t('landing.contact.title')}
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mx-auto max-w-xl text-lg text-surface-500 dark:text-surface-400">
+              {t('landing.contact.subtitle')}
+            </motion.p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-5">
+            {/* Contact info cards */}
+            <motion.div variants={stagger} className="space-y-4 lg:col-span-2">
+              {[
+                { Icon: Mail, label: t('landing.contact.emailLabel'), value: t('landing.contact.emailValue'), href: `mailto:${t('landing.contact.emailValue')}` },
+                { Icon: Phone, label: t('landing.contact.phoneLabel'), value: t('landing.contact.phoneValue'), href: `tel:${t('landing.contact.phoneValue')}` },
+                { Icon: Clock, label: t('landing.contact.hoursLabel'), value: t('landing.contact.hoursValue'), href: null },
+                { Icon: Zap, label: t('landing.contact.responseLabel'), value: t('landing.contact.responseValue'), href: null },
+              ].map(({ Icon, label, value, href }, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex items-center gap-4 rounded-xl border border-surface-100 bg-white p-4 shadow-card dark:border-surface-800 dark:bg-surface-900">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Icon size={18} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wider text-surface-400">{label}</p>
+                    {href ? (
+                      <a href={href} className="font-semibold text-surface-900 hover:text-emerald-600 dark:text-surface-50 dark:hover:text-emerald-400 transition-colors">
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="font-semibold text-surface-900 dark:text-surface-50">{value}</p>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+
+              {/* Demo CTA */}
+              <motion.div variants={fadeUp} className="rounded-xl border border-indigo-200 bg-indigo-50 p-5 dark:border-indigo-800/50 dark:bg-indigo-900/20">
+                <p className="mb-1 font-semibold text-indigo-900 dark:text-indigo-100">{t('landing.contact.demoTitle')}</p>
+                <p className="mb-3 text-sm text-indigo-600 dark:text-indigo-300">{t('landing.contact.demoDesc')}</p>
+                <Button size="sm" asChild className="bg-indigo-600 hover:bg-indigo-700">
+                  <Link to="/auth/register">{t('landing.contact.demoCta')}</Link>
+                </Button>
+              </motion.div>
+            </motion.div>
+
+            {/* Contact form */}
+            <motion.div variants={fadeUp} className="lg:col-span-3">
+              <div className="rounded-2xl border border-surface-100 bg-white p-8 shadow-card dark:border-surface-800 dark:bg-surface-900">
+                <div className="space-y-4">
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium text-surface-700 dark:text-surface-300">
+                      {t('landing.contact.formName')}
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Jan Novák"
+                      className="w-full rounded-xl border border-surface-200 bg-surface-50 px-4 py-3 text-sm outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 dark:border-surface-700 dark:bg-surface-800 dark:text-surface-50 dark:placeholder-surface-500 dark:focus:border-emerald-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium text-surface-700 dark:text-surface-300">
+                      {t('landing.contact.formEmail')}
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="jan@firma.cz"
+                      className="w-full rounded-xl border border-surface-200 bg-surface-50 px-4 py-3 text-sm outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 dark:border-surface-700 dark:bg-surface-800 dark:text-surface-50 dark:placeholder-surface-500 dark:focus:border-emerald-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium text-surface-700 dark:text-surface-300">
+                      {t('landing.contact.formMessage')}
+                    </label>
+                    <textarea
+                      rows={4}
+                      placeholder="Ahoj, chtěl bych se zeptat..."
+                      className="w-full resize-none rounded-xl border border-surface-200 bg-surface-50 px-4 py-3 text-sm outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 dark:border-surface-700 dark:bg-surface-800 dark:text-surface-50 dark:placeholder-surface-500 dark:focus:border-emerald-500"
+                    />
+                  </div>
+                  <Button size="lg" className="w-full">
+                    {t('landing.contact.formSubmit')}
+                    <ArrowRight size={16} />
+                  </Button>
+                  <p className="text-center text-xs text-surface-400">
+                    {t('landing.contact.formNote')}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </InViewSection>
 
@@ -1099,12 +1559,12 @@ export default function LandingPage() {
       {/* ── Footer ───────────────────────────────────────────────────────────── */}
       <footer className="border-t border-surface-100 bg-white py-16 dark:border-surface-800 dark:bg-surface-950">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-12 grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div className="col-span-2 md:col-span-1">
+          <div className="mb-12 grid grid-cols-2 gap-8 md:grid-cols-5">
+            <div className="col-span-2 md:col-span-2">
               <p className="font-display mb-3 text-lg font-bold text-surface-900 dark:text-surface-50">
                 Estat<span className="text-emerald-500">IQ</span>
               </p>
-              <p className="mb-5 text-sm text-surface-400">{t('landing.footer.tagline')}</p>
+              <p className="mb-5 max-w-xs text-sm leading-relaxed text-surface-400">{t('landing.footer.tagline')}</p>
               <div className="flex gap-2">
                 {[Globe, Mail].map((Icon, i) => (
                   <div key={i} className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-surface-200 text-surface-400 transition-colors hover:text-surface-600 dark:border-surface-700 dark:hover:text-surface-300">
@@ -1114,37 +1574,47 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {(['product', 'company', 'legal'] as const).map((group) => (
-              <div key={group}>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-surface-400">
-                  {t(`landing.footer.${group}`)}
-                </p>
-                <ul className="space-y-2 text-sm text-surface-500 dark:text-surface-400">
-                  {group === 'product' && (
-                    <>
-                      <li><a href="#features" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.features')}</a></li>
-                      <li><a href="#pricing" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.pricing')}</a></li>
-                      <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.changelog')}</a></li>
-                      <li><a href="#b2b" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">B2B</a></li>
-                    </>
-                  )}
-                  {group === 'company' && (
-                    <>
-                      <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.about')}</a></li>
-                      <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.blog')}</a></li>
-                      <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.careers')}</a></li>
-                    </>
-                  )}
-                  {group === 'legal' && (
-                    <>
-                      <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.privacy')}</a></li>
-                      <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.terms')}</a></li>
-                      <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.gdpr')}</a></li>
-                    </>
-                  )}
-                </ul>
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-surface-400">
+                {t('landing.footer.product')}
+              </p>
+              <ul className="space-y-2 text-sm text-surface-500 dark:text-surface-400">
+                <li><a href="#what-we-do" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.whatWeDo.eyebrow')}</a></li>
+                <li><a href="#features" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.features')}</a></li>
+                <li><a href="#pricing" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.pricing')}</a></li>
+                <li><a href="#comparison" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.comparison.eyebrow')}</a></li>
+                <li><a href="#b2b" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">B2B</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-surface-400">
+                {t('landing.footer.company')}
+              </p>
+              <ul className="space-y-2 text-sm text-surface-500 dark:text-surface-400">
+                <li><a href="#about" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.about')}</a></li>
+                <li><a href="#why-us" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.whyUs.eyebrow')}</a></li>
+                <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.blog')}</a></li>
+                <li><a href="#contact" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.contact.eyebrow')}</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-surface-400">
+                {t('landing.footer.legal')}
+              </p>
+              <ul className="space-y-2 text-sm text-surface-500 dark:text-surface-400">
+                <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.privacy')}</a></li>
+                <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.terms')}</a></li>
+                <li><a href="#" className="transition-colors hover:text-surface-900 dark:hover:text-surface-50">{t('landing.footer.gdpr')}</a></li>
+              </ul>
+              <div className="mt-6">
+                <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-surface-400">Kontakt</p>
+                <a href={`mailto:${t('landing.contact.emailValue')}`} className="text-sm text-surface-500 transition-colors hover:text-emerald-600 dark:text-surface-400 dark:hover:text-emerald-400">
+                  {t('landing.contact.emailValue')}
+                </a>
               </div>
-            ))}
+            </div>
           </div>
 
           <div className="flex flex-col items-center justify-between gap-4 border-t border-surface-100 pt-8 text-xs text-surface-400 dark:border-surface-800 sm:flex-row">

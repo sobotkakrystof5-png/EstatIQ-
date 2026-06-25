@@ -24,6 +24,7 @@ const SettingsPage = lazy(() => import('@/features/settings/SettingsPage'))
 const EnergyPage = lazy(() => import('@/features/energy/EnergyPage'))
 const B2BPage = lazy(() => import('@/features/b2b/B2BPage'))
 const ForgotPasswordPage = lazy(() => import('@/features/dashboard/ForgotPasswordPage'))
+const ResetPasswordPage = lazy(() => import('@/features/auth/ResetPasswordPage'))
 const AcceptInvitePage = lazy(() => import('@/features/auth/AcceptInvitePage'))
 const TenantDashboardPage = lazy(() => import('@/features/tenant-portal/TenantDashboardPage'))
 const TenantPaymentsPage = lazy(() => import('@/features/tenant-portal/TenantPaymentsPage'))
@@ -80,6 +81,7 @@ export const router = createBrowserRouter([
       { path: 'login', element: withSuspense(<LoginPage />) },
       { path: 'register', element: withSuspense(<RegisterPage />) },
       { path: 'forgot-password', element: withSuspense(<ForgotPasswordPage />) },
+      { path: 'reset-password', element: withSuspense(<ResetPasswordPage />) },
       { path: 'accept-invite', element: withSuspense(<AcceptInvitePage />) },
     ],
   },

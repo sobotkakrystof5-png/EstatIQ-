@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 interface CardProps {
@@ -24,26 +23,17 @@ export function Card({
   padding = 'md',
 }: CardProps) {
   return (
-    <motion.div
-      whileHover={
-        hover || onClick
-          ? {
-              y: -2,
-              boxShadow: '0 12px 40px -8px rgb(0 0 0 / 0.14), 0 2px 8px -2px rgb(0 0 0 / 0.08)',
-            }
-          : undefined
-      }
-      transition={{ duration: 0.2 }}
+    <div
       className={cn(
         'rounded-xl bg-white shadow-card dark:bg-surface-900 dark:border dark:border-surface-800',
-        (hover || onClick) && 'cursor-pointer',
+        (hover || onClick) && 'cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover',
         paddingStyles[padding],
         className,
       )}
       onClick={onClick}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 

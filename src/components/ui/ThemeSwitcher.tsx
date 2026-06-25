@@ -39,7 +39,9 @@ export function ThemeSwitcher() {
           className={cn(
             'z-50 min-w-[148px] overflow-hidden rounded-xl border border-surface-200 bg-white p-1 shadow-modal',
             'dark:border-surface-700 dark:bg-surface-900',
-            'animate-in fade-in-0 zoom-in-95 data-[side=bottom]:slide-in-from-top-2',
+            'origin-top-right transition-all duration-150',
+            'data-[state=open]:opacity-100 data-[state=open]:scale-100',
+            'data-[state=closed]:opacity-0 data-[state=closed]:scale-95',
           )}
         >
           {THEMES.map(({ value, icon: Icon, labelKey }) => {

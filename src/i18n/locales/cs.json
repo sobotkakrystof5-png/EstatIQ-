@@ -298,8 +298,148 @@
         "3": { "q": "Co se stane s daty při zrušení předplatného?", "a": "Data zůstávají v bezpečí. Přejdete do read-only módu — vidíte vše, ale nemůžete přidávat nové záznamy. Kdykoli se můžete vrátit." },
         "4": { "q": "Jak funguje pozvánka pro nájemníka?", "a": "Zadáte jméno a e-mail nájemníka. Systém odešle pozvánku s jednorázovým tokenem platným 72 hodin. Nájemník si aktivuje účet sám." },
         "5": { "q": "Je EstatIQ v souladu s GDPR?", "a": "Ano. Data jsou uložena na evropských serverech. Nájemníci mohou kdykoli požádat o export nebo výmaz svých dat přes portál." },
-        "6": { "q": "Funguje EstatIQ pro správcovské firmy?", "a": "Ano, máme B2B tarify od 2 500 Kč/měs. pro firmy spravující 50–400+ jednotek. Kontaktujte nás pro demo." }
+        "6": { "q": "Funguje EstatIQ pro správcovské firmy?", "a": "Ano, máme B2B tarify od 2 500 Kč/měs. pro firmy spravující 50–400+ jednotek. Kontaktujte nás pro demo." },
+        "7": { "q": "Funguje EstatIQ i na mobilu?", "a": "Ano. EstatIQ je plně responzivní — funguje perfektně na telefonu, tabletu i počítači. Žádná instalace není potřeba, stačí otevřít prohlížeč." },
+        "8": { "q": "Co je portál pro nájemníka?", "a": "Po pozvání dostane váš nájemník vlastní přihlášení, kde vidí stav svých plateb, smlouvy a může vám poslat zprávu. Méně telefonátů a e-mailů pro vás." }
       }
+    },
+    "whatWeDo": {
+      "eyebrow": "Co je EstatIQ",
+      "title": "Asistent pro správu nájmů — jednoduše.",
+      "subtitle": "Představte si, že místo vás někdo každý měsíc hlídá platby, posílá upomínky nájemníkům, archivuje smlouvy a připraví daňový přehled. To je přesně to, co dělá EstatIQ.",
+      "cards": {
+        "1": {
+          "icon": "home",
+          "title": "Vše na jednom místě",
+          "desc": "Místo tří různých programů a šanonu papírů máte vše — smlouvy, platby, nájemníky, energie — v jedné jednoduché aplikaci na počítači i telefonu."
+        },
+        "2": {
+          "icon": "zap",
+          "title": "Pracuje za vás automaticky",
+          "desc": "EstatIQ každý měsíc sám vygeneruje platby, pošle nájemníkům připomínku s QR kódem a upozorní vás, pokud někdo nezaplatil. Bez vaší práce."
+        },
+        "3": {
+          "icon": "file",
+          "title": "Daně a dokumenty bez stresu",
+          "desc": "Jedním klikem máte přehled příjmů a výdajů připravený pro účetního nebo pro vaše daňové přiznání. Žádné ruční sestavování v Excelu."
+        }
+      }
+    },
+    "timeSavings": {
+      "eyebrow": "Úspora času",
+      "title": "3 hodiny ušetřené každý týden.",
+      "subtitle": "Počítejte sami: každý měsíc procházet platby, psát upomínky, hledat smlouvy, připravovat výkazy... To jsou desítky hodin ročně. EstatIQ to zvládne za vás — automaticky, spolehlivě, bez chyb.",
+      "stats": {
+        "hours": "3+ hod.",
+        "hoursLabel": "ušetřeno každý týden",
+        "payments": "0",
+        "paymentsLabel": "zapomenutých plateb",
+        "setup": "5 min",
+        "setupLabel": "na první nastavení",
+        "reminders": "100%",
+        "remindersLabel": "upomínek odesláno automaticky"
+      },
+      "items": {
+        "1": {
+          "title": "Místo vás kontrolujeme platby",
+          "desc": "Systém sám sleduje, kdo zaplatil a kdo ne. Vy to vidíte na přehledném dashboardu v reálném čase — bez procházení výpisů z účtu."
+        },
+        "2": {
+          "title": "Upomínky posíláme za vás",
+          "desc": "5 dní před splatností, v den splatnosti i 7 a 14 dní po — nájemník dostane e-mail s QR kódem pro okamžitou platbu. Vy nemusíte nic dělat."
+        },
+        "3": {
+          "title": "Daňový export za minutu",
+          "desc": "Žádné ruční sestavování. Exportujte přehled příjmů a výdajů po nemovitostech jedním klikem, kdykoli potřebujete — pro vás nebo pro účetního."
+        }
+      }
+    },
+    "whyUs": {
+      "eyebrow": "Proč EstatIQ",
+      "title": "6 důvodů, proč si pronajímatelé volí EstatIQ.",
+      "subtitle": "Nestačí jen aplikace. Potřebujete systém, kterému věříte a který skutečně pracuje za vás. Tady je, proč EstatIQ funguje.",
+      "advantages": {
+        "1": {
+          "title": "Vše na jednom místě",
+          "desc": "Platby, smlouvy, nájemníci, energie, daně — žádné přepínání mezi Excelem, e-mailem a šanonem."
+        },
+        "2": {
+          "title": "Nastavíte za 5 minut",
+          "desc": "Žádné složité konfigurace. Průvodce vás provede krok za krokem. Pak systém pracuje sám — každý měsíc."
+        },
+        "3": {
+          "title": "Bezpečnost jako v bance",
+          "desc": "Data uložena v EU, šifrovaná. Plně v souladu s GDPR. Vaše smlouvy a platby jsou v bezpečí."
+        },
+        "4": {
+          "title": "Spokojený nájemník",
+          "desc": "Vlastní portál pro nájemníka — vidí platby, smlouvy a QR kód. Méně telefonátů a e-mailů na vás."
+        },
+        "5": {
+          "title": "Daňový export jedním klikem",
+          "desc": "Strukturovaný přehled pro účetního připravený okamžitě. Ušetříte hodiny práce před každým daňovým termínem."
+        },
+        "6": {
+          "title": "Podpora do 24 hodin",
+          "desc": "Reální lidé, kteří vám odpoví. Žádné chatboty, žádné čekání týden. Píšeme česky a slovensky."
+        }
+      }
+    },
+    "comparison": {
+      "eyebrow": "Porovnání",
+      "title": "V čem je EstatIQ lepší než to, co teď používáte?",
+      "subtitle": "Většina pronajímatelů začíná s Excelem a WhatsAppem. Funguje to — ale jen chvíli. Podívejte se, co vám chybí.",
+      "colExcel": "Excel / WhatsApp",
+      "colOther": "Jiný SW",
+      "colEstatiq": "EstatIQ",
+      "features": {
+        "1": "Automatické platební upomínky",
+        "2": "QR kódy pro okamžitou platbu",
+        "3": "Portál pro nájemníka",
+        "4": "Energetický audit a anomálie",
+        "5": "Daňový export jedním klikem",
+        "6": "Upozornění na expiraci smluv",
+        "7": "Bezpečné úložiště dokumentů",
+        "8": "Přehledný dashboard v reálném čase",
+        "9": "Zákaznická podpora v češtině"
+      },
+      "note": "Srovnání je orientační. EstatIQ neustále přidává nové funkce — vždy zdarma pro stávající uživatele."
+    },
+    "about": {
+      "eyebrow": "O nás",
+      "title": "Vznikli jsme, protože správa nájmů nás štvala.",
+      "story": "Byl jsem pronajímatel se čtyřmi byty a každý měsíc jsem strávil hodiny kontrolováním plateb v Excelu, psáním upomínek přes WhatsApp a hledáním smluv v e-mailu. Jednou se mi stalo, že jsem zapomněl na expiraci pojistky. To byl zlom. EstatIQ jsem vytvořil proto, aby se to nestalo nikomu jinému.",
+      "signature": "Krystof, zakladatel EstatIQ",
+      "location": "Praha, Česká republika",
+      "missionEyebrow": "Naše poslání",
+      "missionTitle": "Pronájem jako pasivní příjem — doopravdy.",
+      "missionDesc": "Věříme, že správa nemovitostí nemá být druhé zaměstnání. Pronajímatelé by se měli věnovat tomu, co jim přináší radost — a ne papírování. EstatIQ automatizuje rutinu, aby vy mohli žít.",
+      "values": {
+        "1": { "title": "Jednoduchost", "desc": "Používá to i ten, kdo nikdy neviděl správcovský software. Navrhujeme pro lidi, ne pro techniky." },
+        "2": { "title": "Důvěra", "desc": "S penězi a smlouvami zacházíme jako s vlastními. Bezpečnost a GDPR jsou u nás samozřejmost." },
+        "3": { "title": "Automatizace", "desc": "Pokud to může udělat počítač, neotravujeme vás s tím. Váš čas je vzácný." }
+      }
+    },
+    "contact": {
+      "eyebrow": "Kontakt",
+      "title": "Jsme tu pro vás.",
+      "subtitle": "Máte otázku? Chcete vidět demo? Nebo si jen chcete promluvit před registrací? Napište nám — odpovídáme do 24 hodin v pracovní dny.",
+      "emailLabel": "E-mail",
+      "emailValue": "ahoj@estatiq.cz",
+      "phoneLabel": "Telefon",
+      "phoneValue": "+420 774 123 456",
+      "hoursLabel": "Pracovní doba",
+      "hoursValue": "Po–Pá, 9:00–17:00",
+      "responseLabel": "Doba odpovědi",
+      "responseValue": "Do 24 hodin",
+      "formName": "Vaše jméno",
+      "formEmail": "Váš e-mail",
+      "formMessage": "Vaše zpráva nebo otázka",
+      "formSubmit": "Odeslat zprávu",
+      "formNote": "Odpovídáme do 24 hodin v pracovní dny. Žádný spam, žádné obchodní hovory.",
+      "demoTitle": "Chcete raději demo?",
+      "demoDesc": "30 minut online, ukážeme vám vše živě na vašich datech.",
+      "demoCta": "Domluvit demo"
     }
   },
   "auth": {

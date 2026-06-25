@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import {
   LayoutDashboard,
@@ -43,7 +42,6 @@ export default function AppShell() {
   const [collapsed, setCollapsed] = useState(false)
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const location = useLocation()
   const { profile, signOut } = useAuth()
 
   const initials = profile?.full_name
@@ -58,17 +56,16 @@ export default function AppShell() {
   return (
     <div className="flex h-screen overflow-hidden bg-surface-50 dark:bg-surface-950">
       {/* ── Sidebar ──────────────────────────────────────────────────────── */}
-      <motion.aside
-        animate={{ width: collapsed ? 72 : 256 }}
-        transition={{ duration: 0.22, ease: 'easeInOut' }}
-        className="relative flex shrink-0 flex-col border-r border-surface-200 bg-white dark:border-surface-800 dark:bg-surface-950"
+      <aside
+        style={{ width: collapsed ? 72 : 256, transition: 'width 0.22s ease-in-out' }}
+        className="relative flex shrink-0 flex-col overflow-hidden border-r border-surface-200 bg-white dark:border-surface-800 dark:bg-surface-950"
       >
         {/* Logo */}
         <div className={cn(
           'flex h-16 shrink-0 items-center border-b border-surface-100 dark:border-surface-800',
           collapsed ? 'justify-center px-0' : 'justify-between px-5',
         )}>
-          <span className="font-display text-xl font-bold text-surface-900 dark:text-surface-50">
+          <span className="font-display text-xl font-bold text-surface-900 dark:text-surface-50 whitespace-nowrap">
             {collapsed
               ? <span className="text-emerald-600">E</span>
               : <>Estat<span className="text-emerald-600">IQ</span></>
@@ -186,7 +183,7 @@ export default function AppShell() {
         >
           {collapsed ? <ChevronRight size={12} /> : <ChevronLeft size={12} />}
         </button>
-      </motion.aside>
+      </aside>
 
       {/* ── Main content ─────────────────────────────────────────────────── */}
       <div className="flex flex-1 flex-col overflow-hidden">
@@ -208,17 +205,9 @@ export default function AppShell() {
           </div>
         </header>
 
-        {/* Page content */}
+        {/* Page content — no JS animation wrapper, instant render */}
         <main className="flex-1 overflow-y-auto">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="h-full"
-          >
-            <Outlet />
-          </motion.div>
+          <Outlet />
         </main>
       </div>
     </div>

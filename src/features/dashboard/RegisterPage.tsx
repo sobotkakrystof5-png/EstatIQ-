@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Mail, Lock, User, Phone, MapPin, Locate, ExternalLink, Building2 } from 'lucide-react'
@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Select } from '@/components/ui/Select'
 import { supabase } from '@/lib/supabase'
+import { useAuth } from '@/features/auth/AuthContext'
 import type { SupportedCurrency } from '@/hooks/useCurrency'
 
 type Role = 'landlord' | 'tenant' | 'manager'
@@ -64,6 +65,7 @@ const CURRENCIES: { value: SupportedCurrency; label: string }[] = [
 export default function RegisterPage() {
   const { t } = useTranslation()
   const navigate = useNavigate()
+  const { session } = useAuth()
 
   const [loading, setLoading] = useState(false)
   const [role, setRole] = useState<Role>('landlord')
@@ -71,6 +73,12 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
+  const [checkEmail, setCheckEmail] = useState(false)
+
+  // Navigate once AuthContext confirms the session — avoids race condition
+  useEffect(() => {
+    if (session) void navigate(role === 'landlord' ? '/onboarding' : '/app/dashboard')
+  }, [session, navigate, role])
 
   const [phone, setPhone] = useState('')
   const [country, setCountry] = useState('CZ')
@@ -145,7 +153,14 @@ export default function RegisterPage() {
       return
     }
 
-    void navigate(role === 'landlord' ? '/onboarding' : '/app/dashboard')
+    // If Supabase requires email confirmation, data.session is null
+    const { data } = await supabase.auth.getSession()
+    if (!data.session) {
+      setCheckEmail(true)
+      setLoading(false)
+      return
+    }
+    // If auto-confirmed: useEffect above navigates when session appears in context
   }
 
   const roles: { value: Role; label: string }[] = [
@@ -155,6 +170,25 @@ export default function RegisterPage() {
   ]
 
   const hasCzAddress = country === 'CZ' && (street || city)
+
+  if (checkEmail) {
+    return (
+      <div className="text-center">
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 dark:bg-emerald-900/20">
+          <Mail size={26} className="text-emerald-600 dark:text-emerald-400" />
+        </div>
+        <h2 className="font-display mb-2 text-xl font-bold text-surface-900 dark:text-surface-50">
+          {t('auth.register.checkEmail.title')}
+        </h2>
+        <p className="mb-6 text-sm text-surface-500 dark:text-surface-400">
+          {t('auth.register.checkEmail.body', { email })}
+        </p>
+        <Link to="/auth/login" className="text-sm font-medium text-emerald-600 hover:text-emerald-700 dark:text-emerald-400">
+          {t('auth.register.checkEmail.backToLogin')}
+        </Link>
+      </div>
+    )
+  }
 
   return (
     <div>

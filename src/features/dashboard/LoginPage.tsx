@@ -1,21 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Mail, Lock } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { supabase } from '@/lib/supabase'
+import { useAuth } from '@/features/auth/AuthContext'
 
 export default function LoginPage() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
+  const { session } = useAuth()
   const from = (location.state as { from?: Location })?.from?.pathname ?? '/app/dashboard'
 
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
+
+  // Navigate once AuthContext confirms the session — avoids race condition where
+  // navigate() fires before setSession() is committed in the context
+  useEffect(() => {
+    if (session) void navigate(from, { replace: true })
+  }, [session, navigate, from])
 
   async function handleSubmit(e: { preventDefault(): void }) {
     e.preventDefault()
@@ -27,10 +35,8 @@ export default function LoginPage() {
     if (error) {
       setError(t('auth.login.error'))
       setLoading(false)
-      return
     }
-
-    void navigate(from, { replace: true })
+    // Navigation handled by useEffect above when session updates in AuthContext
   }
 
   return (
