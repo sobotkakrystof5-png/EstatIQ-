@@ -417,7 +417,10 @@
       "noAccount": "Nemáte účet?",
       "register": "Zaregistrovať sa",
       "orContinueWith": "alebo pokračujte cez",
-      "error": "Nesprávny e-mail alebo heslo. Skúste to znova."
+      "error": "Nesprávny e-mail alebo heslo. Skúste to znova.",
+      "google": "Pokračovať cez Google",
+      "orEmail": "alebo cez e-mail",
+      "apple": "Pokračovať cez Apple"
     },
     "register": {
       "title": "Začnite zadarmo",
@@ -454,7 +457,19 @@
         "title": "Skontrolujte e-mail",
         "body": "Odoslali sme potvrdzovací odkaz na {{email}}. Po kliknutí sa prihlásite.",
         "backToLogin": "Späť na prihlásenie"
-      }
+      },
+      "google": "Zaregistrovať cez Google",
+      "otp": {
+        "title": "Verify your email",
+        "subtitle": "Enter the 6-digit code we sent to",
+        "ariaLabel": "Email verification code",
+        "digitLabel": "Digit",
+        "verifying": "Verifying code…",
+        "error": "Invalid or expired code. Please try again.",
+        "resend": "Send new code",
+        "resendCooldown": "Resend in {{seconds}} s"
+      },
+      "apple": "Zaregistrovať cez Apple"
     },
     "forgotPassword": {
       "title": "Obnovenie hesla",

@@ -594,7 +594,10 @@
       "noAccount": "Nemáte účet?",
       "register": "Zaregistrovat se",
       "orContinueWith": "nebo pokračujte přes",
-      "error": "Nesprávný e-mail nebo heslo. Zkuste to znovu."
+      "error": "Nesprávný e-mail nebo heslo. Zkuste to znovu.",
+      "google": "Pokračovat přes Google",
+      "orEmail": "nebo přes e-mail",
+      "apple": "Pokračovat přes Apple"
     },
     "register": {
       "title": "Začněte zdarma",
@@ -631,7 +634,19 @@
         "title": "Zkontrolujte e-mail",
         "body": "Odeslali jsme potvrzovací odkaz na {{email}}. Po kliknutí se přihlásíte.",
         "backToLogin": "Zpět na přihlášení"
-      }
+      },
+      "google": "Registrovat přes Google",
+      "otp": {
+        "title": "Ověřte svůj e-mail",
+        "subtitle": "Zadejte 6místný kód, který jsme odeslali na",
+        "ariaLabel": "Kód pro ověření e-mailu",
+        "digitLabel": "Číslice",
+        "verifying": "Ověřuji kód…",
+        "error": "Nesprávný nebo prošlý kód. Zkuste to znovu.",
+        "resend": "Odeslat nový kód",
+        "resendCooldown": "Odeslat znovu za {{seconds}} s"
+      },
+      "apple": "Registrovat přes Apple"
     },
     "forgotPassword": {
       "title": "Obnovení hesla",

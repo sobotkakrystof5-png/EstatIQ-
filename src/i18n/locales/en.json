@@ -594,7 +594,10 @@
       "noAccount": "Don't have an account?",
       "register": "Sign up",
       "orContinueWith": "or continue with",
-      "error": "Incorrect email or password. Please try again."
+      "error": "Incorrect email or password. Please try again.",
+      "google": "Continue with Google",
+      "orEmail": "or with email",
+      "apple": "Continue with Apple"
     },
     "register": {
       "title": "Get started free",
@@ -631,7 +634,19 @@
         "title": "Check your email",
         "body": "We sent a confirmation link to {{email}}. Click it to sign in.",
         "backToLogin": "Back to sign in"
-      }
+      },
+      "google": "Sign up with Google",
+      "otp": {
+        "title": "Verify your email",
+        "subtitle": "Enter the 6-digit code we sent to",
+        "ariaLabel": "Email verification code",
+        "digitLabel": "Digit",
+        "verifying": "Verifying code…",
+        "error": "Invalid or expired code. Please try again.",
+        "resend": "Send new code",
+        "resendCooldown": "Resend in {{seconds}} s"
+      },
+      "apple": "Sign up with Apple"
     },
     "forgotPassword": {
       "title": "Reset password",

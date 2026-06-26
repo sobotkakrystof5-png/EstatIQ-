@@ -417,7 +417,10 @@
       "noAccount": "Нет аккаунта?",
       "register": "Зарегистрироваться",
       "orContinueWith": "или продолжить через",
-      "error": "Неверный email или пароль. Попробуйте снова."
+      "error": "Неверный email или пароль. Попробуйте снова.",
+      "google": "Продолжить через Google",
+      "orEmail": "или по e-mail",
+      "apple": "Продолжить через Apple"
     },
     "register": {
       "title": "Начать бесплатно",
@@ -454,7 +457,19 @@
         "title": "Проверьте почту",
         "body": "Мы отправили ссылку подтверждения на {{email}}. Нажмите на неё для входа.",
         "backToLogin": "Вернуться ко входу"
-      }
+      },
+      "google": "Зарегистрироваться через Google",
+      "otp": {
+        "title": "Verify your email",
+        "subtitle": "Enter the 6-digit code we sent to",
+        "ariaLabel": "Email verification code",
+        "digitLabel": "Digit",
+        "verifying": "Verifying code…",
+        "error": "Invalid or expired code. Please try again.",
+        "resend": "Send new code",
+        "resendCooldown": "Resend in {{seconds}} s"
+      },
+      "apple": "Зарегистрироваться через Apple"
     },
     "forgotPassword": {
       "title": "Сброс пароля",

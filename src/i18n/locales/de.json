@@ -416,7 +416,10 @@
       "noAccount": "Kein Konto?",
       "register": "Registrieren",
       "orContinueWith": "oder weiter mit",
-      "error": "Falsche E-Mail oder Passwort. Bitte versuchen Sie es erneut."
+      "error": "Falsche E-Mail oder Passwort. Bitte versuchen Sie es erneut.",
+      "google": "Mit Google fortfahren",
+      "orEmail": "oder per E-Mail",
+      "apple": "Mit Apple fortfahren"
     },
     "register": {
       "title": "Kostenlos starten",
@@ -453,7 +456,19 @@
         "title": "E-Mail überprüfen",
         "body": "Wir haben einen Bestätigungslink an {{email}} gesendet. Klicken Sie darauf, um sich anzumelden.",
         "backToLogin": "Zurück zur Anmeldung"
-      }
+      },
+      "google": "Mit Google registrieren",
+      "otp": {
+        "title": "Verify your email",
+        "subtitle": "Enter the 6-digit code we sent to",
+        "ariaLabel": "Email verification code",
+        "digitLabel": "Digit",
+        "verifying": "Verifying code…",
+        "error": "Invalid or expired code. Please try again.",
+        "resend": "Send new code",
+        "resendCooldown": "Resend in {{seconds}} s"
+      },
+      "apple": "Mit Apple registrieren"
     },
     "forgotPassword": {
       "title": "Passwort zurücksetzen",

@@ -416,7 +416,10 @@
       "noAccount": "¿No tienes cuenta?",
       "register": "Registrarse",
       "orContinueWith": "o continuar con",
-      "error": "Correo o contraseña incorrectos. Por favor, inténtelo de nuevo."
+      "error": "Correo o contraseña incorrectos. Por favor, inténtelo de nuevo.",
+      "google": "Continuar con Google",
+      "orEmail": "o con correo",
+      "apple": "Continuar con Apple"
     },
     "register": {
       "title": "Empezar gratis",
@@ -453,7 +456,19 @@
         "title": "Revisa tu correo",
         "body": "Enviamos un enlace de confirmación a {{email}}. Haz clic para iniciar sesión.",
         "backToLogin": "Volver al inicio de sesión"
-      }
+      },
+      "google": "Registrarse con Google",
+      "otp": {
+        "title": "Verify your email",
+        "subtitle": "Enter the 6-digit code we sent to",
+        "ariaLabel": "Email verification code",
+        "digitLabel": "Digit",
+        "verifying": "Verifying code…",
+        "error": "Invalid or expired code. Please try again.",
+        "resend": "Send new code",
+        "resendCooldown": "Resend in {{seconds}} s"
+      },
+      "apple": "Registrarse con Apple"
     },
     "forgotPassword": {
       "title": "Restablecer contraseña",
