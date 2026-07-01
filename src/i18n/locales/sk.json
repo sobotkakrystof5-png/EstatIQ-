@@ -35,7 +35,10 @@
     "settings": "Nastavenia",
     "logout": "Odhlásiť sa",
     "collapseMenu": "Zbaliť menu",
-    "expandMenu": "Rozbaliť menu"
+    "expandMenu": "Rozbaliť menu",
+    "calendar": "Calendar",
+    "more": "More",
+    "quickCreate": "Create"
   },
   "landing": {
     "hero": {
@@ -645,6 +648,12 @@
       "title": "Notifikácie",
       "empty": "Žiadne nové notifikácie",
       "markRead": "Označiť ako prečítané"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "analytics": "Analytics",
+      "subsidies": "Subsidies & Mortgages",
+      "news": "News"
     }
   },
   "properties": {
@@ -706,7 +715,48 @@
       "nameRequired": "Zadaj názov nehnuteľnosti.",
       "rentRequired": "Zadaj mesačný nájom.",
       "create": "Pridať nehnuteľnosť",
-      "save": "Uložiť zmeny"
+      "save": "Uložiť zmeny",
+      "tabAi": "AI Assistant",
+      "tabManual": "Manual entry",
+      "tabCuzk": "Import from cadastre",
+      "aiSubTab": {
+        "describe": "Describe in words",
+        "copy": "Copy existing"
+      },
+      "aiDescribeLabel": "What do you want to create?",
+      "aiDescribePlaceholder": "2-bedroom flat in Prague Vinohrady, 50 m², panel building…",
+      "aiWillFill": "AI will fill in:",
+      "aiWillFillDesc": "Property type, address, size, equipment and more based on your description.",
+      "aiGenerate": "Generate draft",
+      "aiCopyComingSoon": "Copying existing property will be available soon.",
+      "selectType": "Select type",
+      "propertyType": "Property type",
+      "region": "Region",
+      "regionPlaceholder": "Central Bohemia",
+      "disposition": "Layout",
+      "sectionBasic": "Basic information",
+      "sectionValue": "Property value",
+      "sectionTypology": "Typology",
+      "sectionLocation": "Location in building",
+      "sectionEquipment": "Equipment",
+      "sectionEnergy": "Energy & meters",
+      "sectionInsurance": "Insurance",
+      "sectionNotes": "Notes",
+      "purchasePrice": "Acquisition price",
+      "marketValue": "Current market value",
+      "ownershipType": "Ownership type",
+      "constructionType": "Construction type",
+      "heatingType": "Heating type",
+      "unitNumber": "Flat number",
+      "floor": "Floor",
+      "totalFloors": "Total floors",
+      "basementFloors": "Basement floors",
+      "gasEicCode": "EIC code (gas)",
+      "electricityEanCode": "EAN code (electricity)",
+      "insurancePolicyNumber": "Policy number",
+      "insuranceAnnualPremium": "Annual premium",
+      "insuranceNote": "Insurance note",
+      "insuranceNotePlaceholder": "Insurer, expiry date…"
     },
     "detail": {
       "back": "Späť na nehnuteľnosti",
@@ -743,6 +793,48 @@
     "emptyFiltered": {
       "title": "Nič tu nie je",
       "description": "Pre zvolený filter nemáme žiadne nehnuteľnosti."
+    },
+    "type": {
+      "byt": "Flat",
+      "dum": "House",
+      "pozemek": "Land",
+      "komercni_prostor": "Commercial space",
+      "garaz": "Garage / parking",
+      "kancelar": "Office",
+      "sklad": "Storage",
+      "jine": "Other"
+    },
+    "ownership": {
+      "personal": "Personal ownership",
+      "cooperative": "Cooperative",
+      "state": "State / municipal",
+      "svj": "HOA (SVJ)",
+      "other": "Other"
+    },
+    "construction": {
+      "panel": "Prefab panel",
+      "brick": "Brick",
+      "timber": "Timber frame",
+      "concrete": "Monolithic concrete",
+      "other": "Other"
+    },
+    "heating": {
+      "central": "Central",
+      "floor": "Floor heating",
+      "electric": "Electric",
+      "gas": "Gas",
+      "heat_pump": "Heat pump",
+      "fireplace": "Fireplace / local",
+      "other": "Other"
+    },
+    "equipment": {
+      "elevator": "Elevator",
+      "parking": "Parking",
+      "garage": "Garage",
+      "balcony": "Balcony",
+      "loggia": "Loggia",
+      "terrace": "Terrace",
+      "cellar": "Cellar"
     }
   },
   "payments": {
@@ -1318,7 +1410,35 @@
       "api_not_configured": "Overovanie katastra nie je dostupné — kontaktujte podporu.",
       "generic": "Overenie zlyhalo. Skúste to znova."
     },
-    "reset": "Začať znova"
+    "reset": "Začať znova",
+    "modal": {
+      "title": "Import from Land Registry",
+      "description": "Search a property by address, parcel number or title deed.",
+      "tab": {
+        "address": "Address",
+        "parcel": "Parcel",
+        "lv": "Title deed"
+      },
+      "addressLabel": "Property address",
+      "addressPlaceholder": "e.g. Vinohrady 42, Prague…",
+      "changeAddress": "Change address",
+      "confirm": "Use this address",
+      "search": "Search in Land Registry",
+      "lvHint": "Enter cadastral area code and title deed number.",
+      "parcelHint": "Enter cadastral area code and parcel number.",
+      "kuCode": "Cadastral area code",
+      "lvNumber": "Title deed no.",
+      "parcelNumber": "Parcel number"
+    },
+    "detail": {
+      "ku": "Cadastral area",
+      "lv": "Title deed",
+      "parcel": "Parcel number"
+    },
+    "error": {
+      "ruianFailed": "Failed to search RUIAN. Please try again.",
+      "wsdpFailed": "Failed to load data from the Land Registry. Check the entered values."
+    }
   },
   "prelaunch": {
     "eyebrow": "Prelaunch — obmedzený early access",
@@ -1357,6 +1477,168 @@
       "learnMore": "Viac informácií",
       "accept": "Prijať všetky",
       "reject": "Odmietnuť voliteľné"
+    }
+  },
+  "calendar": {
+    "title": "Calendar",
+    "view": {
+      "agenda": "Agenda",
+      "month": "Month"
+    },
+    "today": "Today",
+    "prevWeek": "Previous week",
+    "nextWeek": "Next week",
+    "addEvent": "Add event",
+    "empty": {
+      "title": "No events",
+      "description": "No scheduled events for this day."
+    }
+  },
+  "analytics": {
+    "title": "Financial Analysis",
+    "period": {
+      "1y": "Last year",
+      "2y": "Last 2 years",
+      "3y": "Last 3 years",
+      "5y": "Last 5 years"
+    },
+    "kpi": {
+      "growth": "Year-over-year growth",
+      "growthSub": "Year-over-year",
+      "roi": "ROI",
+      "roiSub": "Return on investment",
+      "netIncome": "Net income",
+      "netIncomeSub": "This year",
+      "portfolio": "Portfolio value",
+      "portfolioSub": "Total acquisition cost"
+    },
+    "cashflow": {
+      "title": "Cashflow — last 6 months",
+      "income": "Income",
+      "expenses": "Expenses",
+      "avg": "Average"
+    },
+    "aiPrediction": {
+      "title": "AI Portfolio Prediction",
+      "empty": "Click for AI estimate of your properties value.",
+      "refresh": "Update estimate",
+      "placeholder": "Add purchase prices to your properties to enable AI estimation."
+    }
+  },
+  "subsidies": {
+    "title": "Subsidies, Mortgages & Energy",
+    "available": {
+      "title": "Available subsidies",
+      "count": "active",
+      "expires": "Valid until"
+    },
+    "mortgage": {
+      "title": "Mortgage rates",
+      "from": "from",
+      "declining": "rates falling",
+      "note": "Indicative average of best market offers. Updated daily."
+    }
+  },
+  "news": {
+    "title": "Legislative changes & important news",
+    "refresh": "Refresh",
+    "empty": "No news matching the filter.",
+    "category": {
+      "all": "All",
+      "market": "Market",
+      "legislation": "Legislation",
+      "finance": "Finance",
+      "tips": "Tips"
+    }
+  },
+  "svj": {
+    "title": "SVJ Management",
+    "description": "An active SVJ subscription is required to access the SVJ module. Choose from SVJ plans to get full access.",
+    "cta": "View SVJ plans"
+  },
+  "quickCreate": {
+    "title": "Create",
+    "items": {
+      "property": "Property",
+      "tenant": "Tenant",
+      "lease": "Lease",
+      "payment": "Payment",
+      "expense": "Expense",
+      "task": "Task"
+    }
+  },
+  "workspace": {
+    "manage": "Management",
+    "crm": "CRM",
+    "airbnb": "Airbnb / Hotel",
+    "svj": "HOA"
+  },
+  "more": {
+    "title": "More",
+    "quickActions": "Quick actions",
+    "aiAssistant": "AI Assistant",
+    "aiAssistantDesc": "Ask anything",
+    "guide": "App guide",
+    "guideDesc": "Learn how to use the app",
+    "addToHome": "Add to home screen",
+    "addToHomeDesc": "Show iOS instructions",
+    "menuTree": "Navigation",
+    "pwa": {
+      "howTo": "How to add to home screen (iOS)",
+      "step1": "Tap the Share icon (square with arrow) in the Safari bottom bar",
+      "step2": "Scroll down and tap Add to Home Screen",
+      "step3": "Confirm by tapping Add in the top right",
+      "result": "The app will then behave like a native app – full screen with its own icon."
+    }
+  },
+  "expenses": {
+    "title": "Expenses",
+    "subtitle": "Property expenses for tax overview.",
+    "add": "Add expense",
+    "totalThisYear": "Expenses this year",
+    "taxDeductible": "Tax deductible",
+    "empty": {
+      "title": "No expenses yet",
+      "description": "Add your first expense to track property costs."
+    },
+    "category": {
+      "repair": "Repair",
+      "insurance": "Insurance",
+      "utilities": "Utilities",
+      "management": "Management",
+      "tax": "Taxes & fees",
+      "other": "Other",
+      "opravy": "Repairs",
+      "pojistne": "Insurance",
+      "sluzby": "Utilities",
+      "sprava": "Management",
+      "danove_poplatky": "Taxes & fees",
+      "energie": "Energy",
+      "reklama": "Marketing",
+      "jine": "Other"
+    },
+    "form": {
+      "title": "New expense",
+      "subtitle": "Enter a property-related expense.",
+      "property": "Property",
+      "selectProperty": "Select property",
+      "category": "Category",
+      "date": "Date",
+      "description": "Description",
+      "descriptionPlaceholder": "Boiler repair, annual insurance…",
+      "amount": "Amount",
+      "taxDeductible": "Tax deductible expense",
+      "taxDeductibleHint": "This expense will be included in the tax overview.",
+      "save": "Save expense",
+      "propertyRequired": "Select a property.",
+      "descriptionRequired": "Enter a description.",
+      "amountRequired": "Enter a valid amount.",
+      "dateRequired": "Enter a date."
+    },
+    "tax": {
+      "no": "Not deductible",
+      "yes": "Fully deductible",
+      "pausal30": "30% flat rate"
     }
   }
 }

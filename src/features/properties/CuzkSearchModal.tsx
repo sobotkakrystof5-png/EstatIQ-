@@ -12,7 +12,7 @@ import {
   type RuianCandidate,
 } from './cuzk'
 
-type Tab = 'address' | 'lv'
+type Tab = 'address' | 'parcel' | 'lv'
 
 export interface CuzkAddressData {
   street: string
@@ -50,7 +50,7 @@ export function CuzkSearchModal({ open, onOpenChange, onConfirm }: CuzkSearchMod
     >
       {/* Tabs */}
       <div className="mb-5 flex gap-1 rounded-lg bg-surface-100 p-1 dark:bg-surface-800">
-        {(['address', 'lv'] as Tab[]).map((id) => (
+        {(['address', 'parcel', 'lv'] as Tab[]).map((id) => (
           <button
             key={id}
             onClick={() => setTab(id)}
@@ -66,11 +66,9 @@ export function CuzkSearchModal({ open, onOpenChange, onConfirm }: CuzkSearchMod
         ))}
       </div>
 
-      {tab === 'address' ? (
-        <AddressTab onConfirm={onConfirm} onClose={() => handleOpenChange(false)} />
-      ) : (
-        <LvTab onConfirm={onConfirm} onClose={() => handleOpenChange(false)} />
-      )}
+      {tab === 'address' && <AddressTab onConfirm={onConfirm} onClose={() => handleOpenChange(false)} />}
+      {tab === 'parcel' && <ParcelTab onConfirm={onConfirm} onClose={() => handleOpenChange(false)} />}
+      {tab === 'lv' && <LvTab onConfirm={onConfirm} onClose={() => handleOpenChange(false)} />}
     </Modal>
   )
 }
@@ -238,6 +236,145 @@ function AddressTab({
         <Button
           type="button"
           disabled={!selected}
+          rightIcon={<ChevronRight size={16} />}
+          onClick={handleConfirm}
+        >
+          {t('cuzk.modal.confirm')}
+        </Button>
+      </div>
+    </div>
+  )
+}
+
+// ── Záložka: vyhledání podle parcelního čísla ────────────────────────────────
+
+function ParcelTab({
+  onConfirm,
+  onClose,
+}: {
+  onConfirm: (data: CuzkAddressData) => void
+  onClose: () => void
+}) {
+  const { t } = useTranslation()
+  const [kuCode, setKuCode] = useState('')
+  const [parcel, setParcel] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [result, setResult] = useState<CuzkPropertyResult | null>(null)
+
+  async function handleSearch() {
+    const kuTrimmed = kuCode.trim()
+    const parcelTrimmed = parcel.trim()
+    if (!kuTrimmed || !parcelTrimmed) return
+
+    setLoading(true)
+    setError(null)
+    setResult(null)
+    try {
+      const data = await fetchPropertyFromCuzk({ ku_code: kuTrimmed, lv: parcelTrimmed })
+      setResult(data)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : t('cuzk.error.wsdpFailed'))
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  function handleConfirm() {
+    if (!result) return
+    const parts = (result.address ?? '').split(',')
+    onConfirm({
+      street: parts[0]?.trim() ?? '',
+      city: parts[1]?.trim() ?? '',
+      zip: '',
+      cadastre_ku: result.cadastre_ku ?? undefined,
+      cadastre_ku_code: kuCode.trim() || undefined,
+      cadastre_parcel: parcel.trim() || undefined,
+    })
+    onClose()
+  }
+
+  const canSearch = kuCode.trim().length > 0 && parcel.trim().length > 0
+
+  return (
+    <div className="space-y-4">
+      <p className="text-sm text-surface-500 dark:text-surface-400">{t('cuzk.modal.parcelHint')}</p>
+
+      <div className="grid grid-cols-2 gap-3">
+        <Input
+          label={t('cuzk.modal.kuCode')}
+          placeholder="620985"
+          value={kuCode}
+          inputMode="numeric"
+          autoFocus
+          onChange={(e) => { setKuCode(e.target.value.replace(/\D/g, '')); setResult(null) }}
+        />
+        <Input
+          label={t('cuzk.modal.parcelNumber')}
+          placeholder="123/4"
+          value={parcel}
+          onChange={(e) => { setParcel(e.target.value); setResult(null) }}
+        />
+      </div>
+
+      <Button
+        type="button"
+        variant="outline"
+        loading={loading}
+        disabled={!canSearch}
+        leftIcon={<Search size={16} />}
+        onClick={() => void handleSearch()}
+        className="w-full"
+      >
+        {t('cuzk.modal.search')}
+      </Button>
+
+      {error && (
+        <p className="flex items-center gap-2 text-sm text-red-600 dark:text-red-400">
+          <TriangleAlert size={15} />
+          {error}
+        </p>
+      )}
+
+      <AnimatePresence>
+        {result && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-800/60 dark:bg-emerald-900/20"
+          >
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-800/40">
+                <Building2 size={16} className="text-emerald-700 dark:text-emerald-400" />
+              </div>
+              <div className="min-w-0 space-y-0.5">
+                {result.address && (
+                  <p className="font-medium text-surface-900 dark:text-surface-50">{result.address}</p>
+                )}
+                {result.cadastre_ku && (
+                  <p className="text-sm text-surface-500">{t('cuzk.detail.ku')}: {result.cadastre_ku}</p>
+                )}
+                {result.cadastre_parcel && (
+                  <p className="text-sm text-surface-500">{t('cuzk.detail.parcel')}: {result.cadastre_parcel}</p>
+                )}
+                {result.area_m2 && (
+                  <p className="text-sm text-surface-500">{t('properties.detail.area')}: {result.area_m2} m²</p>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="flex justify-end gap-3 pt-2">
+        <Button type="button" variant="ghost" onClick={onClose}>
+          {t('common.cancel')}
+        </Button>
+        <Button
+          type="button"
+          disabled={!result}
           rightIcon={<ChevronRight size={16} />}
           onClick={handleConfirm}
         >

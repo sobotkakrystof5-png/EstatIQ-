@@ -10,12 +10,33 @@ function monthPrefix(year: number, month: number) {
 
 export interface DashboardStats {
   incomeThisMonth: number
-  incomeTrend: number        // % change vs last month
+  incomeTrend: number
   propertiesTotal: number
-  propertiesOccupied: number // active leases count
-  occupancyPct: number       // propertiesOccupied / propertiesTotal * 100
-  pendingAmount: number      // SUM(amount WHERE status='pending')
-  overdueAmount: number      // SUM(amount WHERE status='overdue')
+  propertiesOccupied: number
+  occupancyPct: number
+  pendingAmount: number
+  overdueAmount: number
+  tenantsCount: number
+  leasesCount: number
+  tasksCount: number
+  expensesThisMonth: number
+  cashflow: number
+  insuranceCount: number
+  loansMonthlyTotal: number
+  metersCount: number
+}
+
+export interface TenantPreview {
+  id: string
+  fullName: string
+  email: string
+}
+
+export interface PropertyPreview {
+  id: string
+  name: string
+  city: string
+  status: string
 }
 
 export interface RecentPayment {
@@ -68,12 +89,24 @@ export async function fetchDashboardStats(): Promise<DashboardStats> {
   const currentPrefix = monthPrefix(currentYear, currentMonth)
   const prevPrefix = monthPrefix(prevYear, prevMonth)
 
-  const [propertiesRes, thisMonthRes, prevMonthRes, pendingRes, overdueRes] = await Promise.all([
-    supabase.from('properties').select('status').is('archived_at', null),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const db = supabase as any
+
+  const [
+    propertiesRes, thisMonthRes, prevMonthRes, pendingRes, overdueRes,
+    tenantsRes, leasesRes, tasksRes, expensesRes, loansRes, metersRes,
+  ] = await Promise.all([
+    supabase.from('properties').select('status, insurance_policy_number').is('archived_at', null),
     supabase.from('payments').select('amount, status').like('due_date', `${currentPrefix}%`),
     supabase.from('payments').select('amount, status').like('due_date', `${prevPrefix}%`),
     supabase.from('payments').select('amount').eq('status', 'pending'),
     supabase.from('payments').select('amount').eq('status', 'overdue'),
+    supabase.from('tenants').select('id', { count: 'exact', head: true }),
+    supabase.from('leases').select('id', { count: 'exact', head: true }).eq('status', 'aktivni'),
+    db.from('calendar_events').select('id', { count: 'exact', head: true }).eq('status', 'open') as Promise<{ count: number | null }>,
+    supabase.from('expenses').select('amount').like('expense_date', `${currentPrefix}%`),
+    db.from('loans').select('monthly_payment') as Promise<{ data: Array<{ monthly_payment: number | null }> | null }>,
+    supabase.from('energy_readings').select('id', { count: 'exact', head: true }).like('reading_date', `${currentPrefix}%`),
   ])
 
   const properties = propertiesRes.data ?? []
@@ -102,6 +135,12 @@ export async function fetchDashboardStats(): Promise<DashboardStats> {
   const propertiesOccupied = properties.filter((p) => p.status === 'pronajata').length
   const occupancyPct = propertiesTotal > 0 ? Math.round((propertiesOccupied / propertiesTotal) * 100) : 0
 
+  const expensesThisMonth = (expensesRes.data ?? []).reduce((s, e) => s + e.amount, 0)
+  const loansData = (loansRes as unknown as { data: Array<{ monthly_payment: number | null }> | null }).data ?? []
+  const loansMonthlyTotal = loansData.reduce((s, l) => s + (l.monthly_payment ?? 0), 0)
+  const tasksCount = (tasksRes as unknown as { count: number | null }).count ?? 0
+  const insuranceCount = properties.filter((p) => p.insurance_policy_number).length
+
   return {
     incomeThisMonth,
     incomeTrend,
@@ -110,6 +149,14 @@ export async function fetchDashboardStats(): Promise<DashboardStats> {
     occupancyPct,
     pendingAmount,
     overdueAmount,
+    tenantsCount: tenantsRes.count ?? 0,
+    leasesCount: leasesRes.count ?? 0,
+    tasksCount,
+    expensesThisMonth,
+    cashflow: incomeThisMonth - expensesThisMonth,
+    insuranceCount,
+    loansMonthlyTotal,
+    metersCount: metersRes.count ?? 0,
   }
 }
 
@@ -197,5 +244,37 @@ export async function fetchIncomeChart(): Promise<ChartPoint[]> {
       .reduce((s, p) => s + p.amount, 0),
     // TODO(fáze 2): track occupancy per month historically
     occupancy: occupancyPct,
+  }))
+}
+
+export async function fetchDashboardTenantsPreview(): Promise<TenantPreview[]> {
+  const { data, error } = await supabase
+    .from('tenants')
+    .select('id, full_name, email')
+    .limit(5)
+
+  if (error) throw error
+
+  return (data ?? []).map((t) => ({
+    id: t.id,
+    fullName: t.full_name,
+    email: t.email,
+  }))
+}
+
+export async function fetchDashboardPropertiesPreview(): Promise<PropertyPreview[]> {
+  const { data, error } = await supabase
+    .from('properties')
+    .select('id, name, city, status')
+    .is('archived_at', null)
+    .limit(5)
+
+  if (error) throw error
+
+  return (data ?? []).map((p) => ({
+    id: p.id,
+    name: p.name,
+    city: p.city,
+    status: p.status,
   }))
 }

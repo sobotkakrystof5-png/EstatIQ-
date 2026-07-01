@@ -13,7 +13,10 @@ const PrelaunchPage = lazy(() => import('@/features/dashboard/PrelaunchPage'))
 const LoginPage = lazy(() => import('@/features/dashboard/LoginPage'))
 const RegisterPage = lazy(() => import('@/features/dashboard/RegisterPage'))
 const OnboardingWizard = lazy(() => import('@/features/onboarding/OnboardingWizard'))
-const DashboardPage = lazy(() => import('@/features/dashboard/DashboardPage'))
+const DashboardShell = lazy(() => import('@/features/dashboard/DashboardShell'))
+const CalendarPage = lazy(() => import('@/features/calendar/CalendarPage'))
+const SvjPage = lazy(() => import('@/features/svj/SvjPage'))
+const ExpensesPage = lazy(() => import('@/features/expenses/ExpensesPage'))
 const PropertiesPage = lazy(() => import('@/features/properties/PropertiesPage'))
 const PropertyDetailPage = lazy(() => import('@/features/properties/PropertyDetailPage'))
 const TenantsPage = lazy(() => import('@/features/tenants/TenantsPage'))
@@ -103,7 +106,10 @@ export const router = createBrowserRouter([
         element: <AppShell />,
         children: [
           { index: true, element: <Navigate to="dashboard" replace /> },
-          { path: 'dashboard', element: withSuspense(<DashboardPage />) },
+          { path: 'dashboard', element: withSuspense(<DashboardShell />) },
+          { path: 'calendar',  element: withSuspense(<CalendarPage />) },
+          { path: 'svj',       element: withSuspense(<SvjPage />) },
+          { path: 'expenses',  element: withSuspense(<ExpensesPage />) },
           { path: 'properties', element: withSuspense(<PropertiesPage />) },
           { path: 'properties/:id', element: withSuspense(<PropertyDetailPage />) },
           { path: 'tenants', element: withSuspense(<TenantsPage />) },
@@ -113,6 +119,9 @@ export const router = createBrowserRouter([
           { path: 'energy', element: withSuspense(<EnergyPage />) },
           { path: 'taxes', element: <ComingSoon title="Daně" /> },
           { path: 'messages', element: <ComingSoon title="Zprávy" /> },
+          { path: 'crm', element: <ComingSoon title="CRM" /> },
+          { path: 'airbnb', element: <ComingSoon title="Krátkodobé pronájmy" /> },
+          { path: 'tasks', element: <ComingSoon title="Úkoly" /> },
           { path: 'b2b', element: withSuspense(<B2BPage />) },
           { path: 'settings', element: withSuspense(<SettingsPage />) },
         ],

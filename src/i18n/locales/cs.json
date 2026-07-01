@@ -35,7 +35,14 @@
     "settings": "Nastavení",
     "logout": "Odhlásit se",
     "collapseMenu": "Sbalit menu",
-    "expandMenu": "Rozbalit menu"
+    "expandMenu": "Rozbalit menu",
+    "calendar": "Kalendář",
+    "more": "Více",
+    "quickCreate": "Vytvořit",
+    "tasks": "Úkoly",
+    "svj": "SVJ",
+    "bank": "Banka",
+    "expenses": "Náklady"
   },
   "landing": {
     "hero": {
@@ -799,6 +806,37 @@
       },
       "occupancy": {
         "title": "Obsazenost"
+      },
+      "tenants": {
+        "title": "Nájemníci"
+      },
+      "leases": {
+        "title": "Smlouvy",
+        "sub": "aktivní"
+      },
+      "tasks": {
+        "title": "Úkoly",
+        "sub": "otevřené"
+      },
+      "cashflow": {
+        "title": "Cashflow",
+        "sub": "příjmy − výdaje"
+      },
+      "debts": {
+        "title": "Dluhy",
+        "sub": "po splatnosti"
+      },
+      "insurance": {
+        "title": "Pojištění",
+        "unit": "nemovitostí"
+      },
+      "loans": {
+        "title": "Úvěry",
+        "sub": "/ měs."
+      },
+      "meters": {
+        "title": "Měřidla",
+        "sub": "odečty tento měsíc"
       }
     },
     "recentPayments": {
@@ -824,6 +862,22 @@
       "title": "Notifikace",
       "empty": "Žádné nové notifikace",
       "markRead": "Označit jako přečtené"
+    },
+    "miniTenants": {
+      "title": "Nájemníci",
+      "viewAll": "Zobrazit vše",
+      "empty": "Zatím žádní nájemníci"
+    },
+    "miniProperties": {
+      "title": "Nemovitosti",
+      "viewAll": "Zobrazit vše",
+      "empty": "Zatím žádné nemovitosti"
+    },
+    "tabs": {
+      "overview": "Výchozí",
+      "analytics": "Analytika",
+      "subsidies": "Dotace, hypotéky a energie",
+      "news": "Novinky"
     }
   },
   "properties": {
@@ -892,7 +946,90 @@
       "nameRequired": "Zadej název nemovitosti.",
       "rentRequired": "Zadej měsíční nájem.",
       "create": "Přidat nemovitost",
-      "save": "Uložit změny"
+      "save": "Uložit změny",
+      "tabAi": "AI Asistent",
+      "tabManual": "Ruční zadání",
+      "tabCuzk": "Import z katastru",
+      "aiSubTab": {
+        "describe": "Popsat slovně",
+        "copy": "Kopírovat existující"
+      },
+      "aiDescribeLabel": "Co chcete vytvořit?",
+      "aiDescribePlaceholder": "Byt 2+kk v Praze na Vinohradech, 50 m², panelový dům…",
+      "aiWillFill": "AI doplní:",
+      "aiWillFillDesc": "Typ nemovitosti, adresu, velikost, vybavení a další údaje podle vašeho popisu.",
+      "aiGenerate": "Vygenerovat návrh",
+      "aiCopyComingSoon": "Kopírování existující nemovitosti bude dostupné brzy.",
+      "selectType": "Vyberte typ",
+      "propertyType": "Typ nemovitosti",
+      "region": "Kraj",
+      "regionPlaceholder": "Středočeský kraj",
+      "disposition": "Dispozice",
+      "sectionBasic": "Základní údaje",
+      "sectionValue": "Hodnota nemovitosti",
+      "sectionTypology": "Typologie",
+      "sectionLocation": "Umístění v domě",
+      "sectionEquipment": "Vybavení",
+      "sectionEnergy": "Energie a měřidla",
+      "sectionInsurance": "Pojištění",
+      "sectionNotes": "Poznámky",
+      "purchasePrice": "Pořizovací cena",
+      "marketValue": "Aktuální tržní hodnota",
+      "ownershipType": "Typ vlastnictví",
+      "constructionType": "Typ konstrukce",
+      "heatingType": "Typ vytápění",
+      "unitNumber": "Číslo bytu",
+      "floor": "Patro",
+      "totalFloors": "Počet pater",
+      "basementFloors": "Suterén (patra)",
+      "gasEicCode": "EIC kód (plyn)",
+      "electricityEanCode": "EAN kód (elektřina)",
+      "insurancePolicyNumber": "Číslo pojistky",
+      "insuranceAnnualPremium": "Roční pojistné",
+      "insuranceNote": "Poznámka k pojištění",
+      "insuranceNotePlaceholder": "Pojišťovna, datum platnosti…"
+    },
+    "type": {
+      "byt": "Byt",
+      "dum": "Dům",
+      "pozemek": "Pozemek",
+      "komercni_prostor": "Komerční prostor",
+      "garaz": "Garáž / parkovací stání",
+      "kancelar": "Kancelář",
+      "sklad": "Sklad",
+      "jine": "Jiné"
+    },
+    "ownership": {
+      "personal": "Osobní vlastnictví",
+      "cooperative": "Družstevní",
+      "state": "Státní / obecní",
+      "svj": "SVJ",
+      "other": "Jiné"
+    },
+    "construction": {
+      "panel": "Panelová",
+      "brick": "Cihlová",
+      "timber": "Dřevostavba",
+      "concrete": "Monolitická",
+      "other": "Jiná"
+    },
+    "heating": {
+      "central": "Ústřední",
+      "floor": "Etážové",
+      "electric": "Elektrické",
+      "gas": "Plynové",
+      "heat_pump": "Tepelné čerpadlo",
+      "fireplace": "Krbové / lokální",
+      "other": "Jiné"
+    },
+    "equipment": {
+      "elevator": "Výtah",
+      "parking": "Parkování",
+      "garage": "Garáž",
+      "balcony": "Balkón",
+      "loggia": "Lodžie",
+      "terrace": "Terasa",
+      "cellar": "Sklep"
     },
     "detail": {
       "back": "Zpět na nemovitosti",
@@ -1569,7 +1706,35 @@
       "api_not_configured": "Ověřování katastru není dostupné — kontaktujte podporu.",
       "generic": "Ověření se nezdařilo. Zkuste to znovu."
     },
-    "reset": "Začít znovu"
+    "reset": "Začít znovu",
+    "modal": {
+      "title": "Import z katastru nemovitostí",
+      "description": "Vyhledejte nemovitost podle adresy, parcelního čísla nebo listu vlastnictví.",
+      "tab": {
+        "address": "Adresa",
+        "parcel": "Parcela",
+        "lv": "List vlastnictví"
+      },
+      "addressLabel": "Adresa nemovitosti",
+      "addressPlaceholder": "Vinohradská 42, Praha…",
+      "changeAddress": "Změnit adresu",
+      "confirm": "Použít tuto adresu",
+      "search": "Vyhledat v katastru",
+      "lvHint": "Zadejte kód katastrálního území a číslo listu vlastnictví.",
+      "parcelHint": "Zadejte kód katastrálního území a parcelní číslo.",
+      "kuCode": "Kód k.ú.",
+      "lvNumber": "Číslo LV",
+      "parcelNumber": "Parcelní číslo"
+    },
+    "detail": {
+      "ku": "Katastrální území",
+      "lv": "List vlastnictví",
+      "parcel": "Parcelní číslo"
+    },
+    "error": {
+      "ruianFailed": "Nepodařilo se prohledat RÚIAN. Zkuste to znovu.",
+      "wsdpFailed": "Nepodařilo se načíst data z katastru. Zkontrolujte zadané hodnoty."
+    }
   },
   "prelaunch": {
     "eyebrow": "Prelaunch — limitovaný early access",
@@ -1608,6 +1773,168 @@
       "learnMore": "Více informací",
       "accept": "Přijmout vše",
       "reject": "Odmítnout volitelné"
+    }
+  },
+  "calendar": {
+    "title": "Kalendář",
+    "view": {
+      "agenda": "Agenda",
+      "month": "Měsíc"
+    },
+    "today": "Dnes",
+    "prevWeek": "Předchozí týden",
+    "nextWeek": "Následující týden",
+    "addEvent": "Přidat událost",
+    "empty": {
+      "title": "Žádné události",
+      "description": "Pro tento den nemáte žádné naplánované akce."
+    }
+  },
+  "analytics": {
+    "title": "Finanční analýza",
+    "period": {
+      "1y": "Poslední rok",
+      "2y": "Poslední 2 roky",
+      "3y": "Poslední 3 roky",
+      "5y": "Posledních 5 let"
+    },
+    "kpi": {
+      "growth": "Meziroční růst",
+      "growthSub": "Meziročně",
+      "roi": "ROI",
+      "roiSub": "Návratnost investice",
+      "netIncome": "Čistý příjem",
+      "netIncomeSub": "Tento rok",
+      "portfolio": "Hodnota portfolia",
+      "portfolioSub": "Celková pořizovací cena"
+    },
+    "cashflow": {
+      "title": "Cashflow za posledních 6 měsíců",
+      "income": "Příjmy",
+      "expenses": "Výdaje",
+      "avg": "Průměr"
+    },
+    "aiPrediction": {
+      "title": "AI predikce portfolia",
+      "empty": "Klikněte pro AI odhad hodnoty vašich nemovitostí.",
+      "refresh": "Aktualizovat odhad",
+      "placeholder": "Na základě vašeho portfolia AI odhad není k dispozici — přidejte pořizovací ceny nemovitostí."
+    }
+  },
+  "subsidies": {
+    "title": "Dotace, hypotéky a energie",
+    "available": {
+      "title": "Dostupné dotace",
+      "count": "aktivní",
+      "expires": "Platí do"
+    },
+    "mortgage": {
+      "title": "Hypoteční sazby",
+      "from": "od",
+      "declining": "sazby klesají",
+      "note": "Orientační průměr nejlepších nabídek na trhu. Aktualizováno denně."
+    }
+  },
+  "news": {
+    "title": "Změny v legislativě a důležité novinky",
+    "refresh": "Obnovit",
+    "empty": "Žádné novinky odpovídají filtru.",
+    "category": {
+      "all": "Vše",
+      "market": "Trh",
+      "legislation": "Legislativa",
+      "finance": "Finance",
+      "tips": "Tipy"
+    }
+  },
+  "svj": {
+    "title": "SVJ Management",
+    "description": "Pro přístup k SVJ modulu je potřeba aktivní SVJ předplatné. Vyberte si z nabídky SVJ tarifů a získejte přístup ke kompletní správě SVJ.",
+    "cta": "Zobrazit SVJ tarify"
+  },
+  "quickCreate": {
+    "title": "Vytvořit",
+    "items": {
+      "property": "Nemovitost",
+      "tenant": "Nájemník",
+      "lease": "Smlouva",
+      "payment": "Platba",
+      "expense": "Náklad",
+      "task": "Úkol"
+    }
+  },
+  "workspace": {
+    "manage": "Správa",
+    "crm": "CRM",
+    "airbnb": "Airbnb / Hotel",
+    "svj": "SVJ"
+  },
+  "more": {
+    "title": "Více",
+    "quickActions": "Rychlé akce",
+    "aiAssistant": "AI Asistent",
+    "aiAssistantDesc": "Zeptejte se na cokoliv",
+    "guide": "Průvodce aplikací",
+    "guideDesc": "Naučte se používat aplikaci",
+    "addToHome": "Přidat na plochu",
+    "addToHomeDesc": "Zobrazit návod pro iOS",
+    "menuTree": "Navigace",
+    "pwa": {
+      "howTo": "Jak přidat na plochu (iOS)",
+      "step1": "Klepněte na ikonu Sdílet (čtvereček se šipkou nahoru) v dolní liště Safari",
+      "step2": "Posuňte nabídku dolů a klepněte na Přidat na plochu",
+      "step3": "Potvrďte klepnutím na Přidat vpravo nahoře",
+      "result": "Aplikace se poté bude chovat jako nativní – na celou obrazovku a s vlastní ikonou."
+    }
+  },
+  "expenses": {
+    "title": "Náklady",
+    "subtitle": "Výdaje na nemovitosti pro daňový přehled.",
+    "add": "Přidat náklad",
+    "totalThisYear": "Výdaje tento rok",
+    "taxDeductible": "Daňově uznatelný",
+    "empty": {
+      "title": "Zatím žádné náklady",
+      "description": "Přidej první výdaj a sleduj náklady na nemovitosti."
+    },
+    "category": {
+      "repair": "Oprava",
+      "insurance": "Pojistné",
+      "utilities": "Služby",
+      "management": "Správa",
+      "tax": "Daně a poplatky",
+      "other": "Ostatní",
+      "opravy": "Opravy",
+      "pojistne": "Pojistné",
+      "sluzby": "Služby",
+      "sprava": "Správa",
+      "danove_poplatky": "Daně a poplatky",
+      "energie": "Energie",
+      "reklama": "Reklama",
+      "jine": "Ostatní"
+    },
+    "form": {
+      "title": "Nový náklad",
+      "subtitle": "Zadej výdaj spojeného s nemovitostí.",
+      "property": "Nemovitost",
+      "selectProperty": "Vyberte nemovitost",
+      "category": "Kategorie",
+      "date": "Datum",
+      "description": "Popis",
+      "descriptionPlaceholder": "Oprava kotle, pojistné za rok…",
+      "amount": "Částka",
+      "taxDeductible": "Daňově uznatelný výdaj",
+      "taxDeductibleHint": "Výdaj bude zahrnut do daňového přehledu.",
+      "save": "Uložit náklad",
+      "propertyRequired": "Vyberte nemovitost.",
+      "descriptionRequired": "Zadej popis výdaje.",
+      "amountRequired": "Zadej platnou částku.",
+      "dateRequired": "Zadej datum výdaje."
+    },
+    "tax": {
+      "no": "Neuznatelný",
+      "yes": "Plně uznatelný",
+      "pausal30": "Paušál 30 %"
     }
   }
 }

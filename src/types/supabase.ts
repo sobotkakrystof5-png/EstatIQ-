@@ -742,6 +742,7 @@ export type Database = {
           address: string
           archived_at: string | null
           area_sqm: number | null
+          basement_floors: number | null
           cadastral_number: string | null
           cadastre_lv: string | null
           cadastre_ku: string | null
@@ -751,25 +752,41 @@ export type Database = {
           cadastre_encumbrances: string[] | null
           cadastre_refreshed_at: string | null
           city: string
+          construction_type: string | null
           country: string
           cover_image_url: string | null
           created_at: string
           description: string | null
+          disposition: string | null
+          electricity_ean_code: string | null
+          equipment: string[]
           floor: number | null
+          gas_eic_code: string | null
+          heating_type: string | null
           id: string
+          insurance_annual_premium: number | null
+          insurance_note: string | null
+          insurance_policy_number: string | null
+          market_value: number | null
           name: string
           organization_id: string | null
           owner_id: string
+          ownership_type: string | null
           postal_code: string | null
+          purchase_price: number | null
+          region: string | null
           rooms: number | null
           status: Database["public"]["Enums"]["property_status"]
+          total_floors: number | null
           type: Database["public"]["Enums"]["property_type"]
+          unit_number: string | null
           updated_at: string
         }
         Insert: {
           address: string
           archived_at?: string | null
           area_sqm?: number | null
+          basement_floors?: number | null
           cadastral_number?: string | null
           cadastre_lv?: string | null
           cadastre_ku?: string | null
@@ -779,25 +796,41 @@ export type Database = {
           cadastre_encumbrances?: string[] | null
           cadastre_refreshed_at?: string | null
           city: string
+          construction_type?: string | null
           country?: string
           cover_image_url?: string | null
           created_at?: string
           description?: string | null
+          disposition?: string | null
+          electricity_ean_code?: string | null
+          equipment?: string[]
           floor?: number | null
+          gas_eic_code?: string | null
+          heating_type?: string | null
           id?: string
+          insurance_annual_premium?: number | null
+          insurance_note?: string | null
+          insurance_policy_number?: string | null
+          market_value?: number | null
           name: string
           organization_id?: string | null
           owner_id: string
+          ownership_type?: string | null
           postal_code?: string | null
+          purchase_price?: number | null
+          region?: string | null
           rooms?: number | null
           status?: Database["public"]["Enums"]["property_status"]
+          total_floors?: number | null
           type?: Database["public"]["Enums"]["property_type"]
+          unit_number?: string | null
           updated_at?: string
         }
         Update: {
           address?: string
           archived_at?: string | null
           area_sqm?: number | null
+          basement_floors?: number | null
           cadastral_number?: string | null
           cadastre_lv?: string | null
           cadastre_ku?: string | null
@@ -807,19 +840,34 @@ export type Database = {
           cadastre_encumbrances?: string[] | null
           cadastre_refreshed_at?: string | null
           city?: string
+          construction_type?: string | null
           country?: string
           cover_image_url?: string | null
           created_at?: string
           description?: string | null
+          disposition?: string | null
+          electricity_ean_code?: string | null
+          equipment?: string[]
           floor?: number | null
+          gas_eic_code?: string | null
+          heating_type?: string | null
           id?: string
+          insurance_annual_premium?: number | null
+          insurance_note?: string | null
+          insurance_policy_number?: string | null
+          market_value?: number | null
           name?: string
           organization_id?: string | null
           owner_id?: string
+          ownership_type?: string | null
           postal_code?: string | null
+          purchase_price?: number | null
+          region?: string | null
           rooms?: number | null
           status?: Database["public"]["Enums"]["property_status"]
+          total_floors?: number | null
           type?: Database["public"]["Enums"]["property_type"]
+          unit_number?: string | null
           updated_at?: string
         }
         Relationships: [
@@ -1124,7 +1172,7 @@ export type Database = {
       payment_status: "pending" | "paid" | "overdue" | "canceled"
       payment_type: "rent" | "deposit" | "utilities" | "repair" | "other"
       property_status: "volna" | "pronajata" | "v_oprave" | "archivovana"
-      property_type: "byt" | "dum" | "kancelar" | "sklad" | "garaz" | "jine"
+      property_type: "byt" | "dum" | "kancelar" | "sklad" | "garaz" | "jine" | "pozemek" | "komercni_prostor"
       subscription_status:
         | "active"
         | "trialing"
@@ -1322,7 +1370,7 @@ export const Constants = {
       payment_status: ["pending", "paid", "overdue", "canceled"],
       payment_type: ["rent", "deposit", "utilities", "repair", "other"],
       property_status: ["volna", "pronajata", "v_oprave", "archivovana"],
-      property_type: ["byt", "dum", "kancelar", "sklad", "garaz", "jine"],
+      property_type: ["byt", "dum", "kancelar", "sklad", "garaz", "jine", "pozemek", "komercni_prostor"],
       subscription_status: [
         "active",
         "trialing",

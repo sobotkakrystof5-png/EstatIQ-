@@ -5,6 +5,9 @@ export type Json = string | number | boolean | null | { [key: string]: Json | un
 
 export type UserRole = 'landlord' | 'tenant' | 'manager'
 export type PropertyStatus = 'active' | 'vacant' | 'maintenance' | 'archived'
+export type PropertyType = 'byt' | 'dum' | 'kancelar' | 'sklad' | 'garaz' | 'jine' | 'pozemek' | 'komercni_prostor'
+export type CalendarEventType = 'task' | 'payment_due' | 'lease_expiry' | 'insurance_expiry' | 'revision'
+export type CalendarEventStatus = 'open' | 'done'
 export type LeaseStatus = 'active' | 'upcoming' | 'expired' | 'terminated'
 export type PaymentStatus = 'paid' | 'pending' | 'overdue' | 'canceled'
 export type PaymentType = 'rent' | 'deposit' | 'utilities' | 'repair' | 'other'
@@ -151,12 +154,36 @@ export interface Property {
   archived_at: string | null   // soft delete
   created_at: string
   updated_at: string
+  // Typ a lokalita
+  property_type: PropertyType
+  region: string | null
+  disposition: string | null
+  // Hodnota
+  purchase_price: number | null
+  market_value: number | null
+  // Typologie
+  ownership_type: string | null
+  construction_type: string | null
+  heating_type: string | null
+  // Umístění v domě
+  unit_number: string | null
+  total_floors: number | null
+  basement_floors: number | null
+  // Vybavení
+  equipment: string[]
+  // Energie
+  gas_eic_code: string | null
+  electricity_ean_code: string | null
+  // Pojištění
+  insurance_policy_number: string | null
+  insurance_annual_premium: number | null
+  insurance_note: string | null
   // ČÚZK / katastr
-  cadastral_number: string | null       // původní pole — odkaz na LV nebo parcelu
-  cadastre_lv: string | null            // číslo listu vlastnictví
-  cadastre_ku: string | null            // název katastrálního území
-  cadastre_ku_code: string | null       // kód katastrálního území
-  cadastre_parcel: string | null        // parcelní číslo
+  cadastral_number: string | null
+  cadastre_lv: string | null
+  cadastre_ku: string | null
+  cadastre_ku_code: string | null
+  cadastre_parcel: string | null
   cadastre_owners: CadastreOwner[] | null
   cadastre_encumbrances: string[] | null
   cadastre_refreshed_at: string | null
@@ -308,4 +335,41 @@ export interface PropertyWithStats extends Property {
   tenant_count: number
   unpaid_count: number
   last_payment_at: string | null
+}
+
+// ── Loan ──────────────────────────────────────────────────────────────────────
+export type LoanType = 'mortgage' | 'renovation' | 'personal' | 'other'
+
+export interface Loan {
+  id: string
+  owner_id: string
+  organization_id: string | null
+  property_id: string | null
+  lender: string
+  loan_type: LoanType
+  principal: number | null
+  current_balance: number | null
+  monthly_payment: number
+  interest_rate: number | null
+  start_date: string | null
+  end_date: string | null
+  notes: string | null
+  created_at: string
+  updated_at: string
+}
+
+// ── CalendarEvent / Task ──────────────────────────────────────────────────────
+export interface CalendarEvent {
+  id: string
+  owner_id: string
+  organization_id: string | null
+  title: string
+  description: string | null
+  due_at: string                          // ISO timestamptz
+  event_type: CalendarEventType
+  related_property_id: string | null
+  related_tenant_id: string | null
+  status: CalendarEventStatus
+  created_at: string
+  updated_at: string
 }

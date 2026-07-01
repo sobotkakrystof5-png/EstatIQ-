@@ -5,6 +5,8 @@ import {
   fetchIncomeChart,
   fetchNotifications,
   markNotificationRead,
+  fetchDashboardTenantsPreview,
+  fetchDashboardPropertiesPreview,
 } from './data'
 
 export function useDashboardStats() {
@@ -29,4 +31,12 @@ export function useMarkNotificationRead() {
     mutationFn: markNotificationRead,
     onSuccess: () => qc.invalidateQueries({ queryKey: ['dashboard', 'notifications'] }),
   })
+}
+
+export function useDashboardTenantsPreview() {
+  return useQuery({ queryKey: ['dashboard', 'tenantsPreview'], queryFn: fetchDashboardTenantsPreview })
+}
+
+export function useDashboardPropertiesPreview() {
+  return useQuery({ queryKey: ['dashboard', 'propertiesPreview'], queryFn: fetchDashboardPropertiesPreview })
 }

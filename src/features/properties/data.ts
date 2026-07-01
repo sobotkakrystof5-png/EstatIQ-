@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabase'
 import type { Tables } from '@/lib/supabase'
 import type { Enums } from '@/types/supabase'
-import type { Lease, LeaseStatus, PropertyStatus, PropertyWithStats } from '@/types/database'
+import type { Lease, LeaseStatus, PropertyStatus, PropertyType, PropertyWithStats } from '@/types/database'
 
 // ── Enum mappers ─────────────────────────────────────────────────────────────
 
@@ -82,6 +82,25 @@ function mapPropertyWithStats(row: DbPropertyWithLeases): PropertyWithStats {
       ? paidPayments.sort((a, b) => b.paid_at!.localeCompare(a.paid_at!))[0].paid_at!
       : null
 
+  const r = row as typeof row & {
+    region?: string | null
+    disposition?: string | null
+    purchase_price?: number | null
+    market_value?: number | null
+    ownership_type?: string | null
+    construction_type?: string | null
+    heating_type?: string | null
+    unit_number?: string | null
+    total_floors?: number | null
+    basement_floors?: number | null
+    equipment?: string[] | null
+    gas_eic_code?: string | null
+    electricity_ean_code?: string | null
+    insurance_policy_number?: string | null
+    insurance_annual_premium?: number | null
+    insurance_note?: string | null
+  }
+
   return {
     id: row.id,
     owner_id: row.owner_id,
@@ -102,6 +121,31 @@ function mapPropertyWithStats(row: DbPropertyWithLeases): PropertyWithStats {
     archived_at: row.archived_at,
     created_at: row.created_at,
     updated_at: row.updated_at,
+    // typ
+    property_type: (row.type as PropertyType) ?? 'byt',
+    region: r.region ?? null,
+    disposition: r.disposition ?? null,
+    // hodnota
+    purchase_price: r.purchase_price ?? null,
+    market_value: r.market_value ?? null,
+    // typologie
+    ownership_type: r.ownership_type ?? null,
+    construction_type: r.construction_type ?? null,
+    heating_type: r.heating_type ?? null,
+    // umístění
+    unit_number: r.unit_number ?? null,
+    total_floors: r.total_floors ?? null,
+    basement_floors: r.basement_floors ?? null,
+    // vybavení
+    equipment: r.equipment ?? [],
+    // energie
+    gas_eic_code: r.gas_eic_code ?? null,
+    electricity_ean_code: r.electricity_ean_code ?? null,
+    // pojištění
+    insurance_policy_number: r.insurance_policy_number ?? null,
+    insurance_annual_premium: r.insurance_annual_premium ?? null,
+    insurance_note: r.insurance_note ?? null,
+    // katastr
     active_lease: activeLease ? mapLease(activeLease) : null,
     tenant_count: tenantCount,
     unpaid_count: unpaidCount,
@@ -133,11 +177,29 @@ const PROPERTY_SELECT = `
 
 export interface PropertyDraft {
   name: string
+  property_type?: PropertyType
   address_street: string
   address_city: string
   address_zip: string
+  region?: string | null
   rooms: number | null
   floor_area_m2: number | null
+  disposition?: string | null
+  purchase_price?: number | null
+  market_value?: number | null
+  ownership_type?: string | null
+  construction_type?: string | null
+  heating_type?: string | null
+  unit_number?: string | null
+  floor?: number | null
+  total_floors?: number | null
+  basement_floors?: number | null
+  equipment?: string[]
+  gas_eic_code?: string | null
+  electricity_ean_code?: string | null
+  insurance_policy_number?: string | null
+  insurance_annual_premium?: number | null
+  insurance_note?: string | null
   monthly_rent: number
   status: PropertyStatus
   notes: string | null
@@ -194,12 +256,29 @@ export async function createProperty(draft: PropertyDraft): Promise<PropertyWith
       city: draft.address_city,
       postal_code: draft.address_zip || null,
       country: 'CZ',
+      type: draft.property_type ?? 'byt',
       rooms: draft.rooms,
       area_sqm: draft.floor_area_m2,
       status: toDbPropertyStatus(draft.status),
       description: draft.notes,
-      type: 'byt',
       archived_at: draft.status === 'archived' ? new Date().toISOString() : null,
+      region: draft.region ?? null,
+      disposition: draft.disposition ?? null,
+      purchase_price: draft.purchase_price ?? null,
+      market_value: draft.market_value ?? null,
+      ownership_type: draft.ownership_type ?? null,
+      construction_type: draft.construction_type ?? null,
+      heating_type: draft.heating_type ?? null,
+      unit_number: draft.unit_number ?? null,
+      floor: draft.floor ?? null,
+      total_floors: draft.total_floors ?? null,
+      basement_floors: draft.basement_floors ?? null,
+      equipment: draft.equipment ?? [],
+      gas_eic_code: draft.gas_eic_code ?? null,
+      electricity_ean_code: draft.electricity_ean_code ?? null,
+      insurance_policy_number: draft.insurance_policy_number ?? null,
+      insurance_annual_premium: draft.insurance_annual_premium ?? null,
+      insurance_note: draft.insurance_note ?? null,
       cadastral_number: draft.cadastral_number ?? null,
       cadastre_lv: draft.cadastre_lv ?? null,
       cadastre_ku: draft.cadastre_ku ?? null,
@@ -218,6 +297,7 @@ export async function updateProperty(id: string, draft: PropertyDraft): Promise<
     .from('properties')
     .update({
       name: draft.name,
+      type: draft.property_type ?? 'byt',
       address: draft.address_street,
       city: draft.address_city,
       postal_code: draft.address_zip || null,
@@ -226,6 +306,23 @@ export async function updateProperty(id: string, draft: PropertyDraft): Promise<
       status: toDbPropertyStatus(draft.status),
       description: draft.notes,
       archived_at: draft.status === 'archived' ? new Date().toISOString() : null,
+      region: draft.region ?? null,
+      disposition: draft.disposition ?? null,
+      purchase_price: draft.purchase_price ?? null,
+      market_value: draft.market_value ?? null,
+      ownership_type: draft.ownership_type ?? null,
+      construction_type: draft.construction_type ?? null,
+      heating_type: draft.heating_type ?? null,
+      unit_number: draft.unit_number ?? null,
+      floor: draft.floor ?? null,
+      total_floors: draft.total_floors ?? null,
+      basement_floors: draft.basement_floors ?? null,
+      equipment: draft.equipment ?? [],
+      gas_eic_code: draft.gas_eic_code ?? null,
+      electricity_ean_code: draft.electricity_ean_code ?? null,
+      insurance_policy_number: draft.insurance_policy_number ?? null,
+      insurance_annual_premium: draft.insurance_annual_premium ?? null,
+      insurance_note: draft.insurance_note ?? null,
     })
     .eq('id', id)
     .select(PROPERTY_SELECT)

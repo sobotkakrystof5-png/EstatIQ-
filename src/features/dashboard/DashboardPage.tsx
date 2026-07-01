@@ -12,6 +12,12 @@ import {
   Clock,
   Bell,
   X,
+  Users,
+  FileSignature,
+  CheckSquare,
+  ShieldCheck,
+  Landmark,
+  Gauge,
 } from 'lucide-react'
 import {
   AreaChart,
@@ -34,6 +40,8 @@ import {
   useIncomeChart,
   useNotifications,
   useMarkNotificationRead,
+  useDashboardTenantsPreview,
+  useDashboardPropertiesPreview,
 } from './hooks'
 
 // ── Count-up fade ─────────────────────────────────────────────────────────────
@@ -59,14 +67,15 @@ function AnimatedNumber({ value, prefix = '', suffix = '' }: { value: string; pr
 interface StatCardProps {
   title: string
   value: string
+  sub?: string
   trend?: { value: number; label: string }
   icon: React.ReactNode
   iconBg: string
-  valueSuffix?: string
+  valueClassName?: string
   loading?: boolean
 }
 
-function StatCard({ title, value, trend, icon, iconBg, valueSuffix, loading }: StatCardProps) {
+function StatCard({ title, value, sub, trend, icon, iconBg, valueClassName, loading }: StatCardProps) {
   return (
     <Card>
       <CardHeader>
@@ -78,9 +87,12 @@ function StatCard({ title, value, trend, icon, iconBg, valueSuffix, loading }: S
       {loading ? (
         <Skeleton className="mb-2 h-9 w-32" />
       ) : (
-        <p className="mb-1 font-display text-3xl font-bold text-surface-900 dark:text-surface-50">
-          <AnimatedNumber value={value} suffix={valueSuffix} />
+        <p className={`mb-1 font-display text-3xl font-bold ${valueClassName ?? 'text-surface-900 dark:text-surface-50'}`}>
+          <AnimatedNumber value={value} />
         </p>
+      )}
+      {sub && !loading && (
+        <p className="text-xs text-surface-400">{sub}</p>
       )}
       {trend && !loading && (
         <div className="flex items-center gap-1.5 text-xs">
@@ -124,12 +136,31 @@ function ChartTooltip({
   )
 }
 
-// ── Notification type → icon color ────────────────────────────────────────────
+// ── Notification dot ──────────────────────────────────────────────────────────
 
 function notificationDot(type: string) {
   if (type.includes('overdue') || type.includes('energy')) return 'bg-red-400'
   if (type.includes('expir') || type.includes('reminder')) return 'bg-amber-400'
   return 'bg-indigo-400'
+}
+
+// ── Property status badge colour ──────────────────────────────────────────────
+
+function propStatusClass(status: string) {
+  if (status === 'pronajata') return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+  if (status === 'volna') return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
+  return 'bg-surface-100 text-surface-500 dark:bg-surface-800 dark:text-surface-400'
+}
+
+// ── Stagger wrapper ───────────────────────────────────────────────────────────
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06 } },
+}
+const fadeUp = {
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
@@ -142,6 +173,8 @@ export default function DashboardPage() {
   const { data: recentPayments, isLoading: paymentsLoading } = useRecentPayments()
   const { data: chartData, isLoading: chartLoading } = useIncomeChart()
   const { data: notifications, isLoading: notificationsLoading } = useNotifications()
+  const { data: tenantsPrev, isLoading: tenantsLoading } = useDashboardTenantsPreview()
+  const { data: propertiesPrev, isLoading: propertiesLoading } = useDashboardPropertiesPreview()
   const { mutate: markRead } = useMarkNotificationRead()
 
   const hour = new Date().getHours()
@@ -153,6 +186,16 @@ export default function DashboardPage() {
         : 'dashboard.greeting.evening'
 
   const firstName = profile?.full_name?.split(' ')[0] ?? ''
+
+  const cashflowStr = stats
+    ? (stats.cashflow >= 0 ? '+' : '') + formatCurrency(stats.cashflow)
+    : '—'
+  const cashflowColor =
+    !stats
+      ? 'text-surface-900 dark:text-surface-50'
+      : stats.cashflow >= 0
+        ? 'text-emerald-600 dark:text-emerald-400'
+        : 'text-red-500 dark:text-red-400'
 
   return (
     <div className="p-6 lg:p-8">
@@ -176,15 +219,62 @@ export default function DashboardPage() {
         </motion.p>
       </div>
 
-      {/* Stat cards */}
+      {/* ── Row 1: Counts ────────────────────────────────────────────────── */}
       <motion.div
         initial="hidden"
         animate="visible"
-        variants={{ visible: { transition: { staggerChildren: 0.07 } }, hidden: {} }}
-        className="mb-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
+        variants={stagger}
+        className="mb-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
       >
-        {/* Celkový příjem */}
-        <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
+        <motion.div variants={fadeUp}>
+          <StatCard
+            title={t('dashboard.cards.properties.title')}
+            value={String(stats?.propertiesTotal ?? 0)}
+            sub={`${stats?.propertiesOccupied ?? 0} / ${stats?.propertiesTotal ?? 0} ${t('dashboard.cards.properties.occupied')}`}
+            icon={<Building2 size={18} className="text-indigo-600 dark:text-indigo-400" />}
+            iconBg="bg-indigo-50 dark:bg-indigo-900/20"
+            loading={statsLoading}
+          />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <StatCard
+            title={t('dashboard.cards.tenants.title')}
+            value={String(stats?.tenantsCount ?? 0)}
+            icon={<Users size={18} className="text-violet-600 dark:text-violet-400" />}
+            iconBg="bg-violet-50 dark:bg-violet-900/20"
+            loading={statsLoading}
+          />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <StatCard
+            title={t('dashboard.cards.leases.title')}
+            value={String(stats?.leasesCount ?? 0)}
+            sub={t('dashboard.cards.leases.sub')}
+            icon={<FileSignature size={18} className="text-blue-600 dark:text-blue-400" />}
+            iconBg="bg-blue-50 dark:bg-blue-900/20"
+            loading={statsLoading}
+          />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <StatCard
+            title={t('dashboard.cards.tasks.title')}
+            value={String(stats?.tasksCount ?? 0)}
+            sub={t('dashboard.cards.tasks.sub')}
+            icon={<CheckSquare size={18} className="text-amber-600 dark:text-amber-400" />}
+            iconBg="bg-amber-50 dark:bg-amber-900/20"
+            loading={statsLoading}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* ── Row 2: Finance ───────────────────────────────────────────────── */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={stagger}
+        className="mb-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
+      >
+        <motion.div variants={fadeUp}>
           <StatCard
             title={t('dashboard.cards.income.title')}
             value={formatCurrency(stats?.incomeThisMonth ?? 0)}
@@ -198,43 +288,79 @@ export default function DashboardPage() {
             loading={statsLoading}
           />
         </motion.div>
-
-        {/* Čeká na platbu */}
-        <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
+        <motion.div variants={fadeUp}>
           <StatCard
-            title={t('dashboard.cards.pending.title')}
-            value={formatCurrency(stats?.pendingAmount ?? 0)}
-            icon={<Clock size={18} className="text-amber-600 dark:text-amber-400" />}
-            iconBg="bg-amber-50 dark:bg-amber-900/20"
+            title={t('dashboard.cards.cashflow.title')}
+            value={cashflowStr}
+            sub={t('dashboard.cards.cashflow.sub')}
+            icon={<TrendingUp size={18} className="text-emerald-600 dark:text-emerald-400" />}
+            iconBg="bg-emerald-50 dark:bg-emerald-900/20"
+            valueClassName={cashflowColor}
             loading={statsLoading}
           />
         </motion.div>
-
-        {/* Po splatnosti */}
-        <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
+        <motion.div variants={fadeUp}>
           <StatCard
-            title={t('dashboard.cards.overdue.title')}
+            title={t('dashboard.cards.expenses.title')}
+            value={formatCurrency(stats?.expensesThisMonth ?? 0)}
+            icon={<Clock size={18} className="text-rose-600 dark:text-rose-400" />}
+            iconBg="bg-rose-50 dark:bg-rose-900/20"
+            loading={statsLoading}
+          />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <StatCard
+            title={t('dashboard.cards.debts.title')}
             value={formatCurrency(stats?.overdueAmount ?? 0)}
+            sub={t('dashboard.cards.debts.sub')}
             icon={<AlertCircle size={18} className="text-red-500 dark:text-red-400" />}
             iconBg="bg-red-50 dark:bg-red-900/20"
-            loading={statsLoading}
-          />
-        </motion.div>
-
-        {/* Obsazenost */}
-        <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
-          <StatCard
-            title={t('dashboard.cards.occupancy.title')}
-            value={String(stats?.occupancyPct ?? 0)}
-            valueSuffix={` %  (${stats?.propertiesOccupied ?? 0} / ${stats?.propertiesTotal ?? 0})`}
-            icon={<Building2 size={18} className="text-indigo-600 dark:text-indigo-400" />}
-            iconBg="bg-indigo-50 dark:bg-indigo-900/20"
+            valueClassName={(stats?.overdueAmount ?? 0) > 0 ? 'text-red-600 dark:text-red-400' : 'text-surface-900 dark:text-surface-50'}
             loading={statsLoading}
           />
         </motion.div>
       </motion.div>
 
-      {/* Chart + Recent payments */}
+      {/* ── Row 3: Assets ────────────────────────────────────────────────── */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={stagger}
+        className="mb-8 grid gap-4 sm:grid-cols-3"
+      >
+        <motion.div variants={fadeUp}>
+          <StatCard
+            title={t('dashboard.cards.insurance.title')}
+            value={String(stats?.insuranceCount ?? 0)}
+            sub={t('dashboard.cards.insurance.unit')}
+            icon={<ShieldCheck size={18} className="text-sky-600 dark:text-sky-400" />}
+            iconBg="bg-sky-50 dark:bg-sky-900/20"
+            loading={statsLoading}
+          />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <StatCard
+            title={t('dashboard.cards.loans.title')}
+            value={formatCurrency(stats?.loansMonthlyTotal ?? 0)}
+            sub={t('dashboard.cards.loans.sub')}
+            icon={<Landmark size={18} className="text-orange-600 dark:text-orange-400" />}
+            iconBg="bg-orange-50 dark:bg-orange-900/20"
+            loading={statsLoading}
+          />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <StatCard
+            title={t('dashboard.cards.meters.title')}
+            value={String(stats?.metersCount ?? 0)}
+            sub={t('dashboard.cards.meters.sub')}
+            icon={<Gauge size={18} className="text-teal-600 dark:text-teal-400" />}
+            iconBg="bg-teal-50 dark:bg-teal-900/20"
+            loading={statsLoading}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* ── Chart + Recent payments ──────────────────────────────────────── */}
       <div className="mb-6 grid gap-6 lg:grid-cols-3">
         {/* Chart */}
         <Card className="lg:col-span-2" padding="lg">
@@ -311,18 +437,11 @@ export default function DashboardPage() {
               {t('dashboard.emptyState.title')}
             </p>
           ) : (
-            <ul
-              className="space-y-0 divide-y divide-surface-100 dark:divide-surface-800"
-              role="list"
-            >
+            <ul className="space-y-0 divide-y divide-surface-100 dark:divide-surface-800" role="list">
               {recentPayments.map((p) => (
                 <li key={p.id} className="flex items-center gap-3 py-3 first:pt-0 last:pb-0">
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface-100 text-xs font-semibold text-surface-500 dark:bg-surface-800">
-                    {p.tenantName
-                      .split(' ')
-                      .map((w) => w[0])
-                      .join('')
-                      .slice(0, 2)}
+                    {p.tenantName.split(' ').map((w) => w[0]).join('').slice(0, 2)}
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm font-medium text-surface-900 dark:text-surface-50">
@@ -352,7 +471,124 @@ export default function DashboardPage() {
         </Card>
       </div>
 
-      {/* Notifications */}
+      {/* ── Mini-lists: Nájemníci + Nemovitosti ──────────────────────────── */}
+      <div className="mb-6 grid gap-6 md:grid-cols-2">
+        {/* Tenants mini-list */}
+        <Card padding="lg">
+          <CardHeader>
+            <CardTitle>{t('dashboard.miniTenants.title')}</CardTitle>
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/app/tenants">{t('dashboard.miniTenants.viewAll')}</Link>
+            </Button>
+          </CardHeader>
+          {tenantsLoading ? (
+            <div className="space-y-3">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <div key={i} className="flex items-center gap-3 py-1">
+                  <Skeleton className="h-9 w-9 rounded-full" />
+                  <div className="flex-1 space-y-1.5">
+                    <Skeleton className="h-3.5 w-28" />
+                    <Skeleton className="h-3 w-20" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : !tenantsPrev?.length ? (
+            <p className="py-6 text-center text-sm text-surface-400">
+              {t('dashboard.miniTenants.empty')}
+            </p>
+          ) : (
+            <ul className="divide-y divide-surface-100 dark:divide-surface-800" role="list">
+              {tenantsPrev.map((tenant) => (
+                <li key={tenant.id} className="flex items-center gap-3 py-3 first:pt-0 last:pb-0">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    {tenant.fullName.split(' ').map((n) => n[0]).slice(0, 2).join('').toUpperCase()}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-medium text-surface-900 dark:text-surface-50">
+                      {tenant.fullName}
+                    </p>
+                    <p className="truncate text-xs text-surface-400">
+                      {tenant.email}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+          <div className="mt-4 border-t border-surface-100 pt-4 dark:border-surface-800">
+            <Button variant="outline" size="sm" className="w-full" asChild>
+              <Link to="/app/tenants">
+                {t('dashboard.miniTenants.viewAll')}
+                <ArrowRight size={14} />
+              </Link>
+            </Button>
+          </div>
+        </Card>
+
+        {/* Properties mini-list */}
+        <Card padding="lg">
+          <CardHeader>
+            <CardTitle>{t('dashboard.miniProperties.title')}</CardTitle>
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/app/properties">{t('dashboard.miniProperties.viewAll')}</Link>
+            </Button>
+          </CardHeader>
+          {propertiesLoading ? (
+            <div className="space-y-3">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <div key={i} className="flex items-center gap-3 py-1">
+                  <Skeleton className="h-9 w-9 rounded-lg" />
+                  <div className="flex-1 space-y-1.5">
+                    <Skeleton className="h-3.5 w-28" />
+                    <Skeleton className="h-3 w-20" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : !propertiesPrev?.length ? (
+            <p className="py-6 text-center text-sm text-surface-400">
+              {t('dashboard.miniProperties.empty')}
+            </p>
+          ) : (
+            <ul className="divide-y divide-surface-100 dark:divide-surface-800" role="list">
+              {propertiesPrev.map((prop) => (
+                <li key={prop.id} className="flex items-center gap-3 py-3 first:pt-0 last:pb-0">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400">
+                    {prop.name.slice(0, 2).toUpperCase()}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-medium text-surface-900 dark:text-surface-50">
+                      {prop.name}
+                    </p>
+                    <p className="truncate text-xs text-surface-400">
+                      {prop.city}
+                    </p>
+                  </div>
+                  <span className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${propStatusClass(prop.status)}`}>
+                    {prop.status === 'pronajata'
+                      ? 'Pronajato'
+                      : prop.status === 'volna'
+                        ? 'Volné'
+                        : 'Údržba'
+                    }
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <div className="mt-4 border-t border-surface-100 pt-4 dark:border-surface-800">
+            <Button variant="outline" size="sm" className="w-full" asChild>
+              <Link to="/app/properties">
+                {t('dashboard.miniProperties.viewAll')}
+                <ArrowRight size={14} />
+              </Link>
+            </Button>
+          </div>
+        </Card>
+      </div>
+
+      {/* ── Notifications ────────────────────────────────────────────────── */}
       <Card padding="lg">
         <CardHeader>
           <div className="flex items-center gap-2">
@@ -390,10 +626,7 @@ export default function DashboardPage() {
         ) : (
           <ul className="divide-y divide-surface-100 dark:divide-surface-800" role="list">
             {notifications.map((n) => (
-              <li
-                key={n.id}
-                className="flex items-start gap-3 py-3 first:pt-0 last:pb-0"
-              >
+              <li key={n.id} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0">
                 <span
                   className={`mt-2 h-2 w-2 shrink-0 rounded-full ${notificationDot(n.type)}`}
                   aria-hidden="true"
